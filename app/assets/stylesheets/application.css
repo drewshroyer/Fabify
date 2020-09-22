@@ -13,3 +13,10 @@
  *= require_tree .
  *= require_self
  */
+
+
+  body {
+    font-family: 'Futura';
+    background-color: black;
+    color: white;
+  }

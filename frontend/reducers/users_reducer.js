@@ -1,7 +1,5 @@
 import { RECEIVE_CURRENT_USER } from "../actions/session_actions";
 
-export const RECEIVE_CURRENT_USER = "RECEIVE_CURRENT_USER";
-
 const usersReducer = (oldState = {}, action) => {
   Object.freeze(oldState);
   let newState = Object.assign({}, oldState);
