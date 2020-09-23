@@ -1,11 +1,17 @@
 @import './session/login.css';
 @import './session/signup.css';
 @import './splash/splash.css';
+@import './splash/nav_bar.css';
 
 body {
     font-family: Proxima Nova Alt;
     text-decoration: none;
     margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none; 
 }
 
 

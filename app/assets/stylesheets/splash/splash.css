@@ -4,7 +4,7 @@
   align-items: center;
   background: url(https://www.scdn.co/i/home/lieVariants/bursts-tablet.svg)
     no-repeat;
-  background-size: 100%;
+  background-size: cover;
   background-color: #2d46b9;
   background-position: right 40% center;
   -webkit-box-pack: center;
