@@ -18,7 +18,7 @@ render() {
           <Link
             className="nav-bar-link"
             id="nav-bar-dash"
-            to="linkedin.com/in/drew-shroyer-861b32a4/"
+            to={"https://www.linkedin.com/in/drew-shroyer-861b32a4/"}
           >
             Drew Shroyer
           </Link>

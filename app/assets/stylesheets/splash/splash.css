@@ -15,18 +15,26 @@
 }
 
 .splash-title {
+    position: relative;
+    /* top: -200px; */
     text-align: center;
     max-width: 900px;
     text-decoration: bold;
     color: #1ED760;
     font-size: 170px;
     margin-bottom: 40px;
-    line-height: 1;
+    line-height: .8;
     font-weight: 900;
     letter-spacing: -0.04em !important;
-    transform: scale(1.05, 1);  
+    transform: scale(1, .95);  
+    z-index: 0;
     /* use this transfrom to make the letters more smushed  */
 }
+
+/* #splash-everything {
+    position: absolute;
+  left: 600px;
+} */
 
 .splash-signUp-button {
   color: #2d46b9;

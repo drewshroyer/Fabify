@@ -10,7 +10,8 @@ render() {
           <div>
             <Navbar />
             <div className="background-splash">
-              <div className="splash-title">Listening is everything</div>
+              <div className="splash-title">Listening is</div>
+              <div className="splash-title" id="splash-everything">everything</div>
               <h5>Millions of songs and podcasts. No credit card needed.</h5>
               <button className="splash-signUp-button" type="submit" value="">
                 <Link to={`/signup`}>GET FABIFY FREE</Link>

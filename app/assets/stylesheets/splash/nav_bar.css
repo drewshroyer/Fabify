@@ -4,6 +4,7 @@
     background-color: black;
     display: flex;
     position: fixed;
+    z-index: 100;
 }
 
 .nav-bar-links {
