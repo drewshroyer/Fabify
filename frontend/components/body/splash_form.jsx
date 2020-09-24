@@ -16,6 +16,7 @@ render() {
                 <Link to={`/signup`}>GET FABIFY FREE</Link>
               </button>
             </div>
+            <Footer />
           </div>
         );
     }

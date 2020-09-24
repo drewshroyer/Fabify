@@ -2,6 +2,7 @@
 @import './session/signup.css';
 @import './splash/splash.css';
 @import './splash/nav_bar.css';
+@import './splash/footer.css';
 
 body {
     font-family: Proxima Nova Alt;

@@ -64,6 +64,7 @@
   font-family: inherit;
   font-weight: 900;
   border: .1px solid #fff;
+  transition-duration: .3s;
 }
 
 .login-session-submit:hover {
@@ -95,6 +96,7 @@
     min-width: 160px;
     text-transform: uppercase;
     white-space: normal;
+    transition-duration: .3s;
 }
 
 .signUp-button:hover {
