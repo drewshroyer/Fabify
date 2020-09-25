@@ -12,11 +12,21 @@ class LoginForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  componentWillUnmount() {
+    this.props.clearErrors();
+  }
+
+  clearErrors() {
+    return (
+     <div></div>
+    );
+  }
+
   update(field) {
     return (e) => this.setState({[field]: e.currentTarget.value });
   }
 
-    handleSubmit(e) {
+  handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
     this.props.processForm(user);
@@ -82,6 +92,7 @@ class LoginForm extends React.Component {
                     className="login-session-submit"
                     type="submit"
                     value={this.props.formType}
+                    onSubmit={this.handleSubmit}
                   />
                 </label>
                 <br />

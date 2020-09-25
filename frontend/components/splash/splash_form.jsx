@@ -24,3 +24,7 @@ render() {
 }
 
 export default Splash;
+
+// start by going throughing the AWS tutorial 
+// AWS is very specific so tiny errors can ruin everything - be as carful as possible 
+// follow along with the videos and be super specific 

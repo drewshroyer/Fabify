@@ -1,0 +1,42 @@
+.internal-nav-bar-container {
+ height: 1000px;
+ width: 250px;
+ background-color: #040404;
+ color: white;
+}
+
+#internal-white-splash-logo {
+     width:130px;
+     height: auto;
+     position: absolute;
+     top: 3%;
+     left: 2%;
+}
+
+.internal-nav-icon  {
+color: #B3B3B3;
+}
+
+.internal-nav-link {
+   color: #B3B3B3;
+   font-size: 14px;
+    font-weight: 700;
+    line-height: 16px;
+    letter-spacing: normal;
+    text-transform: none;
+}
+
+.internal-nav-link:hover {
+     color: #ffffff;
+}
+
+.internal-nav-column {
+    position: absolute;
+    top: 11%;
+    left: 2%;
+}
+
+.internal-nav-links {
+    display: flex;
+    flex-direction: column;
+}

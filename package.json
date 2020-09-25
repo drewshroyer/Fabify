@@ -29,15 +29,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/drewshroyer/Snobify.git"
+    "url": "git+https://github.com/drewshroyer/fabify.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/drewshroyer/Snobify/issues"
+    "url": "https://github.com/drewshroyer/fabify/issues"
   },
-  "homepage": "https://github.com/drewshroyer/Snobify#readme",
+  "homepage": "https://github.com/drewshroyer/fabify#readme",
   "engines": {
     "node": "12.5.0",
     "npm": "6.9.0"

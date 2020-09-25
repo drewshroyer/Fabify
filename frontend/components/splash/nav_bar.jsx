@@ -15,20 +15,20 @@ render() {
         </Link>
 
         <div className="nav-bar-links">
-          <Link
+          <a
             className="nav-bar-link"
             id="nav-bar-dash"
-            to={"https://www.linkedin.com/in/drew-shroyer-861b32a4/"}
+            href={"http://www.drewshroyer.com/"}
           >
             Drew Shroyer
-          </Link>
-          <Link
+          </a>
+          <a
             className="nav-bar-link"
             id="nav-bar-dash"
-            to="linkedin.com/in/drew-shroyer-861b32a4/"
+            href={"https://www.linkedin.com/in/drew-shroyer-861b32a4/"}
           >
             LinkedIn
-          </Link>
+          </a>
           <div className="nav-bar-dash"></div>
           <Link className="nav-bar-link" to="/signup">
             Sign Up

@@ -128,7 +128,7 @@ class SignupForm extends React.Component {
                   value="male"
                   onChange={this.update("gender")}
                 />
-                <label for="male">Male</label>
+                <label htmlFor="male">Male</label>
                 <input
                   type="radio"
                   id="female"
@@ -136,7 +136,7 @@ class SignupForm extends React.Component {
                   value="female"
                   onChange={this.update("gender")}
                 />
-                <label for="female">Female</label>
+                <label htmlFor="female">Female</label>
                 <input
                   type="radio"
                   id="other"
@@ -144,7 +144,7 @@ class SignupForm extends React.Component {
                   value="non-binary"
                   onChange={this.update("gender")}
                 />
-                <label for="other">Non-binary</label>
+                <label htmlFor="other">Non-binary</label>
               </div>
               <p>
                 By clicking on Sign up, you agree to Spotify's Terms and
