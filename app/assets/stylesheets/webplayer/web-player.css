@@ -1,0 +1,30 @@
+.web-player-container {
+    display: flex;
+}
+.webplayer-body-container {
+    display: flex;
+    background-color: #121212;
+    height: 100vh;
+    width: 100%;
+}
+
+.top-bar-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: black;
+    height: 50px;
+    width: 100%;
+}
+
+.webplayer-logout-button {
+    background-color: #121212;
+    color: white;
+    border-radius: 15px; 
+    padding: 5px 15px;
+    margin-right: 20px;
+}
+
+.top-nav-arrow {
+    color: white;
+}

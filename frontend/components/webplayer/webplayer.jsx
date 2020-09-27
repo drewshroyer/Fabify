@@ -4,11 +4,16 @@ import InternalNavbar from "./internal-nav";
 
 class WebPlayer extends React.Component {
     render() {
-        return (        
-        <div>
-            <InternalNavbar/>
-        </div>
-        )
+        return (
+          <div className="web-player-container">
+            <InternalNavbar />
+            <div className="webplayer-body-container">
+              <div className="top-bar-container">
+                <Link to="/" className="webplayer-logout-button">Log out</Link>
+              </div>
+            </div>
+          </div>
+        );
     }
 }
 

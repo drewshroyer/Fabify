@@ -1,16 +1,43 @@
 .internal-nav-bar-container {
- height: 1000px;
- width: 250px;
- background-color: #040404;
- color: white;
+    display: flex;
+    height: 100vh;
+    width: 275px;
+    background-color: #040404;
 }
 
 #internal-white-splash-logo {
-     width:130px;
-     height: auto;
-     position: absolute;
-     top: 3%;
-     left: 2%;
+    width:130px;
+    height: auto;
+    position: absolute;
+    top: 3%;
+    left: 1.5%;
+}
+
+.internal-home-link {
+    color: white;
+    background-color: #282828;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 85px; 
+    border-radius: 5px;
+    padding-left: 25px;
+   
+}
+.internal-search-link {
+    padding-top: 5px;
+    padding-bottom: 5px;
+  padding-right: 85px;  
+  border-radius: 5px;
+      padding-left: 25px;
+
+}
+.internal-library-link {
+    padding-top: 5px;
+    padding-bottom: 5px;
+  padding-right: 85px;   
+      border-radius: 5px;
+          padding-left: 25px;
+ 
 }
 
 .internal-nav-icon  {
@@ -24,19 +51,67 @@ color: #B3B3B3;
     line-height: 16px;
     letter-spacing: normal;
     text-transform: none;
+    margin-left: 20px;
 }
-
 .internal-nav-link:hover {
-     color: #ffffff;
+      color: white;
+}
+.internal-nav-icon:hover {
+    color: white;
 }
 
 .internal-nav-column {
     position: absolute;
     top: 11%;
-    left: 2%;
+
 }
 
-.internal-nav-links {
-    display: flex;
-    flex-direction: column;
+.playlist-header {
+    color: #B3B3B3;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 16px;
+    letter-spacing: normal;
+    text-transform: none;
+    padding-left: 25px;
+    letter-spacing: .2em;
+    margin-top: 30px;
+}
+
+.internal-create-playlist-link {
+    color: #B3B3B3;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 16px;
+    letter-spacing: normal;
+    text-transform: none;
+    padding-left: 25px;
+    letter-spacing: .2em;
+    margin-top: 10px;
+
+}
+
+.internal-liked-songs-link {
+    color: #B3B3B3;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 16px;
+    letter-spacing: normal;
+    text-transform: none;
+    padding-left: 25px;
+    letter-spacing: .2em;
+     margin-top: 10px;
+}
+
+.internal-nav-line {
+    margin: 25px 10px;
+    border: 1px solid #282828;
+    background-color: #040404;
+}
+
+.user-playlists {
+    letter-spacing: .015em;
+    font-size: 14px;
+    font-weight: var(--glue-font-weight-normal);
+    
 }
