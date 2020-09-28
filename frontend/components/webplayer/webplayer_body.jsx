@@ -4,7 +4,8 @@ import InternalNavbar from "./internal-nav";
 
 class WebPlayerBody extends React.Component {
   render() {
-    return <div className="webplayer-body-container"></div>
+    return <div className="webplayer-body-container">
+    </div>
   }
 }
 

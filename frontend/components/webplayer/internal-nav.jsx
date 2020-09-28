@@ -87,7 +87,7 @@ class InternalNavbar extends React.Component {
                   fill="currentColor"
                 ></path>
               </svg>
-              <Link to={`/playlist`} className="internal-nav-link">
+              <Link className="internal-nav-link">
                 Create Playlist{" "}
               </Link>
             </div>
@@ -109,7 +109,9 @@ class InternalNavbar extends React.Component {
               </Link>
             </div>
             <div className="internal-nav-line"></div>
-            <div className="user-playlists"></div>
+            <div className="user-playlists">
+
+            </div>
           </div>
         </div>
       </div>

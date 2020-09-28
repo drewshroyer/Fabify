@@ -1,0 +1,14 @@
+.play-bar-container {
+    background-color: #282828;
+    width: 100%;
+    height: 90px;
+    border-top: black;
+    color: #B3B3B3;
+    z-index: 500;
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    bottom: 0%;
+}
