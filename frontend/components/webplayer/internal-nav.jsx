@@ -1,9 +1,21 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import CreatePlaylist from "../playlists/create_playlist_modal";
 
 class InternalNavbar extends React.Component {
-  render() {
+    constructor(props) {
+    super(props);
+    this.state = { isOpen: false };
+    this.toggleModal = this.toggleModal.bind(this);
+  }
 
+  toggleModal() {
+    this.setState({
+      isOpen: !this.state.isOpen
+    });
+  }
+
+  render() {
     const { playlists, currentUser } = this.props;
 
     return (
@@ -12,7 +24,7 @@ class InternalNavbar extends React.Component {
           <Link to="/webplayer">
             <img
               id="internal-white-splash-logo"
-              src={window.whiteSpotifyLogoURL}
+              src={window.whiteFabifyLogoURL}
               alt="spotify_logo"
             ></img>
           </Link>
@@ -87,9 +99,18 @@ class InternalNavbar extends React.Component {
                   fill="currentColor"
                 ></path>
               </svg>
-              <Link className="internal-nav-link">
-                Create Playlist{" "}
-              </Link>
+              <div className="open-create-playlist-modal">
+                <button
+                  className="internal-nav-link"
+                  onClick={this.toggleModal}
+                >
+                  Create Playlist
+                </button>
+                <CreatePlaylist
+                  show={this.state.isOpen}
+                  onClose={this.toggleModal}
+                />
+              </div>
             </div>
             <div className="internal-liked-songs-link">
               <svg
@@ -110,7 +131,7 @@ class InternalNavbar extends React.Component {
             </div>
             <div className="internal-nav-line"></div>
             <div className="user-playlists">
-
+              {/* <PlaylistIndex/> will render a user'slists of playlists once that functionality is built  */}
             </div>
           </div>
         </div>
