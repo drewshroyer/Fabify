@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import CreatePlaylist from "../playlists/create_playlist_modal";
-import { openModal, closeModal } from "../../actions/modal_actions";
-
+import { openModal } from "../../actions/modal_actions";
+import { closeModal } from "../../actions/modal_actions";
 
 class InternalNavbar extends React.Component {
     constructor(props) {
@@ -18,8 +18,6 @@ class InternalNavbar extends React.Component {
   }
 
   render() {
-    const { playlists, currentUser } = this.props;
-
     return (
       <div className="internal-nav-bar-container">
         <div className="internal-nav-bar-inner-container">
@@ -83,11 +81,10 @@ class InternalNavbar extends React.Component {
                 Your Library
               </Link>
             </div>
-
             <div className="playlist-header">PLAYLISTS</div>
             <div
               className="internal-create-playlist-link"
-              onClick={() => (this.props.openModal("createPlaylist"))}
+            //   onClick={() => this.props.openModal("createPlaylist")}
             >
               <svg
                 className="internal-nav-icon"
@@ -105,9 +102,7 @@ class InternalNavbar extends React.Component {
                 <button
                   className="open-create-playlist-modal"
                   onClick={this.toggleModal}
-                >
-                  Create Playlist
-                </button>
+                >Create Playlist</button>
                 <CreatePlaylist
                   show={this.state.isOpen}
                   onClose={this.toggleModal}
@@ -128,7 +123,7 @@ class InternalNavbar extends React.Component {
                 ></path>
               </svg>
               <Link to={`/webplayer`} className="internal-nav-link">
-                Liked Songs{" "}
+                Liked Songs
               </Link>
             </div>
             <div className="internal-nav-line"></div>

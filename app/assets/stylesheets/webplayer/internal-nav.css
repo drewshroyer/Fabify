@@ -15,46 +15,60 @@
 
 .internal-home-link {
     color: white;
+    fill: #ffffff;
     background-color: #282828;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    padding-right: 85px; 
+    padding-right: 80px; 
     border-radius: 5px;
     padding-left: 25px; 
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin: 10px 5px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+.internal-home-link:hover {
+    color: white;
 }
 
 .internal-search-link {
-    padding-top: 5px;
-    padding-bottom: 5px;
-  padding-right: 85px;  
+  color: #B3B3B3;
+  padding-right: 80px ;  
   border-radius: 5px;
-      padding-left: 25px;
-
+  padding-left: 25px; 
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  margin: 10px 5px;
+  padding-top: 5px;
 }
+
 .internal-library-link {
-    padding-top: 5px;
-    padding-bottom: 5px;
-    padding-right: 85px;   
-    border-radius: 5px;
-    padding-left: 25px;
+    color: #B3B3B3;
+   margin: 10px 5px;
+   padding-right: 80px;  
+   border-radius: 5px;
+   padding-left: 25px; 
+   display: flex;
+   align-items: center;
+   flex-direction: row;
+   padding-top: 5px;
 }
 
 .open-create-playlist-modal {
     background-color: black;
     border: none;
     color: #B3B3B3;
-   font-size: 14px;
+    font-size: 14px;
     font-weight: 700;
     line-height: 16px;
     letter-spacing: normal;
     text-transform: none;
     padding-top: 0%;
     margin-top: 0%;
-    margin-left: 20px;
-}
-
-.internal-nav-icon  {
-color: #B3B3B3;
+    padding-top: 8px;
+    padding-bottom: 8px;
 }
 
 .internal-nav-link {
@@ -66,17 +80,17 @@ color: #B3B3B3;
     text-transform: none;
     margin-left: 20px;
 }
-.internal-nav-link:hover {
+/* .internal-nav-link:hover {
       color: white;
 }
 .internal-nav-icon:hover {
     color: white;
-}
+} */
 
 .internal-nav-column {
     position: absolute;
-    top: 10%;
-}
+    top: 9%;
+} 
 
 .playlist-header {
     color: #B3B3B3;
@@ -85,7 +99,7 @@ color: #B3B3B3;
     line-height: 16px;
     letter-spacing: normal;
     text-transform: none;
-    padding-left: 25px;
+    padding-left: 30px;
     letter-spacing: .2em;
     margin-top: 30px;
 }
@@ -97,10 +111,14 @@ color: #B3B3B3;
     line-height: 16px;
     letter-spacing: normal;
     text-transform: none;
-    padding-left: 25px;
+    padding-left: 30px;
     letter-spacing: .2em;
     margin-top: 10px;
-
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-top: 8px;
+    padding-bottom: 8px;
 }
 
 .internal-liked-songs-link {
@@ -110,9 +128,12 @@ color: #B3B3B3;
     line-height: 16px;
     letter-spacing: normal;
     text-transform: none;
-    padding-left: 25px;
+    padding-left: 30px;
     letter-spacing: .2em;
-     margin-top: 10px;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
 .internal-nav-line {

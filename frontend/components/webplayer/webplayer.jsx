@@ -10,7 +10,7 @@ class WebPlayer extends React.Component {
         return (
           <div className="web-player-container">
             <InternalNavbar />
-            <div className="webplayer-body-container">
+            <div className="webplayer-outer-body-container">
               <div className="top-bar-container">
                 <Link to="/" className="webplayer-logout-button">
                   Log out

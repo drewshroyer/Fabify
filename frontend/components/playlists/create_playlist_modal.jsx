@@ -1,7 +1,6 @@
 import React from "react";
-import Link from 'react';
+import {Link} from 'react-router-dom';
 import { openModal, closeModal } from "../../actions/modal_actions";
-
 
 class CreatePlaylist extends React.Component {
   constructor(props) {
@@ -22,7 +21,6 @@ class CreatePlaylist extends React.Component {
       newState.title = "New Playlist";
     }
     this.props.processForm(newState).then(fetchUser(currentUser.id));
-    // this.CreatePlaylist()
   }
 
   update(field) {
@@ -39,9 +37,7 @@ class CreatePlaylist extends React.Component {
       <div className="modal-container">
         <div className="inner-modal-container">
           <div className="create-playlist-modal">
-            <Link to={`/webplayer`} className="x-icon">
-              X
-            </Link>
+            <div onClick={this.props.closeModal} className="x-icon">X</div>
             <h1 className="create-new-playlist-container">
               Create new playlist
             </h1>

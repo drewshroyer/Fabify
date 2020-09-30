@@ -1,8 +1,9 @@
 .web-player-container {
     display: flex;
 }
-.webplayer-body-container {
+.webplayer-outer-body-container {
     display: flex;
+    flex-direction: column;
     background-color: #121212;
     height: 100vh;
     width: 100%;

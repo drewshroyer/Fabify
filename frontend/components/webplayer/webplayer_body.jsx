@@ -9,18 +9,20 @@ class WebPlayerBody extends React.Component {
 
   componentDidMount() {
     this.props.fetchSongs();
-    this.props.fetchPlaylists();
+    // this.props.fetchPlaylists();
+    // this.props.fetchArtists();
   }
 
   render() {
-    const { songs } = this.props;
+    const { songs, artists } = this.props;
     if(!songs) return null;
+    // console.log(this.props);
     return (
       <div className="webplayer-body-container">
         <div className="shortcuts-keyword-webplayer">Shortcuts</div>
         <ul className="webplayer-music-tile-line-item">
           {songs.map((song) => (
-            <SongIndexItem song={song} key={song.id} />
+            <SongIndexItem song={song} artist={artists[song.artist_id]} key={song.id} />
           ))}
         </ul>
       </div>
