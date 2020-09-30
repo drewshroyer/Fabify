@@ -10,10 +10,10 @@
 
 .top-bar-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
     background-color: black;
-    height: 50px;
+    height: 60px;
     width: 100%;
 }
 
@@ -33,4 +33,18 @@
     width: 24px;
     stroke: #181818;
 
+}
+
+.shortcuts-keyword-webplayer {
+    margin-top: 30px;
+    margin-left: 50px;
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 28px;
+    letter-spacing: -.02em;
+}
+
+.shortcuts-keyword-webplayer:hover {
+    text-decoration: underline;
 }

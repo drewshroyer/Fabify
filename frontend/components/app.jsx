@@ -19,6 +19,7 @@ const App = () => (
     <Route exact path="/webplayer" component={WebPlayer} />
     <Route exact path="/search" component={Search} />
     <Route exact path="/library" component={Library} />
+    {/* <Route exact path="/songs/:songId" component={} /> */}
   </div>
 );
 

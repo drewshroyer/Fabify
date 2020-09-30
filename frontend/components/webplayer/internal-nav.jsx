@@ -1,6 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import CreatePlaylist from "../playlists/create_playlist_modal";
+import { openModal, closeModal } from "../../actions/modal_actions";
+
 
 class InternalNavbar extends React.Component {
     constructor(props) {
@@ -85,7 +87,7 @@ class InternalNavbar extends React.Component {
             <div className="playlist-header">PLAYLISTS</div>
             <div
               className="internal-create-playlist-link"
-              onClick={() => this.props.openModal("createPlaylist")}
+              onClick={() => (this.props.openModal("createPlaylist"))}
             >
               <svg
                 className="internal-nav-icon"
@@ -99,9 +101,9 @@ class InternalNavbar extends React.Component {
                   fill="currentColor"
                 ></path>
               </svg>
-              <div className="open-create-playlist-modal">
+              <div className="internal-nav-link">
                 <button
-                  className="internal-nav-link"
+                  className="open-create-playlist-modal"
                   onClick={this.toggleModal}
                 >
                   Create Playlist

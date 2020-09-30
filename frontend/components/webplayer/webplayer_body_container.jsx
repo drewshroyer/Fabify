@@ -1,18 +1,15 @@
 import { connect } from "react-redux";
-import InternalNavbar from "./internal-nav";
+import WebPlayerBody from "./webplayer_body";
+import {fetchSongs} from "../../actions/song_actions" ;
+import {fetchPlaylists} from "../../actions/playlist_actions";
+import {fetchUser} from "../../actions/user_actions";
 
 const mSTP = (state) => {
   const currentUserId = state.session.id;
   const currentUser = state.entities.users[currentUserId];
-  const { playlists } = state.entities;
-  const userPlaylists =
-    Object.values(playlists).length > 0
-      ? currentUser.playlistIds.map((id) => {
-          return playlists[id];
-        })
-      : [];
   return {
-    playlists: playlists,
+    playlists: Object.values(state.entities.playlists),
+    songs: Object.values(state.entities.songs),
     currentUserId: currentUserId,
     currentUser: currentUser,
   };
@@ -20,11 +17,10 @@ const mSTP = (state) => {
 
 const mDTP = (dispatch) => {
   return {
-    openModal: (modal) => dispatch(openModal(modal)),
     fetchUser: (id) => dispatch(fetchUser(id)),
     fetchPlaylists: () => dispatch(fetchPlaylists()),
     fetchSongs: () => dispatch(fetchSongs()),
   };
 };
 
-export default connect(mSTP, mDTP)(InternalNavbar);
+export default connect(mSTP, mDTP)(WebPlayerBody);

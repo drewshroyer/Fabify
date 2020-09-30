@@ -20,8 +20,7 @@
     padding-bottom: 5px;
     padding-right: 85px; 
     border-radius: 5px;
-    padding-left: 25px;
-   
+    padding-left: 25px; 
 }
 
 .internal-search-link {
@@ -38,7 +37,20 @@
     padding-right: 85px;   
     border-radius: 5px;
     padding-left: 25px;
- 
+}
+
+.open-create-playlist-modal {
+    background-color: black;
+    border: none;
+    color: #B3B3B3;
+   font-size: 14px;
+    font-weight: 700;
+    line-height: 16px;
+    letter-spacing: normal;
+    text-transform: none;
+    padding-top: 0%;
+    margin-top: 0%;
+    margin-left: 20px;
 }
 
 .internal-nav-icon  {

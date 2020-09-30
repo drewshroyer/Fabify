@@ -2,6 +2,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-wrap: none;
     position: fixed;
     top: 0;  
     bottom: 0;
@@ -16,28 +17,60 @@
 }
 
 .create-playlist-modal {
-    position: absolute;
     height: 100%;
     width: 100%;
     background: black;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    top: 50%; 
-    left: 50%;  
-    transform: translate(-50%, -50%);
+}
+
+.x-icon {
+    font-weight: 100;
+    color: white;
+    font-size: 48px;
+    line-height: 56px;
+    padding-left: 600px;
+    padding-right: 600px;
+    text-align: center;
 }
 
 .create-playlist-input-bar {
     width: 100%;
-    height: 300px;
-    background-color: 282828;
+    height: 100px;
+    background-color: #282828;
+    padding: 32px 400px;
 }
 
-.new-playlist-input {
-     padding: 0 32px;
+.cancel-create-buttons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
+.playlist-cancel-button {
+    margin-right: 10px;
+}
+.playlist-create-button {
+    margin-left: 10px;
+    border: none;
+}
+
+.new-playlist-input-text {
+    background-color: #282828;
+    border: none;
+    font-size: 48px;
+    line-height: 56px;
+    letter-spacing: -.005em;
+    font-weight: var(--glue-font-weight-black);
+    color: #fff;
+    text-transform: none;
+    caret-color: #1db954;
+    box-sizing: border-box;
+    width: 800px;
+    background-color: transparent;
+}
 .new-playlist-input-title {
     font-size: 14px;
     line-height: 20px;
@@ -48,18 +81,16 @@
     margin-bottom: .5em;
 }
 
-.new_playlist-input-text {
+.create-new-playlist-container {
     font-size: 48px;
     line-height: 56px;
-    letter-spacing: -.005em;
-    font-weight: var(--glue-font-weight-black);
-    color: #fff;
-    text-transform: none;
-    caret-color: #1db954;
+    padding-left: 600px;
+    padding-right: 600px;
 }
 
 .playlist-cancel-button {
     color: white;
+    background-color: transparent;
     border-radius: 500px;
     padding: 8px 34px;
     text-transform: uppercase;

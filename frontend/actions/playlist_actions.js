@@ -20,28 +20,31 @@ const removePlaylist = (playlistId) => ({
 });
 
 export const fetchPlaylists = () => dispatch => {
-    return fetchPlaylists().then((playlists) =>
+    return PlaylistAPIUtil.fetchPlaylists().then((playlists) =>
       dispatch(receiveAllPlaylists(playlists))
     );
 }
 
 export const fetchPlaylist = (id) => (dispatch) => {
-  return fetchPlaylist(id).then((playlist) =>
+  return PlaylistAPIUtil.fetchPlaylist(id).then((playlist) =>
     dispatch(receivePlaylist(playlist))
   );
 };
 
-export const createPlaylist = (playlist) => (dispatch) =>
-  PlaylistAPIUtil.createPlaylist(playlist).then((playlist) =>
+export const createPlaylist = (playlist) => (dispatch) => {
+  return PlaylistAPIUtil.createPlaylist(playlist).then((playlist) =>
     dispatch(receivePlaylist(playlist))
   );
+}
 
-  export const updatePlaylist = (id) => (dispatch) =>
-    PlaylistAPIUtil.updatePlaylist(id).then((playlist) =>
+  export const updatePlaylist = (id) => (dispatch) => {
+    return PlaylistAPIUtil.updatePlaylist(id).then((playlist) =>
       dispatch(receivePlaylist(playlist))
     );
+  }
 
-  export const deletePlaylist = (id) => (dispatch) =>
-    PlaylistAPIUtil.deletePlaylist(id).then(() => 
+  export const deletePlaylist = (id) => (dispatch) => {
+    return PlaylistAPIUtil.deletePlaylist(id).then(() => 
     dispatch(removePlaylist()));
+  }
 

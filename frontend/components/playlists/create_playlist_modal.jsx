@@ -1,5 +1,7 @@
 import React from "react";
-import Modal from 'react';
+import Link from 'react';
+import { openModal, closeModal } from "../../actions/modal_actions";
+
 
 class CreatePlaylist extends React.Component {
   constructor(props) {
@@ -7,7 +9,6 @@ class CreatePlaylist extends React.Component {
     this.state = {
       title: "",
     };
-
     this.handleSubmit = this.handleSubmit.bind(this);
     this.update = this.update.bind(this);
   }
@@ -21,6 +22,7 @@ class CreatePlaylist extends React.Component {
       newState.title = "New Playlist";
     }
     this.props.processForm(newState).then(fetchUser(currentUser.id));
+    // this.CreatePlaylist()
   }
 
   update(field) {
@@ -35,14 +37,18 @@ class CreatePlaylist extends React.Component {
       }
     return (
       <div className="modal-container">
-        <div class="inner-modal-container">
+        <div className="inner-modal-container">
           <div className="create-playlist-modal">
-            <svg></svg>
-            <h1 className="create-prompt">Create new playlist</h1>
+            <Link to={`/webplayer`} className="x-icon">
+              X
+            </Link>
+            <h1 className="create-new-playlist-container">
+              Create new playlist
+            </h1>
             <div className="create-playlist-input-bar">
               <form onSubmit={this.handleSubmit}>
-                <div className=".new-playlist-input">
-                  <h4 className="new-playlist-input-title">Playlist Name</h4>
+                <div className="new-playlist-input">
+                  <div className="new-playlist-input-title">Playlist Name</div>
                   <input
                     type="text"
                     value={this.state.title}
@@ -51,23 +57,23 @@ class CreatePlaylist extends React.Component {
                     className="new-playlist-input-text"
                   />
                 </div>
-                <div className="cancel-create-buttons">
-                  <button
-                    className="playlist-cancel-button"
-                    onClick={this.props.closeModal}
-                    value="CANCEL"
-                  >
-                    CANCEL
-                  </button>
-                  <button
-                    className="playlist-create-button"
-                    type="submit"
-                    value="CREATE"
-                  >
-                    CREATE
-                  </button>
-                </div>
               </form>
+            </div>
+            <div className="cancel-create-buttons">
+              <button
+                className="playlist-cancel-button"
+                onClick={this.props.closeModal}
+                value="CANCEL"
+              >
+                CANCEL
+              </button>
+              <button
+                className="playlist-create-button"
+                type="submit"
+                value="CREATE"
+              >
+                CREATE
+              </button>
             </div>
           </div>
         </div>

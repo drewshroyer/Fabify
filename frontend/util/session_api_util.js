@@ -14,7 +14,6 @@ export const signup = (user) => {
 })
   }
 
-
 export const logout = () => {
   return $.ajax({
     method: "DELETE",
