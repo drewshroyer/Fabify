@@ -25,7 +25,27 @@ class SongIndexItem extends React.Component {
       } else {
           audioEle.play();
       }
+
+    //   if (this.state.selectedSong !== e.currentTarget.id) {
+    //     audioEle.play();
+    //     this.setState({
+    //       selectedSong: e.currentTarget.id,
+    //       playingSong: true,
+    //     });
+    //   } else if (this.state.selectedSong === e.currentTarget.id) {
+    //     audioEle.pause();
+    //     this.setState({
+    //       playingSong: false,
+    //     });
+    //   } else {
+    //     audioEle.pause();
+    //     this.setState({
+    //       selectedSong: e.currentTarget.id,
+    //       playingSong: false,
+    //     });
+    //   }
     }
+
 
   render() {
     const { song, artist } = this.props;
@@ -41,7 +61,12 @@ class SongIndexItem extends React.Component {
             id={song.id}
             onClick={this.togglePlayPause}
           >
-            {this.state.selectedSong === song.id ? (
+            <img
+              className="webplayer-music-tile-play-button"
+              src={window.whitePlayButton}
+              alt="white-play-button"
+            ></img>
+            {/* {this.state.selectedSong === song.id ? (
               <img
                 className="webplayer-music-tile-play-button"
                 src={window.whitePlayButton}
@@ -53,7 +78,7 @@ class SongIndexItem extends React.Component {
                 src={window.whitePauseButton}
                 alt="white-pause-button"
               />
-            )}
+            )} */}
           </div>
           <audio
             src={song.audio_url}

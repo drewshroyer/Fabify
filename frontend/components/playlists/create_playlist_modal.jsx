@@ -47,33 +47,34 @@ class CreatePlaylist extends React.Component {
               <form onSubmit={this.handleSubmit}>
                 <div className="new-playlist-input">
                   <div className="new-playlist-input-title">Playlist Name</div>
-                  <input
-                    type="text"
-                    value={this.state.title}
-                    onChange={this.update("title")}
-                    placeholder="New Playlist"
-                    className="new-playlist-input-text"
-                  />
+                      <input
+                        type="text"
+                        value={this.state.title}
+                        onChange={this.update("title")}
+                        placeholder="New Playlist"
+                        className="new-playlist-input-text"
+                      />
+                  </div>
+                  </form>
                 </div>
-              </form>
+              <div className="cancel-create-buttons">
+                <button
+                  className="playlist-cancel-button"
+                  onClick={() => this.props.closeModal()}
+                  value="CANCEL"
+                >
+                  CANCEL
+                </button>
+                <button
+                  className="playlist-create-button"
+                  type="submit"
+                  value="CREATE"
+                  onSubmit={this.handleSubmit}
+                >
+                  CREATE
+                </button>
+              </div>
             </div>
-            <div className="cancel-create-buttons">
-              <button
-                className="playlist-cancel-button"
-                onClick={() => this.props.closeModal()}
-                value="CANCEL"
-              >
-                CANCEL
-              </button>
-              <button
-                className="playlist-create-button"
-                type="submit"
-                value="CREATE"
-              >
-                CREATE
-              </button>
-            </div>
-          </div>
         </div>
       </div>
     );

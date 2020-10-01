@@ -9,7 +9,7 @@ render() {
         <Link to="/">
           <img
             id="white-splash-logo"
-            src={window.whiteSpotifyLogoURL}
+            src={window.whiteFabifyLogoURL}
             alt="spotify_logo"
           ></img>
         </Link>

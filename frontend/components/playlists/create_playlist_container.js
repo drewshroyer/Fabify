@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import PlaylistCreate from "./playlist_create";
+import PlaylistCreate from "./create_playlist_modal";
 import { createPlaylist} from "../../actions/playlist_actions";
 import { closeModal } from "../../actions/modal_actions";
 import { withRouter } from "react-router-dom";

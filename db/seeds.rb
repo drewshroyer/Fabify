@@ -123,9 +123,9 @@ song13.photo.attach(io: file26, filename: 'Janelle-Monae-Dirty-Computer-album-co
 
 song14 = Song.create!({name: "Make Me Feel", album_id: album13.id, artist_id: artist7.id, song_length: "3.27"})
 file27 = URI.open('https://fabify-seeds.s3.us-east-2.amazonaws.com/Janelle+Mona%CC%81e+Make+Me+Feel+%5BOfficial+Music+Video%5D.mp3')
-file28 = URI.open('https://fabify-seeds.s3.us-east-2.amazonaws.com/0501_janelle-monae-dirty-computer-1000x1000.jpg')
+file28 = URI.open('https://fabify-seeds.s3.us-east-2.amazonaws.com/042618_JanelleMonae_HighRes_Art_MakeMeFeel.jpg')
 song14.audio.attach(io: file27, filename: 'Janelle-Monae-make-me-feel-audio.mp3')
-song14.photo.attach(io: file28, filename: 'Janelle-Monae-Dirty-Computer-album-cover.jpg')
+song14.photo.attach(io: file28, filename: 'Janelle-Monae-Make-Me-Feel-album-cover.jpg')
 
 #King Princess
 artist9 = Artist.create!({name: "King Princess", biography: "American singer/songwriter, producer, and multi-instrumentalist King Princess delivers her soulful vocals over warm, atmospheric synth production inspired by influences. She broke through in 2018 with her single 1950 before issuing her 2019 debut, Cheap Queen.Born Mikaela Straus, the Brooklyn-based artist was a young music prodigy, reportedly offered a record deal when she was just 11. She studied at USC before leaving school to pursue a music career. Early songs like Send Pix and Sunburn featured a more bluesy rock tone, one that she would polish on her 2018 breakthrough, 1950. The queer love anthem received cosigns from the likes of  and  and was her first release for 's  label. She followed with her second single, Talia. Both tracks appeared on her 2018 EP Make My Bed, which topped the New Zealand Heatseekers chart. She followed with the single Pussy Is God, as well as a cover of  and 's Femme Fatale and a collaboration with , I Know. In 2019, King Princess released her debut full-length album, Cheap Queen, which cracked the Top 20 of the Billboard Top Alternative Albums chart. ~ Neil Z. Yeung, Rovi"})
@@ -142,3 +142,35 @@ file31 = URI.open('https://fabify-seeds.s3.us-east-2.amazonaws.com/King+Princess
 file32 = URI.open('https://fabify-seeds.s3.us-east-2.amazonaws.com/king_princess_cheap_queen.jpg')
 song16.audio.attach(io: file31, filename: 'King-Princess-Cheap-Queen-audio.mp3')
 song16.photo.attach(io: file32, filename: 'King-Princess-Cheap-Queen-album-cover.jpg')
+
+#Lil Nas X
+artist10 = Artist.create!({name: "Lil Nas X", biography: "Moseying onto the scene with a surprise breakthrough, Atlanta's Lil Nas X merged the pastoral tones of country music with hip-hop, putting his spin on a subgenre dubbed country-trap. Like similar experiments by  and Lil Tracy, the hybrid was an unexpected success for the rapper: his debut single, Old Town Road, was a viral hit on social media and streaming, sending him toward the upper reaches of the Hot 100. By the summer of 2019, it was certified multi-platinum and number one across the globe."})
+album17 = Album.create!({name: "7 EP", creator_id: artist10.id})
+song17 = Song.create!({name: "Old Town Road", album_id: album17.id, artist_id: artist10.id, song_length: "2.37"})
+file33 = URI.open('https://fabify-seeds.s3.us-east-2.amazonaws.com/Lil+Nas+X+-+Old+Town+Road+(Official+Movie)+ft.+Billy+Ray+Cyrus.mp3')
+file34 = URI.open('https://fabify-seeds.s3.us-east-2.amazonaws.com/old+town+road+lil+nas+x+album+cover.jpg')
+song17.audio.attach(io: file33, filename: 'Lil-Nas-X-audio.mp3')
+song17.photo.attach(io: file34, filename: 'Lil-Nas-X-cover.jpg')
+
+#Miley Cyrus 
+artist11 = Artist.create!({name: "Miley Cyrus ", biography: "Miley Cyrus is one of the most influential artists in pop culture. She has five #1 albums including her 2013 GRAMMY-nominated album Bangerz, that is also certified 3x platinum in the U.S., five sold out world tours and 36 million digital tracks sold in the US alone. In 2015 she released her free, 23-track surprise experimental album, Miley Cyrus and Her Dead Petz, co-produced by Wayne Coyne and other Flaming Lips members. Her sixth album, Younger Now, which was released in 2017, exceeded 1.7 billion streams worldwide. In the summer of 2019, Cyrus dropped SHE IS COMING, the first of three EPs that will make up one album titled SHE IS: MILEY CYRUS. The album debuted in the Top 5 on the Billboard Top 200 Album Chart with the track, Mother’s Daughter, garnering 130 million streams worldwide. In September Cyrus released, “Slide Away,” which currently has 21 million streams worldwide, with the accompanying video reaching 19 million views in less than a month. Cyrus also collaborated with Ariana Grande and Lana Del Rey on the soundtrack for the 2019 reboot of Charlie’s Angels with the song “Don’t Call me Angel.“ The song set the record for biggest single day streams for an all-female collaboration in Spotify History."})
+album18 = Album.create!({name: "Midnight Sky", creator_id: artist11.id})
+song18 = Song.create!({name: "Midnight Sky", album_id: album18.id, artist_id: artist11.id, song_length: "3.31"})
+file35 = URI.open('https://fabify-seeds.s3.us-east-2.amazonaws.com/Miley+Cyrus+-+Midnight+Sky+(Official+Video).mp3')
+file36 = URI.open('https://fabify-seeds.s3.us-east-2.amazonaws.com/Miley-Cyrus-Midnight-Sky-Cover.jpg')
+song18.audio.attach(io: file35, filename: 'Miley_Cyrus-Midnight-Sky-audio.mp3')
+song18.photo.attach(io: file36, filename: 'Miley_Cyrus-Midnight-Sky-cover.jpg')
+
+album19 = Album.create!({name: "Slide Away", creator_id: artist11.id})
+song19 = Song.create!({name: "Slide Away", album_id: album19.id, artist_id: artist11.id, song_length: "2.41"})
+file37 = URI.open('https://fabify-seeds.s3.us-east-2.amazonaws.com/Miley+Cyrus+-+Slide+Away+(Official+Video).mp3')
+file38 = URI.open('https://fabify-seeds.s3.us-east-2.amazonaws.com/Miley-Cyrus-Slide-Away-1565961099-compressed.jpg')
+song19.audio.attach(io: file37, filename: 'Miley_Cyrus-Slide-Away-audio.mp3')
+song19.photo.attach(io: file38, filename: 'Miley_Cyrus-Slide-Away-album-cover.jpg')
+
+album20 = Album.create!({name: "Bangerz", creator_id: artist11.id})
+song20 = Song.create!({name: "Wrecking Ball", album_id: album20.id, artist_id: artist11.id, song_length: "3.31"})
+file39 = URI.open('https://fabify-seeds.s3.us-east-2.amazonaws.com/Miley+Cyrus+-+Wrecking+Ball+(Official+Video).mp3')
+file40 = URI.open('https://fabify-seeds.s3.us-east-2.amazonaws.com/miley-cyrus-bangerz-deluxe.jpg')
+song20.audio.attach(io: file39, filename: 'Miley-Cyrus-Bangerz-audio.mp3')
+song20.photo.attach(io: file40, filename: 'Miley-Cyrus-Bangerz-cover.jpg')

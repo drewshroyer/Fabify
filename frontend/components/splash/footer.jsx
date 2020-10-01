@@ -11,7 +11,7 @@ class Footer extends React.Component {
               <img
                 className="footer-white-logo"
                 id="white-splash-logo"
-                src={window.whiteSpotifyLogoURL}
+                src={window.whiteFabifyLogoURL}
                 alt="spotify_logo"
               ></img>
             </Link>
@@ -116,9 +116,7 @@ class Footer extends React.Component {
             </div>
 
             <div className="footer-far-right-icons">
-              <Link to="instagram.com/drewshroyer">
-                
-              </Link>
+              <Link to="instagram.com/drewshroyer"></Link>
             </div>
           </div>
         </div>
