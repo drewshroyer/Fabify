@@ -84,7 +84,7 @@ class InternalNavbar extends React.Component {
             <div className="playlist-header">PLAYLISTS</div>
             <div
               className="internal-create-playlist-link"
-            //   onClick={() => this.props.openModal("createPlaylist")}
+              onClick={() => this.props.openModal("createPlaylist")}
             >
               <svg
                 className="internal-nav-icon"

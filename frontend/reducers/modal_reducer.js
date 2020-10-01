@@ -2,6 +2,7 @@ import { OPEN_MODAL, CLOSE_MODAL } from "../actions/modal_actions";
 
 const modalReducer = (state = null, action) => {
   Object.freeze(state);
+  // console.log(action.songId);
   switch (action.type) {
     case OPEN_MODAL:
       if (action.modal === "addSongToPlaylist") {

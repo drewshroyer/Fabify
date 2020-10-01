@@ -19,8 +19,8 @@ export const fetchArtists = () => (dispatch) => {
   );
 };
 
-export const fetchSong = (id) => (dispatch) => {
-  return ArtistAPIUtil.fetchArtists(id).then((artist) =>
+export const fetchArtist = (id) => (dispatch) => {
+  return ArtistAPIUtil.fetchArtist(id).then((artist) =>
     dispatch(receiveArtist(artist))
   );
 };

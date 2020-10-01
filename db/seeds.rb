@@ -79,3 +79,66 @@ file15 = URI.open('https://fabify-seeds.s3.us-east-2.amazonaws.com/Kehlani+-+Nig
 file16 = URI.open('https://fabify-seeds.s3.us-east-2.amazonaws.com/nights_like_this_kehlani_album.jpg')
 song8.audio.attach(io: file15, filename: 'ILaughWhenImWithFriendsButSadWhenImAlone-070-Shake-070-Shake-audio.mp3')
 song8.photo.attach(io: file16, filename: 'ILaughWhenImWithFriendsButSadWhenImAlone-070-Shake-album-cover.jpg')
+
+#Sam Smith
+artist5 = Artist.create!({name: "Sam Smith", biography: "Shot from obscurity to fame as the featured artist on 's Latch (2012), a global smash hit that showcased their distinctively stirring high tenor, Sam Smith has since become one of pop's most prominent balladeers. Taking cues from soul belters like  and , followers such as  and , and their own church upbringing, Smith effectively arrived as a headliner with In the Lonely Hour (2014). Multi-platinum in the singer's native U.K. and the U.S., the album also garnered Best New Artist and three additional Grammys among a slew of accolades. Smith followed up with The Thrill of It All (2017), a heartsick album favoring Southern soul and gospel, and by the end of the 2010s accumulated six number one U.K. singles as a headliner: Money on My Mind, Stay with Me,/ and Lay Me Down, followed by the Academy Award-winning James Bond theme Writing's on the Wall, Too Good at Goodbyes, and the  collaboration Promises. Smith entered the next decade with the Top 20 U.K. single To Die For."})
+album9 = Album.create!({name: "Diamonds", creator_id: artist5.id})
+song9 = Song.create!({name: "Diamonds", album_id: album9.id, artist_id: artist5.id, song_length: "3.33"})
+file17 = URI.open('https://fabify-seeds.s3.us-east-2.amazonaws.com/Sam+Smith+-+Diamonds.mp3')
+file18 = URI.open('https://fabify-seeds.s3.us-east-2.amazonaws.com/sam_smith_diamonds.jpg')
+song9.audio.attach(io: file17, filename: 'Sam-Smith-Diamonds-audio.mp3')
+song9.photo.attach(io: file18, filename: 'Sam-Smith-Diamonds-album-cover.jpg')
+
+album10 = Album.create!({name: "While We Wait", creator_id: artist5.id})
+song10 = Song.create!({name: "Dancing With a Stranger", album_id: album10.id, artist_id: artist5.id, song_length: "2.51"})
+file19 = URI.open('https://fabify-seeds.s3.us-east-2.amazonaws.com/Sam+Smith%2C+Normani+-+Dancing+With+A+Stranger+(Official+Video).mp3')
+file20 = URI.open('https://fabify-seeds.s3.us-east-2.amazonaws.com/sam_smith_dancing.jpeg')
+song10.audio.attach(io: file19, filename: 'Sam-Smith-Dancing-audio.mp3')
+song10.photo.attach(io: file20, filename: 'Sam-Smith-Dancing-album-cover.jpg')
+
+#Fletcher
+artist6 = Artist.create!({name: "Fletcher", biography: "the nighttime is the hardest, that's when i'm brokenhearted. you up? t(ex)t me at 732.605.5362 x"})
+album11 = Album.create!({name: "Bitter", creator_id: artist6.id})
+song11 = Song.create!({name: "Bitter", album_id: album11.id, artist_id: artist6.id, song_length: "2.57"})
+file21 = URI.open('https://fabify-seeds.s3.us-east-2.amazonaws.com/FLETCHER%2C+Kito+-+Bitter+ft.+Trevor+Daniel.mp3')
+file22 = URI.open('https://fabify-seeds.s3.us-east-2.amazonaws.com/fletcher_bitter.jpg')
+song11.audio.attach(io: file21, filename: 'Fletcher-Bitter-audio.mp3')
+song11.photo.attach(io: file22, filename: 'Fletcher-Bitter-cover.jpg')
+
+album12 = Album.create!({name: "Finding Fletcher", creator_id: artist6.id})
+song12 = Song.create!({name: "Undrunk", album_id: album12.id, artist_id: artist6.id, song_length: "3.21"})
+file23 = URI.open('https://fabify-seeds.s3.us-east-2.amazonaws.com/FLETCHER+-+Undrunk+(Official+Video).mp3')
+file24 = URI.open('https://fabify-seeds.s3.us-east-2.amazonaws.com/fletcher_undrunk.jpg')
+song12.audio.attach(io: file23, filename: 'Fletcher-Undrunk-audio.mp3')
+song12.photo.attach(io: file24, filename: 'Fletcher-Undrunk-album-cover.jpg')
+
+#Janelle Monae
+artist7 = Artist.create!({name: "Janelle Monae", biography: "Grammy-nominated singer, songwriter, arranger, producer, and actor Janelle Monáe left her mark on 2010s R&B with an energized retro-futuristic sound wrapped in theatrical science fiction concepts. After she spent years grinding away in the Atlanta underground, Monáe capitalized on support from 's  and developed into one of the most dynamic artists of her time, fusing soul, funk, hip-hop, and new wave -- among other genres -- with a spirited approach that seemed to treat entertainment and art as indivisible. She and her fellow  associates likewise stressed singles as much as albums. Tightrope and Django Jane provided bold jolts, while The ArchAndroid (2010), The Electric Lady (2013), and Dirty Computer (2018), all complex full-lengths, elaborated upon themes of oppression, identity, and liberation as they related to race and sexuality."})
+album13 = Album.create!({name: "Dirty Computer", creator_id: artist7.id})
+song13 = Song.create!({name: "I Like That", album_id: album13.id, artist_id: artist7.id, song_length: "4.12"})
+file25 = URI.open('https://fabify-seeds.s3.us-east-2.amazonaws.com/Janelle+Mona%CC%81e+-+I+Like+That+%5BOfficial+Music+Video%5D.mp3')
+file26 = URI.open('https://fabify-seeds.s3.us-east-2.amazonaws.com/0501_janelle-monae-dirty-computer-1000x1000.jpg')
+song13.audio.attach(io: file25, filename: 'Janelle-Monae-i-like-that-audio.mp3')
+song13.photo.attach(io: file26, filename: 'Janelle-Monae-Dirty-Computer-album-cover.jpg')
+
+song14 = Song.create!({name: "Make Me Feel", album_id: album13.id, artist_id: artist7.id, song_length: "3.27"})
+file27 = URI.open('https://fabify-seeds.s3.us-east-2.amazonaws.com/Janelle+Mona%CC%81e+Make+Me+Feel+%5BOfficial+Music+Video%5D.mp3')
+file28 = URI.open('https://fabify-seeds.s3.us-east-2.amazonaws.com/0501_janelle-monae-dirty-computer-1000x1000.jpg')
+song14.audio.attach(io: file27, filename: 'Janelle-Monae-make-me-feel-audio.mp3')
+song14.photo.attach(io: file28, filename: 'Janelle-Monae-Dirty-Computer-album-cover.jpg')
+
+#King Princess
+artist9 = Artist.create!({name: "King Princess", biography: "American singer/songwriter, producer, and multi-instrumentalist King Princess delivers her soulful vocals over warm, atmospheric synth production inspired by influences. She broke through in 2018 with her single 1950 before issuing her 2019 debut, Cheap Queen.Born Mikaela Straus, the Brooklyn-based artist was a young music prodigy, reportedly offered a record deal when she was just 11. She studied at USC before leaving school to pursue a music career. Early songs like Send Pix and Sunburn featured a more bluesy rock tone, one that she would polish on her 2018 breakthrough, 1950. The queer love anthem received cosigns from the likes of  and  and was her first release for 's  label. She followed with her second single, Talia. Both tracks appeared on her 2018 EP Make My Bed, which topped the New Zealand Heatseekers chart. She followed with the single Pussy Is God, as well as a cover of  and 's Femme Fatale and a collaboration with , I Know. In 2019, King Princess released her debut full-length album, Cheap Queen, which cracked the Top 20 of the Billboard Top Alternative Albums chart. ~ Neil Z. Yeung, Rovi"})
+album15 = Album.create!({name: "Make My Bed", creator_id: artist9.id})
+song15 = Song.create!({name: "Upper West Side", album_id: album15.id, artist_id: artist9.id, song_length: "3.31"})
+file29 = URI.open('https://fabify-seeds.s3.us-east-2.amazonaws.com/King+Princess+-+Upper+West+Side+(Official+Video).mp3')
+file30 = URI.open('https://fabify-seeds.s3.us-east-2.amazonaws.com/Make_My_Bed_Cover_king_princess.jpg')
+song15.audio.attach(io: file29, filename: 'King-Princess-Upper-West-Side-audio.mp3')
+song15.photo.attach(io: file30, filename: 'King-Princess-Upper-West-Side-cover.jpg')
+
+album16 = Album.create!({name: "Cheap Queen", creator_id: artist9.id})
+song16 = Song.create!({name: "Cheap Queen", album_id: album16.id, artist_id: artist9.id, song_length: "2.41"})
+file31 = URI.open('https://fabify-seeds.s3.us-east-2.amazonaws.com/King+Princess+-+Cheap+Queen.mp3')
+file32 = URI.open('https://fabify-seeds.s3.us-east-2.amazonaws.com/king_princess_cheap_queen.jpg')
+song16.audio.attach(io: file31, filename: 'King-Princess-Cheap-Queen-audio.mp3')
+song16.photo.attach(io: file32, filename: 'King-Princess-Cheap-Queen-album-cover.jpg')

@@ -32,3 +32,17 @@ export const deletePlaylist = (id) => {
       method: "DELETE",
     });
 }
+
+export const addSong = (playlistId, songId) =>
+  $.ajax({
+    method: "POST",
+    url: `/api/playlists/${playlistId}/add_song`,
+    data: { song_id: songId },
+  });
+
+export const removeSong = (playlistId, songId) =>
+  $.ajax({
+    method: "DELETE",
+    url: `/api/playlists/${playlistId}/remove_song`,
+    data: { song_id: songId },
+  });

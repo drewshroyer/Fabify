@@ -37,7 +37,9 @@ class CreatePlaylist extends React.Component {
       <div className="modal-container">
         <div className="inner-modal-container">
           <div className="create-playlist-modal">
-            <div onClick={this.props.closeModal} className="x-icon">X</div>
+            <div onClick={this.props.closeModal} className="x-icon">
+              X
+            </div>
             <h1 className="create-new-playlist-container">
               Create new playlist
             </h1>
@@ -58,7 +60,7 @@ class CreatePlaylist extends React.Component {
             <div className="cancel-create-buttons">
               <button
                 className="playlist-cancel-button"
-                onClick={this.props.closeModal}
+                onClick={() => this.props.closeModal()}
                 value="CANCEL"
               >
                 CANCEL
