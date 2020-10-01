@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import InternalNavbar from "../nav/internal-nav";
-import PlayBar from './play-bar';
+import PlayBar from '../playbar/play-bar';
 import WebPlayerBody from './webplayer_body_container';
 
 

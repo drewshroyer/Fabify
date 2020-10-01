@@ -25,27 +25,7 @@ class SongIndexItem extends React.Component {
       } else {
           audioEle.play();
       }
-
-    //   if (this.state.selectedSong !== e.currentTarget.id) {
-    //     audioEle.play();
-    //     this.setState({
-    //       selectedSong: e.currentTarget.id,
-    //       playingSong: true,
-    //     });
-    //   } else if (this.state.selectedSong === e.currentTarget.id) {
-    //     audioEle.pause();
-    //     this.setState({
-    //       playingSong: false,
-    //     });
-    //   } else {
-    //     audioEle.pause();
-    //     this.setState({
-    //       selectedSong: e.currentTarget.id,
-    //       playingSong: false,
-    //     });
-    //   }
     }
-
 
   render() {
     const { song, artist } = this.props;

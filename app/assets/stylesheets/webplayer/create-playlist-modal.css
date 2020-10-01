@@ -35,6 +35,14 @@
     text-align: center;
 }
 
+.x-icon-style {
+    background-color: transparent;
+    font-weight: 100;
+    color: white;
+    font-size: 48px;
+    border: none;
+}
+
 .create-playlist-input-bar {
     width: 100%;
     height: 100px;

@@ -84,7 +84,7 @@ class InternalNavbar extends React.Component {
             <div className="playlist-header">PLAYLISTS</div>
             <div
               className="internal-create-playlist-link"
-              onClick={() => this.props.openModal("createPlaylist")}
+              // onClick={() => this.props.openModal("createPlaylist")}
             >
               <svg
                 className="internal-nav-icon"
@@ -105,7 +105,7 @@ class InternalNavbar extends React.Component {
                 >Create Playlist</button>
                 <CreatePlaylist
                   show={this.state.isOpen}
-                  onClose={this.toggleModal}
+                  onClick={this.toggleModal}
                 />
               </div>
             </div>
@@ -122,7 +122,7 @@ class InternalNavbar extends React.Component {
                   fill="currentColor"
                 ></path>
               </svg>
-              <Link to={`/webplayer`} className="internal-nav-link">
+              <Link to={`/webplayer/`} className="internal-nav-link">
                 Liked Songs
               </Link>
             </div>

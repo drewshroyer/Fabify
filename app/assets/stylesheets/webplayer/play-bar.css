@@ -4,11 +4,127 @@
     height: 90px;
     border-top: black;
     color: #B3B3B3;
-    z-index: 500;
+    z-index: 5;
     position: fixed;
     display: flex;
     justify-content: space-between;
     align-items: center;
     position: absolute;
     bottom: 0%;
+}
+
+.right-play-bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+
+.volume-slide-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center; 
+    padding-right: 10px;
+    width: 80%;
+}
+
+.volume-slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+  background: #535353;
+  outline: none;
+}
+
+.volume-slider:hover {
+  opacity: 1;
+}
+
+.volume-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #1CB954;
+}
+
+.volume-slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #1CB954;
+  cursor: pointer;
+}
+
+.white-volume-icon {
+    height: 15px;
+    width: 15px;
+    padding-right: 5px;
+}
+
+.center-play-bar-vertical-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.timeline-slide-container {
+    width: 100%;
+}
+
+.timeline-slider {
+  -webkit-appearance: none;
+  width: 500px;
+  height: 4px;
+  border-radius: 2px;
+  background: #535353;
+  outline: none;
+}
+
+.timeline-slider-slider:hover {
+  opacity: 1;
+}
+
+.timeline-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #ffffff;
+}
+
+.timeline-slider::-moz-range-thumb {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #ffffff;
+  cursor: pointer;
+}
+
+.center-play-bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.previous-song-button {
+    height: 20px;
+    width: auto;
+}
+
+.next-song-button {
+    height: 20px;
+    width: auto;
+}
+
+.main-play-button {
+    padding: 10px;
+    height: 36px;
+    width: auto;
 }
