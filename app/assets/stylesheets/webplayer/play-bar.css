@@ -128,3 +128,30 @@
     height: 36px;
     width: auto;
 }
+
+.main-play-button:hover {
+    padding: 7px;
+    height: 42px;
+    width: auto;
+}
+
+.left-play-bar-name-render {
+    font-size: 14px;
+    color: #ffff;
+}
+
+.left-play-bar-artist-render {
+    font-size: 12px;
+    color: #ffff;
+}
+
+.left-play-bar-artist-render {
+    display: block;
+    height: 60px;
+    width: auto;
+}
+
+.left-play-bar-data {
+    display: flex;
+    flex-direction: column;
+}

@@ -1,21 +1,37 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import {fetchSongs} from "../../actions/song_actions"
+import { fetchSong } from "../../actions/song_actions";
 
 class PlayBar extends React.Component {
   constructor(props) {
     super(props);
   }
 
-  // componentDidMount() {
-  //   this.props.fetchSongs();
-  //   this.props.fetchArtists();
-  // }
+  componentDidMount() {
+    fetchSong(this.props.selectedSong);
+  }
 
   render() {
+    // const songs = fetchSongs();
+    // console.log("hi", songs);
+    // let photo = songs.id && songs.id.photo_url ? songs.id.
+    // console.log("songs", this.props.songs);
+    // console.log(this.props.songs);
+    console.log(this.props);
     return (
       <div className="play-bar-container">
-        <div className="left-play-bar">SONG DATA GOES HERE</div>
+        <div className="left-play-bar">
+          <div className="left-play-bar-photo-render" c>
+            {this.props.selectedSong.photo}
+          </div>
+          <div className="left-play-bar-data">
+            <div className="left-play-bar-name-render">
+              {this.props.selectedSong.name}
+            </div>
+            <div className="left-play-bar-artist-render">
+              {this.props.selectedSong.artist}
+            </div>
+          </div>
+        </div>
 
         <div className="center-play-bar-vertical-container">
           <div className="center-play-bar">
@@ -28,6 +44,8 @@ class PlayBar extends React.Component {
               src={whitePlayCircleButton}
               alt="whitePlayCircleButton"
               className="main-play-button"
+              id={this.props.selectedSong}
+              onClick={this.props.togglePlayPause}
             />
             <img
               src={whiteNextIcon}
@@ -40,9 +58,10 @@ class PlayBar extends React.Component {
               type="range"
               min="1"
               max="100"
+              placeholder="0"
               className="timeline-slider"
             />
-            </div>
+          </div>
         </div>
 
         <div className="right-play-bar">
@@ -56,7 +75,7 @@ class PlayBar extends React.Component {
               type="range"
               min="1"
               max="100"
-              // value="50"
+              placeholder="50"
               className="volume-slider"
             />
           </div>

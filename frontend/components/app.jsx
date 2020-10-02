@@ -8,6 +8,7 @@ import WebPlayer from './webplayer/webplayer';
 import Search from "./webplayer/search";
 import Library from "./webplayer/library";
 import { AuthRoute } from "../util/route_util";
+import LikedSongs from "./webplayer/liked_songs"
 import SessionForm from "./session_form/login_form";
 import Navbar from "./splash/nav_bar";
 
@@ -19,6 +20,7 @@ const App = () => (
     <Route exact path="/webplayer" component={WebPlayer} />
     <Route exact path="/search" component={Search} />
     <Route exact path="/library" component={Library} />
+    <Route exact path="/likes" component={LikedSongs} />
     {/* <Route exact path="/songs/:songId" component={} /> */}
   </div>
 );

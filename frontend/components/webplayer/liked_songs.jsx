@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import SongIndexItem from "./song_Index_Item";
 
-class WebPlayerBody extends React.Component {
+class LikedSongs extends React.Component {
   constructor(props) {
     super(props);
   }
@@ -15,18 +15,17 @@ class WebPlayerBody extends React.Component {
 
   render() {
     const { songs, artists } = this.props;
-    if(!songs) return null;
+    if (!songs) return null;
     // console.log(this.props);
     return (
       <div className="webplayer-body-container">
-        <div className="shortcuts-keyword-webplayer">Shortcuts</div>
+        <div className="shortcuts-keyword-webplayer">Liked Songs</div>
         <ul className="webplayer-music-tile-line-item">
           {songs.map((song) => (
             <SongIndexItem
               song={song}
               artist={artists[song.artist_id]}
               key={song.id}
-              togglePlayPause={this.props.togglePlayPause}
             />
           ))}
         </ul>
@@ -35,4 +34,4 @@ class WebPlayerBody extends React.Component {
   }
 }
 
-export default WebPlayerBody;
+export default LikedSongs;

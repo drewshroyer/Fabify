@@ -122,7 +122,7 @@ class InternalNavbar extends React.Component {
                   fill="currentColor"
                 ></path>
               </svg>
-              <Link to={`/webplayer/`} className="internal-nav-link">
+              <Link to={`/likes`} className="internal-nav-link">
                 Liked Songs
               </Link>
             </div>

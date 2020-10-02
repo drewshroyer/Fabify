@@ -1,7 +1,7 @@
 import * as SongAPIUtil from "../util/song_api_util";
 
 export const RECEIVE_ALL_SONGS = "RECEIVE_ALL_SONGS";
-export const RECEIVE_SONG= "RECEIVE_SONG";
+export const RECEIVE_SONG = "RECEIVE_SONG";
 
 const receiveAllSongs = (payload) => ({
   type: RECEIVE_ALL_SONGS,
@@ -15,9 +15,9 @@ const receiveSong = (song) => ({
 });
 
 export const fetchSongs = () => (dispatch) => {
-  return SongAPIUtil.fetchSongs().then((payload) => // a payload means we are returning multiple pieces of data
-    dispatch(receiveAllSongs(payload))
-  );
+  return SongAPIUtil.fetchSongs().then((
+    payload // a payload means we are returning multiple pieces of data
+  ) => dispatch(receiveAllSongs(payload)));
 };
 
 export const fetchSong = (id) => (dispatch) => {

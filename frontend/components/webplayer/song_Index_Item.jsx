@@ -6,26 +6,26 @@ class SongIndexItem extends React.Component {
     constructor(props) {
         super(props)
         this.state = { playingSong: false, selectedSong: "" };
-        this.togglePlayPause = this.togglePlayPause.bind(this);
+    //  this.togglePlayPause = this.togglePlayPause.bind(this);
     }
 
-    togglePlayPause(e) {
-      const audioEle = document.getElementById(
-        `audio-element--${e.currentTarget.id}`
-      );
+    // togglePlayPause(e) {
+    //   const audioEle = document.getElementById(
+    //     `audio-element--${e.currentTarget.id}`
+    //   );
 
-      if (this.state.selectedSong === e.currentTarget.id) {
-        this.setState({playingSong: !this.state.playingSong})
-      } else {
-        this.setState({ selectedSong: e.currentTarget.id, playingSong: false });
-      }
+    //   if (this.state.selectedSong === e.currentTarget.id) {
+    //     this.setState({playingSong: !this.state.playingSong})
+    //   } else {
+    //     this.setState({ selectedSong: e.currentTarget.id, playingSong: false });
+    //   }
 
-      if (this.state.playingSong) {
-          audioEle.pause();
-      } else {
-          audioEle.play();
-      }
-    }
+    //   if (this.state.playingSong) {
+    //       audioEle.pause();
+    //   } else {
+    //       audioEle.play();
+    //   }
+    // }
 
   render() {
     const { song, artist } = this.props;
@@ -39,7 +39,7 @@ class SongIndexItem extends React.Component {
           <div
             className="webplayer-music-tile-audio"
             id={song.id}
-            onClick={this.togglePlayPause}
+            onClick={this.props.togglePlayPause}
           >
             <img
               className="webplayer-music-tile-play-button"
