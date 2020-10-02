@@ -45,13 +45,15 @@ class PlayBar extends React.Component {
             />
           </div>
           <div className="timeline-slide-container">
+            <div className="timeline-slide-time-count">O:OO</div>
             <input
               type="range"
               min="1"
               max="100"
               placeholder="0"
               className="timeline-slider"
-            />
+            />{" "}
+            <div className="timeline-slide-time-count">3:37</div>
           </div>
         </div>
 

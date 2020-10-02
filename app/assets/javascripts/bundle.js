@@ -761,13 +761,17 @@ var PlayBar = /*#__PURE__*/function (_React$Component) {
         className: "next-song-button"
       })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "timeline-slide-container"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "timeline-slide-time-count"
+      }, "O:OO"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "range",
         min: "1",
         max: "100",
         placeholder: "0",
         className: "timeline-slider"
-      }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "timeline-slide-time-count"
+      }, "3:37"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "right-play-bar"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         src: whiteVolumeIcon,
@@ -2099,7 +2103,7 @@ var WebPlayer = /*#__PURE__*/function (_React$Component) {
           playingSong: !this.state.playingSong
         });
       } else {
-        // this when we set a new song
+        // this where we set a new song
         this.setState({
           selectedSong: id,
           playingSong: false,

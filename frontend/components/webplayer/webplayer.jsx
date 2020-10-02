@@ -22,7 +22,7 @@ class WebPlayer extends React.Component {
     if (this.state.selectedSong === id) {
       this.setState({ playingSong: !this.state.playingSong });
     } else {
-      // this when we set a new song
+      // this where we set a new song
       this.setState({
         selectedSong: id,
         playingSong: false,
