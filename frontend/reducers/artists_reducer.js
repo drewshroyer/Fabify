@@ -1,4 +1,5 @@
-import { RECEIVE_ALL_ARTISTS, RECEIVE_ARTIST, RECEIVE_ALL_SONGS } from "../actions/song_actions";
+import { RECEIVE_ALL_SONGS } from "../actions/song_actions";
+import { RECEIVE_ALL_ARTISTS, RECEIVE_ARTIST} from "../actions/artist_actions";
 
 const artistsReducer = (state = {}, action) => {
   Object.freeze(state);

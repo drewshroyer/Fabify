@@ -705,39 +705,43 @@ var PlayBar = /*#__PURE__*/function (_React$Component) {
   var _super = _createSuper(PlayBar);
 
   function PlayBar(props) {
+    var _this;
+
     _classCallCheck(this, PlayBar);
 
-    return _super.call(this, props);
+    _this = _super.call(this, props);
+    _this.togglePlayBar = _this.togglePlayBar.bind(_assertThisInitialized(_this));
+    return _this;
   }
 
   _createClass(PlayBar, [{
-    key: "componentDidMount",
-    value: function componentDidMount() {
-      Object(_actions_song_actions__WEBPACK_IMPORTED_MODULE_1__["fetchSong"])(this.props.selectedSong);
+    key: "togglePlayBar",
+    value: function togglePlayBar() {
+      this.props.togglePlayPause(this.props.selectedSong);
     }
   }, {
     key: "render",
     value: function render() {
-      // const songs = fetchSongs();
-      // console.log("hi", songs);
-      // let photo = songs.id && songs.id.photo_url ? songs.id.
-      // console.log("songs", this.props.songs);
-      // console.log(this.props.songs);
-      console.log(this.props);
+      var _this$props = this.props,
+          selectedSong = _this$props.selectedSong,
+          name = _this$props.name,
+          artist = _this$props.artist,
+          photo = _this$props.photo;
+      console.log(photo);
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "play-bar-container"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "left-play-bar"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, photo && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         className: "left-play-bar-photo-render",
-        c: true
-      }, this.props.selectedSong.photo), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        src: photo
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "left-play-bar-data"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "left-play-bar-name-render"
-      }, this.props.selectedSong.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "left-play-bar-artist-render"
-      }, this.props.selectedSong.artist))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, artist))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "center-play-bar-vertical-container"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "center-play-bar"
@@ -750,7 +754,7 @@ var PlayBar = /*#__PURE__*/function (_React$Component) {
         alt: "whitePlayCircleButton",
         className: "main-play-button",
         id: this.props.selectedSong,
-        onClick: this.props.togglePlayPause
+        onClick: this.togglePlayBar
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         src: whiteNextIcon,
         alt: "whiteNextIcon",
@@ -1967,27 +1971,17 @@ var SongIndexItem = /*#__PURE__*/function (_React$Component) {
     _this.state = {
       playingSong: false,
       selectedSong: ""
-    }; //  this.togglePlayPause = this.togglePlayPause.bind(this);
-
+    };
+    _this.handleSongClick = _this.handleSongClick.bind(_assertThisInitialized(_this));
     return _this;
-  } // togglePlayPause(e) {
-  //   const audioEle = document.getElementById(
-  //     `audio-element--${e.currentTarget.id}`
-  //   );
-  //   if (this.state.selectedSong === e.currentTarget.id) {
-  //     this.setState({playingSong: !this.state.playingSong})
-  //   } else {
-  //     this.setState({ selectedSong: e.currentTarget.id, playingSong: false });
-  //   }
-  //   if (this.state.playingSong) {
-  //       audioEle.pause();
-  //   } else {
-  //       audioEle.play();
-  //   }
-  // }
-
+  }
 
   _createClass(SongIndexItem, [{
+    key: "handleSongClick",
+    value: function handleSongClick() {
+      this.props.togglePlayPause(this.props.song.id, this.props.song.name, this.props.song.photo_url, this.props.artist.name);
+    }
+  }, {
     key: "render",
     value: function render() {
       var _this$props = this.props,
@@ -2008,8 +2002,7 @@ var SongIndexItem = /*#__PURE__*/function (_React$Component) {
         className: "webplayer-music-tile-artist"
       }, artist.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "webplayer-music-tile-audio",
-        id: song.id,
-        onClick: this.props.togglePlayPause
+        onClick: this.handleSongClick
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         className: "webplayer-music-tile-play-button",
         src: window.whitePlayButton,
@@ -2088,24 +2081,31 @@ var WebPlayer = /*#__PURE__*/function (_React$Component) {
     _this.togglePlayPause = _this.togglePlayPause.bind(_assertThisInitialized(_this));
     _this.state = {
       playingSong: false,
-      selectedSong: ""
+      selectedSong: "",
+      name: "",
+      photo: "",
+      artist: ""
     };
     return _this;
   }
 
   _createClass(WebPlayer, [{
     key: "togglePlayPause",
-    value: function togglePlayPause(e) {
-      var audioEle = document.getElementById("audio-element--".concat(e.currentTarget.id));
+    value: function togglePlayPause(id, name, photo, artist) {
+      var audioEle = document.getElementById("audio-element--".concat(id));
 
-      if (this.state.selectedSong === e.currentTarget.id) {
+      if (this.state.selectedSong === id) {
         this.setState({
           playingSong: !this.state.playingSong
         });
       } else {
+        // this when we set a new song
         this.setState({
-          selectedSong: e.currentTarget.id,
-          playingSong: false
+          selectedSong: id,
+          playingSong: false,
+          name: name,
+          photo: photo,
+          artist: artist
         });
       }
 
@@ -2131,7 +2131,10 @@ var WebPlayer = /*#__PURE__*/function (_React$Component) {
         togglePlayPause: this.togglePlayPause
       })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_playbar_play_bar__WEBPACK_IMPORTED_MODULE_3__["default"], {
         togglePlayPause: this.togglePlayPause,
-        selectedSong: this.state.selectedSong
+        selectedSong: this.state.selectedSong,
+        name: this.state.name,
+        photo: this.state.photo,
+        artist: this.state.artist
       }));
     }
   }]);
@@ -2347,6 +2350,8 @@ document.addEventListener("DOMContentLoaded", function () {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _actions_song_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../actions/song_actions */ "./frontend/actions/song_actions.js");
+/* harmony import */ var _actions_artist_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../actions/artist_actions */ "./frontend/actions/artist_actions.js");
+
 
 
 var artistsReducer = function artistsReducer() {
@@ -2356,10 +2361,10 @@ var artistsReducer = function artistsReducer() {
   var newState = Object.assign({}, state);
 
   switch (action.type) {
-    case _actions_song_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_ALL_ARTISTS"]:
+    case _actions_artist_actions__WEBPACK_IMPORTED_MODULE_1__["RECEIVE_ALL_ARTISTS"]:
       return action.artists;
 
-    case _actions_song_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_ARTIST"]:
+    case _actions_artist_actions__WEBPACK_IMPORTED_MODULE_1__["RECEIVE_ARTIST"]:
       newState[action.artist.id] = action.artist;
       return newState;
 

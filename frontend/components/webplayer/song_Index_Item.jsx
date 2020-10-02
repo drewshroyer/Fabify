@@ -2,30 +2,20 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 class SongIndexItem extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { playingSong: false, selectedSong: "" };
+    this.handleSongClick = this.handleSongClick.bind(this);
+  }
 
-    constructor(props) {
-        super(props)
-        this.state = { playingSong: false, selectedSong: "" };
-    //  this.togglePlayPause = this.togglePlayPause.bind(this);
-    }
-
-    // togglePlayPause(e) {
-    //   const audioEle = document.getElementById(
-    //     `audio-element--${e.currentTarget.id}`
-    //   );
-
-    //   if (this.state.selectedSong === e.currentTarget.id) {
-    //     this.setState({playingSong: !this.state.playingSong})
-    //   } else {
-    //     this.setState({ selectedSong: e.currentTarget.id, playingSong: false });
-    //   }
-
-    //   if (this.state.playingSong) {
-    //       audioEle.pause();
-    //   } else {
-    //       audioEle.play();
-    //   }
-    // }
+  handleSongClick() {
+    this.props.togglePlayPause(
+      this.props.song.id,
+      this.props.song.name,
+      this.props.song.photo_url,
+      this.props.artist.name
+    );
+  }
 
   render() {
     const { song, artist } = this.props;
@@ -38,8 +28,7 @@ class SongIndexItem extends React.Component {
           <div className="webplayer-music-tile-artist">{artist.name}</div>
           <div
             className="webplayer-music-tile-audio"
-            id={song.id}
-            onClick={this.props.togglePlayPause}
+            onClick={this.handleSongClick}
           >
             <img
               className="webplayer-music-tile-play-button"

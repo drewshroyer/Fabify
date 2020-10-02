@@ -37,7 +37,7 @@ artist2 = Artist.create!({name: "Kim Petras", biography: "Fast-rising pop sensat
 album3 = Album.create!({name: "Malibu", creator_id: artist2.id})
 song3 = Song.create!({name: "Malibu", album_id: album3.id, artist_id: artist2.id, song_length: "3:11"})
 file5 = URI.open('https://fabify-seeds.s3.us-east-2.amazonaws.com/Malibu+-+Kim+Petras+(At+Home+Edition).mp3')
-file6 = URI.open('https://fabify-seeds.s3.us-east-2.amazonaws.com/220px-Kim_Petras_-_Malibu.png')
+file6 = URI.open('https://fabify-seeds.s3.us-east-2.amazonaws.com/kim_petras_malibu_cover2.jpg')
 song3.audio.attach(io: file5, filename: 'Malibu-kim-petras-audio.mp3')
 song3.photo.attach(io: file6, filename: 'Malibu-kim-petras-album-cover.jpg')
 

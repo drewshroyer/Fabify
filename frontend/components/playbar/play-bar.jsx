@@ -4,32 +4,23 @@ import { fetchSong } from "../../actions/song_actions";
 class PlayBar extends React.Component {
   constructor(props) {
     super(props);
+    this.togglePlayBar = this.togglePlayBar.bind(this);
   }
 
-  componentDidMount() {
-    fetchSong(this.props.selectedSong);
+  togglePlayBar() {
+    this.props.togglePlayPause(this.props.selectedSong);
   }
 
   render() {
-    // const songs = fetchSongs();
-    // console.log("hi", songs);
-    // let photo = songs.id && songs.id.photo_url ? songs.id.
-    // console.log("songs", this.props.songs);
-    // console.log(this.props.songs);
-    console.log(this.props);
+    const { selectedSong, name, artist, photo } = this.props;
+     console.log(photo);
     return (
       <div className="play-bar-container">
         <div className="left-play-bar">
-          <div className="left-play-bar-photo-render" c>
-            {this.props.selectedSong.photo}
-          </div>
+          {photo && <img className="left-play-bar-photo-render" src={photo} />}
           <div className="left-play-bar-data">
-            <div className="left-play-bar-name-render">
-              {this.props.selectedSong.name}
-            </div>
-            <div className="left-play-bar-artist-render">
-              {this.props.selectedSong.artist}
-            </div>
+            <div className="left-play-bar-name-render">{name}</div>
+            <div className="left-play-bar-artist-render">{artist}</div>
           </div>
         </div>
 
@@ -45,7 +36,7 @@ class PlayBar extends React.Component {
               alt="whitePlayCircleButton"
               className="main-play-button"
               id={this.props.selectedSong}
-              onClick={this.props.togglePlayPause}
+              onClick={this.togglePlayBar}
             />
             <img
               src={whiteNextIcon}
