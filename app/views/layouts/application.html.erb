@@ -1,6 +1,16 @@
 <!DOCTYPE html>
 <html>
   <head>
+
+  <meta property="og:title" content="Fabify" />
+     <meta property='og:image' content="<%= image_url('cover_photo.png') %>"/>
+     <meta property="og:description"
+       content="Fabify, a Spotify clone, is a music platform where users can like songs and create playlists, and listen to their favorite music. Fabify exclusively features currated content created by artists that identify as LBGTQIA+."
+     />
+       <meta property="og:url"
+       content="https://fabify.herokuapp.com/"
+     />
+
   <script type="text/javascript">
       window.spotifyLogoURL = "<%= image_url('spotify_logo.png') %>";
       window.whiteSpotifyLogoURL = "<%= image_url('white_logo.png') %>";
@@ -11,7 +21,6 @@
       window.whiteVolumeIcon = "<%= image_url('volume_up-white-18dp.svg') %>";
       window.whitePreviousIcon = "<%= image_url('skip_previous-white-18dp.svg') %>";
       window.whiteNextIcon = "<%= image_url('skip_next-white-18dp.svg') %>";
-
 </script>
 
     <%= csrf_meta_tags %>
