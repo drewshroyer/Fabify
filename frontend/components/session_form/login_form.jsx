@@ -50,8 +50,8 @@ class LoginForm extends React.Component {
                 <img
                   src={window.spotifyLogoURL}
                   alt="spotify_logo"
-                  width=" 198px"
-                  height="66px"
+                  width=" 195px"
+                  height="62px"
                 ></img>
               </Link>
             </header>
@@ -60,6 +60,9 @@ class LoginForm extends React.Component {
               <div className="login-center-text">
                 To continue, log in to Fabify.
               </div>
+              <button className="demo-user-login-button" type="submit" value="">
+                Demo User Login
+              </button>
               <br />
               {this.renderErrors()}
               <div className="login-form">
@@ -99,13 +102,15 @@ class LoginForm extends React.Component {
                 <br />
                 <span className="line"></span>
                 <label>
-                  <div className="login-center-text">
+                  <div className="need-account-center-text">
                     Don't have an account?
                   </div>
                   <br />
-                  <button className="signUp-button" type="submit" value="">
-                    <Link to={`/signup`}>SIGN UP FOR FABIFY</Link>
-                  </button>
+                  <div className="sign-up-demo-login-buttons">
+                    <button className="signUp-button" type="submit" value="">
+                      <Link to={`/signup`}>SIGN UP FOR FABIFY</Link>
+                    </button>
+                  </div>
                 </label>
               </div>
             </form>
