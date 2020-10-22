@@ -35,6 +35,7 @@
     text-align: center;
 }
 
+
 .x-icon-style {
     background-color: transparent;
     font-weight: 100;
@@ -47,11 +48,11 @@
     width: 100%;
     height: 100px;
     background-color: #282828;
-    padding: 32px 400px;
+    padding: 32px 400px 32px 400px;
 }
 
 .cancel-create-buttons {
-    margin-top: 20px;
+    margin-top: 80px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -131,4 +132,8 @@
 
 .playlist-create-button:hover {
     line-height: 18px;
+}
+
+.create-playlist-form-container {
+    width: 50%;
 }

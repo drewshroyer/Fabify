@@ -1,27 +1,19 @@
+import React from "react";
 import { connect } from "react-redux";
-import PlaylistCreate from "./create_playlist_modal";
-import { createPlaylist} from "../../actions/playlist_actions";
+import CreatePlaylist from "./create_playlist_modal";
+import { createPlaylist } from "../../actions/playlist_actions";
 import { closeModal } from "../../actions/modal_actions";
-import { withRouter } from "react-router-dom";
-import { fetchUser } from "../../actions/user_actions";
 
-const mapStateToProps = (state) => {
-  const currentUser = state.entities.users[state.session.id];
+const msp = (state) => {
   return {
-    playlist: { title: "" },
-    formType: "create",
-    currentUser: currentUser,
+    playlist: { name: "" },
   };
 };
 
-const mapDispatchToProps = (dispatch) => {
+const mdp = (dispatch) => {
   return {
     processForm: (playlist) => dispatch(createPlaylist(playlist)),
-    closeModal: () => dispatch(closeModal()),
-    fetchUser: (id) => dispatch(fetchUser(id)),
   };
 };
 
-export default withRouter(
-  connect(mapStateToProps, mapDispatchToProps)(PlaylistCreate)
-);
+export default connect(msp, mdp)(CreatePlaylist);

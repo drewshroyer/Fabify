@@ -1,41 +1,33 @@
 import React from "react";
-import {Link} from 'react-router-dom';
 
 class CreatePlaylist extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      title: "",
+      name: "",
       isOpen: true,
     };
 
-    this.closeModal = this.closeModal.bind(this);
+    this.handleClickforCancel = this.handleClickforCancel.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.update = this.update.bind(this);
+    this.handleChange = this.handleChange.bind(this);
   }
 
   handleSubmit(e) {
     e.preventDefault();
-    const { currentUser, fetchUser } = this.props;
+    this.props.processForm(this.state);
     this.props.closeModal();
-    const newState = Object.assign({}, this.state);
-    if (this.state.title.length === 0) {
-      newState.title = "New Playlist";
-    }
-    this.props.processForm(newState).then(fetchUser(currentUser.id));
   }
 
-  update(field) {
-    return (e) => {
-      this.setState({ [field]: e.target.value });
-    };
+  handleChange(field) {
+    return (e) =>
+      this.setState({
+        [field]: e.target.value,
+      });
   }
 
-  
-  closeModal() {
-    this.setState({
-      isOpen: false,
-    });
+  handleClickforCancel() {
+    this.props.toggleModal();
   }
 
   render() {
@@ -49,8 +41,7 @@ class CreatePlaylist extends React.Component {
             <div className="x-icon">
               <button
                 className="x-icon-style"
-                onClick={this.closeModal}
-                value="X"
+                onClick={this.handleClickforCancel}
               >
                 X
               </button>
@@ -59,35 +50,35 @@ class CreatePlaylist extends React.Component {
               Create new playlist
             </h1>
             <div className="create-playlist-input-bar">
-              <form onSubmit={this.handleSubmit}>
+              <form className="create-playlist-form-container" onSubmit={this.handleSubmit}>
                 <div className="new-playlist-input">
                   <div className="new-playlist-input-title">Playlist Name</div>
                   <input
                     type="text"
-                    value={this.state.title}
-                    onChange={this.update("title")}
+                    value={this.state.name}
+                    onChange={this.handleChange("name")}
                     placeholder="New Playlist"
                     className="new-playlist-input-text"
                   />
                 </div>
+                <div className="cancel-create-buttons">
+                  <button
+                    className="playlist-cancel-button"
+                    onClick={this.handleClickforCancel}
+                    value="CANCEL"
+                  >
+                    CANCEL
+                  </button>
+                  <button
+                    className="playlist-create-button"
+                    type="submit"
+                    value="CREATE"
+                    onSubmit={this.handleChange("name")}
+                  >
+                    CREATE
+                  </button>
+                </div>
               </form>
-            </div>
-            <div className="cancel-create-buttons">
-              <button
-                className="playlist-cancel-button"
-                onClick={this.closeModal}
-                value="CANCEL"
-              >
-                CANCEL
-              </button>
-              <button
-                className="playlist-create-button"
-                type="submit"
-                value="CREATE"
-                onSubmit={this.handleSubmit}
-              >
-                CREATE
-              </button>
             </div>
           </div>
         </div>

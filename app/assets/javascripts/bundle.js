@@ -150,11 +150,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "closeModal", function() { return closeModal; });
 var OPEN_MODAL = "OPEN_MODAL";
 var CLOSE_MODAL = "CLOSE_MODAL";
-var openModal = function openModal(modal, song) {
+var openModal = function openModal(modal) {
   return {
     type: OPEN_MODAL,
-    modal: modal,
-    song: song
+    modal: modal
   };
 };
 var closeModal = function closeModal() {
@@ -527,7 +526,6 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 
 
 
-
 var InternalNavbar = /*#__PURE__*/function (_React$Component) {
   _inherits(InternalNavbar, _React$Component);
 
@@ -631,6 +629,7 @@ var InternalNavbar = /*#__PURE__*/function (_React$Component) {
         className: "open-create-playlist-modal",
         onClick: this.toggleModal
       }, "Create Playlist"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_playlists_create_playlist_modal__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        toggleModal: this.toggleModal,
         show: this.state.isOpen,
         onClick: this.toggleModal
       }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -807,7 +806,6 @@ var PlayBar = /*#__PURE__*/function (_React$Component) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -834,7 +832,6 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 
 
 
-
 var CreatePlaylist = /*#__PURE__*/function (_React$Component) {
   _inherits(CreatePlaylist, _React$Component);
 
@@ -847,12 +844,12 @@ var CreatePlaylist = /*#__PURE__*/function (_React$Component) {
 
     _this = _super.call(this, props);
     _this.state = {
-      title: "",
+      name: "",
       isOpen: true
     };
-    _this.closeModal = _this.closeModal.bind(_assertThisInitialized(_this));
+    _this.handleClickforCancel = _this.handleClickforCancel.bind(_assertThisInitialized(_this));
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
-    _this.update = _this.update.bind(_assertThisInitialized(_this));
+    _this.handleChange = _this.handleChange.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -860,33 +857,22 @@ var CreatePlaylist = /*#__PURE__*/function (_React$Component) {
     key: "handleSubmit",
     value: function handleSubmit(e) {
       e.preventDefault();
-      var _this$props = this.props,
-          currentUser = _this$props.currentUser,
-          fetchUser = _this$props.fetchUser;
+      this.props.processForm(this.state);
       this.props.closeModal();
-      var newState = Object.assign({}, this.state);
-
-      if (this.state.title.length === 0) {
-        newState.title = "New Playlist";
-      }
-
-      this.props.processForm(newState).then(fetchUser(currentUser.id));
     }
   }, {
-    key: "update",
-    value: function update(field) {
+    key: "handleChange",
+    value: function handleChange(field) {
       var _this2 = this;
 
       return function (e) {
-        _this2.setState(_defineProperty({}, field, e.target.value));
+        return _this2.setState(_defineProperty({}, field, e.target.value));
       };
     }
   }, {
-    key: "closeModal",
-    value: function closeModal() {
-      this.setState({
-        isOpen: false
-      });
+    key: "handleClickforCancel",
+    value: function handleClickforCancel() {
+      this.props.toggleModal();
     }
   }, {
     key: "render",
@@ -905,13 +891,13 @@ var CreatePlaylist = /*#__PURE__*/function (_React$Component) {
         className: "x-icon"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "x-icon-style",
-        onClick: this.closeModal,
-        value: "X"
+        onClick: this.handleClickforCancel
       }, "X")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
         className: "create-new-playlist-container"
       }, "Create new playlist"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "create-playlist-input-bar"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+        className: "create-playlist-form-container",
         onSubmit: this.handleSubmit
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "new-playlist-input"
@@ -919,22 +905,22 @@ var CreatePlaylist = /*#__PURE__*/function (_React$Component) {
         className: "new-playlist-input-title"
       }, "Playlist Name"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "text",
-        value: this.state.title,
-        onChange: this.update("title"),
+        value: this.state.name,
+        onChange: this.handleChange("name"),
         placeholder: "New Playlist",
         className: "new-playlist-input-text"
-      })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "cancel-create-buttons"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "playlist-cancel-button",
-        onClick: this.closeModal,
+        onClick: this.handleClickforCancel,
         value: "CANCEL"
       }, "CANCEL"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "playlist-create-button",
         type: "submit",
         value: "CREATE",
-        onSubmit: this.handleSubmit
-      }, "CREATE")))));
+        onSubmit: this.handleChange("name")
+      }, "CREATE")))))));
     }
   }]);
 
@@ -2451,20 +2437,11 @@ var modalReducer = function modalReducer() {
   Object.freeze(state);
 
   switch (action.type) {
-    case _actions_modal_actions__WEBPACK_IMPORTED_MODULE_0__["OPEN_MODAL"]:
-      if (action.modal === "addSongToPlaylist") {
-        return Object.assign({}, state, {
-          modal: action.modal,
-          songId: action.song
-        });
-      } else {
-        return Object.assign({}, state, {
-          modal: action.modal
-        });
-      }
-
     case _actions_modal_actions__WEBPACK_IMPORTED_MODULE_0__["CLOSE_MODAL"]:
       return null;
+
+    case _actions_modal_actions__WEBPACK_IMPORTED_MODULE_0__["OPEN_MODAL"]:
+      return action.modal;
 
     default:
       return state;
