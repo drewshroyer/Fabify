@@ -265,16 +265,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "logoutCurrentUser", function() { return logoutCurrentUser; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "receiveErrors", function() { return receiveErrors; });
 /* harmony import */ var _util_session_api_util__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../util/session_api_util */ "./frontend/util/session_api_util.js");
+/* harmony import */ var jwt_decode__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! jwt-decode */ "./node_modules/jwt-decode/build/jwt-decode.esm.js");
+
 
 var RECEIVE_CURRENT_USER = "RECEIVE_CURRENT_USER";
 var LOGOUT_CURRENT_USER = "LOGOUT_CURRENT_USER";
 var RECEIVE_SESSION_ERRORS = "RECEIVE_SESSION_ERRORS";
 var login = function login(user) {
   return function (dispatch) {
-    return _util_session_api_util__WEBPACK_IMPORTED_MODULE_0__["login"](user).then(function (user) {
-      return dispatch(receiveCurrentUser(user));
-    }, function (err) {
-      return dispatch(receiveErrors(err.responseJSON));
+    return _util_session_api_util__WEBPACK_IMPORTED_MODULE_0__["login"](user).then(function (res) {
+      var token = res.data.token;
+      localStorage.setItem("jwtToken", token);
+      _util_session_api_util__WEBPACK_IMPORTED_MODULE_0__["setAuthToken"](token);
+      var decoded = Object(jwt_decode__WEBPACK_IMPORTED_MODULE_1__["default"])(token);
+      dispatch(receiveCurrentUser(decoded));
+    })["catch"](function (err) {
+      dispatch(receiveErrors(err.response.data));
     });
   };
 };
@@ -1013,9 +1019,11 @@ var LoginForm = /*#__PURE__*/function (_React$Component) {
     _this = _super.call(this, props);
     _this.state = {
       email: "",
-      password: ""
+      password: "",
+      errors: {}
     };
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
+    _this.handleDemoLogin = _this.handleDemoLogin.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -1042,8 +1050,11 @@ var LoginForm = /*#__PURE__*/function (_React$Component) {
     key: "handleSubmit",
     value: function handleSubmit(e) {
       e.preventDefault();
-      var user = Object.assign({}, this.state);
-      this.props.processForm(user);
+      var user = {
+        username: this.state.username,
+        password: this.state.password
+      };
+      this.props.login(user);
     }
   }, {
     key: "renderErrors",
@@ -1053,6 +1064,16 @@ var LoginForm = /*#__PURE__*/function (_React$Component) {
           key: "error-".concat(i)
         }, error);
       }));
+    }
+  }, {
+    key: "handleDemoLogin",
+    value: function handleDemoLogin(e) {
+      e.preventDefault();
+      var user = {
+        username: "DemoUser",
+        password: "password"
+      };
+      this.props.login(user);
     }
   }, {
     key: "render",
@@ -1103,7 +1124,12 @@ var LoginForm = /*#__PURE__*/function (_React$Component) {
         value: ""
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         to: "/signup"
-      }, "SIGN UP FOR FABIFY")))))));
+      }, "SIGN UP FOR FABIFY")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "demo-user-login-button"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        onClick: this.handleDemoLogin,
+        className: "demo-user-button"
+      }, "Demo User")))))));
     }
   }]);
 
@@ -1148,6 +1174,9 @@ var mSTP = function mSTP(_ref) {
 
 var mDTP = function mDTP(dispatch) {
   return {
+    login: function login(user) {
+      return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_3__["login"])(user));
+    },
     processForm: function processForm(user) {
       return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_3__["login"])(user));
     }
@@ -2854,14 +2883,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "login", function() { return login; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "signup", function() { return signup; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "logout", function() { return logout; });
-var login = function login(user) {
-  return $.ajax({
-    method: "POST",
-    url: "/api/session",
-    data: {
-      user: user
-    }
-  });
+var login = function login(userData) {
+  return axios.post("/api/users/login", userData);
 };
 var signup = function signup(user) {
   return $.ajax({
@@ -4073,6 +4096,22 @@ module.exports = hoistNonReactStatics;
 module.exports = Array.isArray || function (arr) {
   return Object.prototype.toString.call(arr) == '[object Array]';
 };
+
+
+/***/ }),
+
+/***/ "./node_modules/jwt-decode/build/jwt-decode.esm.js":
+/*!*********************************************************!*\
+  !*** ./node_modules/jwt-decode/build/jwt-decode.esm.js ***!
+  \*********************************************************/
+/*! exports provided: default, InvalidTokenError */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "InvalidTokenError", function() { return n; });
+function e(e){this.message=e}e.prototype=new Error,e.prototype.name="InvalidCharacterError";var r="undefined"!=typeof window&&window.atob&&window.atob.bind(window)||function(r){var t=String(r).replace(/=+$/,"");if(t.length%4==1)throw new e("'atob' failed: The string to be decoded is not correctly encoded.");for(var n,o,a=0,i=0,c="";o=t.charAt(i++);~o&&(n=a%4?64*n+o:o,a++%4)?c+=String.fromCharCode(255&n>>(-2*a&6)):0)o="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=".indexOf(o);return c};function t(e){var t=e.replace(/-/g,"+").replace(/_/g,"/");switch(t.length%4){case 0:break;case 2:t+="==";break;case 3:t+="=";break;default:throw"Illegal base64url string!"}try{return function(e){return decodeURIComponent(r(e).replace(/(.)/g,(function(e,r){var t=r.charCodeAt(0).toString(16).toUpperCase();return t.length<2&&(t="0"+t),"%"+t})))}(t)}catch(e){return r(t)}}function n(e){this.message=e}function o(e,r){if("string"!=typeof e)throw new n("Invalid token specified");var o=!0===(r=r||{}).header?0:1;try{return JSON.parse(t(e.split(".")[o]))}catch(e){throw new n("Invalid token specified: "+e.message)}}n.prototype=new Error,n.prototype.name="InvalidTokenError";/* harmony default export */ __webpack_exports__["default"] = (o);
+//# sourceMappingURL=jwt-decode.esm.js.map
 
 
 /***/ }),
