@@ -19,11 +19,20 @@
 }
 
 .webplayer-logout-button {
+    font-family: Proxima Nova Alt;
+    border:none;
     background-color: #121212;
     color: white;
     border-radius: 15px; 
     padding: 5px 15px;
     margin-right: 20px;
+    text-transform: uppercase;
+    font-weight: 900;
+    letter-spacing: 1.2px;
+}
+
+.webplayer-logout-button:hover {
+    background-color: #272727;
 }
 
 .top-nav-arrow {
