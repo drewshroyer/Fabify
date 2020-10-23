@@ -75,6 +75,9 @@ class LoginForm extends React.Component {
             </div>
             <br />
             <div className="login-form">
+              <button className="demo-user-login-button" type="submit" value="">
+                Demo User Login
+              </button>
               <br />
               <label>
                 Email address or username
@@ -116,14 +119,6 @@ class LoginForm extends React.Component {
                 <button className="signUp-button" type="submit" value="">
                   <Link to={`/signup`}>SIGN UP FOR FABIFY</Link>
                 </button>
-                <div className="demo-user-login-button">
-                  <button
-                    onClick={this.handleDemoLogin}
-                    className="demo-user-button"
-                  >
-                    Demo User
-                  </button>
-                </div>
                 {this.renderErrors()}
               </label>
             </div>

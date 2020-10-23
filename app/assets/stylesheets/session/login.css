@@ -2,13 +2,13 @@
     /* position: fixed;
     left: 30px; */
     display: flex;
-    align-content: center;
-    flex-wrap: wrap;
+    /* justify-content: flex-start;
+    align-self: center; */
 }
 
 
 .header-link {
-    padding: 10px;
+    padding: 0px 0px 0px 10px;
     margin: 10px auto; 
 }
 
@@ -19,12 +19,11 @@
 }
 
 #wrap { 
-    top: 3%;
-    position: fixed;
-    left: 35%;
     display: flex;
-    justify-content: center;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: scroll;
 }
 
 .login-form-container {
@@ -74,26 +73,57 @@
 
 .login-center-text {
     text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+}
+.need-account-center-text {
+    text-align: center;
     font-size: 18px;
+    font-weight: bold;
+}
+.sign-up-demo-login-buttons {
+    display: flex;
+    flex-direction: column;
+    height: 120px;
+    justify-content: flex-start;
 }
 
 .signUp-button {
-  margin-top: 5px;
-  border: 2px solid #616467; 
+    border: 2px solid #616467; 
     border-radius: 500px;
-  color: #616467;
-  padding: 14px 100px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 14px;
-  line-height: 1;
-  font-family: inherit;
-  font-weight: 900;
-  letter-spacing: 2px;
-  margin-top: 5px;
+    color: #616467;
+    padding: 14px 100px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    line-height: 1;
+    font-family: inherit;
+    font-weight: 900;
+    letter-spacing: 2px;
+    margin-top: 5px;
     background-color: transparent;
     min-width: 160px;
+    text-transform: uppercase;
+    white-space: normal;
+    transition-duration: .3s;
+}
+
+.demo-user-login-button {
+    margin-top: 15px;
+    border: 2px solid rgb(58, 88, 151); 
+    border-radius: 500px;
+    background-color: rgb(58, 88, 151);
+    padding: 14px 120px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    line-height: 1;
+    font-family: inherit;
+    font-weight: 900;
+    letter-spacing: 2px;
+    color: #fff;
     text-transform: uppercase;
     white-space: normal;
     transition-duration: .3s;
@@ -102,4 +132,9 @@
 .signUp-button:hover {
   background-color: #616467; 
   color: white;
+}
+
+.demo-user-login-button:hover {
+    color: #fff;
+    background-color: #3a61b3;
 }
