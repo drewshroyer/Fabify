@@ -16,7 +16,6 @@ class WebPlayerBody extends React.Component {
   render() {
     const { songs, artists } = this.props;
     if(!songs) return null;
-    // console.log(this.props);
     return (
       <div className="webplayer-body-container">
         <div className="shortcuts-keyword-webplayer">Shortcuts</div>

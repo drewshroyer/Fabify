@@ -726,7 +726,6 @@ var PlayBar = /*#__PURE__*/function (_React$Component) {
           name = _this$props.name,
           artist = _this$props.artist,
           photo = _this$props.photo;
-      console.log(photo);
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "play-bar-container"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1844,8 +1843,7 @@ var LikedSongs = /*#__PURE__*/function (_React$Component) {
       var _this$props = this.props,
           songs = _this$props.songs,
           artists = _this$props.artists;
-      if (!songs) return null; // console.log(this.props);
-
+      if (!songs) return null;
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "webplayer-body-container"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -2235,8 +2233,7 @@ var WebPlayerBody = /*#__PURE__*/function (_React$Component) {
       var _this$props = this.props,
           songs = _this$props.songs,
           artists = _this$props.artists;
-      if (!songs) return null; // console.log(this.props);
-
+      if (!songs) return null;
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "webplayer-body-container"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
