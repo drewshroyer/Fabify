@@ -4,6 +4,7 @@ import {fetchSongs} from "../../actions/song_actions" ;
 import {fetchPlaylists} from "../../actions/playlist_actions";
 import {fetchUser} from "../../actions/user_actions";
 import {fetchArtists} from "../../actions/artist_actions";
+import {logout} from "../../actions/session_actions";
 
 const mSTP = (state) => {
   const currentUserId = state.session.id;
@@ -23,6 +24,7 @@ const mDTP = (dispatch) => {
     fetchPlaylists: () => dispatch(fetchPlaylists()),
     fetchSongs: () => dispatch(fetchSongs()),
     fetchArtists: () => dispatch(fetchArtists()),
+    logout: () => dispatch(logout())
   };
 };
 
