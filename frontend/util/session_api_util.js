@@ -1,7 +1,11 @@
-export const login = (userData) => {
-  return axios.post("/api/users/login", userData);
-};
 
+export const login = (user) => {
+  return $.ajax({
+    method: "POST",
+    url: "/api/session",
+    data: { user },
+    })
+  }
 
 export const signup = (user) => {
   return $.ajax({

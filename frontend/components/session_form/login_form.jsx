@@ -11,10 +11,11 @@ class LoginForm extends React.Component {
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleDemoLogin = this.handleDemoLogin.bind(this);
+    this.renderErrors = this.renderErrors.bind(this);
   }
 
   componentWillUnmount() {
-    this.props.clearErrors();
+    this.clearErrors();
   }
 
   clearErrors() {
@@ -27,12 +28,10 @@ class LoginForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-
     let user = {
-      username: this.state.username,
+      email: this.state.email,
       password: this.state.password,
     };
-
     this.props.login(user);
   }
 
@@ -45,10 +44,11 @@ class LoginForm extends React.Component {
       </ul>
     );
   }
+
   handleDemoLogin(e) {
     e.preventDefault();
     let user = {
-      username: "DemoUser",
+      email: "DemoUser@gmail.com",
       password: "password",
     };
     this.props.login(user);
@@ -74,7 +74,6 @@ class LoginForm extends React.Component {
               To continue, log in to Fabify.
             </div>
             <br />
-            {this.renderErrors()}
             <div className="login-form">
               <br />
               <label>
@@ -125,6 +124,7 @@ class LoginForm extends React.Component {
                     Demo User
                   </button>
                 </div>
+                {this.renderErrors()}
               </label>
             </div>
           </form>
