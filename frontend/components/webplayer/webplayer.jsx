@@ -1,12 +1,15 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { connect } from "react-redux";
 import InternalNavbar from "../nav/internal-nav";
 import PlayBar from "../playbar/play-bar";
 import WebPlayerBody from "./webplayer_body_container";
+import { logout } from "../../actions/session_actions";
 
 class WebPlayer extends React.Component {
   constructor(props) {
+    // debugger
     super(props);
+    // this.handleLogout = this.handleLogout.bind(this);
     this.togglePlayPause = this.togglePlayPause.bind(this);
     this.state = {
       playingSong: false,
@@ -45,9 +48,12 @@ class WebPlayer extends React.Component {
         <InternalNavbar />
         <div className="webplayer-outer-body-container">
           <div className="top-bar-container">
-            <Link to="/" className="webplayer-logout-button">
+            <button
+              onClick={this.props.logout}
+              className="webplayer-logout-button"
+            >
               Log out
-            </Link>
+            </button>
           </div>
           <WebPlayerBody togglePlayPause={this.togglePlayPause} />
         </div>
@@ -63,4 +69,10 @@ class WebPlayer extends React.Component {
   }
 }
 
-export default WebPlayer;
+const mDTP = (dispatch) => {
+  return {
+    logout: () => dispatch(logout()),
+  };
+};
+
+export default connect(null, mDTP)(WebPlayer);
