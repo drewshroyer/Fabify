@@ -1022,7 +1022,7 @@ var LoginForm = /*#__PURE__*/function (_React$Component) {
   _createClass(LoginForm, [{
     key: "componentWillUnmount",
     value: function componentWillUnmount() {
-      this.props.clearErrors();
+      this.clearErrors();
     }
   }, {
     key: "clearErrors",
