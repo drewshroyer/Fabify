@@ -726,7 +726,6 @@ var PlayBar = /*#__PURE__*/function (_React$Component) {
           name = _this$props.name,
           artist = _this$props.artist,
           photo = _this$props.photo;
-      console.log(photo);
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "play-bar-container"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1065,7 +1064,7 @@ var LoginForm = /*#__PURE__*/function (_React$Component) {
     value: function handleDemoLogin(e) {
       e.preventDefault();
       var user = {
-        email: "DemoUser2@gmail.com",
+        email: "password@gmail.com",
         password: "password"
       };
       this.props.login(user);
@@ -1095,9 +1094,9 @@ var LoginForm = /*#__PURE__*/function (_React$Component) {
       }, "To continue, log in to Fabify."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "login-form"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        onClick: this.handleDemoLogin,
         className: "demo-user-login-button",
-        type: "submit",
-        value: ""
+        type: "submit"
       }, "Demo User Login"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Email address or username", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         className: "login-input-box",
         type: "text",
@@ -1844,8 +1843,7 @@ var LikedSongs = /*#__PURE__*/function (_React$Component) {
       var _this$props = this.props,
           songs = _this$props.songs,
           artists = _this$props.artists;
-      if (!songs) return null; // console.log(this.props);
-
+      if (!songs) return null;
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "webplayer-body-container"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {

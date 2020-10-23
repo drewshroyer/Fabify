@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import { withRouter, Link } from "react-router-dom";
 
 class LoginForm extends React.Component {
@@ -48,7 +48,7 @@ class LoginForm extends React.Component {
   handleDemoLogin(e) {
     e.preventDefault();
     let user = {
-      email: "DemoUser2@gmail.com",
+      email: "password@gmail.com",
       password: "password",
     };
     this.props.login(user);
@@ -75,7 +75,11 @@ class LoginForm extends React.Component {
             </div>
             <br />
             <div className="login-form">
-              <button className="demo-user-login-button" type="submit" value="">
+              <button
+                onClick={this.handleDemoLogin}
+                className="demo-user-login-button"
+                type="submit"
+              >
                 Demo User Login
               </button>
               <br />
@@ -128,6 +132,5 @@ class LoginForm extends React.Component {
     );
   }
 }
-
 
 export default LoginForm;

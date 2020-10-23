@@ -13,7 +13,6 @@ class PlayBar extends React.Component {
 
   render() {
     const { selectedSong, name, artist, photo } = this.props;
-     console.log(photo);
     return (
       <div className="play-bar-container">
         <div className="left-play-bar">
