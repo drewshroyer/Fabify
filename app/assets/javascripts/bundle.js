@@ -1065,7 +1065,7 @@ var LoginForm = /*#__PURE__*/function (_React$Component) {
     value: function handleDemoLogin(e) {
       e.preventDefault();
       var user = {
-        email: "DemoUser@gmail.com",
+        email: "DemoUser2@gmail.com",
         password: "password"
       };
       this.props.login(user);
