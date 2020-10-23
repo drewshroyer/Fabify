@@ -20,6 +20,7 @@ class WebPlayer extends React.Component {
     };
   }
 
+
   togglePlayPause(id, name, photo, artist) {
     const audioEle = document.getElementById(`audio-element--${id}`);
     if (this.state.selectedSong === id) {

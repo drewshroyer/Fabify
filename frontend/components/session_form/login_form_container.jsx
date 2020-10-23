@@ -14,6 +14,7 @@ return {
 
 const mDTP = (dispatch) => {
     return {
+      login: (user) => dispatch(login(user)),
       processForm: (user) => dispatch(login(user)),
     };
 };
