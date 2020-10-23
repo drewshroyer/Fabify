@@ -1065,7 +1065,7 @@ var LoginForm = /*#__PURE__*/function (_React$Component) {
     value: function handleDemoLogin(e) {
       e.preventDefault();
       var user = {
-        email: "DemoUser@gmail.com",
+        email: "password@gmail.com",
         password: "password"
       };
       this.props.login(user);
@@ -1095,9 +1095,9 @@ var LoginForm = /*#__PURE__*/function (_React$Component) {
       }, "To continue, log in to Fabify."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "login-form"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        onClick: this.handleDemoLogin,
         className: "demo-user-login-button",
-        type: "submit",
-        value: ""
+        type: "submit"
       }, "Demo User Login"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Email address or username", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         className: "login-input-box",
         type: "text",
