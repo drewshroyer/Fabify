@@ -12,7 +12,7 @@ const msp = (state) => {
 
 const mdp = (dispatch) => {
   return {
-    processForm: (playlist) => dispatch(createPlaylist(playlist)),
+    createPlaylist: (playlist) => dispatch(createPlaylist(playlist)),
   };
 };
 

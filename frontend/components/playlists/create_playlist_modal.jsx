@@ -7,7 +7,6 @@ class CreatePlaylist extends React.Component {
       name: "",
       isOpen: true,
     };
-
     this.handleClickforCancel = this.handleClickforCancel.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
@@ -15,7 +14,7 @@ class CreatePlaylist extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.processForm(this.state);
+    this.props.createPlaylist(this.state);
     this.props.closeModal();
   }
 
@@ -69,14 +68,10 @@ class CreatePlaylist extends React.Component {
                   >
                     CANCEL
                   </button>
-                  <button
+                  <input
                     className="playlist-create-button"
                     type="submit"
-                    value="CREATE"
-                    onSubmit={this.handleChange("name")}
-                  >
-                    CREATE
-                  </button>
+                    value="CREATE"/>
                 </div>
               </form>
             </div>

@@ -225,7 +225,7 @@ var fetchPlaylist = function fetchPlaylist(id) {
 var createPlaylist = function createPlaylist(playlist) {
   return function (dispatch) {
     return _util_playlist_api_util__WEBPACK_IMPORTED_MODULE_0__["createPlaylist"](playlist).then(function (playlist) {
-      return dispatch(receivePlaylist(playlist));
+      return dispatch(receiveCreatedPlaylist(playlist));
     });
   };
 };
@@ -856,7 +856,7 @@ var CreatePlaylist = /*#__PURE__*/function (_React$Component) {
     key: "handleSubmit",
     value: function handleSubmit(e) {
       e.preventDefault();
-      this.props.processForm(this.state);
+      this.props.createPlaylist(this.state);
       this.props.closeModal();
     }
   }, {
@@ -914,12 +914,11 @@ var CreatePlaylist = /*#__PURE__*/function (_React$Component) {
         className: "playlist-cancel-button",
         onClick: this.handleClickforCancel,
         value: "CANCEL"
-      }, "CANCEL"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      }, "CANCEL"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         className: "playlist-create-button",
         type: "submit",
-        value: "CREATE",
-        onSubmit: this.handleChange("name")
-      }, "CREATE")))))));
+        value: "CREATE"
+      })))))));
     }
   }]);
 
@@ -2774,7 +2773,7 @@ var fetchPlaylist = function fetchPlaylist(id) {
 };
 var createPlaylist = function createPlaylist(playlist) {
   return $.ajax({
-    url: "/api/playlists/".concat(playlist),
+    url: "/api/playlists/",
     method: 'POST',
     data: {
       playlist: playlist
