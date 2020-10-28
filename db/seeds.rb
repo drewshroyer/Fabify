@@ -11,6 +11,7 @@ require 'open-uri'
 Artist.destroy_all
 Song.destroy_all
 Album.destroy_all
+Playlist.destroy_all
 
 #Troye Sivan
 artist1 = Artist.create!({name: "Troye Sivan", biography: "TIME magazine proclaimed Troye Sivan “the perfect pop star for 2018” and his work continues to affirm his reputation as an important artistic voice for our time. His 2015 debut album, Blue Neighbourhood, topped the iTunes charts in 66 countries, and is certified Gold in four countries. Troye’s Blue Neighbourhood trilogy of videos captured coming-of-age from a modern perspective, resonating especially with LGBTQ teens.
@@ -174,3 +175,7 @@ file39 = URI.open('https://fabify-seeds.s3.us-east-2.amazonaws.com/Miley+Cyrus+-
 file40 = URI.open('https://fabify-seeds.s3.us-east-2.amazonaws.com/miley-cyrus-bangerz-deluxe.jpg')
 song20.audio.attach(io: file39, filename: 'Miley-Cyrus-Bangerz-audio.mp3')
 song20.photo.attach(io: file40, filename: 'Miley-Cyrus-Bangerz-cover.jpg')
+
+playlist1 = Playlist.create!(name: "New Music Friday", author_id: 7, description: "Come back each Friday for fresh new tunes!")
+playlist2 = Playlist.create!(name: "Pop Power", author_id: 3, description: "All the latest Pop, delivered to you")
+playlist3 = Playlist.create!(name: "Support Queer Artists", author_id: 2, description: "Support Queer Artists")
