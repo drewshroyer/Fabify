@@ -11,7 +11,6 @@ import { AuthRoute, ProtectedRoute } from "../util/route_util";
 import LikedSongs from "./webplayer/liked_songs"
 import SessionForm from "./session_form/login_form";
 import Navbar from "./splash/nav_bar";
-import PlaylistIndexContainer from "./playlists/playlist_index_container"
 
 const App = () => (
   <div>
@@ -22,8 +21,6 @@ const App = () => (
     <ProtectedRoute exact path="/search" component={Search} />
     <ProtectedRoute exact path="/library" component={Library} />
     <ProtectedRoute exact path="/likes" component={LikedSongs} />
-    <ProtectedRoute exact path="/playlists" component={PlaylistIndexContainer} />
-
     {/* <Route exact path="/songs/:songId" component={} /> */}
   </div>
 );

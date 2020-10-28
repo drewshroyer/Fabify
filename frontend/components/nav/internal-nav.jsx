@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import CreatePlaylist from "../playlists/create_playlist_modal";
-import { openModal } from "../../actions/modal_actions";
+import PlaylistIndex from "../playlists/playlist_index";
 
 class InternalNavbar extends React.Component {
     constructor(props) {
@@ -83,7 +83,6 @@ class InternalNavbar extends React.Component {
             <div className="playlist-header">PLAYLISTS</div>
             <div
               className="internal-create-playlist-link"
-              // onClick={() => this.props.openModal("createPlaylist")}
             >
               <svg
                 className="internal-nav-icon"
@@ -130,7 +129,7 @@ class InternalNavbar extends React.Component {
             </div>
             <div className="internal-nav-line"></div>
             <div className="user-playlists">
-              {/* <PlaylistIndex/> will render a user'slists of playlists once that functionality is built  */}
+            <PlaylistIndex />
             </div>
           </div>
         </div>

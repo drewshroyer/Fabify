@@ -1,21 +1,12 @@
+import React from "react";
 import { connect } from "react-redux";
 import InternalNavbar from "./internal-nav";
+import { fetchPlaylists, fetchSongs } from "../../actions/playlist_actions";
 
 const mSTP = (state) => {
   const currentUserId = state.session.id;
   const currentUser = state.entities.users[currentUserId];
-  const { playlists } = state.entities;
-  const userPlaylists =
-    Object.values(playlists).length > 0
-      ? currentUser.playlistIds.map((id) => {
-          return playlists[id];
-        })
-      : [];
-  return {
-    playlists: playlists,
-    currentUserId: currentUserId,
-    currentUser: currentUser,
-  };
+  const playlists  = state.entities.playlists;
 };
 
 const mDTP = (dispatch) => {

@@ -1,10 +1,24 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react'
+import { connect } from 'react-redux'
+import { Link } from 'react-router-dom'
+import { fetchPlaylists } from '../../actions/playlist_actions';
+
+const mSTP = state => {
+    return {
+        playlists: Object.values(state.entities.playlists)
+    }
+}
+
+const mDTP = dispatch => {
+    return {
+        fetchPlaylists: () => dispatch(fetchPlaylists()),
+    }
+}
 
 class PlaylistIndex extends React.Component {
 
     componentDidMount(){
-        this.props.fetchUserPlaylists();
+        this.props.fetchPlaylists();
     }
     
     render() {
@@ -28,4 +42,4 @@ class PlaylistIndex extends React.Component {
     }
 }
 
-export default PlaylistIndex;
+export default connect(mSTP, mDTP)(PlaylistIndex)
