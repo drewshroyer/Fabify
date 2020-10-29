@@ -225,7 +225,7 @@ var fetchPlaylist = function fetchPlaylist(id) {
 var createPlaylist = function createPlaylist(playlist) {
   return function (dispatch) {
     return _util_playlist_api_util__WEBPACK_IMPORTED_MODULE_0__["createPlaylist"](playlist).then(function (playlist) {
-      return dispatch(receiveCreatedPlaylist(playlist));
+      return dispatch(receivePlaylist(playlist));
     });
   };
 };
