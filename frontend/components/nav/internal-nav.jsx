@@ -16,6 +16,10 @@ class InternalNavbar extends React.Component {
     });
   }
 
+  // componentDidMount() {
+  //   this.props.fetchPlaylists();
+  // }
+
   render() {
     return (
       <div className="internal-nav-bar-container">

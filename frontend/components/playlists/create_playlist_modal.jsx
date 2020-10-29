@@ -4,7 +4,10 @@ class CreatePlaylist extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: "",
+      playlist: {
+        name: "",
+        // author_id: currentUser.id,
+      },
       isOpen: true,
     };
     this.handleClickforCancel = this.handleClickforCancel.bind(this);
@@ -14,8 +17,9 @@ class CreatePlaylist extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.createPlaylist(this.state);
-    this.props.closeModal();
+    // console.log(this.state.playlist);
+    this.props.createPlaylist(this.state.playlist);
+    this.props.toggleModal();
   }
 
   handleChange(field) {

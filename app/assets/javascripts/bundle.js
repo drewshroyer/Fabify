@@ -550,7 +550,10 @@ var InternalNavbar = /*#__PURE__*/function (_React$Component) {
       this.setState({
         isOpen: !this.state.isOpen
       });
-    }
+    } // componentDidMount() {
+    //   this.props.fetchPlaylists();
+    // }
+
   }, {
     key: "render",
     value: function render() {
@@ -842,7 +845,10 @@ var CreatePlaylist = /*#__PURE__*/function (_React$Component) {
 
     _this = _super.call(this, props);
     _this.state = {
-      name: "",
+      playlist: {
+        name: "" // author_id: currentUser.id,
+
+      },
       isOpen: true
     };
     _this.handleClickforCancel = _this.handleClickforCancel.bind(_assertThisInitialized(_this));
@@ -854,9 +860,10 @@ var CreatePlaylist = /*#__PURE__*/function (_React$Component) {
   _createClass(CreatePlaylist, [{
     key: "handleSubmit",
     value: function handleSubmit(e) {
-      e.preventDefault();
-      this.props.createPlaylist(this.state);
-      this.props.closeModal();
+      e.preventDefault(); // console.log(this.state.playlist);
+
+      this.props.createPlaylist(this.state.playlist);
+      this.props.toggleModal();
     }
   }, {
     key: "handleChange",

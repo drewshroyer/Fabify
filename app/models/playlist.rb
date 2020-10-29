@@ -13,7 +13,6 @@ class Playlist < ApplicationRecord
 
     validates :name, presence: true
     validates :author_id, presence: true
-    validates :description, presence: true
 
     belongs_to :user,
         foreign_key: :author_id,

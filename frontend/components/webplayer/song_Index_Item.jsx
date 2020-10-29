@@ -35,19 +35,6 @@ class SongIndexItem extends React.Component {
               src={window.whitePlayButton}
               alt="white-play-button"
             ></img>
-            {/* {this.state.selectedSong === song.id ? (
-              <img
-                className="webplayer-music-tile-play-button"
-                src={window.whitePlayButton}
-                alt="white-play-button"
-              ></img>
-            ) : (
-              <img
-                className="webplayer-music-tile-pause-button"
-                src={window.whitePauseButton}
-                alt="white-pause-button"
-              />
-            )} */}
           </div>
           <audio
             src={song.audio_url}

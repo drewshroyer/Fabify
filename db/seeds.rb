@@ -12,6 +12,10 @@ Artist.destroy_all
 Song.destroy_all
 Album.destroy_all
 Playlist.destroy_all
+User.destroy_all
+
+user1 = User.create!({email: "drewshroyer@gmail.com", password: "password", name: "Drew", birthdate: "1994-09-14", gender: "Male"})
+user2 = User.create!({email: "drewshroyer1@gmail.com", password: "password", name: "Sarah", birthdate: "1990-09-14", gender: "Female"})
 
 #Troye Sivan
 artist1 = Artist.create!({name: "Troye Sivan", biography: "TIME magazine proclaimed Troye Sivan “the perfect pop star for 2018” and his work continues to affirm his reputation as an important artistic voice for our time. His 2015 debut album, Blue Neighbourhood, topped the iTunes charts in 66 countries, and is certified Gold in four countries. Troye’s Blue Neighbourhood trilogy of videos captured coming-of-age from a modern perspective, resonating especially with LGBTQ teens.
@@ -31,7 +35,6 @@ file3 = URI.open('https://fabify-seeds.s3.us-east-2.amazonaws.com/Troye+Sivan+-+
 file4 = URI.open('https://fabify-seeds.s3.us-east-2.amazonaws.com/troye-sivan-my-my-my.jpg')
 song2.audio.attach(io: file3, filename: 'MYMYMY-troye-sivan-audio.mp3')
 song2.photo.attach(io: file4, filename: 'MYMYMY-troye-sivan-album-cover.jpg')
-
 
 #Kim Petras
 artist2 = Artist.create!({name: "Kim Petras", biography: "Fast-rising pop sensation Kim Petras has become one of music’s most buzzed-about artists with the release of her latest single “Malibu” and her critically acclaimed debut full-length Clarity. Kim will be making her Coachella debut in October after recently wrapping her international The Clarity Tour and selling out her first ever headline tour last summer in minutes during presale. Kim’s undeniable voice and imaginative artistry have skyrocketed her to international recognition as one of pop’s most promising talents while earning major mainstream media acclaim from the likes of NY Times, NPR, Vanity Fair, People, Rolling Stone, MTV, Glamour, Elle, Variety, Allure, Billboard, Cosmopolitan, Paper, V Magazine, Noisey, OUT, Pitchfork, i-D, Refinery29, and more.  First breaking out with her #1 Spotify Global Viral 50 bop “I Don’t Want It At All,” Kim launched into Top 40 radio with her pop hit “Heart to Break,” opened for Troye Sivan’s nationwide Bloom Tour last year, revived and redefined Halloween music with her spooky project TURN OFF THE LIGHT, collaborated with Charli XCX, Cheat Codes, MAX, SOPHIE, Lil Aaron, and more, appeared on “How It’s Done” from the Ariana-Grande-produced Charlie’s Angels soundtrack, and has been featured on multiple billboards in New York, London, and Los Angeles as a Spotify RISE artist."})
@@ -176,6 +179,6 @@ file40 = URI.open('https://fabify-seeds.s3.us-east-2.amazonaws.com/miley-cyrus-b
 song20.audio.attach(io: file39, filename: 'Miley-Cyrus-Bangerz-audio.mp3')
 song20.photo.attach(io: file40, filename: 'Miley-Cyrus-Bangerz-cover.jpg')
 
-playlist1 = Playlist.create!(name: "New Music Friday", author_id: 7, description: "Come back each Friday for fresh new tunes!")
-playlist2 = Playlist.create!(name: "Pop Power", author_id: 3, description: "All the latest Pop, delivered to you")
-playlist3 = Playlist.create!(name: "Support Queer Artists", author_id: 2, description: "Support Queer Artists")
+playlist1 = Playlist.create!(name: "New Music Friday", author_id: user1.id, description: "Come back each Friday for fresh new tunes!")
+playlist2 = Playlist.create!(name: "Pop Power", author_id: user1.id, description: "All the latest Pop, delivered to you")
+playlist3 = Playlist.create!(name: "Support Queer Artists", author_id: user2.id, description: "Support Queer Artists")
