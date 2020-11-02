@@ -1,45 +1,22 @@
 import React from 'react'
-import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
-import { fetchPlaylists } from '../../actions/playlist_actions';
-
-const mSTP = state => {
-    return {
-        playlists: Object.values(state.entities.playlists)
-    }
-}
-
-const mDTP = dispatch => {
-    return {
-        fetchPlaylists: () => dispatch(fetchPlaylists()),
-    }
-}
 
 class PlaylistIndex extends React.Component {
-
-    componentDidMount(){
-        this.props.fetchPlaylists();
+    constructor(props) {
+        super(props);
     }
-    
+
     render() {
-        if (this.props.playlists.length === 0) {
-            return null;     
-        }
-        const playlistIndex = this.props.playlists.map( playlist => {
-            return (
-                <li>
-                    <Link to={`/playlist/${playlist.id}`}>{playlist.title}</Link> 
-                </li>
-            )
-        });
+        const { playlist } = this.props;
         return (
-            <div>
-                <ul>
-                    {playlistIndex}
-                </ul>
-            </div>
+      <div className="webplayer-music-tile-container">
+        <div className="webplayer-music-tile">
+          <Link to={`/playlists/${playlist.id}`}></Link>
+          <div className="webplayer-music-tile-name">{playlist.name}</div>
+        </div>
+      </div>
         )
     }
 }
 
-export default connect(mSTP, mDTP)(PlaylistIndex)
+export default PlaylistIndex;

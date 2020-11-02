@@ -8,7 +8,7 @@
 #  description :string
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
-#
+
 class Playlist < ApplicationRecord
 
     validates :name, presence: true
@@ -17,5 +17,5 @@ class Playlist < ApplicationRecord
     belongs_to :user,
         foreign_key: :author_id,
         class_name: :User
-
+  
 end

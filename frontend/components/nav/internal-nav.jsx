@@ -133,7 +133,7 @@ class InternalNavbar extends React.Component {
             </div>
             <div className="internal-nav-line"></div>
             <div className="user-playlists">
-            <PlaylistIndex />
+            {/* <PlaylistIndex /> */}
             </div>
           </div>
         </div>

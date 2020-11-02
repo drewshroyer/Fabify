@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import SongIndexItem from "./song_Index_Item";
+import PlaylistIndex from "../playlists/playlist_index"
 
 class WebPlayerBody extends React.Component {
   constructor(props) {
@@ -9,12 +10,12 @@ class WebPlayerBody extends React.Component {
 
   componentDidMount() {
     this.props.fetchSongs();
-    // this.props.fetchPlaylists();
+    this.props.fetchPlaylists();
     // this.props.fetchArtists();
   }
   
   render() {
-    const { songs, artists } = this.props;
+    const { songs, artists, playlists } = this.props;
     if(!songs) return null;
     return (
       <div className="webplayer-body-container">
@@ -27,6 +28,11 @@ class WebPlayerBody extends React.Component {
               key={song.id}
               togglePlayPause={this.props.togglePlayPause}
             />
+          ))}
+        </ul>
+        <ul className="webplayer-music-tile-line-item">
+          {playlists.map((playlist) => (
+            <PlaylistIndex playlist={playlist} key={playlist.id} />
           ))}
         </ul>
       </div>
