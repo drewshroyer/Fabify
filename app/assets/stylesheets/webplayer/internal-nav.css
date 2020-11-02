@@ -146,4 +146,10 @@
     letter-spacing: .015em;
     font-size: 14px;
     font-weight: var(--glue-font-weight-normal);
+    display: flex;
+    flex-direction: column;
+}
+
+.webplayer-playlist-tile-line-item {
+    display: flex;
 }

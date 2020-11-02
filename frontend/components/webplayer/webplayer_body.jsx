@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import SongIndexItem from "./song_Index_Item";
 import PlaylistIndex from "../playlists/playlist_index"
 
@@ -15,6 +14,7 @@ class WebPlayerBody extends React.Component {
   }
   
   render() {
+    debugger
     const { songs, artists, playlists } = this.props;
     if(!songs) return null;
     return (

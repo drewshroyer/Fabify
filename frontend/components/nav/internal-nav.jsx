@@ -4,7 +4,7 @@ import CreatePlaylist from "../playlists/create_playlist_modal";
 import PlaylistIndex from "../playlists/playlist_index";
 
 class InternalNavbar extends React.Component {
-    constructor(props) {
+  constructor(props) {
     super(props);
     this.state = { isOpen: false };
     this.toggleModal = this.toggleModal.bind(this);
@@ -12,15 +12,19 @@ class InternalNavbar extends React.Component {
 
   toggleModal() {
     this.setState({
-      isOpen: !this.state.isOpen
+      isOpen: !this.state.isOpen,
     });
   }
 
-  // componentDidMount() {
-  //   this.props.fetchPlaylists();
-  // }
+  componentDidMount() {
+    // this.props.fetchSongs();
+    this.props.fetchPlaylists();
+    // this.props.fetchArtists();
+  }
 
   render() {
+    // debugger
+    const { playlists } = this.props;
     return (
       <div className="internal-nav-bar-container">
         <div className="internal-nav-bar-inner-container">
@@ -85,9 +89,7 @@ class InternalNavbar extends React.Component {
               </Link>
             </div>
             <div className="playlist-header">PLAYLISTS</div>
-            <div
-              className="internal-create-playlist-link"
-            >
+            <div className="internal-create-playlist-link">
               <svg
                 className="internal-nav-icon"
                 viewBox="0 0 512 512"
@@ -133,7 +135,11 @@ class InternalNavbar extends React.Component {
             </div>
             <div className="internal-nav-line"></div>
             <div className="user-playlists">
-            {/* <PlaylistIndex /> */}
+              <ul className="webplayer-music-tile-line-item">
+                {playlists.map((playlist) => (
+                  <PlaylistIndex playlist={playlist} key={playlist.id} />
+                ))}
+              </ul>
             </div>
           </div>
         </div>
