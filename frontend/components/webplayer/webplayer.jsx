@@ -1,8 +1,8 @@
 import React from "react";
 import { connect } from "react-redux";
 import InternalNavbarContainer from "../nav/internal-nav_container";
-import PlayBar from "../playbar/play-bar";
-import WebPlayerBody from "./webplayer_body_container";
+import PlayBarContainer from "../playbar/play-bar-container";
+import WebPlayerBodyContainer from "./webplayer_body_container";
 import { logout } from "../../actions/session_actions";
 
 class WebPlayer extends React.Component {
@@ -56,9 +56,9 @@ class WebPlayer extends React.Component {
               Log out
             </button>
           </div>
-          <WebPlayerBody togglePlayPause={this.togglePlayPause} />
+          <WebPlayerBodyContainer togglePlayPause={this.togglePlayPause} />
         </div>
-        <PlayBar
+        <PlayBarContainer
           togglePlayPause={this.togglePlayPause}
           selectedSong={this.state.selectedSong}
           name={this.state.name}
