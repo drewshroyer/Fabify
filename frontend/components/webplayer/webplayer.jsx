@@ -1,6 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
-import InternalNavbar from "../nav/internal-nav";
+import InternalNavbarContainer from "../nav/internal-nav_container";
 import PlayBar from "../playbar/play-bar";
 import WebPlayerBody from "./webplayer_body_container";
 import { logout } from "../../actions/session_actions";
@@ -46,7 +46,7 @@ class WebPlayer extends React.Component {
   render() {
     return (
       <div className="web-player-container">
-        <InternalNavbar />
+        <InternalNavbarContainer />
         <div className="webplayer-outer-body-container">
           <div className="top-bar-container">
             <button

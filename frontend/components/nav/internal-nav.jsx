@@ -17,6 +17,7 @@ class InternalNavbar extends React.Component {
   }
 
   componentDidMount() {
+    debugger
     // this.props.fetchSongs();
     this.props.fetchPlaylists();
     // this.props.fetchArtists();
@@ -24,7 +25,9 @@ class InternalNavbar extends React.Component {
 
   render() {
     // debugger
-    const { playlists } = this.props;
+    // const { playlists } = this.props;
+    const playlists = this.props.playlists ? this.props.playlists : []
+  
     return (
       <div className="internal-nav-bar-container">
         <div className="internal-nav-bar-inner-container">

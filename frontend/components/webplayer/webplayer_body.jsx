@@ -14,7 +14,7 @@ class WebPlayerBody extends React.Component {
   }
   
   render() {
-    debugger
+    // debugger
     const { songs, artists, playlists } = this.props;
     if(!songs) return null;
     return (

@@ -18,6 +18,7 @@ const mSTP = (state) => {
 };
 
 const mDTP = (dispatch) => {
+  debugger
   return {
     fetchUser: (id) => dispatch(fetchUser(id)),
     fetchPlaylists: () => dispatch(fetchPlaylists()),
