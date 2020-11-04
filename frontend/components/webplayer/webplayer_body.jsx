@@ -31,9 +31,9 @@ class WebPlayerBody extends React.Component {
           ))}
         </ul>
         <ul className="webplayer-music-tile-line-item">
-          {playlists.map((playlist) => (
+          {/* {playlists.map((playlist) => (
             <PlaylistIndex playlist={playlist} key={playlist.id} />
-          ))}
+          ))} */}
         </ul>
       </div>
     );

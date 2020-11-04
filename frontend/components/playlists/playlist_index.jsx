@@ -9,13 +9,11 @@ class PlaylistIndex extends React.Component {
     render() {
         const { playlist } = this.props;
         return (
-      <div className="webplayer-music-tile-container">
-        <div className="webplayer-music-tile">
-          <Link to={`/playlists/${playlist.id}`}></Link>
-          <div className="webplayer-music-tile-name">{playlist.name}</div>
-        </div>
-      </div>
-        )
+          <div className="nav-bar-playlist-list">
+            <Link to={`/playlists/${playlist.id}`}></Link>
+            <div className="nav-bar-playlist-name">{playlist.name}</div>
+          </div>
+        );
     }
 }
 

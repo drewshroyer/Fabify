@@ -554,8 +554,8 @@ var InternalNavbar = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "componentDidMount",
     value: function componentDidMount() {
-      debugger; // this.props.fetchSongs();
-
+      // debugger
+      // this.props.fetchSongs();
       this.props.fetchPlaylists(); // this.props.fetchArtists();
     }
   }, {
@@ -660,7 +660,7 @@ var InternalNavbar = /*#__PURE__*/function (_React$Component) {
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "user-playlists"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
-        className: "webplayer-music-tile-line-item"
+        className: "nav-bar-playlists"
       }, playlists.map(function (playlist) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_playlists_playlist_index__WEBPACK_IMPORTED_MODULE_3__["default"], {
           playlist: playlist,
@@ -712,7 +712,6 @@ var mSTP = function mSTP(state) {
 };
 
 var mDTP = function mDTP(dispatch) {
-  debugger;
   return {
     fetchUser: function fetchUser(id) {
       return dispatch(Object(_actions_user_actions__WEBPACK_IMPORTED_MODULE_4__["fetchUser"])(id));
@@ -1058,14 +1057,12 @@ var PlaylistIndex = /*#__PURE__*/function (_React$Component) {
     value: function render() {
       var playlist = this.props.playlist;
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "webplayer-music-tile-container"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "webplayer-music-tile"
+        className: "nav-bar-playlist-list"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         to: "/playlists/".concat(playlist.id)
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "webplayer-music-tile-name"
-      }, playlist.name)));
+        className: "nav-bar-playlist-name"
+      }, playlist.name));
     }
   }]);
 
@@ -2397,12 +2394,7 @@ var WebPlayerBody = /*#__PURE__*/function (_React$Component) {
         });
       })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
         className: "webplayer-music-tile-line-item"
-      }, playlists.map(function (playlist) {
-        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_playlists_playlist_index__WEBPACK_IMPORTED_MODULE_2__["default"], {
-          playlist: playlist,
-          key: playlist.id
-        });
-      })));
+      }));
     }
   }]);
 

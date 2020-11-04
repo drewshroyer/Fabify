@@ -17,7 +17,7 @@ class InternalNavbar extends React.Component {
   }
 
   componentDidMount() {
-    debugger
+    // debugger
     // this.props.fetchSongs();
     this.props.fetchPlaylists();
     // this.props.fetchArtists();
@@ -138,7 +138,7 @@ class InternalNavbar extends React.Component {
             </div>
             <div className="internal-nav-line"></div>
             <div className="user-playlists">
-              <ul className="webplayer-music-tile-line-item">
+              <ul className="nav-bar-playlists">
                 {playlists.map((playlist) => (
                   <PlaylistIndex playlist={playlist} key={playlist.id} />
                 ))}
