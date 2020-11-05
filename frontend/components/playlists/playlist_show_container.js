@@ -1,56 +1,50 @@
+import { connect } from "react-redux";
+import PlaylistShow from "./playlist_show_page";
 import {
   fetchPlaylist,
-  deletePlaylist,
   updatePlaylist,
+  deletePlaylist,
 } from "../../actions/playlist_actions";
-import { connect } from "react-redux";
-import { withRouter } from "react-router-dom";
-import PlaylistShow from "./playlist_show_page";
-import { fetchUser } from "../../actions/user_actions";
 
-const msp = (state, ownProps) => {
-  let currentUser = state.entities.users[state.session.id];
-  let playlistId = ownProps.match.params.playlistId; 
-  let playlist = state.entities.playlists[playlistId] || {
-    name: "",
-    song_ids: [],
-    user_id: 0,
-  };
-  let owner;
-  owner = state.entities.users[playlist.user_id] || { username: " " };
-  let songs = playlist.song_ids.map((id) => state.entities.songs[id]);
-  songs = songs.filter((el) => el != null);
-  let albums = songs
-    .map((song) => {
-      if (song) return state.entities.albums[song.album_id];
-    })
-    .filter((album) => typeof album !== "undefined");
-  let artists = albums
-    .map((album) => {
-      if (album) return state.entities.artists[album.artist_id];
-    })
-    .filter((artist) => typeof artist !== "undefined");
-  let playlists = Object.values(state.entities.playlists);
-  
+const mapStateToProps = (state, ownProps) => {
+  let playlist = state.entities.playlists[ownProps.match.params.playlistId];
+  let playlistSongs;
+  let playlistSongIds = [];
+  let songs;
+  if (playlist) {
+    playlist = playlist.playlist;
+    playlistSongs = Object.values(state.entities.playlistSongs).filter(
+      (playlistSong) => {
+        return playlist.id === playlistSong.playlist_id;
+      }
+    );
+    playlistSongs.forEach((playlistSong) => {
+      playlistSongIds.push(playlistSong.song_id);
+    });
+    songs = Object.values(state.entities.songs);
+  }
+
   return {
-    playlist,
+    playlist: state.entities.playlists[ownProps.match.params.playlistId],
     songs,
-    albums,
-    artists,
-    playlists,
-    currentUser,
-    owner,
+    albums: state.entities.albums,
+    playlistId: ownProps.match.params.playlistId,
+    artists: state.entities.artists,
+    playlistSongs: state.entities.playlistSongs,
+    currentUser: state.entities.users[state.session.id],
   };
 };
 
-const mdp = (dispatch) => {
+const mapDispatchToProps = (dispatch, ownProps) => {
   return {
-    fetchPlaylist: (id) => dispatch(fetchPlaylist(id)),
-    deletePlaylist: (id) => dispatch(deletePlaylist(id)),
-    fetchUser: (id) => dispatch(fetchUser(id)),
-    updatePlaylist: (formData, playlistId) =>
-      dispatch(updatePlaylist(formData, playlistId)),
+    fetchPlaylist: (playlistId) => dispatch(fetchPlaylist(playlistId)),
+    updatePlaylist: (id) => dispatch(updatePlaylist(id)),
+    openModal: (openModalProps) => dispatch(openModal(openModalProps)),
+    removeSongFromPlaylist: (songPlaylistId) =>
+      dispatch(removeSongFromPlaylist(songPlaylistId)),
+    deletePlaylist: (playlistId) => dispatch(deletePlaylist(playlistId)),
+    selectSong: (song) => dispatch(receiveSelectedSong(song)),
   };
 };
 
-export default withRouter(connect(msp, mdp)(PlaylistShow));
+export default connect(mapStateToProps, mapDispatchToProps)(PlaylistShow);

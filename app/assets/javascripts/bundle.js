@@ -1188,75 +1188,85 @@ var PlaylistIndex = /*#__PURE__*/function (_React$Component) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _actions_playlist_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../actions/playlist_actions */ "./frontend/actions/playlist_actions.js");
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
-/* harmony import */ var _playlist_show_page__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./playlist_show_page */ "./frontend/components/playlists/playlist_show_page.jsx");
-/* harmony import */ var _actions_user_actions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../actions/user_actions */ "./frontend/actions/user_actions.js");
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _playlist_show_page__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./playlist_show_page */ "./frontend/components/playlists/playlist_show_page.jsx");
+/* harmony import */ var _actions_playlist_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions/playlist_actions */ "./frontend/actions/playlist_actions.js");
 
 
 
 
+var mapStateToProps = function mapStateToProps(state, ownProps) {
+  var playlist = state.entities.playlists[ownProps.match.params.playlistId];
+  var playlistSongs;
+  var playlistSongIds = [];
+  var songs;
 
+  if (playlist) {
+    playlist = playlist.playlist;
+    playlistSongs = Object.values(state.entities.playlistSongs).filter(function (playlistSong) {
+      return playlist.id === playlistSong.playlist_id;
+    });
+    playlistSongs.forEach(function (playlistSong) {
+      playlistSongIds.push(playlistSong.song_id);
+    });
+    songs = Object.values(state.entities.songs);
+  }
 
-var msp = function msp(state, ownProps) {
-  var currentUser = state.entities.users[state.session.id];
-  var playlistId = ownProps.match.params.playlistId;
-  var playlist = state.entities.playlists[playlistId] || {
-    name: "",
-    song_ids: [],
-    user_id: 0
-  };
-  var owner;
-  owner = state.entities.users[playlist.user_id] || {
-    username: " "
-  };
-  var songs = playlist.song_ids.map(function (id) {
-    return state.entities.songs[id];
-  });
-  songs = songs.filter(function (el) {
-    return el != null;
-  });
-  var albums = songs.map(function (song) {
-    if (song) return state.entities.albums[song.album_id];
-  }).filter(function (album) {
-    return typeof album !== "undefined";
-  });
-  var artists = albums.map(function (album) {
-    if (album) return state.entities.artists[album.artist_id];
-  }).filter(function (artist) {
-    return typeof artist !== "undefined";
-  });
-  var playlists = Object.values(state.entities.playlists);
   return {
-    playlist: playlist,
+    playlist: state.entities.playlists[ownProps.match.params.playlistId],
     songs: songs,
-    albums: albums,
-    artists: artists,
-    playlists: playlists,
-    currentUser: currentUser,
-    owner: owner
+    albums: state.entities.albums,
+    playlistId: ownProps.match.params.playlistId,
+    artists: state.entities.artists,
+    playlistSongs: state.entities.playlistSongs,
+    currentUser: state.entities.users[state.session.id]
   };
 };
 
-var mdp = function mdp(dispatch) {
+var mapDispatchToProps = function mapDispatchToProps(dispatch, ownProps) {
   return {
-    fetchPlaylist: function fetchPlaylist(id) {
-      return dispatch(Object(_actions_playlist_actions__WEBPACK_IMPORTED_MODULE_0__["fetchPlaylist"])(id));
+    fetchPlaylist: function fetchPlaylist(playlistId) {
+      return dispatch(Object(_actions_playlist_actions__WEBPACK_IMPORTED_MODULE_2__["fetchPlaylist"])(playlistId));
     },
-    deletePlaylist: function deletePlaylist(id) {
-      return dispatch(Object(_actions_playlist_actions__WEBPACK_IMPORTED_MODULE_0__["deletePlaylist"])(id));
+    updatePlaylist: function updatePlaylist(id) {
+      return dispatch(Object(_actions_playlist_actions__WEBPACK_IMPORTED_MODULE_2__["updatePlaylist"])(id));
     },
-    fetchUser: function fetchUser(id) {
-      return dispatch(Object(_actions_user_actions__WEBPACK_IMPORTED_MODULE_4__["fetchUser"])(id));
+    openModal: function (_openModal) {
+      function openModal(_x) {
+        return _openModal.apply(this, arguments);
+      }
+
+      openModal.toString = function () {
+        return _openModal.toString();
+      };
+
+      return openModal;
+    }(function (openModalProps) {
+      return dispatch(openModal(openModalProps));
+    }),
+    removeSongFromPlaylist: function (_removeSongFromPlaylist) {
+      function removeSongFromPlaylist(_x2) {
+        return _removeSongFromPlaylist.apply(this, arguments);
+      }
+
+      removeSongFromPlaylist.toString = function () {
+        return _removeSongFromPlaylist.toString();
+      };
+
+      return removeSongFromPlaylist;
+    }(function (songPlaylistId) {
+      return dispatch(removeSongFromPlaylist(songPlaylistId));
+    }),
+    deletePlaylist: function deletePlaylist(playlistId) {
+      return dispatch(Object(_actions_playlist_actions__WEBPACK_IMPORTED_MODULE_2__["deletePlaylist"])(playlistId));
     },
-    updatePlaylist: function updatePlaylist(formData, playlistId) {
-      return dispatch(Object(_actions_playlist_actions__WEBPACK_IMPORTED_MODULE_0__["updatePlaylist"])(formData, playlistId));
+    selectSong: function selectSong(song) {
+      return dispatch(receiveSelectedSong(song));
     }
   };
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["withRouter"])(Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(msp, mdp)(_playlist_show_page__WEBPACK_IMPORTED_MODULE_3__["default"])));
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mapStateToProps, mapDispatchToProps)(_playlist_show_page__WEBPACK_IMPORTED_MODULE_1__["default"]));
 
 /***/ }),
 
