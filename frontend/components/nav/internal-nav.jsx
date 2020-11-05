@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import CreatePlaylist from "../playlists/create_playlist_modal";
+import CreatePlaylistContainer from "../playlists/create_playlist_container";
 import PlaylistIndex from "../playlists/playlist_index";
 
 class InternalNavbar extends React.Component {
@@ -22,12 +22,15 @@ class InternalNavbar extends React.Component {
     this.props.fetchPlaylists();
     // this.props.fetchArtists();
   }
+  componentWillMount() {
+    this.props.fetchPlaylists();
+  }
 
   render() {
     // debugger
     // const { playlists } = this.props;
-    const playlists = this.props.playlists ? this.props.playlists : []
-  
+    const playlists = this.props.playlists ? this.props.playlists : [];
+
     return (
       <div className="internal-nav-bar-container">
         <div className="internal-nav-bar-inner-container">
@@ -112,7 +115,7 @@ class InternalNavbar extends React.Component {
                 >
                   Create Playlist
                 </button>
-                <CreatePlaylist
+                <CreatePlaylistContainer
                   toggleModal={this.toggleModal}
                   show={this.state.isOpen}
                   onClick={this.toggleModal}

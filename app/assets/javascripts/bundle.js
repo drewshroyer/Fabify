@@ -497,7 +497,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
-/* harmony import */ var _playlists_create_playlist_modal__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../playlists/create_playlist_modal */ "./frontend/components/playlists/create_playlist_modal.jsx");
+/* harmony import */ var _playlists_create_playlist_container__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../playlists/create_playlist_container */ "./frontend/components/playlists/create_playlist_container.js");
 /* harmony import */ var _playlists_playlist_index__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../playlists/playlist_index */ "./frontend/components/playlists/playlist_index.jsx");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
@@ -557,6 +557,11 @@ var InternalNavbar = /*#__PURE__*/function (_React$Component) {
       // debugger
       // this.props.fetchSongs();
       this.props.fetchPlaylists(); // this.props.fetchArtists();
+    }
+  }, {
+    key: "componentWillMount",
+    value: function componentWillMount() {
+      this.props.fetchPlaylists();
     }
   }, {
     key: "render",
@@ -637,7 +642,7 @@ var InternalNavbar = /*#__PURE__*/function (_React$Component) {
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "open-create-playlist-modal",
         onClick: this.toggleModal
-      }, "Create Playlist"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_playlists_create_playlist_modal__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      }, "Create Playlist"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_playlists_create_playlist_container__WEBPACK_IMPORTED_MODULE_2__["default"], {
         toggleModal: this.toggleModal,
         show: this.state.isOpen,
         onClick: this.toggleModal
@@ -917,6 +922,44 @@ var PlayBar = /*#__PURE__*/function (_React$Component) {
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
 /* harmony default export */ __webpack_exports__["default"] = (PlayBar);
+
+/***/ }),
+
+/***/ "./frontend/components/playlists/create_playlist_container.js":
+/*!********************************************************************!*\
+  !*** ./frontend/components/playlists/create_playlist_container.js ***!
+  \********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _create_playlist_modal__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./create_playlist_modal */ "./frontend/components/playlists/create_playlist_modal.jsx");
+/* harmony import */ var _actions_playlist_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions/playlist_actions */ "./frontend/actions/playlist_actions.js");
+
+
+
+
+var mSTP = function mSTP(state) {
+  var currentUser = state.entities.users[state.session.id];
+  return {
+    playlist: {
+      name: ""
+    },
+    author_id: currentUser.id
+  };
+};
+
+var mDTP = function mDTP(dispatch) {
+  return {
+    createPlaylist: function createPlaylist(playlist) {
+      return dispatch(Object(_actions_playlist_actions__WEBPACK_IMPORTED_MODULE_2__["createPlaylist"])(playlist));
+    }
+  };
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mSTP, mDTP)(_create_playlist_modal__WEBPACK_IMPORTED_MODULE_1__["default"]));
 
 /***/ }),
 
