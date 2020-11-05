@@ -10,6 +10,7 @@ class CreatePlaylist extends React.Component {
       },
       isOpen: true,
     };
+
     this.handleClickforCancel = this.handleClickforCancel.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);

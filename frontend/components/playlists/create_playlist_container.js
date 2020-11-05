@@ -3,10 +3,12 @@ import CreatePlaylist from "./create_playlist_modal";
 import { createPlaylist } from "../../actions/playlist_actions";
 
 const mSTP = (state) => {
-  let currentUser = state.entities.users[state.session.id]
+  const currentUserId = state.session.id;
+  const currentUser = state.entities.users[currentUserId];
   return {
     playlist: { name: "" },
-    author_id: currentUser.id
+    acurrentUserId: currentUserId,
+    currentUser: currentUser,
   };
 };
 
