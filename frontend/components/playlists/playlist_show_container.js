@@ -43,7 +43,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     removeSongFromPlaylist: (songPlaylistId) =>
       dispatch(removeSongFromPlaylist(songPlaylistId)),
     deletePlaylist: (playlistId) => dispatch(deletePlaylist(playlistId)),
-    selectSong: (song) => dispatch(receiveSelectedSong(song)),
+    // selectSong: (song) => dispatch(receiveSelectedSong(song)),
   };
 };
 

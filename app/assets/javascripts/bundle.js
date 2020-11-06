@@ -1259,10 +1259,8 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch, ownProps) {
     }),
     deletePlaylist: function deletePlaylist(playlistId) {
       return dispatch(Object(_actions_playlist_actions__WEBPACK_IMPORTED_MODULE_2__["deletePlaylist"])(playlistId));
-    },
-    selectSong: function selectSong(song) {
-      return dispatch(receiveSelectedSong(song));
-    }
+    } // selectSong: (song) => dispatch(receiveSelectedSong(song)),
+
   };
 };
 
