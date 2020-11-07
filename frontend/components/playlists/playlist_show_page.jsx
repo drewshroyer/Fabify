@@ -1,5 +1,4 @@
 import React from "react";
-import { connect } from "react-redux";
 import InternalNavbarContainer from "../nav/internal-nav_container";
 import PlayBarContainer from "../playbar/play-bar-container";
 import { logout } from "../../actions/session_actions";

@@ -10,8 +10,9 @@ class PlaylistIndex extends React.Component {
         const { playlist } = this.props;
         return (
           <div className="nav-bar-playlist-list">
-            <Link to={`/playlists/${playlist.id}`}></Link>
-            <div className="nav-bar-playlist-name">{playlist.name}</div>
+            <Link to={`/playlists/${playlist.id}`}>
+              <div className="nav-bar-playlist-name">{playlist.name}</div>
+            </Link>
           </div>
         );
     }
