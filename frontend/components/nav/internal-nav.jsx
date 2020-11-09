@@ -132,14 +132,13 @@ class InternalNavbar extends React.Component {
             </div>
             <div className="internal-liked-songs-link">
               <img
+                className="liked-songs-nav-img"
                 aria-hidden="false"
                 draggable="false"
                 loading="eager"
                 src="https://t.scdn.co/images/3099b3803ad9496896c43f22fe9be8c4.png"
                 alt="Liked Songs"
-                class="_64acb0e26fe0d9dff68a0e9725b2a920-scss _4c838ef3d2b6da1a61669046bbfae3d1-scss"
-                srcset="https://t.scdn.co/images/3099b3803ad9496896c43f22fe9be8c4.png 150w, https://t.scdn.co/images/3099b3803ad9496896c43f22fe9be8c4.png 300w"
-                sizes="(min-width: 1280px) 30px, 192px"
+                sizes="(min-width: 120px) 30px, 30px"
               ></img>
               <Link to={`/likes`} className="internal-nav-link">
                 Liked Songs

@@ -660,14 +660,13 @@ var InternalNavbar = /*#__PURE__*/function (_React$Component) {
       }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "internal-liked-songs-link"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        className: "liked-songs-nav-img",
         "aria-hidden": "false",
         draggable: "false",
         loading: "eager",
         src: "https://t.scdn.co/images/3099b3803ad9496896c43f22fe9be8c4.png",
         alt: "Liked Songs",
-        "class": "_64acb0e26fe0d9dff68a0e9725b2a920-scss _4c838ef3d2b6da1a61669046bbfae3d1-scss",
-        srcset: "https://t.scdn.co/images/3099b3803ad9496896c43f22fe9be8c4.png 150w, https://t.scdn.co/images/3099b3803ad9496896c43f22fe9be8c4.png 300w",
-        sizes: "(min-width: 1280px) 30px, 192px"
+        sizes: "(min-width: 120px) 30px, 30px"
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         to: "/likes",
         className: "internal-nav-link"
@@ -1236,22 +1235,20 @@ var PlaylistShow = /*#__PURE__*/function (_React$Component) {
     key: "componentDidMount",
     value: function componentDidMount() {
       this.props.fetchSongs();
-      this.props.fetchPlaylists(); // this.props.fetchArtists();
+      var playlistId = this.props.match.params.playlistId;
+      this.props.fetchPlaylist(playlistId); // this.props.fetchArtists();
     }
   }, {
     key: "render",
     value: function render() {
       // debugger
-      var _this$props = this.props,
-          songs = _this$props.songs,
-          artists = _this$props.artists,
-          playlists = _this$props.playlists;
+      var playlist = this.props.playlist;
       if (!songs) return null;
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "webplayer-body-container"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "shortcuts-keyword-webplayer"
-      }, "TEST TEST"));
+      }, playlist.name));
     }
   }]);
 
@@ -1407,13 +1404,12 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var mSTP = function mSTP(state) {
-  var currentUserId = state.session.id;
-  var currentUser = state.entities.users[currentUserId];
+var mSTP = function mSTP(state, ownProps) {
+  var currentUser = state.entities.users[state.session.id];
+  var playlistId = ownProps.match.params.playlistId;
+  var playlist = state.entities.playlists[playlistId];
   return {
-    playlists: Object.values(state.entities.playlists),
-    songs: Object.values(state.entities.songs),
-    artists: state.entities.artists,
+    playlist: playlist,
     currentUserId: currentUserId,
     currentUser: currentUser
   };
@@ -1421,6 +1417,19 @@ var mSTP = function mSTP(state) {
 
 var mDTP = function mDTP(dispatch) {
   return {
+    fetchPlaylist: function (_fetchPlaylist) {
+      function fetchPlaylist(_x) {
+        return _fetchPlaylist.apply(this, arguments);
+      }
+
+      fetchPlaylist.toString = function () {
+        return _fetchPlaylist.toString();
+      };
+
+      return fetchPlaylist;
+    }(function (id) {
+      return dispatch(fetchPlaylist(id));
+    }),
     fetchUser: function fetchUser(id) {
       return dispatch(Object(_actions_user_actions__WEBPACK_IMPORTED_MODULE_4__["fetchUser"])(id));
     },

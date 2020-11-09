@@ -8,17 +8,18 @@ class PlaylistShow extends React.Component {
 
   componentDidMount() {
     this.props.fetchSongs();
-    this.props.fetchPlaylists();
+    let playlistId = this.props.match.params.playlistId;        
+    this.props.fetchPlaylist(playlistId);
     // this.props.fetchArtists();
   }
 
   render() {
     // debugger
-    const { songs, artists, playlists } = this.props;
+    const { playlist } = this.props;
     if (!songs) return null;
     return (
       <div className="webplayer-body-container">
-        <div className="shortcuts-keyword-webplayer">TEST TEST</div>
+        <div className="shortcuts-keyword-webplayer">{playlist.name}</div>
         {/* <ul className="webplayer-music-tile-line-item">
           {songs.map((song) => (
             <PlaylistSongIndexItem

@@ -83,12 +83,12 @@
     text-transform: none;
     margin-left: 20px;
 }
-/* .internal-nav-link:hover {
-      color: white;
+
+.liked-songs-nav-img {
+    height: 28px;
+    width: auto;
 }
-.internal-nav-icon:hover {
-    color: white;
-} */
+
 .internal-nav-home-icon {
     padding-right: 20px;
 }
