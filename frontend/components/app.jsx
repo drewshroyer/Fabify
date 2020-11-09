@@ -3,7 +3,7 @@ import { Route, Switch, Link } from "react-router-dom";
 
 import SignUpFormContainer from "./session_form/signup_form_container";
 import LogInFormContainer from "./session_form/login_form_container";
-import PlaylistShow from "./playlists/playlist_show_page";
+import PlaylistShow from "./playlists/playlist_show_body";
 import Splash from "./splash/splash_form";
 import WebPlayer from './webplayer/webplayer';
 import Search from "./webplayer/search";

@@ -2,12 +2,11 @@ import React from "react";
 import InternalNavbarContainer from "../nav/internal-nav_container";
 import PlayBarContainer from "../playbar/play-bar-container";
 import { logout } from "../../actions/session_actions";
+import PlaylistShowContainer from "./playlist_show_container";
 
-class PlaylistShow extends React.Component {
+class PlaylistShowBody extends React.Component {
   constructor(props) {
-    // debugger
     super(props);
-    // this.handleLogout = this.handleLogout.bind(this);
     this.togglePlayPause = this.togglePlayPause.bind(this);
     this.state = {
       playingSong: false,
@@ -23,7 +22,6 @@ class PlaylistShow extends React.Component {
     if (this.state.selectedSong === id) {
       this.setState({ playingSong: !this.state.playingSong });
     } else {
-      // this where we set a new song
       this.setState({
         selectedSong: id,
         playingSong: false,
@@ -53,7 +51,9 @@ class PlaylistShow extends React.Component {
               Log out
             </button>
           </div>
-          <div className="webplayer-body-container"></div>
+          <div className="webplayer-body-container">
+            <PlaylistShowContainer/>
+          </div>
         </div>
         <PlayBarContainer
           togglePlayPause={this.togglePlayPause}
@@ -67,4 +67,4 @@ class PlaylistShow extends React.Component {
   }
 }
 
-export default PlaylistShow;
+export default PlaylistShowBody;
