@@ -588,9 +588,10 @@ var InternalNavbar = /*#__PURE__*/function (_React$Component) {
       })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "internal-nav-column"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "internal-home-link"
+        className: "internal-home-link",
+        id: "hover-white"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
-        className: "internal-nav-icon",
+        className: "internal-nav-home-icon",
         viewBox: "0 0 512 512",
         width: "24",
         height: "24",
@@ -600,9 +601,10 @@ var InternalNavbar = /*#__PURE__*/function (_React$Component) {
         fill: "currentColor"
       })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         to: "/webplayer",
-        className: "internal-nav-link"
+        id: "hover-white"
       }, "Home", " ")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "internal-search-link"
+        className: "internal-search-link",
+        id: "hover-white"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
         className: "internal-nav-icon",
         viewBox: "0 0 512 512",
@@ -615,9 +617,11 @@ var InternalNavbar = /*#__PURE__*/function (_React$Component) {
         fillRule: "evenodd"
       })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         to: "/search",
-        className: "internal-nav-link"
+        className: "internal-nav-link",
+        id: "hover-white"
       }, "Search")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "internal-library-link"
+        className: "internal-library-link",
+        id: "hover-white"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
         className: "internal-nav-icon",
         viewBox: "0 0 512 512",
@@ -629,7 +633,8 @@ var InternalNavbar = /*#__PURE__*/function (_React$Component) {
         fill: "currentColor"
       })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         to: "/library",
-        className: "internal-nav-link"
+        className: "internal-nav-link",
+        id: "hover-white"
       }, "Your Library")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "playlist-header"
       }, "PLAYLISTS"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {

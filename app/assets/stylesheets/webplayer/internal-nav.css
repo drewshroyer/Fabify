@@ -32,6 +32,9 @@
     color: white;
 }
 
+
+
+
 .internal-search-link {
   color: #B3B3B3;
   padding-right: 80px ;  
@@ -86,7 +89,9 @@
 .internal-nav-icon:hover {
     color: white;
 } */
-
+.internal-nav-home-icon {
+    padding-right: 20px;
+}
 .internal-nav-column {
     position: absolute;
     top: 9%;
@@ -119,6 +124,35 @@
     align-items: center;
     padding-top: 8px;
     padding-bottom: 8px;
+}
+
+.internal-create-playlist-link:hover {
+    color: white;
+}
+#hover-white {
+    transition: .5s;
+}
+
+#hover-white-home {
+    color: white;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 16px;
+    letter-spacing: normal;
+    text-transform: none;
+    margin-left: 20px;
+}
+
+#hover-white:hover {
+     color: white;
+}
+
+.internal-liked-songs-link:hover {
+    color: white;
+}
+
+.open-create-playlist-modal:hover {
+    color: white;
 }
 
 .internal-liked-songs-link {

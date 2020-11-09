@@ -42,9 +42,9 @@ class InternalNavbar extends React.Component {
             ></img>
           </Link>
           <div className="internal-nav-column">
-            <div className="internal-home-link">
+            <div className="internal-home-link" id="hover-white">
               <svg
-                className="internal-nav-icon"
+                className="internal-nav-home-icon"
                 viewBox="0 0 512 512"
                 width="24"
                 height="24"
@@ -55,11 +55,11 @@ class InternalNavbar extends React.Component {
                   fill="currentColor"
                 ></path>
               </svg>
-              <Link to={`/webplayer`} className="internal-nav-link">
+              <Link to={`/webplayer`} id="hover-white">
                 Home{" "}
               </Link>
             </div>
-            <div className="internal-search-link">
+            <div className="internal-search-link" id="hover-white">
               <svg
                 className="internal-nav-icon"
                 viewBox="0 0 512 512"
@@ -73,11 +73,15 @@ class InternalNavbar extends React.Component {
                   fillRule="evenodd"
                 ></path>
               </svg>
-              <Link to={`/search`} className="internal-nav-link">
+              <Link
+                to={`/search`}
+                className="internal-nav-link"
+                id="hover-white"
+              >
                 Search
               </Link>
             </div>
-            <div className="internal-library-link">
+            <div className="internal-library-link" id="hover-white">
               <svg
                 className="internal-nav-icon"
                 viewBox="0 0 512 512"
@@ -90,7 +94,11 @@ class InternalNavbar extends React.Component {
                   fill="currentColor"
                 ></path>
               </svg>
-              <Link to={`/library`} className="internal-nav-link">
+              <Link
+                to={`/library`}
+                className="internal-nav-link"
+                id="hover-white"
+              >
                 Your Library
               </Link>
             </div>
@@ -123,7 +131,16 @@ class InternalNavbar extends React.Component {
               </div>
             </div>
             <div className="internal-liked-songs-link">
-              <img aria-hidden="false" draggable="false" loading="eager" src="https://t.scdn.co/images/3099b3803ad9496896c43f22fe9be8c4.png" alt="Liked Songs" class="_64acb0e26fe0d9dff68a0e9725b2a920-scss _4c838ef3d2b6da1a61669046bbfae3d1-scss" srcset="https://t.scdn.co/images/3099b3803ad9496896c43f22fe9be8c4.png 150w, https://t.scdn.co/images/3099b3803ad9496896c43f22fe9be8c4.png 300w" sizes="(min-width: 1280px) 30px, 192px"></img>
+              <img
+                aria-hidden="false"
+                draggable="false"
+                loading="eager"
+                src="https://t.scdn.co/images/3099b3803ad9496896c43f22fe9be8c4.png"
+                alt="Liked Songs"
+                class="_64acb0e26fe0d9dff68a0e9725b2a920-scss _4c838ef3d2b6da1a61669046bbfae3d1-scss"
+                srcset="https://t.scdn.co/images/3099b3803ad9496896c43f22fe9be8c4.png 150w, https://t.scdn.co/images/3099b3803ad9496896c43f22fe9be8c4.png 300w"
+                sizes="(min-width: 1280px) 30px, 192px"
+              ></img>
               <Link to={`/likes`} className="internal-nav-link">
                 Liked Songs
               </Link>
