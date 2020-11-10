@@ -1038,8 +1038,7 @@ var CreatePlaylist = /*#__PURE__*/function (_React$Component) {
     value: function handleSubmit(e) {
       e.preventDefault(); // console.log(this.state.playlist);
 
-      this.props.createPlaylist(this.state.playlist);
-      this.props.toggleModal();
+      this.props.createPlaylist(this.state).then(this.props.toggleModal());
     }
   }, {
     key: "handleChange",
