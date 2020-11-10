@@ -16,7 +16,7 @@ class PlaylistShow extends React.Component {
   render() {
     // debugger
     const { playlist } = this.props;
-    if (!songs) return null;
+    if (!playlist) return null;
     return (
       <div className="webplayer-body-container">
         <div className="shortcuts-keyword-webplayer">{playlist.name}</div>

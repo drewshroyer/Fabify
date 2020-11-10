@@ -1243,7 +1243,7 @@ var PlaylistShow = /*#__PURE__*/function (_React$Component) {
     value: function render() {
       // debugger
       var playlist = this.props.playlist;
-      if (!songs) return null;
+      if (!playlist) return null;
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "webplayer-body-container"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
