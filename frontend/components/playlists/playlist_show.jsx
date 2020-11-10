@@ -4,19 +4,28 @@ import PlaylistSongIndexItem from "../playlists/playlist_index";
 class PlaylistShow extends React.Component {
   constructor(props) {
     super(props);
+    this.deleteThisPlaylist = this.deleteThisPlaylist.bind(this);
   }
 
   componentDidMount() {
     this.props.fetchSongs();
-    let playlistId = this.props.match.params.playlistId;        
+    let playlistId = this.props.match.params.playlistId;
     this.props.fetchPlaylist(playlistId);
     // this.props.fetchArtists();
   }
 
+  deleteThisPlaylist() {
+    this.props
+      .deletePlaylist(this.props.playlistId)
+      .then(() => this.props.history.push("/home"));
+  }
+
   render() {
     // debugger
-    const { playlist } = this.props;
-    if (!playlist) return null;
+     if (!this.props.playlist || !this.props.songs || !this.props.albums) {
+       return null;
+     }
+     
     return (
       <div className="webplayer-body-container">
         <div className="shortcuts-keyword-webplayer">{playlist.name}</div>

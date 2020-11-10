@@ -1222,9 +1222,13 @@ var PlaylistShow = /*#__PURE__*/function (_React$Component) {
   var _super = _createSuper(PlaylistShow);
 
   function PlaylistShow(props) {
+    var _this;
+
     _classCallCheck(this, PlaylistShow);
 
-    return _super.call(this, props);
+    _this = _super.call(this, props);
+    _this.deleteThisPlaylist = _this.deleteThisPlaylist.bind(_assertThisInitialized(_this));
+    return _this;
   }
 
   _createClass(PlaylistShow, [{
@@ -1235,11 +1239,22 @@ var PlaylistShow = /*#__PURE__*/function (_React$Component) {
       this.props.fetchPlaylist(playlistId); // this.props.fetchArtists();
     }
   }, {
+    key: "deleteThisPlaylist",
+    value: function deleteThisPlaylist() {
+      var _this2 = this;
+
+      this.props.deletePlaylist(this.props.playlistId).then(function () {
+        return _this2.props.history.push("/home");
+      });
+    }
+  }, {
     key: "render",
     value: function render() {
       // debugger
-      var playlist = this.props.playlist;
-      if (!playlist) return null;
+      if (!this.props.playlist || !this.props.songs || !this.props.albums) {
+        return null;
+      }
+
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "webplayer-body-container"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1388,10 +1403,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var _playlist_show__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./playlist_show */ "./frontend/components/playlists/playlist_show.jsx");
 /* harmony import */ var _actions_song_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions/song_actions */ "./frontend/actions/song_actions.js");
-/* harmony import */ var _actions_playlist_actions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../actions/playlist_actions */ "./frontend/actions/playlist_actions.js");
-/* harmony import */ var _actions_user_actions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../actions/user_actions */ "./frontend/actions/user_actions.js");
-/* harmony import */ var _actions_artist_actions__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../actions/artist_actions */ "./frontend/actions/artist_actions.js");
+/* harmony import */ var _actions_user_actions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../actions/user_actions */ "./frontend/actions/user_actions.js");
+/* harmony import */ var _actions_artist_actions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../actions/artist_actions */ "./frontend/actions/artist_actions.js");
+/* harmony import */ var _actions_playlist_actions__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../actions/playlist_actions */ "./frontend/actions/playlist_actions.js");
 /* harmony import */ var _actions_session_actions__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../actions/session_actions */ "./frontend/actions/session_actions.js");
+
 
 
 
@@ -1427,16 +1443,19 @@ var mDTP = function mDTP(dispatch) {
       return dispatch(fetchPlaylist(id));
     }),
     fetchUser: function fetchUser(id) {
-      return dispatch(Object(_actions_user_actions__WEBPACK_IMPORTED_MODULE_4__["fetchUser"])(id));
+      return dispatch(Object(_actions_user_actions__WEBPACK_IMPORTED_MODULE_3__["fetchUser"])(id));
     },
-    fetchPlaylists: function fetchPlaylists() {
-      return dispatch(Object(_actions_playlist_actions__WEBPACK_IMPORTED_MODULE_3__["fetchPlaylists"])());
+    deletePlaylist: function deletePlaylist(id) {
+      return dispatch(Object(_actions_playlist_actions__WEBPACK_IMPORTED_MODULE_5__["deletePlaylist"])(id));
+    },
+    updatePlaylist: function updatePlaylist(id) {
+      return dispatch(Object(_actions_playlist_actions__WEBPACK_IMPORTED_MODULE_5__["updatePlaylist"])(id));
     },
     fetchSongs: function fetchSongs() {
       return dispatch(Object(_actions_song_actions__WEBPACK_IMPORTED_MODULE_2__["fetchSongs"])());
     },
     fetchArtists: function fetchArtists() {
-      return dispatch(Object(_actions_artist_actions__WEBPACK_IMPORTED_MODULE_5__["fetchArtists"])());
+      return dispatch(Object(_actions_artist_actions__WEBPACK_IMPORTED_MODULE_4__["fetchArtists"])());
     },
     logout: function logout() {
       return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_6__["logout"])());
