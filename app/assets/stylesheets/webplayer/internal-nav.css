@@ -72,6 +72,7 @@
     margin-top: 0%;
     padding-top: 8px;
     padding-bottom: 8px;
+    margin-left: -5px;
 }
 
 .internal-nav-link {
@@ -85,8 +86,23 @@
 }
 
 .liked-songs-nav-img {
-    height: 28px;
+    height: 32px;
     width: auto;
+}
+
+.plus-sign-create-playlist-button {
+    background: #B3B3B3;
+    width: 32px;
+    height: 32px;
+    /* padding: 4px; */
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    fill: #000;
+    transition: .5s;
+}
+
+.plus-sign-create-playlist-button:hover {
+    color: white;
 }
 
 .internal-nav-home-icon {
