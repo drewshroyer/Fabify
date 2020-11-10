@@ -17,6 +17,24 @@
     height: 60px;
     width: 100%;
 }
+.webplayer-top-shortcuts-see-all {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: baseline;
+    margin-top: 30px;
+    margin-left: 50px;
+}
+
+.see-all-playlists-keyword-webplayer {
+    display: flex;
+    color: #b3b3b3;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 16px;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+}
 
 .webplayer-logout-button {
     font-family: Proxima Nova Alt;
@@ -46,8 +64,7 @@
 }
 
 .shortcuts-keyword-webplayer {
-    margin-top: 30px;
-    margin-left: 50px;
+    display: flex;
     color: #ffffff;
     font-size: 24px;
     font-weight: 700;

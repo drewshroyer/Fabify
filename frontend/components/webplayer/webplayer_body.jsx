@@ -19,7 +19,10 @@ class WebPlayerBody extends React.Component {
     if(!songs) return null;
     return (
       <div className="webplayer-body-container">
+        <div className="webplayer-top-shortcuts-see-all">
         <div className="shortcuts-keyword-webplayer">Shortcuts</div>
+        <div className="see-all-playlists-keyword-webplayer">See All Playlists</div>
+        </div>
         <ul className="webplayer-music-tile-line-item">
           {songs.map((song) => (
             <SongIndexItem
