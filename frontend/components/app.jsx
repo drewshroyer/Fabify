@@ -12,6 +12,7 @@ import { AuthRoute, ProtectedRoute } from "../util/route_util";
 import LikedSongs from "./webplayer/liked_songs"
 import SessionForm from "./session_form/login_form";
 import Navbar from "./splash/nav_bar";
+import PlaylistShowBody from "./playlists/playlist_show_body";
 
 const App = () => (
   <div>
@@ -25,7 +26,7 @@ const App = () => (
     <ProtectedRoute
       exact
       path="/playlists/:playlistId"
-      component={PlaylistShow}
+      component={PlaylistShowBody}
     />
   </div>
 );

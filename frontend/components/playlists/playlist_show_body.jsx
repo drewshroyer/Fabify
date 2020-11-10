@@ -1,7 +1,6 @@
 import React from "react";
 import InternalNavbarContainer from "../nav/internal-nav_container";
 import PlayBarContainer from "../playbar/play-bar-container";
-import { logout } from "../../actions/session_actions";
 import PlaylistShowContainer from "./playlist_show_container";
 
 class PlaylistShowBody extends React.Component {
@@ -52,7 +51,7 @@ class PlaylistShowBody extends React.Component {
             </button>
           </div>
           <div className="webplayer-body-container">
-            <PlaylistShowContainer/>
+            {/* <PlaylistShowContainer/> */}
           </div>
         </div>
         <PlayBarContainer
