@@ -13,6 +13,15 @@ const mSTP = (state, ownProps) => {
           state.entities.playlists[ownProps.match.params.playlistId];
     if (playlist) {
         playlist = playlist.playlist;
+        playlistSongs = Object.values(state.entities.playlistSongs).filter(
+          (playlistSong) => {
+            return playlist.id === playlistSong.playlist_id;
+          }
+        );
+        playlistSongs.forEach((playlistSong) => {
+          playlistSongIds.push(playlistSong.song_id);
+        });
+        songs = Object.values(state.entities.songs);
     }
 
   return {

@@ -1372,7 +1372,7 @@ var PlaylistShowBody = /*#__PURE__*/function (_React$Component) {
         className: "webplayer-logout-button"
       }, "Log out")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "webplayer-body-container"
-      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_playbar_play_bar_container__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_playlist_show_container__WEBPACK_IMPORTED_MODULE_3__["default"], null))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_playbar_play_bar_container__WEBPACK_IMPORTED_MODULE_2__["default"], {
         togglePlayPause: this.togglePlayPause,
         selectedSong: this.state.selectedSong,
         name: this.state.name,
@@ -1420,6 +1420,13 @@ var mSTP = function mSTP(state, ownProps) {
 
   if (playlist) {
     playlist = playlist.playlist;
+    playlistSongs = Object.values(state.entities.playlistSongs).filter(function (playlistSong) {
+      return playlist.id === playlistSong.playlist_id;
+    });
+    playlistSongs.forEach(function (playlistSong) {
+      playlistSongIds.push(playlistSong.song_id);
+    });
+    songs = Object.values(state.entities.songs);
   }
 
   return {

@@ -51,7 +51,7 @@ class PlaylistShowBody extends React.Component {
             </button>
           </div>
           <div className="webplayer-body-container">
-            {/* <PlaylistShowContainer/> */}
+            <PlaylistShowContainer/>
           </div>
         </div>
         <PlayBarContainer
