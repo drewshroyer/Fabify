@@ -2706,6 +2706,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _song_Index_Item__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./song_Index_Item */ "./frontend/components/webplayer/song_Index_Item.jsx");
 /* harmony import */ var _playlists_playlist_index__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../playlists/playlist_index */ "./frontend/components/playlists/playlist_index.jsx");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -2727,6 +2728,7 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
 
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
 
 
 
@@ -2768,7 +2770,9 @@ var WebPlayerBody = /*#__PURE__*/function (_React$Component) {
         className: "shortcuts-keyword-webplayer"
       }, "Shortcuts"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "see-all-playlists-keyword-webplayer"
-      }, "See All Playlists")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["Link"], {
+        to: "/playlists"
+      }, "See All"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
         className: "webplayer-music-tile-line-item"
       }, songs.map(function (song) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_song_Index_Item__WEBPACK_IMPORTED_MODULE_1__["default"], {
@@ -2777,9 +2781,7 @@ var WebPlayerBody = /*#__PURE__*/function (_React$Component) {
           key: song.id,
           togglePlayPause: _this.props.togglePlayPause
         });
-      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
-        className: "webplayer-music-tile-line-item"
-      }));
+      })));
     }
   }]);
 

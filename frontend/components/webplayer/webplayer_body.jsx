@@ -1,6 +1,7 @@
 import React from "react";
 import SongIndexItem from "./song_Index_Item";
-import PlaylistIndex from "../playlists/playlist_index"
+import PlaylistIndex from "../playlists/playlist_index";
+import { Link } from "react-router-dom";
 
 class WebPlayerBody extends React.Component {
   constructor(props) {
@@ -20,8 +21,10 @@ class WebPlayerBody extends React.Component {
     return (
       <div className="webplayer-body-container">
         <div className="webplayer-top-shortcuts-see-all">
-        <div className="shortcuts-keyword-webplayer">Shortcuts</div>
-        <div className="see-all-playlists-keyword-webplayer">See All Playlists</div>
+          <div className="shortcuts-keyword-webplayer">Shortcuts</div>
+          <div className="see-all-playlists-keyword-webplayer">
+            <Link to="/playlists">See All</Link>
+          </div>
         </div>
         <ul className="webplayer-music-tile-line-item">
           {songs.map((song) => (
@@ -32,11 +35,6 @@ class WebPlayerBody extends React.Component {
               togglePlayPause={this.props.togglePlayPause}
             />
           ))}
-        </ul>
-        <ul className="webplayer-music-tile-line-item">
-          {/* {playlists.map((playlist) => (
-            <PlaylistIndex playlist={playlist} key={playlist.id} />
-          ))} */}
         </ul>
       </div>
     );
