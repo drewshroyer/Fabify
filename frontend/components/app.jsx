@@ -19,7 +19,7 @@ const App = () => (
     <Route exact path="/" component={Splash} />
     <AuthRoute exact path="/login" component={LogInFormContainer} />
     <AuthRoute exact path="/signup" component={SignUpFormContainer} />
-    <ProtectedRoute exact path="/webplayer" component={WebPlayer} />
+    <ProtectedRoute exact path="/webplayer"  component={WebPlayer} />
     <ProtectedRoute exact path="/search" component={Search} />
     <ProtectedRoute exact path="/library" component={Library} />
     <ProtectedRoute exact path="/likes" component={LikedSongs} />
