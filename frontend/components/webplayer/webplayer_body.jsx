@@ -1,6 +1,5 @@
 import React from "react";
 import SongIndexItem from "./song_Index_Item";
-import PlaylistIndex from "../playlists/playlist_index";
 import { Link } from "react-router-dom";
 
 class WebPlayerBody extends React.Component {
@@ -23,7 +22,7 @@ class WebPlayerBody extends React.Component {
         <div className="webplayer-top-shortcuts-see-all">
           <div className="shortcuts-keyword-webplayer">Shortcuts</div>
           <div className="see-all-playlists-keyword-webplayer">
-            <Link to="/playlists">See All</Link>
+            <Link to="/playlists/1">See All</Link>
           </div>
         </div>
         <ul className="webplayer-music-tile-line-item">

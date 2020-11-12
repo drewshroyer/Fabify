@@ -1,0 +1,66 @@
+.webplayer-music-tile-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+.playlist-music-tile {
+    display: flex;
+    flex-direction: row;
+    height: 60px;
+    width: 100%;
+    border-bottom: 1px solid #b3b3b3;
+    color: white;
+}
+
+.playlist-music-tile-line-item {
+  margin: 5px;
+}
+
+.playlist-music-tile-photo {
+    height: 40px;
+    width: 40px;
+    margin-right: 16px;
+}
+
+.playlist-music-tile-name {
+    width: 200px;
+}
+
+.playlist-music-tile-artist {
+    width: 200px;
+}
+
+.playlist-music-tile-audio {
+ display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.playlist-music-tile-audio-file {
+display: none;
+}
+
+.playlist-music-tile-play-button {
+display: none;
+    width: 30px;
+    width: 30px;
+}
+
+.playlist-music-tile:hover > .playlist-music-tile-audio > .playlist-music-tile-play-button {
+    display: block;
+}
+
+.playlist-music-tile:hover > .playlist-music-tile-audio {
+  left: 0;
+  height: 40px;
+  width: 40px;
+  background-color: #1eba54;
+  color: #1eba54;
+  border-radius: 50%;
+  position: absolute;
+  bottom:  17px;
+  z-index: 2;
+  /* opacity: 1; */
+  box-shadow: 0px 0px 5px 0px #131313;
+}

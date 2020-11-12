@@ -1,5 +1,5 @@
 import React from "react";
-import PlaylistSongIndexItem from "../playlists/playlist_index";
+import PlaylistSongIndexItem from "../playlists/playlist_song_index";
 
 class PlaylistShow extends React.Component {
   constructor(props) {
@@ -7,24 +7,25 @@ class PlaylistShow extends React.Component {
     // this.deleteThisPlaylist = this.deleteThisPlaylist.bind(this);
   }
 
-//   componentDidMount() {
-//     // this.props.fetchSongs();
-//     // let playlistId = this.props.match.params.playlistId;
-//     this.props.fetchPlaylist(this.props.playlistId);
-//     // this.props.fetchArtists();
-//   }
+  componentDidMount() {
+    this.props.fetchSongs();
+    this.props.fetchPlaylists();
+    // this.props.fetchArtists();
+  }
 
-//   deleteCurrentPlaylist() {
-//     this.props
-//       .deletePlaylist(this.props.playlistId)
-//       .then(() => this.props.history.push("/webplayer"));
-//   }
+  //   deleteCurrentPlaylist() {
+  //     this.props
+  //       .deletePlaylist(this.props.playlistId)
+  //       .then(() => this.props.history.push("/webplayer"));
+  //   }
 
   render() {
     // debugger
     //  if (!this.props.playlist || !this.props.songs || !this.props.albums) {
     //    return null;
     //  }
+    const { songs, artists, playlists } = this.props;
+    if (!songs) return null;
 
     return (
       <div className="playlist-show-container">
@@ -37,8 +38,8 @@ class PlaylistShow extends React.Component {
           <div className="playlist-show-description">
             Brand new music from Sam Smith, Miley Cyrus, 070 Shake, and more!
           </div>
-
-          {/* <ul className="webplayer-music-tile-line-item">
+        </div>
+        <ul className="playlist-music-tile-line-item">
           {songs.map((song) => (
             <PlaylistSongIndexItem
               song={song}
@@ -47,8 +48,7 @@ class PlaylistShow extends React.Component {
               togglePlayPause={this.props.togglePlayPause}
             />
           ))}
-        </ul> */}
-        </div>
+        </ul>
       </div>
     );
   }
