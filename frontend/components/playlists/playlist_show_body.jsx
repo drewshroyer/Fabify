@@ -2,6 +2,8 @@ import React from "react";
 import InternalNavbarContainer from "../nav/internal-nav_container";
 import PlayBarContainer from "../playbar/play-bar-container";
 import PlaylistShowContainer from "./playlist_show_container";
+import PlaylistShow from "./playlist_show";
+
 
 class PlaylistShowBody extends React.Component {
   constructor(props) {
@@ -51,7 +53,7 @@ class PlaylistShowBody extends React.Component {
             </button>
           </div>
           <div className="webplayer-body-container">
-            <PlaylistShowContainer/>
+            <PlaylistShow/>
           </div>
         </div>
         <PlayBarContainer

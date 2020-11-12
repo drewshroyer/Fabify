@@ -4,21 +4,21 @@ import PlaylistSongIndexItem from "../playlists/playlist_index";
 class PlaylistShow extends React.Component {
   constructor(props) {
     super(props);
-    this.deleteThisPlaylist = this.deleteThisPlaylist.bind(this);
+    // this.deleteThisPlaylist = this.deleteThisPlaylist.bind(this);
   }
 
-  componentDidMount() {
-    // this.props.fetchSongs();
-    // let playlistId = this.props.match.params.playlistId;
-    this.props.fetchPlaylist(this.props.playlistId);
-    // this.props.fetchArtists();
-  }
+//   componentDidMount() {
+//     // this.props.fetchSongs();
+//     // let playlistId = this.props.match.params.playlistId;
+//     this.props.fetchPlaylist(this.props.playlistId);
+//     // this.props.fetchArtists();
+//   }
 
-  deleteCurrentPlaylist() {
-    this.props
-      .deletePlaylist(this.props.playlistId)
-      .then(() => this.props.history.push("/webplayer"));
-  }
+//   deleteCurrentPlaylist() {
+//     this.props
+//       .deletePlaylist(this.props.playlistId)
+//       .then(() => this.props.history.push("/webplayer"));
+//   }
 
   render() {
     // debugger
@@ -27,9 +27,18 @@ class PlaylistShow extends React.Component {
     //  }
 
     return (
-      <div className="webplayer-body-container">
-        <div className="shortcuts-keyword-webplayer">{this.props.playlist.name}</div>
-        {/* <ul className="webplayer-music-tile-line-item">
+      <div className="playlist-show-container">
+        <div
+          data-testid="background-image"
+          className="background-header-image-playlist-show"
+        >
+          <div className="playlist-subheader-show">Playlist</div>
+          <div className="playlist-show-title">New Music Friday</div>
+          <div className="playlist-show-description">
+            Brand new music from Sam Smith, Miley Cyrus, 070 Shake, and more!
+          </div>
+
+          {/* <ul className="webplayer-music-tile-line-item">
           {songs.map((song) => (
             <PlaylistSongIndexItem
               song={song}
@@ -39,6 +48,7 @@ class PlaylistShow extends React.Component {
             />
           ))}
         </ul> */}
+        </div>
       </div>
     );
   }
