@@ -95,7 +95,7 @@ class InternalNavbar extends React.Component {
                 ></path>
               </svg>
               <Link
-                to={`/library`}
+                to={`/webplayer`}
                 className="internal-nav-link"
                 id="hover-white"
               >

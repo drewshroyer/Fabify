@@ -6,7 +6,6 @@ import LogInFormContainer from "./session_form/login_form_container";
 import Splash from "./splash/splash_form";
 import WebPlayer from './webplayer/webplayer';
 import Search from "./webplayer/search";
-import Library from "./webplayer/library";
 import { AuthRoute, ProtectedRoute } from "../util/route_util";
 import LikedSongs from "./webplayer/liked_songs"
 import PlaylistShowBody from "./playlists/playlist_show_body";
@@ -23,7 +22,6 @@ const App = () => (
       path="/playlists/:playlistId"
       component={PlaylistShowBody}
     />
-    <ProtectedRoute exact path="/library" component={Library} />
     <ProtectedRoute exact path="/likes" component={LikedSongs} />
     <ProtectedRoute
       exact
