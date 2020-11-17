@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import CreatePlaylistContainer from "../playlists/create_playlist_container";
-import PlaylistIndex from "../playlists/playlist_index";
+import PlaylistIndex from "./playlist_index";
 
 class InternalNavbar extends React.Component {
   constructor(props) {
@@ -74,11 +74,11 @@ class InternalNavbar extends React.Component {
                 ></path>
               </svg>
               <Link
-                to={`/search`}
+                to={`/playlists/`}
                 className="internal-nav-link"
                 id="hover-white"
               >
-                Search
+                Playlists
               </Link>
             </div>
             <div className="internal-library-link" id="hover-white">
