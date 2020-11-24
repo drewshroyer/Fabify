@@ -29,17 +29,19 @@ class PlaylistSongIndexItem extends React.Component {
             id={`audio-element--${song.id}`}
           />
           <Link to={`/songs/${song.id}`}></Link>
-          <div className="playlist-music-tile-number">{song.id} 
-          <div
-            className="playlist-music-tile-audio"
-            onClick={this.handleSongClick}
-          >
-            <img
-              className="playlist-music-tile-play-button"
-              src={window.whitePlayButton}
-              alt="white-play-button"
-            ></img>
-          </div>
+          <div className="playlist-music-tile-number-container">
+            <div className="playlist-music-tile-number">{song.id} 
+              <div
+                className="playlist-music-tile-audio"
+                onClick={this.handleSongClick}
+              >
+                <img
+                  className="playlist-music-tile-play-button"
+                  src={window.whitePlayButton}
+                  alt="white-play-button"
+                ></img>
+              </div>
+            </div>
           </div>
           <img src={song.photo_url} className="playlist-music-tile-photo" />
           <div className="playlist-music-tile-name">{song.name}</div>

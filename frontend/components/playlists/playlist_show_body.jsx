@@ -53,7 +53,7 @@ class PlaylistShowBody extends React.Component {
           </div>
           <div className="webplayer-body-container">
             <PlaylistShowContainer
-              togglePlayPause={this.props.togglePlayPause}
+              togglePlayPause={this.togglePlayPause}
             />
           </div>
         </div>

@@ -18,8 +18,65 @@
     background-color: hsla(0,0%,100%,.1);
 }
 
+.play-pause-like-delete-container {
+    height: 100px;
+    width: 100%;
+    padding: 10px 50px 10px 50px;
+    margin-top: 350px;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.playlist-music-audio {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    background-color:  #1eba54;
+    transition: .5s;
+}
+
+.liked-button {
+    color: #1eba54;
+    padding: 20px;
+    background: transparent;
+    border: 0;
+}
+
+.three-dot-options {
+    color: hsla(0,0%,100%,.6);
+    padding: 10px 10px 20px 10px;
+    background: transparent;
+    border: 0;
+    letter-spacing: 2px;
+    font-size: 24px;
+}
+
+.three-dot-options:hover {
+    color: white;
+}
+
+.playlist-music-audio:hover {
+display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 65px;
+    width: 65px;
+    border-radius: 50%;
+    background-color:  #1eba54;
+}
+
+.playlist-music-play-button {
+    height: 30px;
+    width: 30px;
+}
 .playlist-music-tile-line-item {
-  margin-top: 350px;
+  margin-top: 0px;
   padding-inline-start: 0px;
 }
 
@@ -35,7 +92,7 @@
 
 .playlist-music-tile-number {
     text-align: center;
-    width: 40px;
+    width: 50px;
     margin-right: 10px;
     font-size: 16px;
     font-weight: 400;
@@ -46,15 +103,19 @@
     transition: .5s;
 }
 
-.playlist-music-tile-number:hover {
-    visibility: hidden;
+.playlist-music-tile-number-container {
+    width: 50px;
 }
 
-.playlist-music-tile-play-button {
+/* .playlist-music-tile > .playlist-music-tile-number-container:hover {
     visibility: hidden;
-}
+} */
 
-.playlist-music-tile-play-button:hover{
+/* .playlist-music-tile-play-button {
+    visibility: hidden;
+} */
+
+/* .playlist-music-tile-play-button:hover{
     visibility: visible;
     height: 20px;
     width: 25px;
@@ -63,7 +124,7 @@
     line-height: 24px;
     color: white;
     z-index: 1;
-}
+} */
 
 .playlist-music-tile-artist {
     width: 200px;
@@ -86,14 +147,14 @@ display: none;
 }
 
 .playlist-music-tile-play-button {
-display: none;
+/* display: none; */
     width: 30px;
     width: 30px;
 }
 
-.playlist-music-tile:hover > .playlist-music-tile-audio > .playlist-music-tile-play-button {
+/* .playlist-music-tile:hover > .playlist-music-tile-audio > .playlist-music-tile-play-button {
     display: block;
-}
+} */
 
 .playlist-music-tile:hover > .playlist-music-tile-audio {
   left: 0;
