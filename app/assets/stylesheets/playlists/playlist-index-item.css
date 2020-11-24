@@ -20,13 +20,13 @@
 
 .play-pause-like-delete-container {
     height: 100px;
-    width: 100%;
-    padding: 10px 50px 10px 50px;
+    width: 15%;
+    padding: 10px 50px 0px 30px;
     margin-top: 350px;
     color: white;
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
 }
 
@@ -62,7 +62,7 @@
 }
 
 .playlist-music-audio:hover {
-display: flex;
+    display: flex;
     justify-content: center;
     align-items: center;
     height: 65px;
@@ -70,7 +70,9 @@ display: flex;
     border-radius: 50%;
     background-color:  #1eba54;
 }
-
+ul {
+   padding-inline-start: 0px; 
+}
 .playlist-music-play-button {
     height: 30px;
     width: 30px;

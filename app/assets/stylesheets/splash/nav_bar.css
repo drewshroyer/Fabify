@@ -58,6 +58,7 @@
 .nav-bar-playlists {
     color: #b3b3b3;
     margin: 0px;
+    padding-inline-start: 40px;
 }
 
 .nav-bar-playlist-list {

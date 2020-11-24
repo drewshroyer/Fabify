@@ -30,30 +30,43 @@ class PlaylistAllIndex extends React.Component {
               Log out
             </button>
           </div>
+          
+          {/* // Should be same as webplayBodyContainer */}
           <div className="webplayer-body-container">
-            <div className="shortcuts-keyword-webplayer">Popular Playlists</div>
-            <div className="webplayer-music-tile-container">
-              {playlists.map((playlist) => (
+            <div className="webplayer-top-shortcuts-see-all">
+              <div className="shortcuts-keyword-webplayer">Popular Playlists</div>
+            </div>
+            <ul className="webplayer-music-tile-line-item">
+
+        {/* Should be the same as Song Index Item  */}
+        {playlists.map((playlist) => (
+              <div className="webplayer-music-tile-container">
                 <div className="webplayer-music-tile">
-                  <Link to={`/songs/${playlist.id}`}></Link>
-                  <div className="webplayer-music-tile-name">
-                    {playlist.name}
+                  <div className="webplayer-music-tile">
+                    <Link to={`/playlists/${playlist.id}`}>
+                    <div className="webplayer-music-tile-name">
+                      {playlist.name}
+                    </div> </Link>
+                    <div className="webplayer-music-tile-artist">
+                      {playlist.description}
+                    </div>
                   </div>
-                  <div className="webplayer-music-tile-artist">
-                    {playlist.description}
                   </div>
-                </div>
-              ))}
-              <PlayBarContainer
+            </div>
+                ))}
+          </ul>
+        </div>
+
+
+
+        </div>
+        <PlayBarContainer
                 togglePlayPause={this.togglePlayPause}
                 selectedSong={this.state.selectedSong}
                 name={this.state.name}
                 photo={this.state.photo}
                 artist={this.state.artist}
               />
-            </div>
-          </div>
-        </div>
       </div>
     );
   }
