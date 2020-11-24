@@ -1754,14 +1754,7 @@ var PlaylistSongIndexItem = /*#__PURE__*/function (_React$Component) {
         className: "playlist-song-tile-container"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "playlist-music-tile"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "playlist-music-tile-audio",
-        onClick: this.handleSongClick
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        className: "playlist-music-tile-play-button",
-        src: window.whitePlayButton,
-        alt: "white-play-button"
-      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("audio", {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("audio", {
         src: song.audio_url,
         className: "playlist-music-tile-audio-file" // search how manipulate and format audio tags
         ,
@@ -1769,7 +1762,16 @@ var PlaylistSongIndexItem = /*#__PURE__*/function (_React$Component) {
         id: "audio-element--".concat(song.id)
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         to: "/songs/".concat(song.id)
-      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "playlist-music-tile-number"
+      }, song.id, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "playlist-music-tile-audio",
+        onClick: this.handleSongClick
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        className: "playlist-music-tile-play-button",
+        src: window.whitePlayButton,
+        alt: "white-play-button"
+      }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         src: song.photo_url,
         className: "playlist-music-tile-photo"
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
