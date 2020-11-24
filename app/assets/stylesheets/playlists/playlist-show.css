@@ -48,3 +48,93 @@
     line-height: 16px;
     font-weight: 400;
 }
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #282828;
+  min-width: 160px;
+  padding: 10px;
+  z-index: 1;
+}
+.dropdown-content-flex {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+.play-pause-like-delete-container {
+    height: 100px;
+    width: 15%;
+    padding: 10px 50px 0px 30px;
+    margin-top: 350px;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.playlist-music-audio {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    background-color:  #1eba54;
+    transition: .5s;
+}
+
+.liked-button {
+    color: #1eba54;
+    padding: 20px;
+    background: transparent;
+    border: 0;
+}
+
+.dropdown .three-dot-options {
+    color: hsla(0,0%,100%,.6);
+    padding: 10px 10px 20px 10px;
+    background: transparent;
+    border: 0;
+    letter-spacing: 2px;
+    font-size: 24px;
+}
+
+.three-dot-options:hover {
+    color: white;
+}
+
+.playlist-music-audio:hover {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 65px;
+    width: 65px;
+    border-radius: 50%;
+    background-color:  #1eba54;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #282828;
+  color: white;
+}
+
+.delete-playlist-button {
+    padding: 5px;
+    font-weight: 100;
+}
+
+.dropdown-content .delete-playlist-button:hover {
+  background-color: hsla(0,0%,100%,.1);
+  color: white;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}

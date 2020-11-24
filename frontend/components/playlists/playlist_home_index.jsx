@@ -32,8 +32,8 @@ class PlaylistAllIndex extends React.Component {
           </div>
           
           {/* // Should be same as webplayBodyContainer */}
-          <div className="webplayer-body-container">
-            <div className="webplayer-top-shortcuts-see-all">
+          <div className="playlists-all-body-container">
+            <div className="playlists-all-shortcuts-see-all">
               <div className="shortcuts-keyword-webplayer">Popular Playlists</div>
             </div>
             <ul className="webplayer-music-tile-line-item">

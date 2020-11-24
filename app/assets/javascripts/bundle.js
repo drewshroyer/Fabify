@@ -1265,9 +1265,9 @@ var PlaylistAllIndex = /*#__PURE__*/function (_React$Component) {
         onClick: this.props.logout,
         className: "webplayer-logout-button"
       }, "Log out")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "webplayer-body-container"
+        className: "playlists-all-body-container"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "webplayer-top-shortcuts-see-all"
+        className: "playlists-all-shortcuts-see-all"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "shortcuts-keyword-webplayer"
       }, "Popular Playlists")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
@@ -1369,7 +1369,8 @@ var mDTP = function mDTP(dispatch) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _playlists_playlist_song_index__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../playlists/playlist_song_index */ "./frontend/components/playlists/playlist_song_index.jsx");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var _playlists_playlist_song_index__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../playlists/playlist_song_index */ "./frontend/components/playlists/playlist_song_index.jsx");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -1395,15 +1396,20 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 
 
 
+
 var PlaylistShow = /*#__PURE__*/function (_React$Component) {
   _inherits(PlaylistShow, _React$Component);
 
   var _super = _createSuper(PlaylistShow);
 
   function PlaylistShow(props) {
+    var _this;
+
     _classCallCheck(this, PlaylistShow);
 
-    return _super.call(this, props); // this.deleteThisPlaylist = this.deleteThisPlaylist.bind(this);
+    _this = _super.call(this, props);
+    _this.deleteThisPlaylist = _this.handleDeletePlaylist.bind(_assertThisInitialized(_this));
+    return _this;
   }
 
   _createClass(PlaylistShow, [{
@@ -1411,16 +1417,20 @@ var PlaylistShow = /*#__PURE__*/function (_React$Component) {
     value: function componentDidMount() {
       this.props.fetchSongs();
       this.props.fetchPlaylists(); // this.props.fetchArtists();
-    } //   deleteCurrentPlaylist() {
-    //     this.props
-    //       .deletePlaylist(this.props.playlistId)
-    //       .then(() => this.props.history.push("/webplayer"));
-    //   }
+    }
+  }, {
+    key: "handleDeletePlaylist",
+    value: function handleDeletePlaylist() {
+      var _this2 = this;
 
+      this.props.deletePlaylist(this.props.playlistId).then(function () {
+        return _this2.props.history.push("/webplayer");
+      });
+    }
   }, {
     key: "render",
     value: function render() {
-      var _this = this;
+      var _this3 = this;
 
       // debugger
       //  if (!this.props.playlist || !this.props.songs || !this.props.albums) {
@@ -1458,16 +1468,29 @@ var PlaylistShow = /*#__PURE__*/function (_React$Component) {
         viewBox: "0 0 32 32"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
         d: "M27.319 5.927a7.445 7.445 0 00-10.02-.462s-.545.469-1.299.469c-.775 0-1.299-.469-1.299-.469a7.445 7.445 0 00-10.02 10.993l9.266 10.848a2.7 2.7 0 004.106 0l9.266-10.848a7.447 7.447 0 000-10.531z"
-      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "dropdown"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "three-dot-options"
-      }, "...")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "..."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "dropdown-content"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "dropdown-content-flex"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "delete-playlist-button",
+        onClick: this.handleDeletePlaylist
+      }, "Delete Playlist"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+        to: "/webplayer"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "delete-playlist-button"
+      }, "Return to Home")))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "playlist-music-tile-line-item"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, songs.map(function (song) {
-        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_playlists_playlist_song_index__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_playlists_playlist_song_index__WEBPACK_IMPORTED_MODULE_2__["default"], {
           song: song,
           artist: artists[song.artist_id],
           key: song.id,
-          togglePlayPause: _this.props.togglePlayPause
+          togglePlayPause: _this3.props.togglePlayPause
         });
       }))));
     }
@@ -1626,6 +1649,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 var mSTP = function mSTP(state) {
   var currentUserId = state.session.id;
   var currentUser = state.entities.users[currentUserId];
@@ -1654,6 +1678,9 @@ var mDTP = function mDTP(dispatch) {
     },
     logout: function logout() {
       return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_6__["logout"])());
+    },
+    deletePlaylist: function deletePlaylist(id) {
+      return dispatch(Object(_actions_playlist_actions__WEBPACK_IMPORTED_MODULE_3__["deletePlaylist"])(id));
     }
   };
 }; // import { connect } from "react-redux";

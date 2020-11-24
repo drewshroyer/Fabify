@@ -18,58 +18,6 @@
     background-color: hsla(0,0%,100%,.1);
 }
 
-.play-pause-like-delete-container {
-    height: 100px;
-    width: 15%;
-    padding: 10px 50px 0px 30px;
-    margin-top: 350px;
-    color: white;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.playlist-music-audio {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 60px;
-    width: 60px;
-    border-radius: 50%;
-    background-color:  #1eba54;
-    transition: .5s;
-}
-
-.liked-button {
-    color: #1eba54;
-    padding: 20px;
-    background: transparent;
-    border: 0;
-}
-
-.three-dot-options {
-    color: hsla(0,0%,100%,.6);
-    padding: 10px 10px 20px 10px;
-    background: transparent;
-    border: 0;
-    letter-spacing: 2px;
-    font-size: 24px;
-}
-
-.three-dot-options:hover {
-    color: white;
-}
-
-.playlist-music-audio:hover {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 65px;
-    width: 65px;
-    border-radius: 50%;
-    background-color:  #1eba54;
-}
 ul {
    padding-inline-start: 0px; 
 }

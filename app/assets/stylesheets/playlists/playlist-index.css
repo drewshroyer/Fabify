@@ -1,4 +1,4 @@
-.webplayer-body-container {
+.playlists-all-body-container {
   display: flex;
   background-color: #121212;
   width: 100%;
@@ -8,84 +8,13 @@
   overflow: scroll;
 }
 
-.webplayer-music-tile-line-item {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  margin: 5px;
-}
-
-.webplayer-music-tile {
-  position: relative;
-  width: 184px;
-  height: 258px;
-  background-color: #272727;
-  margin: 10px;
-  border-radius: 5%;
-  overflow: hidden;
-}
-
-.webplayer-music-tile:hover > .webplayer-music-tile-audio {
-  left: 0;
-  height: 40px;
-  width: 40px;
-  background-color: #1eba54;
-  color: #1eba54;
-  border-radius: 50%;
-  margin-left: 125px;
-  position: absolute;
-  bottom:  17px;
-  z-index: 2;
-  opacity: 1;
-  box-shadow: 0px 0px 5px 0px #131313;
-}
-
-.webplayer-music-tile:hover > .webplayer-music-tile-audio > .webplayer-music-tile-play-button {
-    display: block;
-}
-
-.webplayer-music-tile-photo {
-  width: 150px;
-  height: 150px;
-  border-radius: 15%;
-  padding: 17px;
-}
-.webplayer-music-tile-audio-file {
-    display: none;
-}
-.webplayer-music-tile-audio {
-  /* opacity: 0;
-  transition: opacity 0.2s ease-in-out; */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.webplayer-music-tile-play-button {
-    display: none;
-    width: 30px;
-    width: 30px;
-}
-
-.webplayer-music-tile-pause-button {
-    display: none;
-    width: 30px;
-    width: 30px;
-}
-
-.webplayer-music-tile-name {
-  font-size: 16px;
-  color: #ffffff;
-  padding-left: 20px;
-  padding-right: 20px;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.webplayer-music-tile-artist {
-  font-size: 10px;
-  color: #b3b3b3;
-  padding-left: 20px;
-  padding-right: 20px;
+.playlists-all-shortcuts-see-all {
+    width: 83%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-top: 30px;
+    padding-inline-start: 40px;
+    transition: .5s;
 }
