@@ -14,10 +14,10 @@
 }
 
 .internal-home-link {
+    width: 80%;
     color: white;
     fill: #ffffff;
     background-color: #282828;
-    padding-right: 80px; 
     border-radius: 5px;
     padding-left: 25px; 
     display: flex;
