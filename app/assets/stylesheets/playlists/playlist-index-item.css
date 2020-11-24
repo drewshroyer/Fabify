@@ -6,14 +6,20 @@
 .playlist-music-tile {
     display: flex;
     flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
     height: 60px;
     width: 100%;
-    border-bottom: 1px solid #b3b3b3;
     color: white;
+}
+
+.playlist-music-tile:hover {
+    background-color: hsla(0,0%,100%,.1);
 }
 
 .playlist-music-tile-line-item {
   margin: 5px;
+  margin-top: 350px;
 }
 
 .playlist-music-tile-photo {
@@ -39,6 +45,11 @@
 
 .playlist-music-tile-audio-file {
 display: none;
+}
+
+.playlist-song-tile-container {
+    display: flex;
+    flex-direction: column;
 }
 
 .playlist-music-tile-play-button {
