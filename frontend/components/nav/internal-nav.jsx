@@ -17,18 +17,21 @@ class InternalNavbar extends React.Component {
   }
 
   componentDidMount() {
-    // debugger
     // this.props.fetchSongs();
     this.props.fetchPlaylists();
     // this.props.fetchArtists();
   }
+
   componentWillMount() {
     this.props.fetchPlaylists();
   }
 
+  updateCurrentTab() {
+    let currentTab = document.getElementsByClassName("internal-home-link")
+    currentTab.classList.toggle("internal-current-link")
+  }
+
   render() {
-    // debugger
-    // const { playlists } = this.props;
     const playlists = this.props.playlists ? this.props.playlists : [];
 
     return (

@@ -17,7 +17,6 @@
     width: 80%;
     color: white;
     fill: #ffffff;
-    background-color: #282828;
     border-radius: 5px;
     padding-left: 25px; 
     display: flex;
@@ -28,11 +27,26 @@
     padding-bottom: 8px;
 }
 
+
+
 .internal-home-link:hover {
     color: white;
 }
 
-
+.internal-current-link {
+    width: 80%;
+    color: white;
+    fill: #ffffff;
+    background-color: #282828;
+    border-radius: 5px;
+    padding-left: 25px; 
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    margin: 10px 5px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
 
 
 .internal-search-link {
@@ -145,6 +159,7 @@
 .internal-create-playlist-link:hover {
     color: white;
 }
+
 #hover-white {
     transition: .5s;
 }

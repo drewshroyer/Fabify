@@ -6,6 +6,7 @@ class PlaylistSongIndexItem extends React.Component {
     super(props);
     this.state = { playingSong: false, selectedSong: "" };
     this.handleSongClick = this.handleSongClick.bind(this);
+    this.removeSongFromPlaylist = this.removeSongFromPlaylist.bind(this);
   }
 
   handleSongClick() {
@@ -15,6 +16,10 @@ class PlaylistSongIndexItem extends React.Component {
       this.props.song.photo_url,
       this.props.artist.name
     );
+  }
+
+  removeSongFromPlaylist() {
+
   }
 
   render() {
@@ -46,6 +51,18 @@ class PlaylistSongIndexItem extends React.Component {
           <img src={song.photo_url} className="playlist-music-tile-photo" />
           <div className="playlist-music-tile-name">{song.name}</div>
           <div className="playlist-music-tile-artist">{artist.name}</div>
+          <div className="dropdown">
+           <button className="three-dot-options" >...
+           </button>
+           <div className="dropdown-content">
+             <div className="dropdown-content-flex">
+             <div className="delete-playlist-button" onClick={this.handleDeletePlaylist}>Delete Playlist</div>
+             <Link to="/webplayer">
+             <div className="delete-playlist-button" onClick={this.removeSongFromPlaylist}>Remove Song</div>
+             </Link>
+             </div>
+           </div>
+           </div>
         </div>
       </div>
     );

@@ -61,6 +61,9 @@ class PlaylistShow extends React.Component {
              <Link to="/webplayer">
              <div className="delete-playlist-button">Return to Home</div>
              </Link>
+             <Link to="/webplayer">
+             <div className="delete-playlist-button">Add Songs</div>
+             </Link>
              </div>
            </div>
            </div>
@@ -73,6 +76,7 @@ class PlaylistShow extends React.Component {
                 artist={artists[song.artist_id]}
                 key={song.id}
                 togglePlayPause={this.props.togglePlayPause}
+                removeSongFromPlaylist = {this.props.removeSongFromPlaylist}
               />
             ))}
           </ul>
