@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import PlaylistShow from "./playlist_show";
+import PlaylistShowBody from "./playlist_show_body";
 import { fetchSongs } from "../../actions/song_actions";
 import { fetchPlaylists } from "../../actions/playlist_actions";
 import { fetchUser } from "../../actions/user_actions";
@@ -34,6 +34,8 @@ const mDTP = (dispatch) => {
   ))
   };
 };
+
+export default connect(mSTP, mDTP)(PlaylistShowBody);
 
 
 // import { connect } from "react-redux";
@@ -85,5 +87,3 @@ const mDTP = (dispatch) => {
 //     fetchArtists: () => dispatch(fetchArtists()),
 //   };
 // };
-
-export default connect(mSTP, mDTP)(PlaylistShow);

@@ -3,7 +3,6 @@ import InternalNavbarContainer from "../nav/internal-nav_container";
 import PlayBarContainer from "../playbar/play-bar-container";
 import PlaylistShowContainer from "./playlist_show_container";
 
-
 class PlaylistShowBody extends React.Component {
   constructor(props) {
     super(props);
