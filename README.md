@@ -15,7 +15,7 @@
 
 ## Highlights 
 
-### Fabify is a clone of Spotify that exclusively features currated content created by artists that identify as LBGTQIA+. Aptly named Fabify as the music housed within the application is Fabulous.
+Fabify is a clone of Spotify that exclusively features currated content created by artists that identify as LBGTQIA+. This website was built with JavaScript, React, Redux, Ruby, Rails, AWS, and Postgres.
 
 ## Login / Sign Up
 
