@@ -11,11 +11,15 @@
     align-items: center;
     height: 60px;
     width: 100%;
-    color: white;
+    color: white;    
+    margin: 0px 10px 0px 10px;
+    transition: .5s;
 }
 
 .playlist-music-tile:hover {
     background-color: hsla(0,0%,100%,.1);
+    border-radius: 5px;
+    margin: 0px 10px 0px 10px;
 }
 
 ul {
