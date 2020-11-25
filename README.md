@@ -1,9 +1,22 @@
 
-Fabify Live Link! (https://fabify.herokuapp.com/#/webplayer "Fabify Live Link")
+[<div style="text-align: center"><img src="app/assets/images/fabify_logo.png" alt="logo"></div>](https://fabify.herokuapp.com/#/)
 
-Fabify is a clone of Spotify that exclusively features currated content created by artists that identify as LBGTQIA+. Aptly named Fabify as the music housed within the application is Fabulous. 
+<h3 style="text-align: center">Listening is Everything</h3>
+
+# Table of Contents
+1. Introduction
+2. Features
+3. Recent Updates
+4. Technology
+5. A closer look
+    * Video Views
+    * Smart Errors
+6. Final Notes
 
 ## Highlights 
+
+Fabify is a clone of Spotify that exclusively features currated content created by artists that identify as LBGTQIA+. Aptly named Fabify as the music housed within the application is Fabulous.
+
 ## Login / Sign Up
 
 Fabify features user auth that only allows members that have signed up for Fabify to step within the walls for this exlcuive content. As well as the ability to sign in and out of the app. If you try to log in with incorrect credentials or sign up with a duplicate email address, you will receive an error message. 
