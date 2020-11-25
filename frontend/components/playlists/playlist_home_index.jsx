@@ -34,20 +34,20 @@ class PlaylistAllIndex extends React.Component {
           {/* // Should be same as webplayBodyContainer */}
           <div className="playlists-all-body-container">
             <div className="playlists-all-shortcuts-see-all">
-              <div className="shortcuts-keyword-webplayer">Popular Playlists</div>
+              <div className="popular-playlists-keyword-webplayer">Popular Playlists</div>
             </div>
             <ul className="webplayer-music-tile-line-item">
 
         {/* Should be the same as Song Index Item  */}
         {playlists.map((playlist) => (
               <div className="webplayer-music-tile-container">
-                <div className="webplayer-music-tile">
+                <div className="playlist-home-tile">
                   <div className="webplayer-music-tile">
                     <Link to={`/playlists/${playlist.id}`}>
-                    <div className="webplayer-music-tile-name">
+                    <div className="playlist-all-music-tile-name">
                       {playlist.name}
                     </div> </Link>
-                    <div className="webplayer-music-tile-artist">
+                    <div className="playlist-all-tile-description">
                       {playlist.description}
                     </div>
                   </div>

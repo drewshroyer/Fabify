@@ -1308,22 +1308,22 @@ var PlaylistAllIndex = /*#__PURE__*/function (_React$Component) {
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "playlists-all-shortcuts-see-all"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "shortcuts-keyword-webplayer"
+        className: "popular-playlists-keyword-webplayer"
       }, "Popular Playlists")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
         className: "webplayer-music-tile-line-item"
       }, playlists.map(function (playlist) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "webplayer-music-tile-container"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "webplayer-music-tile"
+          className: "playlist-home-tile"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "webplayer-music-tile"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
           to: "/playlists/".concat(playlist.id)
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "webplayer-music-tile-name"
+          className: "playlist-all-music-tile-name"
         }, playlist.name), " "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "webplayer-music-tile-artist"
+          className: "playlist-all-tile-description"
         }, playlist.description))));
       })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_playbar_play_bar_container__WEBPACK_IMPORTED_MODULE_3__["default"], {
         togglePlayPause: this.togglePlayPause,

@@ -18,3 +18,41 @@
     padding-inline-start: 40px;
     transition: .5s;
 }
+
+.playlist-all-music-tile-name {
+  margin-top: 10px;
+  font-size: 16px;
+  color: #ffffff;
+  padding-left: 10px;
+  padding-right: 20px;
+  text-overflow: ellipsis;
+  white-space: wrap;
+}
+
+.playlist-all-tile-description {
+  margin-top: 10px;
+  font-size: 12px;
+  color: #b3b3b3;
+  padding-left: 10px;
+  padding-right: 20px;
+  font-weight: 100;
+}
+
+.playlist-home-tile {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  background-color: #272727;
+  margin: 10px;
+  border-radius: 5%;
+  overflow: hidden;
+}
+
+.popular-playlists-keyword-webplayer {
+    margin-bottom: 20px;
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 28px;
+    letter-spacing: -.02em;
+}
