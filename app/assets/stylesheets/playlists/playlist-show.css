@@ -1,10 +1,10 @@
 
 .playlist-show-container {
   display: flex;
-  background-color: #121212;
-  width: 100%;
   flex-direction: column;
   justify-content: flex-start;
+  background-color: #121212;
+  width: 100%;
   height: calc(100vh - 150px);
   overflow: scroll;
 }
@@ -12,7 +12,7 @@
 .background-header-image-playlist-show {
     position: fixed;
     background-image: url("https://t.scdn.co/images/fd7b652335c349899cb8e8e302c87528");
-    height: 350px;
+    height: 400px;
     width: 100%;
     background-position: 50% 15%;
     background-size: cover;
@@ -68,10 +68,10 @@
     justify-content: flex-start;
 }
 .play-pause-like-delete-container {
+    margin-top: 400px;
+    width: 300px;
     height: 100px;
-    width: 15%;
     padding: 10px 50px 0px 30px;
-    margin-top: 350px;
     color: white;
     display: flex;
     flex-direction: row;

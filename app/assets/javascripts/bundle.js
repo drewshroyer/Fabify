@@ -1447,7 +1447,12 @@ var PlaylistShow = /*#__PURE__*/function (_React$Component) {
     _classCallCheck(this, PlaylistShow);
 
     _this = _super.call(this, props);
+    _this.state = {
+      playingSong: false,
+      selectedSong: ""
+    };
     _this.deleteThisPlaylist = _this.handleDeletePlaylist.bind(_assertThisInitialized(_this));
+    _this.handleSongClick = _this.handleSongClick.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -1459,6 +1464,11 @@ var PlaylistShow = /*#__PURE__*/function (_React$Component) {
       this.props.deletePlaylist(this.props.playlistId).then(function () {
         return _this2.props.history.push("/webplayer");
       });
+    }
+  }, {
+    key: "handleSongClick",
+    value: function handleSongClick() {
+      this.props.togglePlayPause(this.props.song.id, this.props.song.name, this.props.song.photo_url, this.props.artist.name);
     }
   }, {
     key: "componentDidMount",

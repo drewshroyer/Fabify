@@ -5,7 +5,9 @@ import PlaylistSongIndexItem from "./playlist_song_index";
 class PlaylistShow extends React.Component {
   constructor(props) {
     super(props);
+    this.state = { playingSong: false, selectedSong: "" };
     this.deleteThisPlaylist = this.handleDeletePlaylist.bind(this);
+    this.handleSongClick = this.handleSongClick.bind(this);
   }
 
    handleDeletePlaylist() {
@@ -13,6 +15,15 @@ class PlaylistShow extends React.Component {
         .deletePlaylist(this.props.playlistId)
         .then(() => this.props.history.push("/webplayer"));
     }
+
+    handleSongClick() {
+    this.props.togglePlayPause(
+      this.props.song.id,
+      this.props.song.name,
+      this.props.song.photo_url,
+      this.props.artist.name
+    );
+  }
 
     componentDidMount() {
     this.props.fetchSongs();
