@@ -16,6 +16,11 @@ class PlaylistShowBody extends React.Component {
     };
   }
 
+  componentDidMount() {
+    this.props.fetchSongs();
+    this.props.fetchPlaylists();
+  }
+
   togglePlayPause(id, name, photo, artist) {
     const audioEle = document.getElementById(`audio-element--${id}`);
     if (this.state.selectedSong === id) {
@@ -30,7 +35,6 @@ class PlaylistShowBody extends React.Component {
         artist: artist,
       });
     }
-
     if (this.state.playingSong) {
       audioEle.pause();
     } else {

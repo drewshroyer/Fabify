@@ -8,26 +8,20 @@ class PlaylistShow extends React.Component {
     this.deleteThisPlaylist = this.handleDeletePlaylist.bind(this);
   }
 
-  componentDidMount() {
-    this.props.fetchSongs();
-    this.props.fetchPlaylists();
-    // this.props.fetchArtists();
-  }
-
     handleDeletePlaylist() {
       this.props
         .deletePlaylist(this.props.playlistId)
         .then(() => this.props.history.push("/webplayer"));
     }
 
+    componentDidMount() {
+    this.props.fetchSongs();
+    this.props.fetchPlaylists();
+    }
+
   render() {
-    // debugger
-    //  if (!this.props.playlist || !this.props.songs || !this.props.albums) {
-    //    return null;
-    //  }
     const { songs, artists, playlists } = this.props;
     if (!songs) return null;
-
     return (
       <div className="playlist-show-container">
         <div

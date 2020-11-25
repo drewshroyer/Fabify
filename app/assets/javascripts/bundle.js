@@ -1461,6 +1461,12 @@ var PlaylistShowBody = /*#__PURE__*/function (_React$Component) {
   }
 
   _createClass(PlaylistShowBody, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      this.props.fetchSongs();
+      this.props.fetchPlaylists();
+    }
+  }, {
     key: "togglePlayPause",
     value: function togglePlayPause(id, name, photo, artist) {
       var audioEle = document.getElementById("audio-element--".concat(id));
