@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import PlaylistSongIndexItem from "../playlists/playlist_song_index";
+import PlaylistSongIndexItem from "./playlist_song_index";
 
 class PlaylistShow extends React.Component {
   constructor(props) {
@@ -8,7 +8,7 @@ class PlaylistShow extends React.Component {
     this.deleteThisPlaylist = this.handleDeletePlaylist.bind(this);
   }
 
-    handleDeletePlaylist() {
+   handleDeletePlaylist() {
       this.props
         .deletePlaylist(this.props.playlistId)
         .then(() => this.props.history.push("/webplayer"));

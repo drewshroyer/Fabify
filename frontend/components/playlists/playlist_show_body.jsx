@@ -6,7 +6,10 @@ import PlaylistShowContainer from "./playlist_show_container";
 class PlaylistShowBody extends React.Component {
   constructor(props) {
     super(props);
+
+    this.deleteThisPlaylist = this.handleDeletePlaylist.bind(this);
     this.togglePlayPause = this.togglePlayPause.bind(this);
+
     this.state = {
       playingSong: false,
       selectedSong: "",
@@ -16,10 +19,11 @@ class PlaylistShowBody extends React.Component {
     };
   }
 
-  componentDidMount() {
-    this.props.fetchSongs();
-    this.props.fetchPlaylists();
-  }
+  handleDeletePlaylist() {
+      this.props
+        .deletePlaylist(this.playlistId)
+        .then(() => this.history.push("/webplayer"));
+    }
 
   togglePlayPause(id, name, photo, artist) {
     const audioEle = document.getElementById(`audio-element--${id}`);
