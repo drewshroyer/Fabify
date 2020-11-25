@@ -4,13 +4,13 @@
 <h3 style="text-align: center">Listening is Everything</h3>
 
 # Table of Contents
+
 1. Introduction
-2. Features
+2. Key Features
 3. Recent Updates
 4. Technology
 5. A closer look
-    * Video Views
-    * Smart Errors
+
 6. Final Notes
 
 ## Highlights 
