@@ -7,9 +7,7 @@ import { logout } from "../../actions/session_actions";
 
 class WebPlayer extends React.Component {
   constructor(props) {
-    // debugger
     super(props);
-    // this.handleLogout = this.handleLogout.bind(this);
     this.togglePlayPause = this.togglePlayPause.bind(this);
     this.state = {
       playingSong: false,

@@ -2735,9 +2735,7 @@ var WebPlayer = /*#__PURE__*/function (_React$Component) {
 
     _classCallCheck(this, WebPlayer);
 
-    // debugger
-    _this = _super.call(this, props); // this.handleLogout = this.handleLogout.bind(this);
-
+    _this = _super.call(this, props);
     _this.togglePlayPause = _this.togglePlayPause.bind(_assertThisInitialized(_this));
     _this.state = {
       playingSong: false,
@@ -2875,7 +2873,6 @@ var WebPlayerBody = /*#__PURE__*/function (_React$Component) {
     value: function render() {
       var _this = this;
 
-      // debugger
       var _this$props = this.props,
           songs = _this$props.songs,
           artists = _this$props.artists,
