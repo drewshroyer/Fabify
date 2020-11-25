@@ -11,6 +11,7 @@ class PlaylistShowBody extends React.Component {
     this.togglePlayPause = this.togglePlayPause.bind(this);
 
     this.state = {
+      // playlist: playlist,
       playingSong: false,
       selectedSong: "",
       name: "",

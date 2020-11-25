@@ -12,10 +12,10 @@ import { removeSongFromPlaylist } from "../../actions/playlist_song_actions"
 const mSTP = (state, ownProps) => {
   const currentUserId = state.session.id;
   const currentUser = state.entities.users[currentUserId];
-  let playlistId = ownProps.match.params.playlistId;
-  let playlist = state.entities.playlists[playlistId];
+  // let playlistId = ownProps.match.params.playlistId;
+  // let playlist = state.entities.playlists[playlistId];
   return {
-    playlist,
+    // playlist,
     playlists: Object.values(state.entities.playlists),
     songs: Object.values(state.entities.songs),
     artists: state.entities.artists,
@@ -26,9 +26,9 @@ const mSTP = (state, ownProps) => {
 
 const mDTP = (dispatch) => {
   return {
+    // fetchPlaylist: (id) => dispatch(fetchPlaylist(id)),
     fetchUser: (id) => dispatch(fetchUser(id)),
     fetchPlaylists: () => dispatch(fetchPlaylists()),
-    fetchPlaylist: (id) => dispatch(fetchPlaylist()),
     fetchSongs: () => dispatch(fetchSongs()),
     fetchArtists: () => dispatch(fetchArtists()),
     logout: () => dispatch(logout()),

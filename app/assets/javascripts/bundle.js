@@ -1598,6 +1598,7 @@ var PlaylistShowBody = /*#__PURE__*/function (_React$Component) {
     _this.deleteThisPlaylist = _this.handleDeletePlaylist.bind(_assertThisInitialized(_this));
     _this.togglePlayPause = _this.togglePlayPause.bind(_assertThisInitialized(_this));
     _this.state = {
+      // playlist: playlist,
       playingSong: false,
       selectedSong: "",
       name: "",
@@ -1705,11 +1706,11 @@ __webpack_require__.r(__webpack_exports__);
 
 var mSTP = function mSTP(state, ownProps) {
   var currentUserId = state.session.id;
-  var currentUser = state.entities.users[currentUserId];
-  var playlistId = ownProps.match.params.playlistId;
-  var playlist = state.entities.playlists[playlistId];
+  var currentUser = state.entities.users[currentUserId]; // let playlistId = ownProps.match.params.playlistId;
+  // let playlist = state.entities.playlists[playlistId];
+
   return {
-    playlist: playlist,
+    // playlist,
     playlists: Object.values(state.entities.playlists),
     songs: Object.values(state.entities.songs),
     artists: state.entities.artists,
@@ -1720,14 +1721,12 @@ var mSTP = function mSTP(state, ownProps) {
 
 var mDTP = function mDTP(dispatch) {
   return {
+    // fetchPlaylist: (id) => dispatch(fetchPlaylist(id)),
     fetchUser: function fetchUser(id) {
       return dispatch(Object(_actions_user_actions__WEBPACK_IMPORTED_MODULE_4__["fetchUser"])(id));
     },
     fetchPlaylists: function fetchPlaylists() {
       return dispatch(Object(_actions_playlist_actions__WEBPACK_IMPORTED_MODULE_3__["fetchPlaylists"])());
-    },
-    fetchPlaylist: function fetchPlaylist(id) {
-      return dispatch(Object(_actions_playlist_actions__WEBPACK_IMPORTED_MODULE_3__["fetchPlaylist"])());
     },
     fetchSongs: function fetchSongs() {
       return dispatch(Object(_actions_song_actions__WEBPACK_IMPORTED_MODULE_2__["fetchSongs"])());
