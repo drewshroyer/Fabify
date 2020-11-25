@@ -5,11 +5,17 @@ class PlayBar extends React.Component {
   constructor(props) {
     super(props);
     this.togglePlayBar = this.togglePlayBar.bind(this);
+    this.setVolume = this.setVolume.bind(this);
   }
 
   togglePlayBar() {
     this.props.togglePlayPause(this.props.selectedSong);
   }
+
+  setVolume(val) {   
+        document.getElementById(`audio-element--${id}`);
+        player.volume = val / 100;
+    }
 
   render() {
     const { selectedSong, name, artist, photo } = this.props;
@@ -64,8 +70,10 @@ class PlayBar extends React.Component {
           />
           <div className="volume-slide-container">
             <input
+              // onInput={setVolume(this.value)}
+              // onChange={setVolume(this.value)}
               type="range"
-              min="1"
+              min="0"
               max="100"
               placeholder="50"
               className="volume-slider"

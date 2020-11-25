@@ -959,6 +959,7 @@ var PlayBar = /*#__PURE__*/function (_React$Component) {
 
     _this = _super.call(this, props);
     _this.togglePlayBar = _this.togglePlayBar.bind(_assertThisInitialized(_this));
+    _this.setVolume = _this.setVolume.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -966,6 +967,12 @@ var PlayBar = /*#__PURE__*/function (_React$Component) {
     key: "togglePlayBar",
     value: function togglePlayBar() {
       this.props.togglePlayPause(this.props.selectedSong);
+    }
+  }, {
+    key: "setVolume",
+    value: function setVolume(val) {
+      document.getElementById("audio-element--".concat(id));
+      player.volume = val / 100;
     }
   }, {
     key: "render",
@@ -1027,8 +1034,10 @@ var PlayBar = /*#__PURE__*/function (_React$Component) {
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "volume-slide-container"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        // onInput={setVolume(this.value)}
+        // onChange={setVolume(this.value)}
         type: "range",
-        min: "1",
+        min: "0",
         max: "100",
         placeholder: "50",
         className: "volume-slider"
