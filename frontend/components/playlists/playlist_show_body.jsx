@@ -2,6 +2,8 @@ import React from "react";
 import InternalNavbarContainer from "../nav/internal-nav_container";
 import PlayBarContainer from "../playbar/play-bar-container";
 import PlaylistShowContainer from "./playlist_show_container";
+import { logout } from "../../actions/session_actions";
+import { connect } from "react-redux";
 
 class PlaylistShowBody extends React.Component {
   constructor(props) {
@@ -78,4 +80,10 @@ class PlaylistShowBody extends React.Component {
   }
 }
 
-export default PlaylistShowBody;
+const mDTP = (dispatch) => {
+  return {
+    logout: () => dispatch(logout()),
+  };
+};
+
+export default connect(null, mDTP)(PlaylistShowBody);
