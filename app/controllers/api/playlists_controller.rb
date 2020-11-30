@@ -21,7 +21,7 @@ class Api::PlaylistsController < ApplicationController
 
   def destroy 
     @playlist = Playlist.find(params[:id])
-    if @playlist.delete
+    if @playlist.destroy
         render :index
     end
   end

@@ -6,11 +6,12 @@ class PlaylistShow extends React.Component {
   constructor(props) {
     super(props);
     this.state = { playingSong: false, selectedSong: "" };
-    this.deleteThisPlaylist = this.handleDeletePlaylist.bind(this);
+    this.deletePlaylist = this.deletePlaylist.bind(this);
     this.handleSongClick = this.handleSongClick.bind(this);
   }
 
-   handleDeletePlaylist() {
+   deletePlaylist(e) {
+     e.preventDefault()
       this.props
         .deletePlaylist(this.props.playlistId)
         .then(() => this.props.history.push("/webplayer"));
@@ -31,7 +32,7 @@ class PlaylistShow extends React.Component {
     }
 
   render() {
-    const { songs, artists, playlists } = this.props;
+    const { songs, artists, playlist } = this.props;
     if (!songs) return null;
     return (
       <div className="playlist-show-container">
@@ -40,7 +41,7 @@ class PlaylistShow extends React.Component {
           className="background-header-image-playlist-show"
         >
           <div className="playlist-subheader-show">Playlist</div>
-          <div className="playlist-show-title">New Music Friday</div>
+          <div className="playlist-show-title">{playlist.name}</div>
           <div className="playlist-show-description">
             Brand new music from Sam Smith, Miley Cyrus, 070 Shake, and more!
           </div>
@@ -62,7 +63,7 @@ class PlaylistShow extends React.Component {
            </button>
            <div className="dropdown-content">
              <div className="dropdown-content-flex">
-             <div className="delete-playlist-button" onClick={this.handleDeletePlaylist}>Delete Playlist</div>
+             <div className="delete-playlist-button" onClick={this.deletePlaylist}>Delete Playlist</div>
              <Link to="/webplayer">
              <div className="delete-playlist-button">Return to Home</div>
              </Link>

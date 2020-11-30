@@ -204,10 +204,10 @@ var receivePlaylist = function receivePlaylist(playlist) {
     playlist: playlist
   };
 };
-var removePlaylist = function removePlaylist(playlistId) {
+var removePlaylist = function removePlaylist(playlist) {
   return {
     type: REMOVE_PLAYLIST,
-    playlistId: playlistId
+    playlistId: playlist.id
   };
 };
 var removePlaylists = function removePlaylists() {
@@ -1460,16 +1460,17 @@ var PlaylistShow = /*#__PURE__*/function (_React$Component) {
       playingSong: false,
       selectedSong: ""
     };
-    _this.deleteThisPlaylist = _this.handleDeletePlaylist.bind(_assertThisInitialized(_this));
+    _this.deletePlaylist = _this.deletePlaylist.bind(_assertThisInitialized(_this));
     _this.handleSongClick = _this.handleSongClick.bind(_assertThisInitialized(_this));
     return _this;
   }
 
   _createClass(PlaylistShow, [{
-    key: "handleDeletePlaylist",
-    value: function handleDeletePlaylist() {
+    key: "deletePlaylist",
+    value: function deletePlaylist(e) {
       var _this2 = this;
 
+      e.preventDefault();
       this.props.deletePlaylist(this.props.playlistId).then(function () {
         return _this2.props.history.push("/webplayer");
       });
@@ -1493,7 +1494,7 @@ var PlaylistShow = /*#__PURE__*/function (_React$Component) {
       var _this$props = this.props,
           songs = _this$props.songs,
           artists = _this$props.artists,
-          playlists = _this$props.playlists;
+          playlist = _this$props.playlist;
       if (!songs) return null;
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "playlist-show-container"
@@ -1504,7 +1505,7 @@ var PlaylistShow = /*#__PURE__*/function (_React$Component) {
         className: "playlist-subheader-show"
       }, "Playlist"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "playlist-show-title"
-      }, "New Music Friday"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, playlist.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "playlist-show-description"
       }, "Brand new music from Sam Smith, Miley Cyrus, 070 Shake, and more!")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "play-pause-like-delete-container"
@@ -1532,7 +1533,7 @@ var PlaylistShow = /*#__PURE__*/function (_React$Component) {
         className: "dropdown-content-flex"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "delete-playlist-button",
-        onClick: this.handleDeletePlaylist
+        onClick: this.deletePlaylist
       }, "Delete Playlist"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         to: "/webplayer"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1736,23 +1737,31 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var mSTP = function mSTP(state, ownProps) {
-  var currentUserId = state.session.id;
-  var currentUser = state.entities.users[currentUserId]; // let playlistId = ownProps.match.params.playlistId;
-  // let playlist = state.entities.playlists[playlistId];
+  var currentUser = state.entities.users[state.session.id];
+  var playlists = Object.values(state.entities.playlists);
+  var songs = Object.values(state.entities.songs);
+  var playlistId = ownProps.match.params.playlistId; //grab the ID   
 
+  var playlist = state.entities.playlists[playlistId] || {
+    name: "",
+    song_ids: [],
+    user_id: 0
+  };
+  var artists = state.entities.artists;
   return {
-    // playlist,
-    playlists: Object.values(state.entities.playlists),
-    songs: Object.values(state.entities.songs),
-    artists: state.entities.artists,
-    currentUserId: currentUserId,
+    playlist: playlist,
+    playlists: playlists,
+    songs: songs,
+    artists: artists,
     currentUser: currentUser
   };
 };
 
 var mDTP = function mDTP(dispatch) {
   return {
-    // fetchPlaylist: (id) => dispatch(fetchPlaylist(id)),
+    fetchPlaylist: function fetchPlaylist(id) {
+      return dispatch(Object(_actions_playlist_actions__WEBPACK_IMPORTED_MODULE_3__["fetchPlaylist"])(id));
+    },
     fetchUser: function fetchUser(id) {
       return dispatch(Object(_actions_user_actions__WEBPACK_IMPORTED_MODULE_4__["fetchUser"])(id));
     },
@@ -3711,8 +3720,8 @@ var updatePlaylist = function updatePlaylist(playlistId) {
 };
 var deletePlaylist = function deletePlaylist(id) {
   return $.ajax({
-    url: "/api/playlists/".concat(id),
-    method: "DELETE"
+    method: "DELETE",
+    url: "api/playlists/".concat(id)
   });
 };
 var addSong = function addSong(playlistId, songId) {
