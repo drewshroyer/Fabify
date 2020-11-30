@@ -1493,8 +1493,7 @@ var PlaylistShow = /*#__PURE__*/function (_React$Component) {
 
       var _this$props = this.props,
           songs = _this$props.songs,
-          artists = _this$props.artists,
-          playlist = _this$props.playlist;
+          artists = _this$props.artists;
       if (!songs) return null;
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "playlist-show-container"
@@ -1505,7 +1504,7 @@ var PlaylistShow = /*#__PURE__*/function (_React$Component) {
         className: "playlist-subheader-show"
       }, "Playlist"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "playlist-show-title"
-      }, playlist.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "New Music Friday"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "playlist-show-description"
       }, "Brand new music from Sam Smith, Miley Cyrus, 070 Shake, and more!")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "play-pause-like-delete-container"
@@ -1579,6 +1578,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _playlist_show_container__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./playlist_show_container */ "./frontend/components/playlists/playlist_show_container.js");
 /* harmony import */ var _actions_session_actions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../actions/session_actions */ "./frontend/actions/session_actions.js");
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _actions_playlist_actions__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../actions/playlist_actions */ "./frontend/actions/playlist_actions.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -1600,6 +1601,8 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
 
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+
 
 
 
@@ -1682,6 +1685,7 @@ var PlaylistShowBody = /*#__PURE__*/function (_React$Component) {
       }, "Log out")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "webplayer-body-container"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_playlist_show_container__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        playlist: this.props.playlist,
         togglePlayPause: this.togglePlayPause
       }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_playbar_play_bar_container__WEBPACK_IMPORTED_MODULE_2__["default"], {
         togglePlayPause: this.togglePlayPause,
@@ -1698,13 +1702,22 @@ var PlaylistShowBody = /*#__PURE__*/function (_React$Component) {
 
 var mDTP = function mDTP(dispatch) {
   return {
+    fetchPlaylist: function fetchPlaylist(id) {
+      return dispatch(Object(_actions_playlist_actions__WEBPACK_IMPORTED_MODULE_6__["fetchPlaylist"])(id));
+    },
     logout: function logout() {
       return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_4__["logout"])());
     }
   };
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_5__["connect"])(null, mDTP)(PlaylistShowBody));
+var mSTP = function mSTP(state, ownProps) {
+  return {
+    playlist: state.entities.playlists[ownProps.match.params.playlistId]
+  };
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_router_dom__WEBPACK_IMPORTED_MODULE_7__["withRouter"])(Object(react_redux__WEBPACK_IMPORTED_MODULE_5__["connect"])(mSTP, mDTP)(PlaylistShowBody)));
 
 /***/ }),
 
@@ -1738,19 +1751,10 @@ __webpack_require__.r(__webpack_exports__);
 
 var mSTP = function mSTP(state, ownProps) {
   var currentUser = state.entities.users[state.session.id];
-  var playlists = Object.values(state.entities.playlists);
   var songs = Object.values(state.entities.songs);
-  var playlistId = ownProps.match.params.playlistId; //grab the ID   
-
-  var playlist = state.entities.playlists[playlistId] || {
-    name: "",
-    song_ids: [],
-    user_id: 0
-  };
+  debugger;
   var artists = state.entities.artists;
   return {
-    playlist: playlist,
-    playlists: playlists,
     songs: songs,
     artists: artists,
     currentUser: currentUser
@@ -3440,11 +3444,11 @@ var playlistsReducer = function playlistsReducer() {
       return action.playlists;
 
     case _actions_playlist_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_PLAYLIST"]:
-      newState[action.playlist.id] = action.playlist;
+      newState[action.playlistId] = action.playlist;
       return newState;
 
     case _actions_playlist_actions__WEBPACK_IMPORTED_MODULE_0__["REMOVE_PLAYLIST"]:
-      delete newState[action.playlist.id];
+      delete newState[action.playlistId];
       return newState;
 
     default:

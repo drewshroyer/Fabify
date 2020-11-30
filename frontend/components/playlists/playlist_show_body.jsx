@@ -4,11 +4,13 @@ import PlayBarContainer from "../playbar/play-bar-container";
 import PlaylistShowContainer from "./playlist_show_container";
 import { logout } from "../../actions/session_actions";
 import { connect } from "react-redux";
+import { fetchPlaylist } from "../../actions/playlist_actions";
+import { withRouter } from 'react-router-dom';
+
 
 class PlaylistShowBody extends React.Component {
   constructor(props) {
     super(props);
-
     this.deleteThisPlaylist = this.handleDeletePlaylist.bind(this);
     this.togglePlayPause = this.togglePlayPause.bind(this);
 
@@ -64,6 +66,7 @@ class PlaylistShowBody extends React.Component {
           </div>
           <div className="webplayer-body-container">
             <PlaylistShowContainer
+              playlist={this.props.playlist}
               togglePlayPause={this.togglePlayPause}
             />
           </div>
@@ -82,8 +85,15 @@ class PlaylistShowBody extends React.Component {
 
 const mDTP = (dispatch) => {
   return {
+    fetchPlaylist: id => dispatch(fetchPlaylist(id)),
     logout: () => dispatch(logout()),
   };
 };
 
-export default connect(null, mDTP)(PlaylistShowBody);
+const mSTP = (state, ownProps) => {  
+  return {
+    playlist: state.entities.playlists[ownProps.match.params.playlistId]
+  };
+};
+
+export default withRouter(connect(mSTP, mDTP)(PlaylistShowBody));

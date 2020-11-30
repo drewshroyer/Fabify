@@ -32,7 +32,7 @@ class PlaylistShow extends React.Component {
     }
 
   render() {
-    const { songs, artists, playlist } = this.props;
+    const { songs, artists } = this.props;
     if (!songs) return null;
     return (
       <div className="playlist-show-container">
@@ -41,7 +41,7 @@ class PlaylistShow extends React.Component {
           className="background-header-image-playlist-show"
         >
           <div className="playlist-subheader-show">Playlist</div>
-          <div className="playlist-show-title">{playlist.name}</div>
+          <div className="playlist-show-title">New Music Friday</div>
           <div className="playlist-show-description">
             Brand new music from Sam Smith, Miley Cyrus, 070 Shake, and more!
           </div>
