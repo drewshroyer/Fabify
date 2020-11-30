@@ -521,8 +521,8 @@ var App = function App() {
     component: _playlists_playlist_show_body__WEBPACK_IMPORTED_MODULE_9__["default"]
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_7__["ProtectedRoute"], {
     exact: true,
-    path: "/webplayer",
-    component: _webplayer_liked_songs__WEBPACK_IMPORTED_MODULE_8__["default"]
+    path: "/likes",
+    component: _webplayer_webplayer__WEBPACK_IMPORTED_MODULE_5__["default"]
   }));
 };
 
@@ -2749,8 +2749,7 @@ var LikedSongs = /*#__PURE__*/function (_React$Component) {
   _createClass(LikedSongs, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      this.props.fetchSongs(); // this.props.fetchPlaylists();
-      // this.props.fetchArtists();
+      this.props.fetchSongs();
     }
   }, {
     key: "render",

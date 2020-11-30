@@ -27,7 +27,7 @@ const App = () => (
       path="/playlists/:playlistId"
       component={PlaylistShowBody}
     />
-    <ProtectedRoute exact path="/webplayer" component={LikedSongs} />
+    <ProtectedRoute exact path="/likes" component={WebPlayer} />
   </div>
 );
 
