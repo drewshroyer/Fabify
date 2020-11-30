@@ -4,7 +4,7 @@ import PlayBarContainer from "../playbar/play-bar-container";
 import PlaylistShowContainer from "./playlist_show_container";
 import { logout } from "../../actions/session_actions";
 import { connect } from "react-redux";
-import { fetchPlaylist } from "../../actions/playlist_actions";
+import { fetchPlaylist, fetchPlaylists } from "../../actions/playlist_actions";
 import { withRouter } from 'react-router-dom';
 
 
@@ -15,7 +15,6 @@ class PlaylistShowBody extends React.Component {
     this.togglePlayPause = this.togglePlayPause.bind(this);
 
     this.state = {
-      // playlist: playlist,
       playingSong: false,
       selectedSong: "",
       name: "",
@@ -23,6 +22,11 @@ class PlaylistShowBody extends React.Component {
       artist: "",
     };
   }
+
+   componentDidMount() {
+     this.props.fetchPlaylists();
+     this.props.fetchPlaylist(this.props.match.params.playlistId);
+   }
 
   handleDeletePlaylist() {
       this.props
@@ -85,8 +89,9 @@ class PlaylistShowBody extends React.Component {
 
 const mDTP = (dispatch) => {
   return {
-    fetchPlaylist: id => dispatch(fetchPlaylist(id)),
     logout: () => dispatch(logout()),
+    fetchPlaylist: id => dispatch(fetchPlaylist(id)),
+    fetchPlaylists: () => dispatch(fetchPlaylists()),
   };
 };
 

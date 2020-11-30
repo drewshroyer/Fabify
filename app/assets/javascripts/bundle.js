@@ -224,6 +224,7 @@ var fetchPlaylists = function fetchPlaylists() {
 };
 var fetchPlaylist = function fetchPlaylist(id) {
   return function (dispatch) {
+    debugger;
     return _util_playlist_api_util__WEBPACK_IMPORTED_MODULE_0__["fetchPlaylist"](id).then(function (playlist) {
       return dispatch(receivePlaylist(playlist));
     });
@@ -1484,7 +1485,7 @@ var PlaylistShow = /*#__PURE__*/function (_React$Component) {
     key: "componentDidMount",
     value: function componentDidMount() {
       this.props.fetchSongs();
-      this.props.fetchPlaylists();
+      this.props.fetchPlaylists(); // this.props.fetchPlaylist(this.props.match.params.playlistId);
     }
   }, {
     key: "render",
@@ -1625,7 +1626,6 @@ var PlaylistShowBody = /*#__PURE__*/function (_React$Component) {
     _this.deleteThisPlaylist = _this.handleDeletePlaylist.bind(_assertThisInitialized(_this));
     _this.togglePlayPause = _this.togglePlayPause.bind(_assertThisInitialized(_this));
     _this.state = {
-      // playlist: playlist,
       playingSong: false,
       selectedSong: "",
       name: "",
@@ -1636,6 +1636,12 @@ var PlaylistShowBody = /*#__PURE__*/function (_React$Component) {
   }
 
   _createClass(PlaylistShowBody, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      this.props.fetchPlaylists();
+      this.props.fetchPlaylist(this.props.match.params.playlistId);
+    }
+  }, {
     key: "handleDeletePlaylist",
     value: function handleDeletePlaylist() {
       var _this2 = this;
@@ -1702,11 +1708,14 @@ var PlaylistShowBody = /*#__PURE__*/function (_React$Component) {
 
 var mDTP = function mDTP(dispatch) {
   return {
+    logout: function logout() {
+      return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_4__["logout"])());
+    },
     fetchPlaylist: function fetchPlaylist(id) {
       return dispatch(Object(_actions_playlist_actions__WEBPACK_IMPORTED_MODULE_6__["fetchPlaylist"])(id));
     },
-    logout: function logout() {
-      return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_4__["logout"])());
+    fetchPlaylists: function fetchPlaylists() {
+      return dispatch(Object(_actions_playlist_actions__WEBPACK_IMPORTED_MODULE_6__["fetchPlaylists"])());
     }
   };
 };
@@ -1751,10 +1760,11 @@ __webpack_require__.r(__webpack_exports__);
 
 var mSTP = function mSTP(state, ownProps) {
   var currentUser = state.entities.users[state.session.id];
-  var songs = Object.values(state.entities.songs);
-  debugger;
+  var songs = Object.values(state.entities.songs); // debugger
+
   var artists = state.entities.artists;
   return {
+    // playlist: state.entities.playlists[ownProps.match.params.playlistId],
     songs: songs,
     artists: artists,
     currentUser: currentUser
@@ -1763,9 +1773,7 @@ var mSTP = function mSTP(state, ownProps) {
 
 var mDTP = function mDTP(dispatch) {
   return {
-    fetchPlaylist: function fetchPlaylist(id) {
-      return dispatch(Object(_actions_playlist_actions__WEBPACK_IMPORTED_MODULE_3__["fetchPlaylist"])(id));
-    },
+    // fetchPlaylist: id => dispatch(fetchPlaylist(id)),
     fetchUser: function fetchUser(id) {
       return dispatch(Object(_actions_user_actions__WEBPACK_IMPORTED_MODULE_4__["fetchUser"])(id));
     },

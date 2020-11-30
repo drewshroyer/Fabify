@@ -6,15 +6,16 @@ import { fetchPlaylist } from "../../actions/playlist_actions";
 import { fetchUser } from "../../actions/user_actions";
 import { fetchArtists } from "../../actions/artist_actions";
 import { logout } from "../../actions/session_actions";
-import { deletePlaylist } from "../../actions/playlist_actions"
-import { removeSongFromPlaylist } from "../../actions/playlist_song_actions"
+import { deletePlaylist } from "../../actions/playlist_actions";
+import { removeSongFromPlaylist } from "../../actions/playlist_song_actions";
 
 const mSTP = (state, ownProps) => {
   const currentUser = state.entities.users[state.session.id];
   let songs = Object.values(state.entities.songs)
-  debugger
+  // debugger
   let artists = state.entities.artists
   return {
+    // playlist: state.entities.playlists[ownProps.match.params.playlistId],
     songs,
     artists,
     currentUser: currentUser,
@@ -23,7 +24,7 @@ const mSTP = (state, ownProps) => {
 
 const mDTP = (dispatch) => {
   return {
-    fetchPlaylist: (id) => dispatch(fetchPlaylist(id)),
+    // fetchPlaylist: id => dispatch(fetchPlaylist(id)),
     fetchUser: (id) => dispatch(fetchUser(id)),
     fetchPlaylists: () => dispatch(fetchPlaylists()),
     fetchSongs: () => dispatch(fetchSongs()),
