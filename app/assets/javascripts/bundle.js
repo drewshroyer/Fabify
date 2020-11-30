@@ -521,7 +521,7 @@ var App = function App() {
     component: _playlists_playlist_show_body__WEBPACK_IMPORTED_MODULE_9__["default"]
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_7__["ProtectedRoute"], {
     exact: true,
-    path: "/likes",
+    path: "/webplayer",
     component: _webplayer_liked_songs__WEBPACK_IMPORTED_MODULE_8__["default"]
   }));
 };
