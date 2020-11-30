@@ -75,7 +75,7 @@ class PlayBar extends React.Component {
               type="range"
               min="0"
               max="100"
-              placeholder="50"
+              placeholder="100"
               className="volume-slider"
             />
           </div>
