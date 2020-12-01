@@ -1492,7 +1492,7 @@ var PlaylistShow = /*#__PURE__*/function (_React$Component) {
       var randomNumber = Math.floor(Math.random() * this.props.songs.length); // console.log(randomNumber)
 
       var song1 = this.props.songs[randomNumber];
-      this.props.togglePlayPause(this.props.song1.id, this.props.song1.name, this.props.song1.photo_url, this.props.song1.name);
+      this.props.togglePlayPause(this.props.song.id, this.props.song.name, this.props.song.photo_url, this.props.song.name);
     }
   }, {
     key: "componentDidMount",
@@ -1900,8 +1900,6 @@ var PlaylistSongIndexItem = /*#__PURE__*/function (_React$Component) {
         ,
         controls: true,
         id: "audio-element--".concat(song.id)
-      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-        to: "/songs/".concat(song.id)
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "playlist-music-tile-number-container"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {

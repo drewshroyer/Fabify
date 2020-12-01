@@ -32,10 +32,10 @@ class PlaylistShow extends React.Component {
     // console.log(randomNumber)
     let song1 = this.props.songs[randomNumber];
     this.props.togglePlayPause(
-      this.props.song1.id,
-      this.props.song1.name,
-      this.props.song1.photo_url,
-      this.props.song1.name
+      this.props.song.id,
+      this.props.song.name,
+      this.props.song.photo_url,
+      this.props.song.name
     );
   }
 
