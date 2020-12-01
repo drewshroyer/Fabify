@@ -21,7 +21,7 @@ class WebPlayerBody extends React.Component {
         <div className="webplayer-top-shortcuts-see-all">
           <div className="shortcuts-keyword-webplayer">Shortcuts</div>
           <div className="see-all-playlists-keyword-webplayer">
-            <Link to="/playlists/1">See All</Link>
+            <Link to="/playlists/">See All</Link>
           </div>
         </div>
         <ul className="webplayer-music-tile-line-item">

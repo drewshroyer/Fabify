@@ -1314,10 +1314,41 @@ var PlaylistAllIndex = /*#__PURE__*/function (_React$Component) {
         className: "webplayer-outer-body-container"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "top-bar-container"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "dropdown"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        onClick: this.props.logout,
         className: "webplayer-logout-button"
-      }, "Log out")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "Menu"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "dropdown-content-webplayer"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "dropdown-content-flex"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "delete-playlist-button"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        className: "nav-bar-link",
+        id: "nav-bar-dash",
+        href: "http://www.drewshroyer.github.io/",
+        target: "_blank"
+      }, "Drew Shroyer")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "delete-playlist-button"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        className: "nav-bar-link",
+        id: "nav-bar-dash",
+        href: "https://www.linkedin.com/in/drew-shroyer-861b32a4/",
+        target: "_blank"
+      }, "LinkedIn")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "delete-playlist-button"
+      }, " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        className: "nav-bar-link",
+        id: "nav-bar-dash",
+        target: "_blank",
+        href: "https://www.github.com/drewshroyer/"
+      }, "GitHub"), " "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "delete-playlist-button"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "nav-bar-link",
+        onClick: this.props.logout
+      }, "Logout")))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "playlists-all-body-container"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "playlists-all-shortcuts-see-all"
@@ -1715,10 +1746,41 @@ var PlaylistShowBody = /*#__PURE__*/function (_React$Component) {
         className: "webplayer-outer-body-container"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "top-bar-container"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "dropdown"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        onClick: this.props.logout,
         className: "webplayer-logout-button"
-      }, "Log out")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "Menu"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "dropdown-content-webplayer"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "dropdown-content-flex"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "delete-playlist-button"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        className: "nav-bar-link",
+        id: "nav-bar-dash",
+        href: "http://www.drewshroyer.github.io/",
+        target: "_blank"
+      }, "Drew Shroyer")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "delete-playlist-button"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        className: "nav-bar-link",
+        id: "nav-bar-dash",
+        href: "https://www.linkedin.com/in/drew-shroyer-861b32a4/",
+        target: "_blank"
+      }, "LinkedIn")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "delete-playlist-button"
+      }, " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        className: "nav-bar-link",
+        id: "nav-bar-dash",
+        target: "_blank",
+        href: "https://www.github.com/drewshroyer/"
+      }, "GitHub"), " "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "delete-playlist-button"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "nav-bar-link",
+        onClick: this.props.logout
+      }, "Logout")))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "webplayer-body-container"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_playlist_show_container__WEBPACK_IMPORTED_MODULE_3__["default"], {
         playlistId: this.state.playlistId,
@@ -2645,7 +2707,7 @@ var Navbar = /*#__PURE__*/function (_React$Component) {
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         className: "nav-bar-link",
         id: "nav-bar-dash",
-        href: "http://www.drewshroyer.com/"
+        href: "http://www.drewshroyer.github.io/"
       }, "Drew Shroyer"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         className: "nav-bar-link",
         id: "nav-bar-dash",
@@ -3105,10 +3167,41 @@ var WebPlayer = /*#__PURE__*/function (_React$Component) {
         className: "webplayer-outer-body-container"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "top-bar-container"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "dropdown"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        onClick: this.props.logout,
         className: "webplayer-logout-button"
-      }, "Log out")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_webplayer_body_container__WEBPACK_IMPORTED_MODULE_4__["default"], {
+      }, "Menu"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "dropdown-content-webplayer"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "dropdown-content-flex"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "delete-playlist-button"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        className: "nav-bar-link",
+        id: "nav-bar-dash",
+        href: "http://www.drewshroyer.github.io/",
+        target: "_blank"
+      }, "Drew Shroyer")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "delete-playlist-button"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        className: "nav-bar-link",
+        id: "nav-bar-dash",
+        href: "https://www.linkedin.com/in/drew-shroyer-861b32a4/",
+        target: "_blank"
+      }, "LinkedIn")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "delete-playlist-button"
+      }, " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        className: "nav-bar-link",
+        id: "nav-bar-dash",
+        target: "_blank",
+        href: "https://www.github.com/drewshroyer/"
+      }, "GitHub"), " "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "delete-playlist-button"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "nav-bar-link",
+        onClick: this.props.logout
+      }, "Logout")))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_webplayer_body_container__WEBPACK_IMPORTED_MODULE_4__["default"], {
         togglePlayPause: this.togglePlayPause
       })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_playbar_play_bar_container__WEBPACK_IMPORTED_MODULE_3__["default"], {
         togglePlayPause: this.togglePlayPause,
@@ -3210,7 +3303,7 @@ var WebPlayerBody = /*#__PURE__*/function (_React$Component) {
       }, "Shortcuts"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "see-all-playlists-keyword-webplayer"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
-        to: "/playlists/1"
+        to: "/playlists/"
       }, "See All"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
         className: "webplayer-music-tile-line-item"
       }, songs.map(function (song) {

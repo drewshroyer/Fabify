@@ -68,6 +68,22 @@
 
 }
 
+.dropdown-content-webplayer {
+  display: none;
+  position: absolute;
+  color: white;
+  font-weight: bold;
+  background-color: #282828;
+  min-width: 160px;
+  padding: 10px;
+  z-index: 1;
+  right: 10px;
+}
+
+.dropdown:hover .dropdown-content-webplayer {
+  display: block;
+}
+
 .shortcuts-keyword-webplayer {
     color: #ffffff;
     font-size: 24px;

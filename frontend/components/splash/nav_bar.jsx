@@ -18,7 +18,7 @@ render() {
           <a
             className="nav-bar-link"
             id="nav-bar-dash"
-            href={"http://www.drewshroyer.com/"}
+            href={"http://www.drewshroyer.github.io/"}
           >
             Drew Shroyer
           </a>

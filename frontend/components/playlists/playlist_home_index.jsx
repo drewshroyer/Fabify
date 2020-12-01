@@ -23,12 +23,45 @@ class PlaylistAllIndex extends React.Component {
         <InternalNavbarContainer />
         <div className="webplayer-outer-body-container">
           <div className="top-bar-container">
-            <button
-              onClick={this.props.logout}
-              className="webplayer-logout-button"
-            >
-              Log out
-            </button>
+            <div className="dropdown">
+           <button className="webplayer-logout-button">Menu
+           </button>
+           <div className="dropdown-content-webplayer">
+             <div className="dropdown-content-flex">  
+             <div className="delete-playlist-button">
+               <a
+            className="nav-bar-link"
+            id="nav-bar-dash"
+            href={"http://www.drewshroyer.github.io/"}
+            target = "_blank"
+          >
+            Drew Shroyer
+          </a>
+          </div>
+             <div className="delete-playlist-button">
+               <a
+            className="nav-bar-link"
+            id="nav-bar-dash"
+            href={"https://www.linkedin.com/in/drew-shroyer-861b32a4/"}
+            target = "_blank"
+          >
+            LinkedIn
+          </a></div>
+             <div className="delete-playlist-button"> <a
+            className="nav-bar-link"
+            id="nav-bar-dash"
+            target = "_blank"
+            href={"https://www.github.com/drewshroyer/"}
+          >
+            GitHub
+          </a> </div>
+             <div className="delete-playlist-button">
+                <div className="nav-bar-link" onClick={this.props.logout}>Logout
+                </div>
+              </div>
+             </div>
+           </div>
+           </div>
           </div>
           
           {/* // Should be same as webplayBodyContainer */}
