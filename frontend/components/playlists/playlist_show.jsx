@@ -13,12 +13,9 @@ class PlaylistShow extends React.Component {
 
    deletePlaylist(e) {
      e.preventDefault()
-      this.props
-        .deletePlaylist(this.props.playlistId)
-        .then(() => this.props.match.history.push("/webplayer"));
+      this.props.deletePlaylist(this.props.playlistId);
+      this.props.history.push('/webplayer');
     }
-
-    // try pulling it out of the .then
 
     handleSongClick() {
     this.props.togglePlayPause(

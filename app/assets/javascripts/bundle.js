@@ -1476,14 +1476,10 @@ var PlaylistShow = /*#__PURE__*/function (_React$Component) {
   _createClass(PlaylistShow, [{
     key: "deletePlaylist",
     value: function deletePlaylist(e) {
-      var _this2 = this;
-
       e.preventDefault();
-      this.props.deletePlaylist(this.props.playlistId).then(function () {
-        return _this2.props.match.history.push("/webplayer");
-      });
-    } // try pulling it out of the .then
-
+      this.props.deletePlaylist(this.props.playlistId);
+      this.props.history.push('/webplayer');
+    }
   }, {
     key: "handleSongClick",
     value: function handleSongClick() {
@@ -1506,7 +1502,7 @@ var PlaylistShow = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      var _this3 = this;
+      var _this2 = this;
 
       var _this$props = this.props,
           songs = _this$props.songs,
@@ -1571,7 +1567,7 @@ var PlaylistShow = /*#__PURE__*/function (_React$Component) {
           key: idx,
           song: song,
           artist: artists[song.artist_id]
-        }, _defineProperty(_React$createElement, "key", song.id), _defineProperty(_React$createElement, "togglePlayPause", _this3.props.togglePlayPause), _defineProperty(_React$createElement, "removeSongFromPlaylist", _this3.props.removeSongFromPlaylist), _React$createElement));
+        }, _defineProperty(_React$createElement, "key", song.id), _defineProperty(_React$createElement, "togglePlayPause", _this2.props.togglePlayPause), _defineProperty(_React$createElement, "removeSongFromPlaylist", _this2.props.removeSongFromPlaylist), _React$createElement));
       }))));
     }
   }]);
