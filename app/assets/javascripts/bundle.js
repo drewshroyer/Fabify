@@ -1467,6 +1467,7 @@ var PlaylistShow = /*#__PURE__*/function (_React$Component) {
     };
     _this.deletePlaylist = _this.deletePlaylist.bind(_assertThisInitialized(_this));
     _this.handleSongClick = _this.handleSongClick.bind(_assertThisInitialized(_this));
+    _this.handleToggleShuffle = _this.handleToggleShuffle.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -1484,6 +1485,14 @@ var PlaylistShow = /*#__PURE__*/function (_React$Component) {
     key: "handleSongClick",
     value: function handleSongClick() {
       this.props.togglePlayPause(this.props.song.id, this.props.song.name, this.props.song.photo_url, this.props.artist.name);
+    }
+  }, {
+    key: "handleToggleShuffle",
+    value: function handleToggleShuffle() {
+      var randomNumber = Math.floor(Math.random() * this.props.songs.length); // console.log(randomNumber)
+
+      var song1 = this.props.songs[randomNumber];
+      this.props.togglePlayPause(this.props.song1.id, this.props.song1.name, this.props.song1.photo_url, this.props.song1.name);
     }
   }, {
     key: "componentDidMount",
@@ -1515,7 +1524,7 @@ var PlaylistShow = /*#__PURE__*/function (_React$Component) {
         className: "play-pause-like-delete-container"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "playlist-music-audio",
-        onClick: this.handleSongClick
+        onClick: this.handleToggleShuffle
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         className: "playlist-music-play-button",
         src: window.whitePlayButton,
@@ -1584,7 +1593,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _actions_session_actions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../actions/session_actions */ "./frontend/actions/session_actions.js");
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var _actions_playlist_actions__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../actions/playlist_actions */ "./frontend/actions/playlist_actions.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -1615,7 +1623,6 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 
 
 
-
 var PlaylistShowBody = /*#__PURE__*/function (_React$Component) {
   _inherits(PlaylistShowBody, _React$Component);
 
@@ -1628,7 +1635,8 @@ var PlaylistShowBody = /*#__PURE__*/function (_React$Component) {
 
     _this = _super.call(this, props);
     _this.deleteThisPlaylist = _this.handleDeletePlaylist.bind(_assertThisInitialized(_this));
-    _this.togglePlayPause = _this.togglePlayPause.bind(_assertThisInitialized(_this));
+    _this.togglePlayPause = _this.togglePlayPause.bind(_assertThisInitialized(_this)); // this.handleToggleShuffle = this.handleToggleShuffle.bind(this);
+
     _this.state = {
       playingSong: false,
       selectedSong: "",
@@ -1679,7 +1687,12 @@ var PlaylistShowBody = /*#__PURE__*/function (_React$Component) {
       } else {
         audioEle.play();
       }
-    }
+    } // handleToggleShuffle() {
+    //   let shuffledSong = Math.floor(Math.random() * songs.length);
+    //   let song = songs[shuffledSong];
+    //   togglePlayPause(shuffledSong.id, shuffledSong.name, shuffledSong.photo, shuffledSong.artist)
+    // }
+
   }, {
     key: "render",
     value: function render() {
@@ -1730,7 +1743,7 @@ var mSTP = function mSTP(state, ownProps) {
   };
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_router_dom__WEBPACK_IMPORTED_MODULE_7__["withRouter"])(Object(react_redux__WEBPACK_IMPORTED_MODULE_5__["connect"])(mSTP, mDTP)(PlaylistShowBody)));
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_5__["connect"])(mSTP, mDTP)(PlaylistShowBody));
 
 /***/ }),
 

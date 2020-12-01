@@ -8,6 +8,7 @@ class PlaylistShow extends React.Component {
     this.state = { playingSong: false, selectedSong: "" };
     this.deletePlaylist = this.deletePlaylist.bind(this);
     this.handleSongClick = this.handleSongClick.bind(this);
+    this.handleToggleShuffle = this.handleToggleShuffle.bind(this);
   }
 
    deletePlaylist(e) {
@@ -23,6 +24,18 @@ class PlaylistShow extends React.Component {
       this.props.song.name,
       this.props.song.photo_url,
       this.props.artist.name
+    );
+  }
+
+   handleToggleShuffle() {
+    let randomNumber = Math.floor(Math.random() * this.props.songs.length);
+    // console.log(randomNumber)
+    let song1 = this.props.songs[randomNumber];
+    this.props.togglePlayPause(
+      this.props.song1.id,
+      this.props.song1.name,
+      this.props.song1.photo_url,
+      this.props.song1.name
     );
   }
 
@@ -50,7 +63,7 @@ class PlaylistShow extends React.Component {
         <div className="play-pause-like-delete-container">
           <div
             className="playlist-music-audio"
-            onClick={this.handleSongClick}
+            onClick={this.handleToggleShuffle}
           >
             <img
               className="playlist-music-play-button"

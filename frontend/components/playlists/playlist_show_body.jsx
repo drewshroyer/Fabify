@@ -5,7 +5,6 @@ import PlaylistShowContainer from "./playlist_show_container";
 import { logout } from "../../actions/session_actions";
 import { connect } from "react-redux";
 import { fetchPlaylist, fetchPlaylists } from "../../actions/playlist_actions";
-import { withRouter } from 'react-router-dom';
 
 
 class PlaylistShowBody extends React.Component {
@@ -13,6 +12,7 @@ class PlaylistShowBody extends React.Component {
     super(props);
     this.deleteThisPlaylist = this.handleDeletePlaylist.bind(this);
     this.togglePlayPause = this.togglePlayPause.bind(this);
+    // this.handleToggleShuffle = this.handleToggleShuffle.bind(this);
 
     this.state = {
       playingSong: false,
@@ -54,6 +54,12 @@ class PlaylistShowBody extends React.Component {
       audioEle.play();
     }
   }
+
+  // handleToggleShuffle() {
+  //   let shuffledSong = Math.floor(Math.random() * songs.length);
+  //   let song = songs[shuffledSong];
+  //   togglePlayPause(shuffledSong.id, shuffledSong.name, shuffledSong.photo, shuffledSong.artist)
+  // }
 
   render() {
     return (
@@ -101,4 +107,4 @@ const mSTP = (state, ownProps) => {
   };
 };
 
-export default withRouter(connect(mSTP, mDTP)(PlaylistShowBody));
+export default connect(mSTP, mDTP)(PlaylistShowBody);
