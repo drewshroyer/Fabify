@@ -48,7 +48,7 @@ class PlaylistShow extends React.Component {
     }
 
   render() {
-    const { songs, artists, playlistName} = this.props;
+    const { songs, artists, playlistName, playlistDescription} = this.props;
     if (!songs) return null;
     return (
       <div className="playlist-show-container">
@@ -57,9 +57,9 @@ class PlaylistShow extends React.Component {
           className="background-header-image-playlist-show"
         >
           <div className="playlist-subheader-show">Playlist</div>
-      <div className="playlist-show-title">{playlistName}</div>
+        <div className="playlist-show-title">{playlistName}</div>
           <div className="playlist-show-description">
-            Brand new music from Sam Smith, Miley Cyrus, 070 Shake, and more!
+            {playlistDescription}
           </div>
         </div>
         <div className="play-pause-like-delete-container">
@@ -78,7 +78,7 @@ class PlaylistShow extends React.Component {
            <button className="three-dot-options" >...
            </button>
            <div className="dropdown-content">
-             <div className="dropdown-content-flex">
+             <div className="dropdown-content-flex">  
              <div className="delete-playlist-button" onClick={this.deletePlaylist}>Delete Playlist</div>
              <Link to="/webplayer">
              <div className="delete-playlist-button">Return to Home</div>
@@ -86,14 +86,16 @@ class PlaylistShow extends React.Component {
              <Link to="/webplayer">
              <div className="delete-playlist-button">Add Songs</div>
              </Link>
+             <div className="delete-playlist-button">Edit Details</div>
              </div>
            </div>
            </div>
         </div>
         <div className="playlist-music-tile-line-item">
           <ul >
-            {songs.map((song) => (
+            {songs.map((song, idx) => (
               <PlaylistSongIndexItem
+                key={idx}
                 song={song}
                 artist={artists[song.artist_id]}
                 key={song.id}

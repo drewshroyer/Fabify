@@ -25,7 +25,7 @@ class InternalNavbar extends React.Component {
 
   componentWillMount() {
     this.props.fetchPlaylists();
-  }
+  }git a
 
   updatePlaylistTab() {
     let homeTab = document.getElementById("internal-home-link")
@@ -150,8 +150,10 @@ class InternalNavbar extends React.Component {
             <div className="internal-nav-line"></div>
             <div className="user-playlists">
               <ul className="nav-bar-playlists">
-                {playlists.map((playlist) => (
-                  <PlaylistIndex playlist={playlist} key={playlist.id} />
+                {playlists.map((playlist, idx) => (
+                  <PlaylistIndex 
+                  playlist={playlist} 
+                  key={idx} />
                 ))}
               </ul>
             </div>
