@@ -25,7 +25,7 @@ class InternalNavbar extends React.Component {
 
   componentWillMount() {
     this.props.fetchPlaylists();
-  }git a
+  }
 
   updatePlaylistTab() {
     let homeTab = document.getElementById("internal-home-link")
