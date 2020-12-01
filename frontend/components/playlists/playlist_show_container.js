@@ -8,10 +8,12 @@ import { fetchArtists } from "../../actions/artist_actions";
 import { logout } from "../../actions/session_actions";
 import { deletePlaylist } from "../../actions/playlist_actions";
 import { removeSongFromPlaylist } from "../../actions/playlist_song_actions";
+import { withRouter } from "react-router-dom";
 
 const mSTP = (state, ownProps) => {
   const currentUser = state.entities.users[state.session.id];
   let songs = Object.values(state.entities.songs)
+  // debugger
   let artists = state.entities.artists
   return {
     songs,
@@ -22,6 +24,7 @@ const mSTP = (state, ownProps) => {
 
 const mDTP = (dispatch) => {
   return {
+    fetchPlaylist: id => dispatch(fetchPlaylist(id)),
     fetchUser: (id) => dispatch(fetchUser(id)),
     fetchPlaylists: () => dispatch(fetchPlaylists()),
     fetchSongs: () => dispatch(fetchSongs()),
@@ -35,4 +38,4 @@ const mDTP = (dispatch) => {
   };
 };
 
-export default connect(mSTP, mDTP)(PlaylistShow);
+export default withRouter(connect(mSTP, mDTP)(PlaylistShow));

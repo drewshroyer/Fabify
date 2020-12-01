@@ -10,29 +10,38 @@ import { fetchPlaylist, fetchPlaylists } from "../../actions/playlist_actions";
 class PlaylistShowBody extends React.Component {
   constructor(props) {
     super(props);
-    this.deleteThisPlaylist = this.handleDeletePlaylist.bind(this);
     this.togglePlayPause = this.togglePlayPause.bind(this);
     // this.handleToggleShuffle = this.handleToggleShuffle.bind(this);
-
     this.state = {
       playingSong: false,
       selectedSong: "",
       name: "",
       photo: "",
       artist: "",
+      playlistName: "",
+      playlistDescription: "",
+      playlistId: ""
     };
   }
 
    componentDidMount() {
-     this.props.fetchPlaylists();
+    //  this.props.fetchPlaylists();
      this.props.fetchPlaylist(this.props.match.params.playlistId);
    }
 
-  handleDeletePlaylist() {
-      this.props
-        .deletePlaylist(this.playlistId)
-        .then(() => this.history.push("/webplayer"));
-    }
+   componentDidUpdate(prevProps, prevState) {
+      if(prevProps.playlist.name !== this.props.playlist.name) {
+        // debugger
+        this.setState({
+          playlistName: this.props.playlist.name,
+          playlistDescription: this.props.playlist.description,
+          playlistId: this.props.playlist.id
+        })
+      }
+      if(prevProps.match.params.playlistId !== this.props.match.params.playlistId) {
+        this.props.fetchPlaylist(this.props.match.params.playlistId);
+      }
+   }
 
   togglePlayPause(id, name, photo, artist) {
     const audioEle = document.getElementById(`audio-element--${id}`);
@@ -77,10 +86,9 @@ class PlaylistShowBody extends React.Component {
           </div>
           <div className="webplayer-body-container">
             <PlaylistShowContainer
-              key = {playlist.id}
-              playlist={playlist}
-              name = {playlist.name}
-              description = {playlist.description}
+              playlistId={this.state.playlistId}
+              playlistName={this.state.playlistName}
+              playlistDescription={this.state.playlistDescription}
               togglePlayPause={this.togglePlayPause}
             />
           </div>
@@ -107,7 +115,7 @@ const mDTP = (dispatch) => {
 
 const mSTP = (state, ownProps) => {  
   return {
-    playlist: state.entities.playlists[ownProps.match.params.playlistId]
+    playlist: state.entities.playlists[ownProps.match.params.playlistId] || {}
   };
 };
 

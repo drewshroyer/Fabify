@@ -1478,7 +1478,7 @@ var PlaylistShow = /*#__PURE__*/function (_React$Component) {
 
       e.preventDefault();
       this.props.deletePlaylist(this.props.playlistId).then(function () {
-        return _this2.props.history.push("/webplayer");
+        return _this2.props.match.history.push("/webplayer");
       });
     }
   }, {
@@ -1507,7 +1507,8 @@ var PlaylistShow = /*#__PURE__*/function (_React$Component) {
 
       var _this$props = this.props,
           songs = _this$props.songs,
-          artists = _this$props.artists;
+          artists = _this$props.artists,
+          playlistName = _this$props.playlistName;
       if (!songs) return null;
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "playlist-show-container"
@@ -1518,7 +1519,7 @@ var PlaylistShow = /*#__PURE__*/function (_React$Component) {
         className: "playlist-subheader-show"
       }, "Playlist"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "playlist-show-title"
-      }, "New Music Friday"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, playlistName), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "playlist-show-description"
       }, "Brand new music from Sam Smith, Miley Cyrus, 070 Shake, and more!")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "play-pause-like-delete-container"
@@ -1634,7 +1635,6 @@ var PlaylistShowBody = /*#__PURE__*/function (_React$Component) {
     _classCallCheck(this, PlaylistShowBody);
 
     _this = _super.call(this, props);
-    _this.deleteThisPlaylist = _this.handleDeletePlaylist.bind(_assertThisInitialized(_this));
     _this.togglePlayPause = _this.togglePlayPause.bind(_assertThisInitialized(_this)); // this.handleToggleShuffle = this.handleToggleShuffle.bind(this);
 
     _this.state = {
@@ -1642,7 +1642,10 @@ var PlaylistShowBody = /*#__PURE__*/function (_React$Component) {
       selectedSong: "",
       name: "",
       photo: "",
-      artist: ""
+      artist: "",
+      playlistName: "",
+      playlistDescription: "",
+      playlistId: ""
     };
     return _this;
   }
@@ -1650,17 +1653,24 @@ var PlaylistShowBody = /*#__PURE__*/function (_React$Component) {
   _createClass(PlaylistShowBody, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      this.props.fetchPlaylists();
+      //  this.props.fetchPlaylists();
       this.props.fetchPlaylist(this.props.match.params.playlistId);
     }
   }, {
-    key: "handleDeletePlaylist",
-    value: function handleDeletePlaylist() {
-      var _this2 = this;
+    key: "componentDidUpdate",
+    value: function componentDidUpdate(prevProps, prevState) {
+      if (prevProps.playlist.name !== this.props.playlist.name) {
+        // debugger
+        this.setState({
+          playlistName: this.props.playlist.name,
+          playlistDescription: this.props.playlist.description,
+          playlistId: this.props.playlist.id
+        });
+      }
 
-      this.props.deletePlaylist(this.playlistId).then(function () {
-        return _this2.history.push("/webplayer");
-      });
+      if (prevProps.match.params.playlistId !== this.props.match.params.playlistId) {
+        this.props.fetchPlaylist(this.props.match.params.playlistId);
+      }
     }
   }, {
     key: "togglePlayPause",
@@ -1709,10 +1719,9 @@ var PlaylistShowBody = /*#__PURE__*/function (_React$Component) {
       }, "Log out")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "webplayer-body-container"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_playlist_show_container__WEBPACK_IMPORTED_MODULE_3__["default"], {
-        key: playlist.id,
-        playlist: playlist,
-        name: playlist.name,
-        description: playlist.description,
+        playlistId: this.state.playlistId,
+        playlistName: this.state.playlistName,
+        playlistDescription: this.state.playlistDescription,
         togglePlayPause: this.togglePlayPause
       }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_playbar_play_bar_container__WEBPACK_IMPORTED_MODULE_2__["default"], {
         togglePlayPause: this.togglePlayPause,
@@ -1743,7 +1752,7 @@ var mDTP = function mDTP(dispatch) {
 
 var mSTP = function mSTP(state, ownProps) {
   return {
-    playlist: state.entities.playlists[ownProps.match.params.playlistId]
+    playlist: state.entities.playlists[ownProps.match.params.playlistId] || {}
   };
 };
 
@@ -1768,6 +1777,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _actions_artist_actions__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../actions/artist_actions */ "./frontend/actions/artist_actions.js");
 /* harmony import */ var _actions_session_actions__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../actions/session_actions */ "./frontend/actions/session_actions.js");
 /* harmony import */ var _actions_playlist_song_actions__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../actions/playlist_song_actions */ "./frontend/actions/playlist_song_actions.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+
 
 
 
@@ -1781,7 +1792,8 @@ __webpack_require__.r(__webpack_exports__);
 
 var mSTP = function mSTP(state, ownProps) {
   var currentUser = state.entities.users[state.session.id];
-  var songs = Object.values(state.entities.songs);
+  var songs = Object.values(state.entities.songs); // debugger
+
   var artists = state.entities.artists;
   return {
     songs: songs,
@@ -1792,6 +1804,9 @@ var mSTP = function mSTP(state, ownProps) {
 
 var mDTP = function mDTP(dispatch) {
   return {
+    fetchPlaylist: function fetchPlaylist(id) {
+      return dispatch(Object(_actions_playlist_actions__WEBPACK_IMPORTED_MODULE_3__["fetchPlaylist"])(id));
+    },
     fetchUser: function fetchUser(id) {
       return dispatch(Object(_actions_user_actions__WEBPACK_IMPORTED_MODULE_4__["fetchUser"])(id));
     },
@@ -1816,7 +1831,7 @@ var mDTP = function mDTP(dispatch) {
   };
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mSTP, mDTP)(_playlist_show__WEBPACK_IMPORTED_MODULE_1__["default"]));
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_router_dom__WEBPACK_IMPORTED_MODULE_8__["withRouter"])(Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mSTP, mDTP)(_playlist_show__WEBPACK_IMPORTED_MODULE_1__["default"])));
 
 /***/ }),
 

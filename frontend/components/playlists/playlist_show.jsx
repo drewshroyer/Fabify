@@ -15,9 +15,10 @@ class PlaylistShow extends React.Component {
      e.preventDefault()
       this.props
         .deletePlaylist(this.props.playlistId)
-        .then(() => this.props.history.push("/webplayer"));
+        .then(() => this.props.match.history.push("/webplayer"));
     }
 
+    
     handleSongClick() {
     this.props.togglePlayPause(
       this.props.song.id,
@@ -46,7 +47,7 @@ class PlaylistShow extends React.Component {
     }
 
   render() {
-    const { songs, artists } = this.props;
+    const { songs, artists, playlistName} = this.props;
     if (!songs) return null;
     return (
       <div className="playlist-show-container">
@@ -55,7 +56,7 @@ class PlaylistShow extends React.Component {
           className="background-header-image-playlist-show"
         >
           <div className="playlist-subheader-show">Playlist</div>
-          <div className="playlist-show-title">New Music Friday</div>
+      <div className="playlist-show-title">{playlistName}</div>
           <div className="playlist-show-description">
             Brand new music from Sam Smith, Miley Cyrus, 070 Shake, and more!
           </div>
