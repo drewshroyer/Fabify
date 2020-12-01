@@ -26,13 +26,22 @@ class InternalNavbar extends React.Component {
     this.props.fetchPlaylists();
   }
 
-  updateCurrentTab() {
+  updatePlaylistTab() {
     let homeTab = document.getElementById("internal-home-link")
     homeTab.style.backgroundColor = '#040404'
+
     let playlistTab = document.getElementById("internal-playlist-link")
     playlistTab.style.backgroundColor = '#282828'
+    playlistTab.style.color = "white"
+  }
+
+  updateLibraryTab() {
+    let homeTab = document.getElementById("internal-home-link")
+    homeTab.style.backgroundColor = '#040404'
+
     let libraryTab = document.getElementById("internal-library-link")
     libraryTab.style.backgroundColor = '#282828'
+    libraryTab.style.color = "white"
   }
 
   render() {
@@ -66,7 +75,7 @@ class InternalNavbar extends React.Component {
                 Home{" "}
               </Link>
             </div>
-            <div className="internal-search-link" onClick={this.updateCurrentTab} id="internal-playlist-link">
+            <div className="internal-search-link" onClick={this.updatePlaylistTab} id="internal-playlist-link">
               <svg
                 className="internal-nav-icon"
                 viewBox="0 0 512 512"
@@ -88,7 +97,7 @@ class InternalNavbar extends React.Component {
                 Playlists
               </Link>
             </div>
-            <div className="internal-library-link" onClick={this.updateCurrentTab} id="internal-library-link">
+            <div className="internal-library-link" onClick={this.updateLibraryTab} id="internal-library-link">
               <svg
                 className="internal-nav-icon"
                 viewBox="0 0 512 512"

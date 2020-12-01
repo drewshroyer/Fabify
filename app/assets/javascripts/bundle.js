@@ -608,14 +608,22 @@ var InternalNavbar = /*#__PURE__*/function (_React$Component) {
       this.props.fetchPlaylists();
     }
   }, {
-    key: "updateCurrentTab",
-    value: function updateCurrentTab() {
+    key: "updatePlaylistTab",
+    value: function updatePlaylistTab() {
       var homeTab = document.getElementById("internal-home-link");
       homeTab.style.backgroundColor = '#040404';
       var playlistTab = document.getElementById("internal-playlist-link");
       playlistTab.style.backgroundColor = '#282828';
+      playlistTab.style.color = "white";
+    }
+  }, {
+    key: "updateLibraryTab",
+    value: function updateLibraryTab() {
+      var homeTab = document.getElementById("internal-home-link");
+      homeTab.style.backgroundColor = '#040404';
       var libraryTab = document.getElementById("internal-library-link");
       libraryTab.style.backgroundColor = '#282828';
+      libraryTab.style.color = "white";
     }
   }, {
     key: "render",
@@ -650,7 +658,7 @@ var InternalNavbar = /*#__PURE__*/function (_React$Component) {
         id: "hover-white"
       }, "Home", " ")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "internal-search-link",
-        onClick: this.updateCurrentTab,
+        onClick: this.updatePlaylistTab,
         id: "internal-playlist-link"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
         className: "internal-nav-icon",
@@ -668,7 +676,7 @@ var InternalNavbar = /*#__PURE__*/function (_React$Component) {
         id: "hover-white"
       }, "Playlists")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "internal-library-link",
-        onClick: this.updateCurrentTab,
+        onClick: this.updateLibraryTab,
         id: "internal-library-link"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
         className: "internal-nav-icon",
