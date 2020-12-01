@@ -1,8 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import PlaylistSongIndexItem from "./playlist_song_index";
 
-class PlaylistShow extends React.Component {
+class ArtistShow extends React.Component {
   constructor(props) {
     super(props);
     this.state = { playingSong: false, selectedSong: "" };
@@ -89,18 +88,6 @@ class PlaylistShow extends React.Component {
            </div>
         </div>
         <div className="playlist-music-tile-line-item">
-          <ul >
-            {songs.map((song, idx) => (
-              <PlaylistSongIndexItem
-                key={idx}
-                song={song}
-                artist={artists[song.artist_id]}
-                key={song.id}
-                togglePlayPause={this.props.togglePlayPause}
-                removeSongFromPlaylist = {this.props.removeSongFromPlaylist}
-              />
-            ))}
-          </ul>
         </div>
       
       </div>
@@ -108,4 +95,4 @@ class PlaylistShow extends React.Component {
   }
 }
 
-export default PlaylistShow;
+export default ArtistShow;

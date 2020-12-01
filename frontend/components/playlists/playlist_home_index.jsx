@@ -63,14 +63,11 @@ class PlaylistAllIndex extends React.Component {
            </div>
            </div>
           </div>
-          
-          {/* // Should be same as webplayBodyContainer */}
           <div className="playlists-all-body-container">
             <div className="playlists-all-shortcuts-see-all">
               <div className="popular-playlists-keyword-webplayer">Popular Playlists</div>
             </div>
             <ul className="webplayer-music-tile-line-item">
-        {/* Should be the same as Song Index Item  */}
         {playlists.map((playlist) => (
               <div className="webplayer-music-tile-container">
                 <div className="playlist-home-tile">

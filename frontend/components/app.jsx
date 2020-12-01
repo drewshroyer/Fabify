@@ -9,6 +9,7 @@ import Search from "./webplayer/search";
 import { AuthRoute, ProtectedRoute } from "../util/route_util";
 import LikedSongs from "./webplayer/liked_songs"
 import PlaylistShowBody from "./playlists/playlist_show_body";
+import ArtistShowBody from "./artists/artist_body";
 import PlaylistAllIndex from "./playlists/playlist_home_index_container";
 
 const App = () => (
@@ -26,6 +27,11 @@ const App = () => (
       exact
       path="/playlists/:playlistId"
       component={PlaylistShowBody}
+    />
+    <ProtectedRoute
+      exact
+      path="/artists/:artistId"
+      component={ArtistShowBody}
     />
     <ProtectedRoute exact path="/likes" component={WebPlayer} />
   </div>

@@ -1,47 +1,45 @@
 import React from "react";
+import { connect } from "react-redux";
 import InternalNavbarContainer from "../nav/internal-nav_container";
 import PlayBarContainer from "../playbar/play-bar-container";
-import PlaylistShowContainer from "./playlist_show_container";
+import ArtistShowContainer from "./artist_show_container";
 import { logout } from "../../actions/session_actions";
-import { connect } from "react-redux";
-import { fetchPlaylist, fetchPlaylists } from "../../actions/playlist_actions";
+import { fetchArtist } from "../../actions/artist_actions";
 
-
-class PlaylistShowBody extends React.Component {
-  constructor(props) {
+class ArtistShowBody extends React.Component {
+    constructor(props) {
     super(props);
     this.togglePlayPause = this.togglePlayPause.bind(this);
-    // this.handleToggleShuffle = this.handleToggleShuffle.bind(this);
-    this.state = {
-      playingSong: false,
-      selectedSong: "",
-      name: "",
-      photo: "",
-      artist: "",
-      playlistName: "",
-      playlistDescription: "",
-      playlistId: ""
-    };
+    this.state = { 
+        playingSong: false, 
+        selectedSong: "",
+        name: "",
+        photo: "",
+        artist: "",
+        artistName: "",
+        artistBio: "",
+        artistId: ""
+     };
   }
 
-   componentDidMount() {
-     this.props.fetchPlaylist(this.props.match.params.playlistId);
+  componentDidMount() {
+     this.props.fetchArtist(this.props.match.params.artistId);
    }
 
    componentDidUpdate(prevProps, prevState) {
-      if(prevProps.playlist.name !== this.props.playlist.name) {
+      if(prevProps.artist.name !== this.props.artist.name) {
         this.setState({
-          playlistName: this.props.playlist.name,
-          playlistDescription: this.props.playlist.description,
-          playlistId: this.props.playlist.id
+          artistName: this.props.artist.name,
+          artistBio: this.props.artist.description,
+          artistId: this.props.artist.id
         })
       }
-      if(prevProps.match.params.playlistId !== this.props.match.params.playlistId) {
-        this.props.fetchPlaylist(this.props.match.params.playlistId);
+      if(prevProps.match.params.artistId !== this.props.match.params.artistId) {
+        this.props.fetchArtist(this.props.match.params.artistId);
       }
    }
 
-  togglePlayPause(id, name, photo, artist) {
+   togglePlayPause(id, name, photo, artist) {
     const audioEle = document.getElementById(`audio-element--${id}`);
     if (this.state.selectedSong === id) {
       this.setState({ playingSong: !this.state.playingSong });
@@ -62,14 +60,8 @@ class PlaylistShowBody extends React.Component {
     }
   }
 
-  // handleToggleShuffle() {
-  //   let shuffledSong = Math.floor(Math.random() * songs.length);
-  //   let song = songs[shuffledSong];
-  //   togglePlayPause(shuffledSong.id, shuffledSong.name, shuffledSong.photo, shuffledSong.artist)
-  // }
-
   render() {
-    const { playlist } = this.props
+    const { songs } = this.props;
     return (
       <div className="web-player-container">
         <InternalNavbarContainer />
@@ -115,39 +107,39 @@ class PlaylistShowBody extends React.Component {
            </div>
            </div>
           </div>
-          <div className="webplayer-body-container">
-            <PlaylistShowContainer
-              playlistId={this.state.playlistId}
-              playlistName={this.state.playlistName}
-              playlistDescription={this.state.playlistDescription}
-              togglePlayPause={this.togglePlayPause}
-            />
-          </div>
+        <div className="webplayer-body-container">
+
+        <ArtistShowContainer 
+            artistId={this.state.artistId}
+            artistName={this.state.artistName}
+            artistBio={this.state.artistBio}
+            togglePlayPause={this.togglePlayPause}
+        />
+        </div>
         </div>
         <PlayBarContainer
-          togglePlayPause={this.togglePlayPause}
-          selectedSong={this.state.selectedSong}
-          name={this.state.name}
-          photo={this.state.photo}
-          artist={this.state.artist}
-        />
-      </div>
-    );
+                togglePlayPause={this.togglePlayPause}
+                selectedSong={this.state.selectedSong}
+                name={this.state.name}
+                photo={this.state.photo}
+                artist={this.state.artist}
+              />
+     </div>
+    )
   }
 }
 
 const mDTP = (dispatch) => {
   return {
     logout: () => dispatch(logout()),
-    fetchPlaylist: id => dispatch(fetchPlaylist(id)),
-    fetchPlaylists: () => dispatch(fetchPlaylists()),
+    fetchArtist: id => dispatch(fetchArtist(id)),
   };
 };
 
 const mSTP = (state, ownProps) => {  
   return {
-    playlist: state.entities.playlists[ownProps.match.params.playlistId] || {}
+    artist: state.entities.artists[ownProps.match.params.artistId] || {}
   };
 };
 
-export default connect(mSTP, mDTP)(PlaylistShowBody);
+export default connect(mSTP, mDTP)(ArtistShowBody);
