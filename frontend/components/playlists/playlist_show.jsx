@@ -18,7 +18,8 @@ class PlaylistShow extends React.Component {
         .then(() => this.props.match.history.push("/webplayer"));
     }
 
-    
+    // try pulling it out of the .then
+
     handleSongClick() {
     this.props.togglePlayPause(
       this.props.song.id,

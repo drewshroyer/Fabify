@@ -1480,7 +1480,8 @@ var PlaylistShow = /*#__PURE__*/function (_React$Component) {
       this.props.deletePlaylist(this.props.playlistId).then(function () {
         return _this2.props.match.history.push("/webplayer");
       });
-    }
+    } // try pulling it out of the .then
+
   }, {
     key: "handleSongClick",
     value: function handleSongClick() {
