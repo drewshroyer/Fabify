@@ -791,46 +791,32 @@ var ArtistShow = /*#__PURE__*/function (_React$Component) {
       playingSong: false,
       selectedSong: ""
     };
-    _this.deletePlaylist = _this.deletePlaylist.bind(_assertThisInitialized(_this));
     _this.handleSongClick = _this.handleSongClick.bind(_assertThisInitialized(_this));
-    _this.handleToggleShuffle = _this.handleToggleShuffle.bind(_assertThisInitialized(_this));
+    _this.handleAddSongToPlaylist = _this.handleAddSongToPlaylist(_assertThisInitialized(_this));
     return _this;
   }
 
   _createClass(ArtistShow, [{
-    key: "deletePlaylist",
-    value: function deletePlaylist(e) {
-      e.preventDefault();
-      this.props.deletePlaylist(this.props.playlistId);
-      this.props.history.push('/webplayer');
-    }
-  }, {
     key: "handleSongClick",
     value: function handleSongClick() {
       this.props.togglePlayPause(this.props.song.id, this.props.song.name, this.props.song.photo_url, this.props.artist.name);
     }
   }, {
-    key: "handleToggleShuffle",
-    value: function handleToggleShuffle() {
-      var randomNumber = Math.floor(Math.random() * this.props.songs.length); // console.log(randomNumber)
-
-      var song1 = this.props.songs[randomNumber];
-      this.props.togglePlayPause(this.props.song.id, this.props.song.name, this.props.song.photo_url, this.props.song.name);
-    }
+    key: "handleAddSongToPlaylist",
+    value: function handleAddSongToPlaylist() {}
   }, {
     key: "componentDidMount",
     value: function componentDidMount() {
       this.props.fetchSongs();
-      this.props.fetchPlaylists(); // this.props.fetchPlaylist(this.props.match.params.playlistId);
+      this.props.fetchPlaylists();
     }
   }, {
     key: "render",
     value: function render() {
       var _this$props = this.props,
           songs = _this$props.songs,
-          artists = _this$props.artists,
-          playlistName = _this$props.playlistName,
-          playlistDescription = _this$props.playlistDescription;
+          artistName = _this$props.artistName,
+          artistBio = _this$props.artistBio;
       if (!songs) return null;
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "playlist-show-container"
@@ -841,46 +827,26 @@ var ArtistShow = /*#__PURE__*/function (_React$Component) {
         className: "playlist-subheader-show"
       }, "Playlist"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "playlist-show-title"
-      }, playlistName), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, artistName), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "playlist-show-description"
-      }, playlistDescription)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, artistBio)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "play-pause-like-delete-container"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "playlist-music-audio",
-        onClick: this.handleToggleShuffle
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        className: "playlist-music-play-button",
-        src: window.whitePlayButton,
-        alt: "white-play-button"
-      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
-        role: "img",
-        height: "32",
-        width: "32",
-        viewBox: "0 0 32 32"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
-        d: "M27.319 5.927a7.445 7.445 0 00-10.02-.462s-.545.469-1.299.469c-.775 0-1.299-.469-1.299-.469a7.445 7.445 0 00-10.02 10.993l9.266 10.848a2.7 2.7 0 004.106 0l9.266-10.848a7.447 7.447 0 000-10.531z"
-      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "dropdown"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "three-dot-options"
-      }, "..."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "dropdown-content"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "dropdown-content-flex"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+        to: "/webplayer"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "delete-playlist-button"
+      }, "Return to Home")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "delete-playlist-button",
-        onClick: this.deletePlaylist
-      }, "Delete Playlist"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-        to: "/webplayer"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "delete-playlist-button"
-      }, "Return to Home")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-        to: "/webplayer"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "delete-playlist-button"
-      }, "Add Songs")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "delete-playlist-button"
-      }, "Edit Details"))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        onClick: this.handleAddSongToPlaylist
+      }, "Add Song to Playlist"))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "playlist-music-tile-line-item"
       }));
     }
