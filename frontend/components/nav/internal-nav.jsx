@@ -8,6 +8,7 @@ class InternalNavbar extends React.Component {
     super(props);
     this.state = { isOpen: false };
     this.toggleModal = this.toggleModal.bind(this);
+    this.updatePlaylistTab = this.updatePlaylistTab.bind(this);
   }
 
   toggleModal() {
@@ -32,16 +33,7 @@ class InternalNavbar extends React.Component {
 
     let playlistTab = document.getElementById("internal-playlist-link")
     playlistTab.style.backgroundColor = '#282828'
-    playlistTab.style.color = "white"
-  }
-
-  updateLibraryTab() {
-    let homeTab = document.getElementById("internal-home-link")
-    homeTab.style.backgroundColor = '#040404'
-
-    let libraryTab = document.getElementById("internal-library-link")
-    libraryTab.style.backgroundColor = '#282828'
-    libraryTab.style.color = "white"
+    playlistTab.style.color = '#ffffff'
   }
 
   render() {
@@ -97,7 +89,7 @@ class InternalNavbar extends React.Component {
                 Playlists
               </Link>
             </div>
-            <div className="internal-library-link" onClick={this.updateLibraryTab} id="internal-library-link">
+            <div className="internal-library-link" id="internal-library-link">
               <svg
                 className="internal-nav-icon"
                 viewBox="0 0 512 512"

@@ -586,6 +586,7 @@ var InternalNavbar = /*#__PURE__*/function (_React$Component) {
       isOpen: false
     };
     _this.toggleModal = _this.toggleModal.bind(_assertThisInitialized(_this));
+    _this.updatePlaylistTab = _this.updatePlaylistTab.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -614,16 +615,7 @@ var InternalNavbar = /*#__PURE__*/function (_React$Component) {
       homeTab.style.backgroundColor = '#040404';
       var playlistTab = document.getElementById("internal-playlist-link");
       playlistTab.style.backgroundColor = '#282828';
-      playlistTab.style.color = "white";
-    }
-  }, {
-    key: "updateLibraryTab",
-    value: function updateLibraryTab() {
-      var homeTab = document.getElementById("internal-home-link");
-      homeTab.style.backgroundColor = '#040404';
-      var libraryTab = document.getElementById("internal-library-link");
-      libraryTab.style.backgroundColor = '#282828';
-      libraryTab.style.color = "white";
+      playlistTab.style.color = '#ffffff';
     }
   }, {
     key: "render",
@@ -676,7 +668,6 @@ var InternalNavbar = /*#__PURE__*/function (_React$Component) {
         id: "hover-white"
       }, "Playlists")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "internal-library-link",
-        onClick: this.updateLibraryTab,
         id: "internal-library-link"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
         className: "internal-nav-icon",
