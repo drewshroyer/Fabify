@@ -224,7 +224,6 @@ var fetchPlaylists = function fetchPlaylists() {
 };
 var fetchPlaylist = function fetchPlaylist(id) {
   return function (dispatch) {
-    debugger;
     return _util_playlist_api_util__WEBPACK_IMPORTED_MODULE_0__["fetchPlaylist"](id).then(function (playlist) {
       return dispatch(receivePlaylist(playlist));
     });
@@ -612,7 +611,7 @@ var InternalNavbar = /*#__PURE__*/function (_React$Component) {
     key: "updateCurrentTab",
     value: function updateCurrentTab() {
       var currentTab = document.getElementsByClassName("internal-home-link");
-      currentTab.classList.toggle("internal-current-link");
+      currentTab.style.background_color = '#282828';
     }
   }, {
     key: "render",
@@ -632,6 +631,7 @@ var InternalNavbar = /*#__PURE__*/function (_React$Component) {
         className: "internal-nav-column"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "internal-home-link",
+        onClick: this.updateCurrentTab,
         id: "hover-white"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
         className: "internal-nav-home-icon",

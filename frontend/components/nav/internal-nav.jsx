@@ -28,7 +28,7 @@ class InternalNavbar extends React.Component {
 
   updateCurrentTab() {
     let currentTab = document.getElementsByClassName("internal-home-link")
-    currentTab.classList.toggle("internal-current-link")
+    currentTab.style.background_color = '#282828'
   }
 
   render() {
@@ -45,7 +45,7 @@ class InternalNavbar extends React.Component {
             ></img>
           </Link>
           <div className="internal-nav-column">
-            <div className="internal-home-link" id="hover-white">
+            <div className="internal-home-link" onClick={this.updateCurrentTab} id="hover-white">
               <svg
                 className="internal-nav-home-icon"
                 viewBox="0 0 512 512"
