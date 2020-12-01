@@ -37,7 +37,6 @@ class PlaylistAllIndex extends React.Component {
               <div className="popular-playlists-keyword-webplayer">Popular Playlists</div>
             </div>
             <ul className="webplayer-music-tile-line-item">
-
         {/* Should be the same as Song Index Item  */}
         {playlists.map((playlist) => (
               <div className="webplayer-music-tile-container">
@@ -56,9 +55,6 @@ class PlaylistAllIndex extends React.Component {
                 ))}
           </ul>
         </div>
-
-
-
         </div>
         <PlayBarContainer
                 togglePlayPause={this.togglePlayPause}

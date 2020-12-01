@@ -610,8 +610,12 @@ var InternalNavbar = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "updateCurrentTab",
     value: function updateCurrentTab() {
-      var currentTab = document.getElementsByClassName("internal-home-link");
-      currentTab.style.background_color = '#282828';
+      var homeTab = document.getElementById("internal-home-link");
+      homeTab.style.backgroundColor = '#040404';
+      var playlistTab = document.getElementById("internal-playlist-link");
+      playlistTab.style.backgroundColor = '#282828';
+      var libraryTab = document.getElementById("internal-library-link");
+      libraryTab.style.backgroundColor = '#282828';
     }
   }, {
     key: "render",
@@ -631,8 +635,7 @@ var InternalNavbar = /*#__PURE__*/function (_React$Component) {
         className: "internal-nav-column"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "internal-home-link",
-        onClick: this.updateCurrentTab,
-        id: "hover-white"
+        id: "internal-home-link"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
         className: "internal-nav-home-icon",
         viewBox: "0 0 512 512",
@@ -647,7 +650,8 @@ var InternalNavbar = /*#__PURE__*/function (_React$Component) {
         id: "hover-white"
       }, "Home", " ")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "internal-search-link",
-        id: "hover-white"
+        onClick: this.updateCurrentTab,
+        id: "internal-playlist-link"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
         className: "internal-nav-icon",
         viewBox: "0 0 512 512",
@@ -664,7 +668,8 @@ var InternalNavbar = /*#__PURE__*/function (_React$Component) {
         id: "hover-white"
       }, "Playlists")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "internal-library-link",
-        id: "hover-white"
+        onClick: this.updateCurrentTab,
+        id: "internal-library-link"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
         className: "internal-nav-icon",
         viewBox: "0 0 512 512",

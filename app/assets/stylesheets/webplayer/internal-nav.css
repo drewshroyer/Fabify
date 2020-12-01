@@ -16,6 +16,7 @@
 .internal-home-link {
     width: 80%;
     color: white;
+    background-color: #282828;
     fill: #ffffff;
     border-radius: 5px;
     padding-left: 25px; 
@@ -26,8 +27,6 @@
     padding-top: 8px;
     padding-bottom: 8px;
 }
-
-
 
 .internal-home-link:hover {
     color: white;
