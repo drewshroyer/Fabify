@@ -62,6 +62,7 @@ class PlaylistShowBody extends React.Component {
   // }
 
   render() {
+    const { playlist } = this.props
     return (
       <div className="web-player-container">
         <InternalNavbarContainer />
@@ -76,7 +77,10 @@ class PlaylistShowBody extends React.Component {
           </div>
           <div className="webplayer-body-container">
             <PlaylistShowContainer
-              playlist={this.props.playlist}
+              key = {playlist.id}
+              playlist={playlist}
+              name = {playlist.name}
+              description = {playlist.description}
               togglePlayPause={this.togglePlayPause}
             />
           </div>

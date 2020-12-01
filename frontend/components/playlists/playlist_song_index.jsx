@@ -25,7 +25,7 @@ class PlaylistSongIndexItem extends React.Component {
   render() {
     const { song, artist } = this.props;
     return (
-      <div className="playlist-song-tile-container">
+      <div className="playlist-song-tile-container" onClick={this.handleSongClick}>
         <div className="playlist-music-tile">
           <audio
             src={song.audio_url}
@@ -38,7 +38,6 @@ class PlaylistSongIndexItem extends React.Component {
             <div className="playlist-music-tile-number">{song.id} 
               <div
                 className="playlist-music-tile-audio"
-                onClick={this.handleSongClick}
               >
                 <img
                   className="playlist-music-tile-play-button"

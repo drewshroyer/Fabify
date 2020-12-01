@@ -61,16 +61,12 @@ ul {
     width: 50px;
 }
 
-/* .playlist-music-tile > .playlist-music-tile-number-container:hover {
+/* .playplaylist-music-tile-play-buttonlist-music-tile > .playlist-music-tile-number-container:hover {
     visibility: hidden;
 } */
 
-/* .playlist-music-tile-play-button {
-    visibility: hidden;
-} */
-
-/* .playlist-music-tile-play-button:hover{
-    visibility: visible;
+.playlist-music-tile-play-button .playlist-song-tile-container:hover{
+    display: block;
     height: 20px;
     width: 25px;
     font-size: 16px;
@@ -78,7 +74,7 @@ ul {
     line-height: 24px;
     color: white;
     z-index: 1;
-} */
+}
 
 .playlist-music-tile-artist {
     width: 200px;
@@ -101,7 +97,7 @@ display: none;
 }
 
 .playlist-music-tile-play-button {
-/* display: none; */
+    display: none;
     width: 30px;
     width: 30px;
 }
