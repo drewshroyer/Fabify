@@ -37,19 +37,29 @@ class ArtistShow extends React.Component {
     const { songs, artistName, artistBio, artistId} = this.props;
     let artistSongs = []
     songs.forEach(song => {
-        if(song.artist.id === artistId){
+        if(song.artist_id === artistId){
             artistSongs.push(song);
         }
     })
-
     if (!artistSongs) return null;
+    // let firstSong = artistSongs.1;
+    // let artistPhoto = firstSong.photo_url;
     return (
-      <div className="playlist-show-container">          
+      <div className="playlist-show-container">  
+      <div className="artist-show-info-container">
+      <ul >
+         {artistSongs.map((song, idx) => (
+             <div className="playlist-song-tile-container">
+            <img src={song.photo_url} className="artist-show-music-tile-photo" />
+            </div>
+         ))}
+        </ul>
           <div className="artist-subheader-show">Verified Artist</div>
         <div className="playlist-show-title">{artistName}</div>
           <div className="artist-show-description">
             {artistBio}
           </div>
+        </div>
         <div className="artist-show-container">
           <div className="dropdown">
            <button className="three-dot-options" >

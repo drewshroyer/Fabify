@@ -8,12 +8,23 @@ import { logout } from "../../actions/session_actions";
 import { removeSongFromPlaylist } from "../../actions/playlist_song_actions";
 import { withRouter } from "react-router-dom";
 
-const mSTP = (state) => {
+const mSTP = (state, ownProps) => {
   const currentUser = state.entities.users[state.session.id];
+//   let artistId = ownProps.match.params.artistId
+//   let artist = state.entities.artists[artistId]
   let songs = Object.values(state.entities.songs)
+//   let artistSongs = []
+//     songs.forEach(song => {
+//         debugger
+//         if(song.artist.id === artistId){
+//             artistSongs.push(song);
+//         }
+//         debugger
+//     })
   let artists = state.entities.artists
   return {
-    songs,
+    // artistSongs,
+     songs,
     artists,
     currentUser: currentUser,
   };

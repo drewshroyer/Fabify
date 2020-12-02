@@ -18,13 +18,18 @@
 
 .artist-show-container {
     height: 0px;
-    /* margin-top: 400px;
-    width: 240px;
-    height: 100px;
-    padding: 10px 50px 0px 30px;
-    color: white;
+}
+
+.artist-show-music-tile-photo {
+    /* position: absolute; */
+    top: 10%;
+    left: 25%;
+    height:200px;
+    width: 200px;
+    z-index: 1;
+}
+
+.artist-show-info-container {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    align-items: center; */
 }

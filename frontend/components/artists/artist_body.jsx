@@ -108,7 +108,6 @@ class ArtistShowBody extends React.Component {
            </div>
           </div>
         <div className="webplayer-body-container">
-
         <ArtistShowContainer 
             artistId={this.state.artistId}
             artistName={this.state.artistName}

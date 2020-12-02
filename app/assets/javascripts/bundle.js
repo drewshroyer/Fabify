@@ -827,20 +827,31 @@ var ArtistShow = /*#__PURE__*/function (_React$Component) {
           artistId = _this$props.artistId;
       var artistSongs = [];
       songs.forEach(function (song) {
-        if (song.artist.id === artistId) {
+        if (song.artist_id === artistId) {
           artistSongs.push(song);
         }
       });
-      if (!artistSongs) return null;
+      if (!artistSongs) return null; // let firstSong = artistSongs.1;
+      // let artistPhoto = firstSong.photo_url;
+
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "playlist-show-container"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "artist-show-info-container"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, artistSongs.map(function (song, idx) {
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "playlist-song-tile-container"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+          src: song.photo_url,
+          className: "artist-show-music-tile-photo"
+        }));
+      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "artist-subheader-show"
       }, "Verified Artist"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "playlist-show-title"
       }, artistName), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "artist-show-description"
-      }, artistBio), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, artistBio)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "artist-show-container"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "dropdown"
@@ -944,11 +955,22 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var mSTP = function mSTP(state) {
-  var currentUser = state.entities.users[state.session.id];
-  var songs = Object.values(state.entities.songs);
+var mSTP = function mSTP(state, ownProps) {
+  var currentUser = state.entities.users[state.session.id]; //   let artistId = ownProps.match.params.artistId
+  //   let artist = state.entities.artists[artistId]
+
+  var songs = Object.values(state.entities.songs); //   let artistSongs = []
+  //     songs.forEach(song => {
+  //         debugger
+  //         if(song.artist.id === artistId){
+  //             artistSongs.push(song);
+  //         }
+  //         debugger
+  //     })
+
   var artists = state.entities.artists;
   return {
+    // artistSongs,
     songs: songs,
     artists: artists,
     currentUser: currentUser
