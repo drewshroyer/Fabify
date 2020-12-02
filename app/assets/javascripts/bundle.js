@@ -839,9 +839,7 @@ var ArtistShow = /*#__PURE__*/function (_React$Component) {
           artistSongs.push(song);
         }
       });
-      if (!artistSongs) return null; // let firstSong = artistSongs.1;
-      // let artistPhoto = firstSong.photo_url;
-
+      if (!artistSongs) return null;
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "playlist-show-container"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {

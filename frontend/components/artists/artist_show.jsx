@@ -45,8 +45,6 @@ class ArtistShow extends React.Component {
         }
     })
     if (!artistSongs) return null;
-    // let firstSong = artistSongs.1;
-    // let artistPhoto = firstSong.photo_url;
     return (
       <div className="playlist-show-container">  
       <div className="artist-show-info-container">

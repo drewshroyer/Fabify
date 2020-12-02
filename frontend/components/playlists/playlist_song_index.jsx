@@ -33,7 +33,6 @@ class PlaylistSongIndexItem extends React.Component {
             controls
             id={`audio-element--${song.id}`}
           />
-          {/* <Link to={`/songs/${song.id}`}></Link> */}
           <div className="playlist-music-tile-number-container">
             <div className="playlist-music-tile-number">{song.id} 
               <div
