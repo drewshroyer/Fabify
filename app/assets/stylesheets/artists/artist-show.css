@@ -6,7 +6,7 @@
 }
 
 .artist-show-description {
-    height: 50px;
+    height: 100px;
     padding: 0.08em 30px 30px 30px;
     color: hsla(0,0%,100%,.7);
     font-size: 14px;
@@ -14,4 +14,17 @@
     font-weight: 400;
     overflow: scroll;
     line-height: 20px;
+}
+
+.artist-show-container {
+    height: 0px;
+    /* margin-top: 400px;
+    width: 240px;
+    height: 100px;
+    padding: 10px 50px 0px 30px;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center; */
 }
