@@ -1472,8 +1472,8 @@ var PlayBar = /*#__PURE__*/function (_React$Component) {
     _classCallCheck(this, PlayBar);
 
     _this = _super.call(this, props);
-    _this.togglePlayBar = _this.togglePlayBar.bind(_assertThisInitialized(_this));
-    _this.setVolume = _this.setVolume.bind(_assertThisInitialized(_this));
+    _this.togglePlayBar = _this.togglePlayBar.bind(_assertThisInitialized(_this)); // this.setVolume = this.setVolume.bind(this);
+
     return _this;
   }
 
@@ -1571,8 +1571,7 @@ var PlayBar = /*#__PURE__*/function (_React$Component) {
         min: "0",
         max: "100",
         placeholder: "100",
-        className: "volume-slider",
-        onChange: ""
+        className: "volume-slider"
       }))));
     }
   }]);

@@ -5,7 +5,7 @@ class PlayBar extends React.Component {
   constructor(props) {
     super(props);
     this.togglePlayBar = this.togglePlayBar.bind(this);
-    this.setVolume = this.setVolume.bind(this);
+    // this.setVolume = this.setVolume.bind(this);
   }
 
   togglePlayBar() {
@@ -98,7 +98,6 @@ class PlayBar extends React.Component {
               max="100"
               placeholder="100"
               className="volume-slider"
-              onChange=""
             />
           </div>
         </div>
