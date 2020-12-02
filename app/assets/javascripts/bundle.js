@@ -1029,6 +1029,9 @@ var mDTP = function mDTP(dispatch) {
     }(function (id) {
       return dispatch(deletePlaylist(id));
     }),
+    addSongToPlaylist: function addSongToPlaylist(playlistSong) {
+      return dispatch(Object(_actions_playlist_song_actions__WEBPACK_IMPORTED_MODULE_7__["addSongToPlaylist"])(playlistSong));
+    },
     removeSongFromPlaylist: function removeSongFromPlaylist(songId, playlistId) {
       return dispatch(Object(_actions_playlist_song_actions__WEBPACK_IMPORTED_MODULE_7__["removeSongFromPlaylist"])(songId, playlistId));
     }
