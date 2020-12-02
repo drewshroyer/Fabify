@@ -20,16 +20,43 @@
     height: 0px;
 }
 
-.artist-show-music-tile-photo {
+.artist-show-music-tile-photo-1 {
     /* position: absolute; */
-    top: 10%;
-    left: 25%;
-    height:200px;
-    width: 200px;
-    z-index: 1;
+    height:300px;
+    width: 300px;
+    margin: 10px 0px 10px 30px;
+}
+
+.artist-show-music-tile-photo-0 {
+    display: none;
+}
+
+.artist-show-music-tile-photo-2 {
+    display: none;
 }
 
 .artist-show-info-container {
     display: flex;
     flex-direction: row;
+}
+
+.artist-show-name {
+    padding: 30px 0px 30px 30px;
+    font-size: 72px;
+    line-height: 72px;
+    font-weight: bolder;
+    color: white;
+}
+.artist-subheader-show {
+    transition: .5s;
+}
+.artist-subheader-show:hover{
+    color: #2E77D0;
+}
+.artist-content-container {
+    margin: 30px 0px 40px 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
 }

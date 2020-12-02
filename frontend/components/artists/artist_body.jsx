@@ -24,6 +24,11 @@ class ArtistShowBody extends React.Component {
 
   componentDidMount() {
      this.props.fetchArtist(this.props.match.params.artistId);
+     this.setState({
+        artistName: this.props.artist.name,
+        artistBio: this.props.artist.biography,
+        artistId: this.props.artist.id
+    })
    }
 
    componentDidUpdate(prevProps, prevState) {

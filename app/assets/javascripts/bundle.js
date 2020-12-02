@@ -612,6 +612,11 @@ var ArtistShowBody = /*#__PURE__*/function (_React$Component) {
     key: "componentDidMount",
     value: function componentDidMount() {
       this.props.fetchArtist(this.props.match.params.artistId);
+      this.setState({
+        artistName: this.props.artist.name,
+        artistBio: this.props.artist.biography,
+        artistId: this.props.artist.id
+      });
     }
   }, {
     key: "componentDidUpdate",
@@ -843,15 +848,17 @@ var ArtistShow = /*#__PURE__*/function (_React$Component) {
           className: "playlist-song-tile-container"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
           src: song.photo_url,
-          className: "artist-show-music-tile-photo"
+          className: "artist-show-music-tile-photo-".concat(idx)
         }));
       })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "artist-content-container"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "artist-subheader-show"
       }, "Verified Artist"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "playlist-show-title"
+        className: "artist-show-name"
       }, artistName), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "artist-show-description"
-      }, artistBio)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, artistBio))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "artist-show-container"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "dropdown"
@@ -886,7 +893,7 @@ var ArtistShow = /*#__PURE__*/function (_React$Component) {
           className: "playlist-music-tile-number-container"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "playlist-music-tile-number"
-        }, song.id, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        }, idx + 1, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "playlist-music-tile-audio"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
           className: "playlist-music-tile-play-button",
@@ -909,7 +916,7 @@ var ArtistShow = /*#__PURE__*/function (_React$Component) {
           className: "dropdown-content-flex"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "delete-playlist-button",
-          onClick: _this2.removeSongFromPlaylist
+          onClick: _this2.handleAddSongToPlaylist
         }, "Add Song to Playlist"))))));
       }))));
     }

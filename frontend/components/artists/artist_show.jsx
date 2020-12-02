@@ -25,6 +25,7 @@ class ArtistShow extends React.Component {
   componentDidMount() {
     this.props.fetchSongs();
     this.props.fetchPlaylists();
+
   }
 
 //   componentWillUpdate(prevProps) {
@@ -49,16 +50,19 @@ class ArtistShow extends React.Component {
       <div className="artist-show-info-container">
       <ul >
          {artistSongs.map((song, idx) => (
-             <div className="playlist-song-tile-container">
-            <img src={song.photo_url} className="artist-show-music-tile-photo" />
-            </div>
+                 <div className="playlist-song-tile-container">
+                <img src={song.photo_url} className={`artist-show-music-tile-photo-${idx}`} />
+                </div>
          ))}
         </ul>
+        <div className="artist-content-container">
           <div className="artist-subheader-show">Verified Artist</div>
-        <div className="playlist-show-title">{artistName}</div>
+        <div className="artist-show-name">{artistName}</div>
           <div className="artist-show-description">
             {artistBio}
           </div>
+         </div>
+
         </div>
         <div className="artist-show-container">
           <div className="dropdown">
@@ -86,7 +90,7 @@ class ArtistShow extends React.Component {
             id={`audio-element--${song.id}`}
           />
           <div className="playlist-music-tile-number-container">
-            <div className="playlist-music-tile-number">{song.id} 
+            <div className="playlist-music-tile-number">{idx + 1} 
               <div
                 className="playlist-music-tile-audio"
               >
@@ -106,7 +110,7 @@ class ArtistShow extends React.Component {
            </button>
            <div className="dropdown-content">
              <div className="dropdown-content-flex">
-             <div className="delete-playlist-button" onClick={this.removeSongFromPlaylist}>Add Song to Playlist</div>
+             <div className="delete-playlist-button" onClick={this.handleAddSongToPlaylist}>Add Song to Playlist</div>
              </div>
            </div>
            </div>
