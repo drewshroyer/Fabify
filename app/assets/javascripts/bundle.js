@@ -1481,13 +1481,29 @@ var PlayBar = /*#__PURE__*/function (_React$Component) {
     key: "togglePlayBar",
     value: function togglePlayBar() {
       this.props.togglePlayPause(this.props.selectedSong);
-    }
-  }, {
-    key: "setVolume",
-    value: function setVolume(val) {
-      document.getElementById("audio-element--".concat(id));
-      player.volume = val / 100;
-    }
+    } // $("#volume").slider({
+    //   	min: 0,
+    //   	max: 100,
+    //   	value: 0,
+    // 		range: "min",
+    //   	slide: function(event, ui) {
+    //     	setVolume(ui.value / 100);
+    //   	}
+    // 	});
+    // let myMedia = document.createElement('audio');
+    // $('#player').append(myMedia);
+    // myMedia.id = "myMedia";
+    // function playAudio(fileName, myVolume) {
+    // 		myMedia.src = fileName;
+    // 		myMedia.setAttribute('loop', 'loop');
+    //   	setVolume(myVolume);
+    //   	myMedia.play();
+    // }
+    // function setVolume(myVolume) {
+    //   var myMedia = document.getElementById('myMedia');
+    //   myMedia.volume = myVolume;
+    // }
+
   }, {
     key: "render",
     value: function render() {
@@ -1495,7 +1511,8 @@ var PlayBar = /*#__PURE__*/function (_React$Component) {
           selectedSong = _this$props.selectedSong,
           name = _this$props.name,
           artist = _this$props.artist,
-          photo = _this$props.photo;
+          photo = _this$props.photo,
+          songLength = _this$props.songLength;
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "play-bar-container"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1554,7 +1571,8 @@ var PlayBar = /*#__PURE__*/function (_React$Component) {
         min: "0",
         max: "100",
         placeholder: "100",
-        className: "volume-slider"
+        className: "volume-slider",
+        onChange: ""
       }))));
     }
   }]);

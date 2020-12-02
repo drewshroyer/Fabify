@@ -29,7 +29,7 @@ class WebPlayer extends React.Component {
         playingSong: false,
         name: name,
         photo: photo,
-        artist: artist
+        artist: artist,
       });
     }
     if (this.state.playingSong) {

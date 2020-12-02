@@ -13,7 +13,7 @@ class SongIndexItem extends React.Component {
       this.props.song.id,
       this.props.song.name,
       this.props.song.photo_url,
-      this.props.artist.name
+      this.props.artist.name,
     );
   }
 

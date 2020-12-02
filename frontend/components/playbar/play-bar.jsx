@@ -12,13 +12,34 @@ class PlayBar extends React.Component {
     this.props.togglePlayPause(this.props.selectedSong);
   }
 
-  setVolume(val) {   
-        document.getElementById(`audio-element--${id}`);
-        player.volume = val / 100;
-    }
+// $("#volume").slider({
+//   	min: 0,
+//   	max: 100,
+//   	value: 0,
+// 		range: "min",
+//   	slide: function(event, ui) {
+//     	setVolume(ui.value / 100);
+//   	}
+// 	});
+	
+	// let myMedia = document.createElement('audio');
+	// $('#player').append(myMedia);
+	// myMedia.id = "myMedia";
+	
+	// function playAudio(fileName, myVolume) {
+	// 		myMedia.src = fileName;
+	// 		myMedia.setAttribute('loop', 'loop');
+  //   	setVolume(myVolume);
+  //   	myMedia.play();
+	// }
+	
+	// function setVolume(myVolume) {
+  //   var myMedia = document.getElementById('myMedia');
+  //   myMedia.volume = myVolume;
+	// }
 
   render() {
-    const { selectedSong, name, artist, photo } = this.props;
+    const { selectedSong, name, artist, photo, songLength } = this.props;
     return (
       <div className="play-bar-container">
         <div className="left-play-bar">
@@ -77,6 +98,7 @@ class PlayBar extends React.Component {
               max="100"
               placeholder="100"
               className="volume-slider"
+              onChange=""
             />
           </div>
         </div>
