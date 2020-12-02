@@ -909,13 +909,8 @@ var ArtistShow = /*#__PURE__*/function (_React$Component) {
           className: "dropdown-content-flex"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "delete-playlist-button",
-          onClick: _this2.handleDeletePlaylist
-        }, "Delete Playlist"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-          to: "/webplayer"
-        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "delete-playlist-button",
           onClick: _this2.removeSongFromPlaylist
-        }, "Add Song to Playlist")))))));
+        }, "Add Song to Playlist"))))));
       }))));
     }
   }]);
@@ -2021,8 +2016,7 @@ var PlaylistShow = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "handleToggleShuffle",
     value: function handleToggleShuffle() {
-      var randomNumber = Math.floor(Math.random() * this.props.songs.length); // console.log(randomNumber)
-
+      var randomNumber = Math.floor(Math.random() * this.props.songs.length);
       var song1 = this.props.songs[randomNumber];
       this.props.togglePlayPause(this.props.song.id, this.props.song.name, this.props.song.photo_url, this.props.song.name);
     }
@@ -2496,9 +2490,11 @@ var PlaylistSongIndexItem = /*#__PURE__*/function (_React$Component) {
         className: "playlist-music-tile-photo"
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "playlist-music-tile-name"
-      }, song.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, song.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+        to: "/artists/".concat(artist.id)
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "playlist-music-tile-artist"
-      }, artist.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, artist.name)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "dropdown"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "three-dot-options"

@@ -117,12 +117,12 @@ class ArtistShowBody extends React.Component {
         </div>
         </div>
         <PlayBarContainer
-                togglePlayPause={this.togglePlayPause}
-                selectedSong={this.state.selectedSong}
-                name={this.state.name}
-                photo={this.state.photo}
-                artist={this.state.artist}
-              />
+            togglePlayPause={this.togglePlayPause}
+            selectedSong={this.state.selectedSong}
+            name={this.state.name}
+            photo={this.state.photo}
+            artist={this.state.artist}
+        />
      </div>
     )
   }

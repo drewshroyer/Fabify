@@ -49,7 +49,9 @@ class PlaylistSongIndexItem extends React.Component {
           </div>
           <img src={song.photo_url} className="playlist-music-tile-photo" />
           <div className="playlist-music-tile-name">{song.name}</div>
+          <Link to={`/artists/${artist.id}`}>
           <div className="playlist-music-tile-artist">{artist.name}</div>
+          </Link>
           <div className="dropdown">
            <button className="three-dot-options" >...
            </button>

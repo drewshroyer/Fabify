@@ -106,10 +106,7 @@ class ArtistShow extends React.Component {
            </button>
            <div className="dropdown-content">
              <div className="dropdown-content-flex">
-             <div className="delete-playlist-button" onClick={this.handleDeletePlaylist}>Delete Playlist</div>
-             <Link to="/webplayer">
              <div className="delete-playlist-button" onClick={this.removeSongFromPlaylist}>Add Song to Playlist</div>
-             </Link>
              </div>
            </div>
            </div>

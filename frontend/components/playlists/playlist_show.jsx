@@ -28,7 +28,6 @@ class PlaylistShow extends React.Component {
 
    handleToggleShuffle() {
     let randomNumber = Math.floor(Math.random() * this.props.songs.length);
-    // console.log(randomNumber)
     let song1 = this.props.songs[randomNumber];
     this.props.togglePlayPause(
       this.props.song.id,
