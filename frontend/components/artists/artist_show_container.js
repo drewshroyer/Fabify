@@ -10,21 +10,12 @@ import { withRouter } from "react-router-dom";
 
 const mSTP = (state, ownProps) => {
   const currentUser = state.entities.users[state.session.id];
-//   let artistId = ownProps.match.params.artistId
-//   let artist = state.entities.artists[artistId]
   let songs = Object.values(state.entities.songs)
-//   let artistSongs = []
-//     songs.forEach(song => {
-//         debugger
-//         if(song.artist.id === artistId){
-//             artistSongs.push(song);
-//         }
-//         debugger
-//     })
   let artists = state.entities.artists
+  let playlists = Object.values(state.entities.playlists)
   return {
-    // artistSongs,
-     songs,
+    playlists,
+    songs,
     artists,
     currentUser: currentUser,
   };

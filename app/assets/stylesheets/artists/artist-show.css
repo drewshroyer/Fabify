@@ -60,3 +60,38 @@
     justify-content: flex-start;
     align-items: flex-start;
 }
+
+.playlist-add-song-list {
+    display: none;
+    position: absolute;
+    background-color: #282828;
+    min-width: 160px;
+    padding: 10px;
+    z-index: 1;
+}
+
+.add-song-to-playlist-button:hover .playlist-add-song-list {
+  display: block;
+}
+
+.add-song-to-playlist-button .add-song-to-playlist-button:hover {
+  background-color: hsla(0,0%,100%,.1);
+  color: white;
+}
+
+.add-song-to-playlist-button {
+    padding: 5px;
+    font-weight: 100;
+}
+
+.dropdown-content-flex:hover .playlist-add-song-list {
+  display: block;
+}
+
+.dropdown-content-flex {
+    display: none;
+    background-color: #282828;
+    min-width: 160px;
+    padding: 10px;
+    z-index: 1;
+}

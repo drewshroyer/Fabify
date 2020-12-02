@@ -1,5 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import PlaylistIndex from "../nav/playlist_index";
+
 
 class ArtistShow extends React.Component {
   constructor(props) {
@@ -35,7 +37,7 @@ class ArtistShow extends React.Component {
 //   }
 
   render() {
-    const { songs, artistName, artistBio, artistId} = this.props;
+    const { playlists, songs, artistName, artistBio, artistId} = this.props;
     let artistSongs = []
     songs.forEach(song => {
         if(song.artist_id === artistId){
@@ -110,7 +112,18 @@ class ArtistShow extends React.Component {
            </button>
            <div className="dropdown-content">
              <div className="dropdown-content-flex">
-             <div className="delete-playlist-button" onClick={this.handleAddSongToPlaylist}>Add Song to Playlist</div>
+             <div className="add-song-to-playlist-button">Add Song to Playlist</div>
+             <div className="playlist-add-song-list">
+                <div className="user-playlists">
+              <ul className="nav-bar-playlists">
+                {playlists.map((playlist, idx) => (
+                  <PlaylistIndex 
+                  playlist={playlist} 
+                  key={idx} />
+                ))}
+              </ul>
+            </div>
+             </div>
              </div>
            </div>
            </div>

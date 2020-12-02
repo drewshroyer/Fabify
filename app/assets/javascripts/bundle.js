@@ -756,6 +756,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var _nav_playlist_index__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../nav/playlist_index */ "./frontend/components/nav/playlist_index.jsx");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -777,6 +778,7 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
 
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
 
 
 
@@ -826,6 +828,7 @@ var ArtistShow = /*#__PURE__*/function (_React$Component) {
       var _this2 = this;
 
       var _this$props = this.props,
+          playlists = _this$props.playlists,
           songs = _this$props.songs,
           artistName = _this$props.artistName,
           artistBio = _this$props.artistBio,
@@ -915,9 +918,19 @@ var ArtistShow = /*#__PURE__*/function (_React$Component) {
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "dropdown-content-flex"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "delete-playlist-button",
-          onClick: _this2.handleAddSongToPlaylist
-        }, "Add Song to Playlist"))))));
+          className: "add-song-to-playlist-button"
+        }, "Add Song to Playlist"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "playlist-add-song-list"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "user-playlists"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+          className: "nav-bar-playlists"
+        }, playlists.map(function (playlist, idx) {
+          return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_nav_playlist_index__WEBPACK_IMPORTED_MODULE_2__["default"], {
+            playlist: playlist,
+            key: idx
+          });
+        })))))))));
       }))));
     }
   }]);
@@ -958,21 +971,12 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var mSTP = function mSTP(state, ownProps) {
-  var currentUser = state.entities.users[state.session.id]; //   let artistId = ownProps.match.params.artistId
-  //   let artist = state.entities.artists[artistId]
-
-  var songs = Object.values(state.entities.songs); //   let artistSongs = []
-  //     songs.forEach(song => {
-  //         debugger
-  //         if(song.artist.id === artistId){
-  //             artistSongs.push(song);
-  //         }
-  //         debugger
-  //     })
-
+  var currentUser = state.entities.users[state.session.id];
+  var songs = Object.values(state.entities.songs);
   var artists = state.entities.artists;
+  var playlists = Object.values(state.entities.playlists);
   return {
-    // artistSongs,
+    playlists: playlists,
     songs: songs,
     artists: artists,
     currentUser: currentUser
