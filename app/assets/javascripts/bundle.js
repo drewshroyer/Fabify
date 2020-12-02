@@ -826,11 +826,11 @@ var ArtistShow = /*#__PURE__*/function (_React$Component) {
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "playlist-show-container"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "playlist-subheader-show"
-      }, "Artist"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "artist-subheader-show"
+      }, "Verified Artist"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "playlist-show-title"
       }, artistName), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "playlist-show-description"
+        className: "artist-show-description"
       }, artistBio), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "play-pause-like-delete-container"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -926,6 +926,9 @@ var mDTP = function mDTP(dispatch) {
     },
     fetchArtists: function fetchArtists() {
       return dispatch(Object(_actions_artist_actions__WEBPACK_IMPORTED_MODULE_5__["fetchArtists"])());
+    },
+    fetchArtist: function fetchArtist(id) {
+      return dispatch(Object(_actions_artist_actions__WEBPACK_IMPORTED_MODULE_5__["fetchArtist"])(id));
     },
     logout: function logout() {
       return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_6__["logout"])());

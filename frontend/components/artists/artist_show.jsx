@@ -39,9 +39,9 @@ class ArtistShow extends React.Component {
     if (!songs) return null;
     return (
       <div className="playlist-show-container">          
-          <div className="playlist-subheader-show">Artist</div>
+          <div className="artist-subheader-show">Verified Artist</div>
         <div className="playlist-show-title">{artistName}</div>
-          <div className="playlist-show-description">
+          <div className="artist-show-description">
             {artistBio}
           </div>
         <div className="play-pause-like-delete-container">

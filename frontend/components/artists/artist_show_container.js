@@ -3,7 +3,7 @@ import ArtistShow from "./artist_show";
 import { fetchSongs } from "../../actions/song_actions";
 import { fetchPlaylists } from "../../actions/playlist_actions";
 import { fetchUser } from "../../actions/user_actions";
-import { fetchArtists } from "../../actions/artist_actions";
+import { fetchArtists, fetchArtist } from "../../actions/artist_actions";
 import { logout } from "../../actions/session_actions";
 import { removeSongFromPlaylist } from "../../actions/playlist_song_actions";
 import { withRouter } from "react-router-dom";
@@ -26,6 +26,7 @@ const mDTP = (dispatch) => {
     fetchPlaylists: () => dispatch(fetchPlaylists()),
     fetchSongs: () => dispatch(fetchSongs()),
     fetchArtists: () => dispatch(fetchArtists()),
+    fetchArtist: (id) => dispatch(fetchArtist(id)),
     logout: () => dispatch(logout()),
     deletePlaylist: (id) => dispatch(deletePlaylist(id)),
     removeSongFromPlaylist: (songId, playlistId) => dispatch(removeSongFromPlaylist(

@@ -1,0 +1,17 @@
+.artist-subheader-show {
+    padding: 0px 0px 0.08em 30px;
+    font-weight: 200;
+    font-size: 14px;
+    color: white;
+}
+
+.artist-show-description {
+    height: 50px;
+    padding: 0.08em 30px 30px 30px;
+    color: hsla(0,0%,100%,.7);
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 400;
+    overflow: scroll;
+    line-height: 20px;
+}
