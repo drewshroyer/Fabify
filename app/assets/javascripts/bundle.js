@@ -682,7 +682,7 @@ var ArtistShowBody = /*#__PURE__*/function (_React$Component) {
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         className: "nav-bar-link",
         id: "nav-bar-dash",
-        href: "http://www.drewshroyer.github.io/",
+        href: "http://drewshroyer.github.io/",
         target: "_blank"
       }, "Drew Shroyer")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "delete-playlist-button"
@@ -1836,7 +1836,7 @@ var PlaylistAllIndex = /*#__PURE__*/function (_React$Component) {
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         className: "nav-bar-link",
         id: "nav-bar-dash",
-        href: "http://www.drewshroyer.github.io/",
+        href: "http://drewshroyer.github.io/",
         target: "_blank"
       }, "Drew Shroyer")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "delete-playlist-button"
@@ -2271,7 +2271,7 @@ var PlaylistShowBody = /*#__PURE__*/function (_React$Component) {
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         className: "nav-bar-link",
         id: "nav-bar-dash",
-        href: "http://www.drewshroyer.github.io/",
+        href: "http://drewshroyer.github.io/",
         target: "_blank"
       }, "Drew Shroyer")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "delete-playlist-button"
@@ -3221,7 +3221,7 @@ var Navbar = /*#__PURE__*/function (_React$Component) {
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         className: "nav-bar-link",
         id: "nav-bar-dash",
-        href: "http://www.drewshroyer.github.io/"
+        href: "http://drewshroyer.github.io/"
       }, "Drew Shroyer"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         className: "nav-bar-link",
         id: "nav-bar-dash",
@@ -3694,7 +3694,7 @@ var WebPlayer = /*#__PURE__*/function (_React$Component) {
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         className: "nav-bar-link",
         id: "nav-bar-dash",
-        href: "http://www.drewshroyer.github.io/",
+        href: "http://drewshroyer.github.io/",
         target: "_blank"
       }, "Drew Shroyer")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "delete-playlist-button"

@@ -54,7 +54,7 @@ class WebPlayer extends React.Component {
                <a
             className="nav-bar-link"
             id="nav-bar-dash"
-            href={"http://www.drewshroyer.github.io/"}
+            href={"http://drewshroyer.github.io/"}
             target = "_blank"
           >
             Drew Shroyer
