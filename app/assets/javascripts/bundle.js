@@ -2913,9 +2913,8 @@ var SignupForm = /*#__PURE__*/function (_React$Component) {
       })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Confirm your email", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         className: "signup-input-box",
         type: "email",
-        placeholder: "Enter your email again",
-        value: this.state.email,
-        onChange: this.update("email") /// how to confirm an email matches another
+        placeholder: "Enter your email again" // value={this.state.email} // this isn't entirely complete - could be better 
+        // onChange={this.update("email")} /// how to confirm an email matches another
 
       })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, "Create a Password", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         className: "signup-input-box",

@@ -82,8 +82,8 @@ class SignupForm extends React.Component {
                   className="signup-input-box"
                   type="email"
                   placeholder="Enter your email again"
-                  value={this.state.email}
-                  onChange={this.update("email")} /// how to confirm an email matches another
+                  // value={this.state.email} // this isn't entirely complete - could be better 
+                  // onChange={this.update("email")} /// how to confirm an email matches another
                 />
               </label>
               <br />
