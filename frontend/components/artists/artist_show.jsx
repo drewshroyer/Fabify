@@ -38,17 +38,12 @@ class ArtistShow extends React.Component {
     const { songs, artistName, artistBio} = this.props;
     if (!songs) return null;
     return (
-      <div className="playlist-show-container">
-        {/* <div
-          data-testid="background-image"
-          className="background-header-image-playlist-show"
-        > */}
+      <div className="playlist-show-container">          
           <div className="playlist-subheader-show">Artist</div>
         <div className="playlist-show-title">{artistName}</div>
           <div className="playlist-show-description">
             {artistBio}
           </div>
-        {/* </div> */}
         <div className="play-pause-like-delete-container">
           <div className="dropdown">
            <button className="three-dot-options" >
