@@ -17,10 +17,12 @@
     flex-direction: row;
     align-items: center;
     justify-content: flex-end;
+    cursor: pointer;
 }
 
 .nav-bar-link:hover {
     color: #1ED760; 
+    cursor: pointer;
 }
 
 .nav-bar-inner-container {
@@ -42,6 +44,7 @@
     margin: 0 20px;
     text-decoration: bold;
     transition-duration: .3s;
+    cursor: pointer;
 }
 
 .nav-bar-link:last-child {

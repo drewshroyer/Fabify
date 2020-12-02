@@ -12,7 +12,6 @@
 .background-header-image-playlist-show {
     position: fixed;
     background-image: url("https://t.scdn.co/images/fd7b652335c349899cb8e8e302c87528");
-    /* background-image: url("https://storage.googleapis.com/pr-newsroom-wp/1/2020/12/Spotify_Wrapped-cards_header-2048x782.png"); */
     height: 400px;
     width: 100%;
     background-position: 50% 15%;

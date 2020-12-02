@@ -15,6 +15,22 @@
  */
 
  
+
+
+
+@font-face {
+  font-family: Proxima Nova Alt;
+  font-style: normal;
+  font-weight: normal;
+  src: url('../fonts/Proxima-Nova-Alt-Bold.otf');
+  src: local('Proxima Nova Alt'), local('Proxima Nova Alt'),
+       url('../fonts/Proxima-Nova-Alt-Bold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/Proxima-Nova-Alt-Bold.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/Proxima-Nova-Alt-Bold.woff') format('woff'), /* Modern Browsers */
+       url('../fonts/Proxima-Nova-Alt-Bold.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/Proxima-Nova-Alt-Bold.svg#OpenSans') format('svg') /* Legacy iOS */
+}
+
 body {
     font-family: Proxima Nova Alt;
     text-decoration: none;
