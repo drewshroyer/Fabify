@@ -69,7 +69,8 @@ class WebPlayer extends React.Component {
           >
             LinkedIn
           </a></div>
-             <div className="delete-playlist-button"> <a
+             <div className="delete-playlist-button"> 
+             <a
             className="nav-bar-link"
             id="nav-bar-dash"
             target = "_blank"

@@ -3705,7 +3705,7 @@ var WebPlayer = /*#__PURE__*/function (_React$Component) {
         target: "_blank"
       }, "LinkedIn")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "delete-playlist-button"
-      }, " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         className: "nav-bar-link",
         id: "nav-bar-dash",
         target: "_blank",
