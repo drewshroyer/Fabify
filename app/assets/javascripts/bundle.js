@@ -3920,6 +3920,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
+ // import "../fonts/Proxima-Nova-Alt-Bold.otf";
 
 document.addEventListener("DOMContentLoaded", function () {
   var store;
