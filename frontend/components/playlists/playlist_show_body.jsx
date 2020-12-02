@@ -25,7 +25,13 @@ class PlaylistShowBody extends React.Component {
   }
 
    componentDidMount() {
+    //  debugger
      this.props.fetchPlaylist(this.props.match.params.playlistId);
+     this.setState({
+        playlistName: this.props.playlist.name,
+        playlistDescription: this.props.playlist.description,
+        playlistId: this.props.playlist.id
+    })
    }
 
    componentDidUpdate(prevProps, prevState) {
@@ -46,7 +52,6 @@ class PlaylistShowBody extends React.Component {
     if (this.state.selectedSong === id) {
       this.setState({ playingSong: !this.state.playingSong });
     } else {
-      // this where we set a new song
       this.setState({
         selectedSong: id,
         playingSong: false,

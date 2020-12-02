@@ -2024,13 +2024,14 @@ var PlaylistShow = /*#__PURE__*/function (_React$Component) {
     key: "componentDidMount",
     value: function componentDidMount() {
       this.props.fetchSongs();
-      this.props.fetchPlaylists(); // this.props.fetchPlaylist(this.props.match.params.playlistId);
+      this.props.fetchPlaylist(this.props.match.params.playlistId);
     }
   }, {
     key: "render",
     value: function render() {
       var _this2 = this;
 
+      // debugger
       var _this$props = this.props,
           songs = _this$props.songs,
           artists = _this$props.artists,
@@ -2182,7 +2183,13 @@ var PlaylistShowBody = /*#__PURE__*/function (_React$Component) {
   _createClass(PlaylistShowBody, [{
     key: "componentDidMount",
     value: function componentDidMount() {
+      //  debugger
       this.props.fetchPlaylist(this.props.match.params.playlistId);
+      this.setState({
+        playlistName: this.props.playlist.name,
+        playlistDescription: this.props.playlist.description,
+        playlistId: this.props.playlist.id
+      });
     }
   }, {
     key: "componentDidUpdate",
@@ -2209,7 +2216,6 @@ var PlaylistShowBody = /*#__PURE__*/function (_React$Component) {
           playingSong: !this.state.playingSong
         });
       } else {
-        // this where we set a new song
         this.setState({
           selectedSong: id,
           playingSong: false,
