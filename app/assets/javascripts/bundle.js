@@ -3215,16 +3215,19 @@ var Navbar = /*#__PURE__*/function (_React$Component) {
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         id: "white-splash-logo",
         src: window.whiteFabifyLogoURL,
-        alt: "spotify_logo"
+        alt: "spotify_logo",
+        target: "_blank"
       })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "nav-bar-links"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         className: "nav-bar-link",
         id: "nav-bar-dash",
+        target: "_blank",
         href: "http://drewshroyer.github.io/"
       }, "Drew Shroyer"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         className: "nav-bar-link",
         id: "nav-bar-dash",
+        target: "_blank",
         href: "https://www.linkedin.com/in/drew-shroyer-861b32a4/"
       }, "LinkedIn"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "nav-bar-dash"

@@ -11,6 +11,7 @@ render() {
             id="white-splash-logo"
             src={window.whiteFabifyLogoURL}
             alt="spotify_logo"
+            target="_blank"
           ></img>
         </Link>
 
@@ -18,6 +19,7 @@ render() {
           <a
             className="nav-bar-link"
             id="nav-bar-dash"
+            target="_blank"
             href={"http://drewshroyer.github.io/"}
           >
             Drew Shroyer
@@ -25,6 +27,7 @@ render() {
           <a
             className="nav-bar-link"
             id="nav-bar-dash"
+            target="_blank"
             href={"https://www.linkedin.com/in/drew-shroyer-861b32a4/"}
           >
             LinkedIn
