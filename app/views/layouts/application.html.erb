@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-
+    <title>Fabify</title>
   <meta property="og:title" content="Fabify" />
      <meta property='og:image' content="<%= image_url('linkedin_cover.png') %>"/>
      <meta property="og:description"
@@ -22,10 +22,9 @@
       window.whitePreviousIcon = "<%= image_url('skip_previous-white-18dp.svg') %>";
       window.whiteNextIcon = "<%= image_url('skip_next-white-18dp.svg') %>";
 </script>
-
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <%= favicon_link_tag asset_path('hiclipart.com.png') %>
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
   </head>
