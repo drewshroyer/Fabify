@@ -22,10 +22,11 @@ class SongIndexItem extends React.Component {
     return (
       <div className="webplayer-music-tile-container">
         <div className="webplayer-music-tile">
-          <Link to={`/songs/${song.id}`}></Link>
+          <Link to={`/artists/${artist.id}`}>
           <img src={song.photo_url} className="webplayer-music-tile-photo" />
           <div className="webplayer-music-tile-name">{song.name}</div>
           <div className="webplayer-music-tile-artist">{artist.name}</div>
+          </Link>
           <div
             className="webplayer-music-tile-audio"
             onClick={this.handleSongClick}

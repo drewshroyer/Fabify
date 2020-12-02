@@ -619,7 +619,7 @@ var ArtistShowBody = /*#__PURE__*/function (_React$Component) {
       if (prevProps.artist.name !== this.props.artist.name) {
         this.setState({
           artistName: this.props.artist.name,
-          artistBio: this.props.artist.description,
+          artistBio: this.props.artist.biography,
           artistId: this.props.artist.id
         });
       }
@@ -809,7 +809,12 @@ var ArtistShow = /*#__PURE__*/function (_React$Component) {
     value: function componentDidMount() {
       this.props.fetchSongs();
       this.props.fetchPlaylists();
-    }
+    } //   componentWillUpdate(prevProps) {
+    //     if (this.props.artistId !== prevProps.artistId) {
+    //     this.fetchArtist(this.props.artistId)
+    //     }
+    //   }
+
   }, {
     key: "render",
     value: function render() {
@@ -821,15 +826,12 @@ var ArtistShow = /*#__PURE__*/function (_React$Component) {
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "playlist-show-container"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        "data-testid": "background-image",
-        className: "background-header-image-playlist-show"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "playlist-subheader-show"
-      }, "Playlist"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "Artist"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "playlist-show-title"
       }, artistName), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "playlist-show-description"
-      }, artistBio)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, artistBio), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "play-pause-like-delete-container"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "dropdown"
@@ -3451,15 +3453,15 @@ var SongIndexItem = /*#__PURE__*/function (_React$Component) {
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "webplayer-music-tile"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-        to: "/songs/".concat(song.id)
-      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        to: "/artists/".concat(artist.id)
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         src: song.photo_url,
         className: "webplayer-music-tile-photo"
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "webplayer-music-tile-name"
       }, song.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "webplayer-music-tile-artist"
-      }, artist.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, artist.name)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "webplayer-music-tile-audio",
         onClick: this.handleSongClick
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {

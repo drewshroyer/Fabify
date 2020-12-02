@@ -30,7 +30,7 @@ class ArtistShowBody extends React.Component {
       if(prevProps.artist.name !== this.props.artist.name) {
         this.setState({
           artistName: this.props.artist.name,
-          artistBio: this.props.artist.description,
+          artistBio: this.props.artist.biography,
           artistId: this.props.artist.id
         })
       }
