@@ -9,14 +9,13 @@ export const clearPlaylistSongs = () => {
   };
 };
 
-export const receiveAllPlaylists = (playlists) => ({
+export const receiveAllPlaylistSongs = () => ({
   type: RECEIVE_ALL_PLAYLISTS_SONGS,
-  playlistSongs,
 });
 
 export const fetchPlaylistSongs = () => dispatch => {
-    return PlaylistAPIUtil.fetchPlaylistSongs().then((playlists) =>
-      dispatch(receiveAllPlaylists(playlists))
+    return PlaylistSongApiUtil.fetchPlaylistSongs().then((playlists) =>
+      dispatch(receiveAllPlaylistSongs(playlists))
     );
 }
 

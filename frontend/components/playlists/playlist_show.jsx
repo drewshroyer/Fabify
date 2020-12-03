@@ -44,9 +44,10 @@ class PlaylistShow extends React.Component {
   }
 
   componentDidMount() {
+    // debugger
     this.props.fetchSongs();
     this.props.fetchPlaylist(this.props.match.params.playlistId);
-    // this.props.fetchPlaylistSongs();
+    this.props.fetchPlaylistSongs();
   }
 
   render() {

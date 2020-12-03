@@ -3,7 +3,7 @@ class Api::PlaylistSongsController < ApplicationController
         @playlist_song = PlaylistSong.new(playlist_song_params)
         if @playlist_song.save
             @playlist = Playlist.find(@playlist_song.playlist_id)
-            render "api/playlists/show"
+            render "api/playlist_songs/show"
         else
             render json: ["Cannot add this song"], status: 401
         end
@@ -15,6 +15,11 @@ class Api::PlaylistSongsController < ApplicationController
             @playlist = Playlist.find(@playlist_song.playlist_id)
             render "api/playlists/show"
         end
+    end
+
+    def index 
+        @playlist_songs = PlaylistSongs.all()
+        render :index
     end
 
     private

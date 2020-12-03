@@ -1,10 +1,11 @@
 import { RECEIVE_PLAYLIST } from "../actions/playlist_actions";
-import { CLEAR_PLAYLIST_SONGS } from "../actions/playlist_songs_actions";
-import { RECEIVE_ALL_PLAYLISTS_SONGS } from "../actions/playlist_songs_actions";
+import { CLEAR_PLAYLIST_SONGS, RECEIVE_ALL_PLAYLISTS_SONGS } from "../actions/playlist_song_actions";
 
-const PlaylistSongReducer = (state = {}, action) => {
+const playlistSongReducer = (state = {}, action) => {
   Object.freeze(state);
   let newState = Object.assign({}, state);
+
+  debugger
 
   switch (action.type) {
      case RECEIVE_ALL_PLAYLISTS_SONGS:
@@ -25,4 +26,4 @@ const PlaylistSongReducer = (state = {}, action) => {
   }
 };
 
-export default PlaylistSongReducer;
+export default playlistSongReducer;
