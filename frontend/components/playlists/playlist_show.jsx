@@ -9,6 +9,8 @@ class PlaylistShow extends React.Component {
     this.deletePlaylist = this.deletePlaylist.bind(this);
     this.handleSongClick = this.handleSongClick.bind(this);
     this.handleToggleShuffle = this.handleToggleShuffle.bind(this);
+    this.removeSongFromPlaylist = this.removeSongFromPlaylist.bind(this);
+
   }
 
    deletePlaylist(e) {
@@ -37,10 +39,15 @@ class PlaylistShow extends React.Component {
     );
   }
 
-    componentDidMount() {
-      this.props.fetchSongs();
-      this.props.fetchPlaylist(this.props.match.params.playlistId);
-    }
+  removeSongFromPlaylist() {
+
+  }
+
+  componentDidMount() {
+    this.props.fetchSongs();
+    this.props.fetchPlaylist(this.props.match.params.playlistId);
+    // this.props.fetchPlaylistSongs();
+  }
 
   render() {
     // debugger

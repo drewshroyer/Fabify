@@ -5,38 +5,16 @@ class PlayBar extends React.Component {
   constructor(props) {
     super(props);
     this.togglePlayBar = this.togglePlayBar.bind(this);
-    // this.setVolume = this.setVolume.bind(this);
   }
 
   togglePlayBar() {
     this.props.togglePlayPause(this.props.selectedSong);
   }
 
-// $("#volume").slider({
-//   	min: 0,
-//   	max: 100,
-//   	value: 0,
-// 		range: "min",
-//   	slide: function(event, ui) {
-//     	setVolume(ui.value / 100);
-//   	}
-// 	});
-	
-	// let myMedia = document.createElement('audio');
-	// $('#player').append(myMedia);
-	// myMedia.id = "myMedia";
-	
-	// function playAudio(fileName, myVolume) {
-	// 		myMedia.src = fileName;
-	// 		myMedia.setAttribute('loop', 'loop');
-  //   	setVolume(myVolume);
-  //   	myMedia.play();
-	// }
-	
-	// function setVolume(myVolume) {
-  //   var myMedia = document.getElementById('myMedia');
-  //   myMedia.volume = myVolume;
-	// }
+// this method should help us not rerender the component but unsure how to effectively use it so far
+  //  shouldComponentUpdate(nextProps, nextState) {
+  //   return false;
+  //  }
 
   render() {
     const { selectedSong, name, artist, photo, songLength } = this.props;

@@ -15,8 +15,17 @@ class Api::PlaylistsController < ApplicationController
     if @playlist.save 
         render :show
     else
-        render json: @user.errors.full_messages, status: 422
+        render json: @playlist.errors.full_messages, status: 422
     end
+  end
+
+  def update 
+    @playlist = Playlist.find(params[:id])
+      if @playlist.update(playlist_params)
+          render "api/playlists/show"
+      else
+          render json: @playlist.errors.full_messages, status: 422
+      end
   end
 
   def destroy 
@@ -28,6 +37,6 @@ class Api::PlaylistsController < ApplicationController
 
   private
   def playlist_params
-    params.require(:playlist).permit(:name, :author_id, :description)
+    params.require(:playlist).permit(:name, :author_id, :description, :song_ids)
   end
 end

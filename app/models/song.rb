@@ -23,4 +23,6 @@ class Song < ApplicationRecord
     has_one_attached :photo
     has_one_attached :audio
 
+    has_many :playlists
+
 end

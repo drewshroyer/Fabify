@@ -1,5 +1,4 @@
 class Api::PlaylistSongsController < ApplicationController
-
     def create
         @playlist_song = PlaylistSong.new(playlist_song_params)
         if @playlist_song.save

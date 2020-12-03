@@ -6,7 +6,6 @@ class PlaylistSongIndexItem extends React.Component {
     super(props);
     this.state = { playingSong: false, selectedSong: "" };
     this.handleSongClick = this.handleSongClick.bind(this);
-    this.removeSongFromPlaylist = this.removeSongFromPlaylist.bind(this);
   }
 
   handleSongClick() {
@@ -16,10 +15,6 @@ class PlaylistSongIndexItem extends React.Component {
       this.props.song.photo_url,
       this.props.artist.name
     );
-  }
-
-  removeSongFromPlaylist() {
-
   }
 
   render() {

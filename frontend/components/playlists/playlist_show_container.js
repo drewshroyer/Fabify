@@ -7,13 +7,14 @@ import { fetchUser } from "../../actions/user_actions";
 import { fetchArtists } from "../../actions/artist_actions";
 import { logout } from "../../actions/session_actions";
 import { deletePlaylist } from "../../actions/playlist_actions";
-import { removeSongFromPlaylist } from "../../actions/playlist_song_actions";
 import { withRouter } from "react-router-dom";
+import { fetchPlaylistSongs } from "../../actions/playlist_song_actions";
+import { removeSongFromPlaylist } from "../../actions/playlist_song_actions";
+
 
 const mSTP = (state, ownProps) => {
   const currentUser = state.entities.users[state.session.id];
   let songs = Object.values(state.entities.songs)
-  // debugger
   let artists = state.entities.artists
   return {
     songs,

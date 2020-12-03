@@ -257,13 +257,16 @@ var deletePlaylist = function deletePlaylist(id) {
 /*!***************************************************!*\
   !*** ./frontend/actions/playlist_song_actions.js ***!
   \***************************************************/
-/*! exports provided: CLEAR_PLAYLIST_SONGS, clearPlaylistSongs, addSongToPlaylist, removeSongFromPlaylist */
+/*! exports provided: CLEAR_PLAYLIST_SONGS, RECEIVE_ALL_PLAYLISTS_SONGS, clearPlaylistSongs, receiveAllPlaylists, fetchPlaylistSongs, addSongToPlaylist, removeSongFromPlaylist */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CLEAR_PLAYLIST_SONGS", function() { return CLEAR_PLAYLIST_SONGS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_ALL_PLAYLISTS_SONGS", function() { return RECEIVE_ALL_PLAYLISTS_SONGS; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "clearPlaylistSongs", function() { return clearPlaylistSongs; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "receiveAllPlaylists", function() { return receiveAllPlaylists; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchPlaylistSongs", function() { return fetchPlaylistSongs; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "addSongToPlaylist", function() { return addSongToPlaylist; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "removeSongFromPlaylist", function() { return removeSongFromPlaylist; });
 /* harmony import */ var _util_playlist_song_api_util__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../util/playlist_song_api_util */ "./frontend/util/playlist_song_api_util.jsx");
@@ -271,9 +274,23 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var CLEAR_PLAYLIST_SONGS = "CLEAR_PLAYLIST_SONGS";
+var RECEIVE_ALL_PLAYLISTS_SONGS = "RECEIVE_ALL_PLAYLISTS_SONGS";
 var clearPlaylistSongs = function clearPlaylistSongs() {
   return {
     type: CLEAR_PLAYLIST_SONGS
+  };
+};
+var receiveAllPlaylists = function receiveAllPlaylists(playlists) {
+  return {
+    type: RECEIVE_ALL_PLAYLISTS_SONGS,
+    playlistSongs: playlistSongs
+  };
+};
+var fetchPlaylistSongs = function fetchPlaylistSongs() {
+  return function (dispatch) {
+    return PlaylistAPIUtil.fetchPlaylistSongs().then(function (playlists) {
+      return dispatch(receiveAllPlaylists(playlists));
+    });
   };
 };
 var addSongToPlaylist = function addSongToPlaylist(playlistSong) {
@@ -1472,8 +1489,7 @@ var PlayBar = /*#__PURE__*/function (_React$Component) {
     _classCallCheck(this, PlayBar);
 
     _this = _super.call(this, props);
-    _this.togglePlayBar = _this.togglePlayBar.bind(_assertThisInitialized(_this)); // this.setVolume = this.setVolume.bind(this);
-
+    _this.togglePlayBar = _this.togglePlayBar.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -1481,28 +1497,10 @@ var PlayBar = /*#__PURE__*/function (_React$Component) {
     key: "togglePlayBar",
     value: function togglePlayBar() {
       this.props.togglePlayPause(this.props.selectedSong);
-    } // $("#volume").slider({
-    //   	min: 0,
-    //   	max: 100,
-    //   	value: 0,
-    // 		range: "min",
-    //   	slide: function(event, ui) {
-    //     	setVolume(ui.value / 100);
-    //   	}
-    // 	});
-    // let myMedia = document.createElement('audio');
-    // $('#player').append(myMedia);
-    // myMedia.id = "myMedia";
-    // function playAudio(fileName, myVolume) {
-    // 		myMedia.src = fileName;
-    // 		myMedia.setAttribute('loop', 'loop');
-    //   	setVolume(myVolume);
-    //   	myMedia.play();
-    // }
-    // function setVolume(myVolume) {
-    //   var myMedia = document.getElementById('myMedia');
-    //   myMedia.volume = myVolume;
-    // }
+    } // this method should help us not rerender the component but unsure how to effectively use it so far
+    //  shouldComponentUpdate(nextProps, nextState) {
+    //   return false;
+    //  }
 
   }, {
     key: "render",
@@ -2027,6 +2025,7 @@ var PlaylistShow = /*#__PURE__*/function (_React$Component) {
     _this.deletePlaylist = _this.deletePlaylist.bind(_assertThisInitialized(_this));
     _this.handleSongClick = _this.handleSongClick.bind(_assertThisInitialized(_this));
     _this.handleToggleShuffle = _this.handleToggleShuffle.bind(_assertThisInitialized(_this));
+    _this.removeSongFromPlaylist = _this.removeSongFromPlaylist.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -2050,10 +2049,13 @@ var PlaylistShow = /*#__PURE__*/function (_React$Component) {
       this.props.togglePlayPause(this.props.song.id, this.props.song.name, this.props.song.photo_url, this.props.song.name);
     }
   }, {
+    key: "removeSongFromPlaylist",
+    value: function removeSongFromPlaylist() {}
+  }, {
     key: "componentDidMount",
     value: function componentDidMount() {
       this.props.fetchSongs();
-      this.props.fetchPlaylist(this.props.match.params.playlistId);
+      this.props.fetchPlaylist(this.props.match.params.playlistId); // this.props.fetchPlaylistSongs();
     }
   }, {
     key: "render",
@@ -2369,8 +2371,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _actions_user_actions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../actions/user_actions */ "./frontend/actions/user_actions.js");
 /* harmony import */ var _actions_artist_actions__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../actions/artist_actions */ "./frontend/actions/artist_actions.js");
 /* harmony import */ var _actions_session_actions__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../actions/session_actions */ "./frontend/actions/session_actions.js");
-/* harmony import */ var _actions_playlist_song_actions__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../actions/playlist_song_actions */ "./frontend/actions/playlist_song_actions.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
+/* harmony import */ var _actions_playlist_song_actions__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../actions/playlist_song_actions */ "./frontend/actions/playlist_song_actions.js");
+
 
 
 
@@ -2385,8 +2388,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var mSTP = function mSTP(state, ownProps) {
   var currentUser = state.entities.users[state.session.id];
-  var songs = Object.values(state.entities.songs); // debugger
-
+  var songs = Object.values(state.entities.songs);
   var artists = state.entities.artists;
   return {
     songs: songs,
@@ -2419,12 +2421,12 @@ var mDTP = function mDTP(dispatch) {
       return dispatch(Object(_actions_playlist_actions__WEBPACK_IMPORTED_MODULE_3__["deletePlaylist"])(id));
     },
     removeSongFromPlaylist: function removeSongFromPlaylist(songId, playlistId) {
-      return dispatch(Object(_actions_playlist_song_actions__WEBPACK_IMPORTED_MODULE_7__["removeSongFromPlaylist"])(songId, playlistId));
+      return dispatch(Object(_actions_playlist_song_actions__WEBPACK_IMPORTED_MODULE_8__["removeSongFromPlaylist"])(songId, playlistId));
     }
   };
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_router_dom__WEBPACK_IMPORTED_MODULE_8__["withRouter"])(Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mSTP, mDTP)(_playlist_show__WEBPACK_IMPORTED_MODULE_1__["default"])));
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_router_dom__WEBPACK_IMPORTED_MODULE_7__["withRouter"])(Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(mSTP, mDTP)(_playlist_show__WEBPACK_IMPORTED_MODULE_1__["default"])));
 
 /***/ }),
 
@@ -2481,7 +2483,6 @@ var PlaylistSongIndexItem = /*#__PURE__*/function (_React$Component) {
       selectedSong: ""
     };
     _this.handleSongClick = _this.handleSongClick.bind(_assertThisInitialized(_this));
-    _this.removeSongFromPlaylist = _this.removeSongFromPlaylist.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -2490,9 +2491,6 @@ var PlaylistSongIndexItem = /*#__PURE__*/function (_React$Component) {
     value: function handleSongClick() {
       this.props.togglePlayPause(this.props.song.id, this.props.song.name, this.props.song.photo_url, this.props.artist.name);
     }
-  }, {
-    key: "removeSongFromPlaylist",
-    value: function removeSongFromPlaylist() {}
   }, {
     key: "render",
     value: function render() {
@@ -4437,13 +4435,14 @@ var removeSong = function removeSong(playlistId, songId) {
 /*!**************************************************!*\
   !*** ./frontend/util/playlist_song_api_util.jsx ***!
   \**************************************************/
-/*! exports provided: addSongToPlaylist, removeSongFromPlaylist */
+/*! exports provided: addSongToPlaylist, removeSongFromPlaylist, fetchPlaylistSongs */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "addSongToPlaylist", function() { return addSongToPlaylist; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "removeSongFromPlaylist", function() { return removeSongFromPlaylist; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchPlaylistSongs", function() { return fetchPlaylistSongs; });
 var addSongToPlaylist = function addSongToPlaylist(playlist_song) {
   return $.ajax({
     method: "POST",
@@ -4461,6 +4460,11 @@ var removeSongFromPlaylist = function removeSongFromPlaylist(songId, playlistId)
       song_id: songId,
       playlist_id: playlistId
     }
+  });
+};
+var fetchPlaylistSongs = function fetchPlaylistSongs() {
+  return $.ajax({
+    url: "/api/playlists_songs"
   });
 };
 
