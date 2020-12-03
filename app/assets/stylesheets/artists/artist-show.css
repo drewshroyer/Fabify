@@ -3,9 +3,12 @@
     font-weight: 200;
     font-size: 14px;
     color: white;
+    transition: .5s;
+    font-family: 'lineto-circular-book';
 }
 
 .artist-show-description {
+    font-family: 'lineto-circular-book';
     height: 100px;
     padding: 0.08em 30px 30px 30px;
     color: hsla(0,0%,100%,.7);
@@ -21,14 +24,13 @@
 }
 
 .artist-show-music-tile-photo-1 {
-    /* position: absolute; */
-    height:300px;
-    width: 300px;
-    margin: 10px 0px 10px 30px;
+    display: none;
 }
 
 .artist-show-music-tile-photo-0 {
-    display: none;
+    height:300px;
+    width: 300px;
+    margin: 10px 0px 10px 30px;
 }
 
 .artist-show-music-tile-photo-2 {
@@ -49,9 +51,7 @@
     font-weight: bolder;
     color: white;
 }
-.artist-subheader-show {
-    transition: .5s;
-}
+
 .artist-subheader-show:hover{
     color: #2E77D0;
 }

@@ -42,6 +42,7 @@
 }
 
 .playlist-show-description {
+    font-family: 'lineto-circular-book';
     padding: 0.08em 0px 30px 30px;
     color: hsla(0,0%,100%,.7);
     font-size: 14px;

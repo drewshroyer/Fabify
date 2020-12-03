@@ -27,8 +27,22 @@
        /* url('../fonts/Proxima-Nova-Alt-Bold.svg#OpenSans') format('svg') Legacy iOS */
 /* } */ 
 
-body {
-    font-family: Proxima Nova Alt;
+ @font-face {
+	 font-family: 'lineto-circular-black';
+	 src:font-url('../stylesheets/lineto-circular-black.woff') format('woff');
+	 font-weight: normal;
+	 font-style: normal;
+ }
+
+ @font-face {
+	 font-family: 'lineto-circular-book';
+	 src:font-url('../stylesheets/lineto-circular-book.woff') format('woff');
+	 font-weight: normal;
+	 font-style: normal;
+ }
+
+ body {
+    font-family: 'lineto-circular-black';
     text-decoration: none;
     margin: 0;
 }
@@ -38,7 +52,7 @@ a {
   text-decoration: none; 
 }
 
-@font-face {
+/* @font-face {
   font-family: "Proxima Nova Alt";
   font-style: normal;
   font-weight: 100;
@@ -57,9 +71,9 @@ a {
   font-style: normal;
   font-weight: 900;
   src: local("Proxima Nova Alt"), local("Proxima-Nova-Alt-Bold"), font-url("Proxima-Nova-Alt-Bold.otf") format("otf");
-}
+} */
 
-body {
+/* body {
     font-family: Proxima Nova Alt;
     text-decoration: none;
     margin: 0;
@@ -68,4 +82,4 @@ body {
 a {
   color: inherit;
   text-decoration: none; 
-}
+} */

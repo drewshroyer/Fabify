@@ -171,6 +171,7 @@
 }
 
 .left-play-bar-artist-render {
+    font-family: 'lineto-circular-book';
     font-size: 12px;
     color: #ffff;
      font-weight: 100;
