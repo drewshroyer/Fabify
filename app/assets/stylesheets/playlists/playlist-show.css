@@ -73,7 +73,7 @@
 }
 .play-pause-like-delete-container {
     margin-top: 400px;
-    width: 240px;
+    width: 160px;
     height: 100px;
     padding: 10px 50px 0px 30px;
     color: white;
@@ -114,7 +114,7 @@
     color: white;
 }
 
-.playlist-music-audio:hover {
+/* .playlist-music-audio:hover {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -122,7 +122,7 @@
     width: 65px;
     border-radius: 50%;
     background-color:  #1eba54;
-}
+} */
 
 .dropdown:hover .dropbtn {
   background-color: #282828;
