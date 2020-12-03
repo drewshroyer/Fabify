@@ -1455,6 +1455,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _actions_song_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../actions/song_actions */ "./frontend/actions/song_actions.js");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
@@ -1503,8 +1505,18 @@ var PlayBar = /*#__PURE__*/function (_React$Component) {
     //  }
 
   }, {
+    key: "updatePlayPauseButton",
+    value: function updatePlayPauseButton() {
+      var playButton = document.getElementById("main-play-button");
+      playButton.style.display = 'none';
+      var pauseButton = document.getElementById("main-pause-button");
+      pauseButton.style.display = 'none';
+    }
+  }, {
     key: "render",
     value: function render() {
+      var _React$createElement;
+
       var _this$props = this.props,
           selectedSong = _this$props.selectedSong,
           name = _this$props.name,
@@ -1532,13 +1544,12 @@ var PlayBar = /*#__PURE__*/function (_React$Component) {
         src: whitePreviousIcon,
         alt: "whitePreviousIcon",
         className: "previous-song-button"
-      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", (_React$createElement = {
         src: whitePlayCircleButton,
         alt: "whitePlayCircleButton",
-        className: "main-play-button",
-        id: this.props.selectedSong,
-        onClick: this.togglePlayBar
-      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        id: "main-play-button",
+        className: "main-play-button"
+      }, _defineProperty(_React$createElement, "id", this.props.selectedSong), _defineProperty(_React$createElement, "onClick", this.togglePlayBar), _React$createElement)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         src: whiteNextIcon,
         alt: "whiteNextIcon",
         className: "next-song-button"
@@ -3657,7 +3668,11 @@ var WebPlayer = /*#__PURE__*/function (_React$Component) {
 
   _createClass(WebPlayer, [{
     key: "togglePlayPause",
-    value: function togglePlayPause(id, name, photo, artist) {
+    value: function togglePlayPause() {
+      var id = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 2;
+      var name = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : "1999";
+      var photo = arguments.length > 2 ? arguments[2] : undefined;
+      var artist = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : "Troy";
       var audioEle = document.getElementById("audio-element--".concat(id));
 
       if (this.state.selectedSong === id) {

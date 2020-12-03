@@ -13,6 +13,20 @@
     bottom: 0%;
 }
 
+#main-pause-button {
+  display: none;
+  /* padding: 10px;
+  height: 36px;
+  width: auto; */
+}
+
+#main-pause-button:hover {
+  padding: 7px;
+  height: 42px;
+  width: auto;
+}
+
+
 .right-play-bar {
     display: flex;
     flex-direction: row;
@@ -139,6 +153,12 @@
 }
 
 .main-play-button:hover {
+    padding: 7px;
+    height: 42px;
+    width: auto;
+}
+
+#main-pause-button:hover {
     padding: 7px;
     height: 42px;
     width: auto;
