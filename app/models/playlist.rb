@@ -18,6 +18,8 @@ class Playlist < ApplicationRecord
         foreign_key: :author_id,
         class_name: :User
 
-    
+    has_many :playlist_songs,
+        foreign_key: :playlist_id,
+        class_name: :PlaylistSong
   
 end

@@ -36,8 +36,10 @@
 }
 
 .artist-show-info-container {
+    background: linear-gradient(to bottom, #525252, #2a2a2a);
     display: flex;
     flex-direction: row;
+    padding: 20px 0px 20px 0px;
 }
 
 .artist-show-name {
