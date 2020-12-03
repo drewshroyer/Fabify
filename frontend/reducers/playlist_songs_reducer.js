@@ -13,8 +13,8 @@ const playlistSongReducer = (state = {}, action) => {
 
     case RECEIVE_PLAYLIST:
       newState = Object.assign({}, state);
-      if (action.object.playlist_songs) {
-        return action.object.playlist_songs;
+      if (action.playlist_songs) {
+        return action.playlist_songs;
       } else {
         return {};
       }

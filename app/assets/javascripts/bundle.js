@@ -4133,8 +4133,8 @@ var playlistSongReducer = function playlistSongReducer() {
     case _actions_playlist_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_PLAYLIST"]:
       newState = Object.assign({}, state);
 
-      if (action.object.playlist_songs) {
-        return action.object.playlist_songs;
+      if (action.playlist_songs) {
+        return action.playlist_songs;
       } else {
         return {};
       }
