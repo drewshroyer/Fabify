@@ -2385,7 +2385,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
 var mSTP = function mSTP(state, ownProps) {
   var currentUser = state.entities.users[state.session.id];
   var songs = Object.values(state.entities.songs);

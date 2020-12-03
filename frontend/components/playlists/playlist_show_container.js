@@ -8,7 +8,6 @@ import { fetchArtists } from "../../actions/artist_actions";
 import { logout } from "../../actions/session_actions";
 import { deletePlaylist } from "../../actions/playlist_actions";
 import { withRouter } from "react-router-dom";
-import { fetchPlaylistSongs } from "../../actions/playlist_song_actions";
 import { removeSongFromPlaylist } from "../../actions/playlist_song_actions";
 
 
