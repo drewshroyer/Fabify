@@ -1991,8 +1991,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _playlist_song_index__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./playlist_song_index */ "./frontend/components/playlists/playlist_song_index.jsx");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
@@ -2060,21 +2058,28 @@ var PlaylistShow = /*#__PURE__*/function (_React$Component) {
     }
   }, {
     key: "removeSongFromPlaylist",
-    value: function removeSongFromPlaylist() {}
+    value: function removeSongFromPlaylist() {
+      e.preventDefault();
+      this.props.removeSongFromPlaylist(this.props.songId, this.props.playlistId);
+    }
   }, {
     key: "componentDidMount",
     value: function componentDidMount() {
-      // debugger
       this.props.fetchSongs();
       this.props.fetchPlaylist(this.props.match.params.playlistId);
       this.props.fetchPlaylistSongs();
+      debugger;
     }
   }, {
     key: "render",
     value: function render() {
-      var _this2 = this;
-
       // debugger
+      // let playlistSongsIndex 
+      // songs.forEach((song) => {
+      //   if(playlistSongs.includes(song.id)) {
+      //     playlistSongsIndex.push(song);
+      //   }
+      // })
       var _this$props = this.props,
           songs = _this$props.songs,
           artists = _this$props.artists,
@@ -2124,15 +2129,7 @@ var PlaylistShow = /*#__PURE__*/function (_React$Component) {
         className: "delete-playlist-button"
       }, "Edit Details"))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "playlist-music-tile-line-item"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, songs.map(function (song, idx) {
-        var _React$createElement;
-
-        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_playlist_song_index__WEBPACK_IMPORTED_MODULE_2__["default"], (_React$createElement = {
-          key: idx,
-          song: song,
-          artist: artists[song.artist_id]
-        }, _defineProperty(_React$createElement, "key", song.id), _defineProperty(_React$createElement, "togglePlayPause", _this2.props.togglePlayPause), _defineProperty(_React$createElement, "removeSongFromPlaylist", _this2.props.removeSongFromPlaylist), _React$createElement));
-      }))));
+      }));
     }
   }]);
 
@@ -2391,13 +2388,13 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var mSTP = function mSTP(state) {
+var mSTP = function mSTP(state, ownProps) {
   var currentUser = state.entities.users[state.session.id];
   var songs = Object.values(state.entities.songs);
-  var artists = state.entities.artists; // debugger
-
+  var artists = state.entities.artists;
   var playlistSongs = state.entities.playlistSongs ? Object.values(state.entities.playlistSongs) : [];
   return {
+    playlist: state.entities.playlists[ownProps.match.params.playlistId] || {},
     playlistSongs: playlistSongs,
     songs: songs,
     artists: artists,
@@ -4124,7 +4121,6 @@ var playlistSongReducer = function playlistSongReducer() {
   var action = arguments.length > 1 ? arguments[1] : undefined;
   Object.freeze(state);
   var newState = Object.assign({}, state);
-  debugger;
 
   switch (action.type) {
     case _actions_playlist_song_actions__WEBPACK_IMPORTED_MODULE_1__["RECEIVE_ALL_PLAYLISTS_SONGS"]:

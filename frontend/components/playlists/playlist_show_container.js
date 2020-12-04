@@ -11,13 +11,13 @@ import { withRouter } from "react-router-dom";
 import { fetchPlaylistSongs } from "../../actions/playlist_song_actions";
 import { removeSongFromPlaylist } from "../../actions/playlist_song_actions";
 
-const mSTP = (state) => {
+const mSTP = (state, ownProps) => {
   const currentUser = state.entities.users[state.session.id];
   let songs = Object.values(state.entities.songs);
   let artists = state.entities.artists;
-  // debugger
   let playlistSongs = state.entities.playlistSongs ? Object.values(state.entities.playlistSongs) : []
   return {
+    playlist: state.entities.playlists[ownProps.match.params.playlistId] || {},
     playlistSongs,
     songs,
     artists,
