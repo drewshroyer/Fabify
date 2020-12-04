@@ -4,12 +4,6 @@ export const RECEIVE_PLAYLIST = "RECEIVE_PLAYLIST";
 export const REMOVE_PLAYLIST = "REMOVE_PLAYLIST";
 export const REMOVE_PLAYLISTS = "CLEAR_PLAYLISTS";
 
-
-export const receiveAllPlaylists = (playlists) => ({
-  type: RECEIVE_ALL_PLAYLISTS,
-  playlists,
-});
-
 export const receivePlaylist = (playlist) => ({
   type: RECEIVE_PLAYLIST,
   playlist
@@ -25,6 +19,11 @@ export const removePlaylists = () => {
     type: REMOVE_PLAYLISTS,
   };
 };
+
+export const receiveAllPlaylists = (playlists) => ({
+  type: RECEIVE_ALL_PLAYLISTS,
+  playlists,
+});
 
 export const fetchPlaylists = () => dispatch => {
     return PlaylistAPIUtil.fetchPlaylists().then((playlists) =>

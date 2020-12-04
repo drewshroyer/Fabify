@@ -1,7 +1,7 @@
 import * as PlaylistSongApiUtil from "../util/playlist_song_api_util";
 import { receivePlaylist } from "./playlist_actions";
 export const CLEAR_PLAYLIST_SONGS = "CLEAR_PLAYLIST_SONGS";
-export const RECEIVE_ALL_PLAYLISTS_SONGS = "RECEIVE_ALL_PLAYLISTS_SONGS";
+export const RECEIVE_ALL_PLAYLIST_SONGS = "RECEIVE_ALL_PLAYLIST_SONGS";
 
 export const clearPlaylistSongs = () => {
   return {
@@ -9,9 +9,12 @@ export const clearPlaylistSongs = () => {
   };
 };
 
-export const receiveAllPlaylistSongs = () => ({
-  type: RECEIVE_ALL_PLAYLISTS_SONGS,
-});
+export const receiveAllPlaylistSongs = (playlistSongs) => {
+   return {
+    type: RECEIVE_ALL_PLAYLIST_SONGS,
+    playlistSongs,
+  };
+};
 
 export const fetchPlaylistSongs = () => dispatch => {
     return PlaylistSongApiUtil.fetchPlaylistSongs().then((playlists) =>

@@ -168,7 +168,7 @@ var closeModal = function closeModal() {
 /*!**********************************************!*\
   !*** ./frontend/actions/playlist_actions.js ***!
   \**********************************************/
-/*! exports provided: RECEIVE_ALL_PLAYLISTS, RECEIVE_PLAYLIST, REMOVE_PLAYLIST, REMOVE_PLAYLISTS, receiveAllPlaylists, receivePlaylist, removePlaylist, removePlaylists, fetchPlaylists, fetchPlaylist, createPlaylist, updatePlaylist, deletePlaylist */
+/*! exports provided: RECEIVE_ALL_PLAYLISTS, RECEIVE_PLAYLIST, REMOVE_PLAYLIST, REMOVE_PLAYLISTS, receivePlaylist, removePlaylist, removePlaylists, receiveAllPlaylists, fetchPlaylists, fetchPlaylist, createPlaylist, updatePlaylist, deletePlaylist */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -177,10 +177,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_PLAYLIST", function() { return RECEIVE_PLAYLIST; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "REMOVE_PLAYLIST", function() { return REMOVE_PLAYLIST; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "REMOVE_PLAYLISTS", function() { return REMOVE_PLAYLISTS; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "receiveAllPlaylists", function() { return receiveAllPlaylists; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "receivePlaylist", function() { return receivePlaylist; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "removePlaylist", function() { return removePlaylist; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "removePlaylists", function() { return removePlaylists; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "receiveAllPlaylists", function() { return receiveAllPlaylists; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchPlaylists", function() { return fetchPlaylists; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchPlaylist", function() { return fetchPlaylist; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createPlaylist", function() { return createPlaylist; });
@@ -192,12 +192,6 @@ var RECEIVE_ALL_PLAYLISTS = "RECEIVE_ALL_PLAYLISTS";
 var RECEIVE_PLAYLIST = "RECEIVE_PLAYLIST";
 var REMOVE_PLAYLIST = "REMOVE_PLAYLIST";
 var REMOVE_PLAYLISTS = "CLEAR_PLAYLISTS";
-var receiveAllPlaylists = function receiveAllPlaylists(playlists) {
-  return {
-    type: RECEIVE_ALL_PLAYLISTS,
-    playlists: playlists
-  };
-};
 var receivePlaylist = function receivePlaylist(playlist) {
   return {
     type: RECEIVE_PLAYLIST,
@@ -213,6 +207,12 @@ var removePlaylist = function removePlaylist(playlist) {
 var removePlaylists = function removePlaylists() {
   return {
     type: REMOVE_PLAYLISTS
+  };
+};
+var receiveAllPlaylists = function receiveAllPlaylists(playlists) {
+  return {
+    type: RECEIVE_ALL_PLAYLISTS,
+    playlists: playlists
   };
 };
 var fetchPlaylists = function fetchPlaylists() {
@@ -257,13 +257,13 @@ var deletePlaylist = function deletePlaylist(id) {
 /*!***************************************************!*\
   !*** ./frontend/actions/playlist_song_actions.js ***!
   \***************************************************/
-/*! exports provided: CLEAR_PLAYLIST_SONGS, RECEIVE_ALL_PLAYLISTS_SONGS, clearPlaylistSongs, receiveAllPlaylistSongs, fetchPlaylistSongs, addSongToPlaylist, removeSongFromPlaylist */
+/*! exports provided: CLEAR_PLAYLIST_SONGS, RECEIVE_ALL_PLAYLIST_SONGS, clearPlaylistSongs, receiveAllPlaylistSongs, fetchPlaylistSongs, addSongToPlaylist, removeSongFromPlaylist */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CLEAR_PLAYLIST_SONGS", function() { return CLEAR_PLAYLIST_SONGS; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_ALL_PLAYLISTS_SONGS", function() { return RECEIVE_ALL_PLAYLISTS_SONGS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_ALL_PLAYLIST_SONGS", function() { return RECEIVE_ALL_PLAYLIST_SONGS; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "clearPlaylistSongs", function() { return clearPlaylistSongs; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "receiveAllPlaylistSongs", function() { return receiveAllPlaylistSongs; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "fetchPlaylistSongs", function() { return fetchPlaylistSongs; });
@@ -274,15 +274,16 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var CLEAR_PLAYLIST_SONGS = "CLEAR_PLAYLIST_SONGS";
-var RECEIVE_ALL_PLAYLISTS_SONGS = "RECEIVE_ALL_PLAYLISTS_SONGS";
+var RECEIVE_ALL_PLAYLIST_SONGS = "RECEIVE_ALL_PLAYLIST_SONGS";
 var clearPlaylistSongs = function clearPlaylistSongs() {
   return {
     type: CLEAR_PLAYLIST_SONGS
   };
 };
-var receiveAllPlaylistSongs = function receiveAllPlaylistSongs() {
+var receiveAllPlaylistSongs = function receiveAllPlaylistSongs(playlistSongs) {
   return {
-    type: RECEIVE_ALL_PLAYLISTS_SONGS
+    type: RECEIVE_ALL_PLAYLIST_SONGS,
+    playlistSongs: playlistSongs
   };
 };
 var fetchPlaylistSongs = function fetchPlaylistSongs() {
@@ -4015,7 +4016,7 @@ var playlistSongReducer = function playlistSongReducer() {
   var newState = Object.assign({}, state);
 
   switch (action.type) {
-    case _actions_playlist_song_actions__WEBPACK_IMPORTED_MODULE_1__["RECEIVE_ALL_PLAYLISTS_SONGS"]:
+    case _actions_playlist_song_actions__WEBPACK_IMPORTED_MODULE_1__["RECEIVE_ALL_PLAYLIST_SONGS"]:
       return action.playlist_songs;
 
     case _actions_playlist_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_PLAYLIST"]:
