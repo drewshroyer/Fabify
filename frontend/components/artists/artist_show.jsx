@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import PlaylistIndex from "../nav/playlist_index";
+import PlaylistSongIndexItem from "../playlists/playlist_song_index"
 
 
 class ArtistShow extends React.Component {
@@ -27,14 +28,7 @@ class ArtistShow extends React.Component {
   componentDidMount() {
     this.props.fetchSongs();
     this.props.fetchPlaylists();
-
   }
-
-//   componentWillUpdate(prevProps) {
-//     if (this.props.artistId !== prevProps.artistId) {
-//     this.fetchArtist(this.props.artistId)
-//     }
-//   }
 
   render() {
     const { playlists, songs, artistName, artistBio, artistId} = this.props;
@@ -81,52 +75,15 @@ class ArtistShow extends React.Component {
          <div className="playlist-music-tile-line-item">
           <ul >
             {artistSongs.map((song, idx) => (
-              <div className="playlist-song-tile-container" onClick={this.handleSongClick}>
-        <div className="playlist-music-tile">
-          <audio
-            src={song.audio_url}
-            className="playlist-music-tile-audio-file" // search how manipulate and format audio tags
-            controls
-            id={`audio-element--${song.id}`}
-          />
-          <div className="playlist-music-tile-number-container">
-            <div className="playlist-music-tile-number">{idx + 1} 
-              <div
-                className="playlist-music-tile-audio"
-              >
-                <img
-                  className="playlist-music-tile-play-button"
-                  src={window.whitePlayButton}
-                  alt="white-play-button"
-                ></img>
-              </div>
-            </div>
-          </div>
-          <img src={song.photo_url} className="playlist-music-tile-photo" />
-          <div className="playlist-music-tile-name">{song.name}</div>
-          <div className="playlist-music-tile-artist">{artistName}</div>
-          <div className="dropdown">
-           <button className="three-dot-options" >...
-           </button>
-           <div className="dropdown-content">
-             <div className="dropdown-content-flex">
-             <div className="add-song-to-playlist-button">Add Song to Playlist</div>
-             <div className="playlist-add-song-list">
-                <div className="user-playlists">
-              <ul className="nav-bar-playlists">
-                {playlists.map((playlist, idx) => (
-                  <PlaylistIndex 
-                  playlist={playlist} 
-                  key={idx} />
-                ))}
-              </ul>
-            </div>
-             </div>
-             </div>
-           </div>
-           </div>
-        </div>
-      </div>
+              <PlaylistSongIndexItem
+                playlists={playlists}
+                idx = {idx}
+                song={song}
+                artist={artistName}
+                key={song.id}
+                togglePlayPause={this.props.togglePlayPause}
+                removeSongFromPlaylist = {this.props.removeSongFromPlaylist}
+              />
             ))}
           </ul>
         </div>

@@ -46,10 +46,11 @@ class PlaylistShow extends React.Component {
   componentDidMount() {
     this.props.fetchSongs();
     this.props.fetchPlaylist(this.props.match.params.playlistId);
+    this.props.fetchPlaylists();
   }
 
   render() {
-    const { songs, artists, playlistName, playlistDescription} = this.props;
+    const { songs, artists, playlistName, playlistDescription, playlists} = this.props;
     let playlistSongsIndex = []
     songs.forEach((song) => {
       if(this.props.playlist.song_ids.includes(song.id)) {
@@ -101,8 +102,10 @@ class PlaylistShow extends React.Component {
         </div>
         <div className="playlist-music-tile-line-item">
           <ul >
-            {playlistSongsIndex.map((song) => (
+            {playlistSongsIndex.map((song, idx) => (
               <PlaylistSongIndexItem
+                playlists = {playlists}
+                idx = {idx}
                 song={song}
                 artist={artists[song.artist_id]}
                 key={song.id}

@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import PlaylistIndex from "../nav/playlist_index";
 
 class PlaylistSongIndexItem extends React.Component {
   constructor(props) {
@@ -18,7 +19,7 @@ class PlaylistSongIndexItem extends React.Component {
   }
 
   render() {
-    const { song, artist } = this.props;
+    const { song, artist, idx, playlists } = this.props;
     return (
       <div className="playlist-song-tile-container" onClick={this.handleSongClick}>
         <div className="playlist-music-tile">
@@ -29,7 +30,7 @@ class PlaylistSongIndexItem extends React.Component {
             id={`audio-element--${song.id}`}
           />
           <div className="playlist-music-tile-number-container">
-            <div className="playlist-music-tile-number">{song.id} 
+            <div className="playlist-music-tile-number">{idx + 1} 
               <div
                 className="playlist-music-tile-audio"
               >
@@ -51,6 +52,17 @@ class PlaylistSongIndexItem extends React.Component {
            </button>
            <div className="dropdown-content">
              <div className="dropdown-content-flex">
+               <div className="add-song-to-playlist-button">Add Song to Playlist</div>
+             <div className="playlist-add-song-list">
+                <div className="user-playlists">
+              <ul className="nav-bar-playlists">
+                {playlists.map((playlist, idx) => (
+                  <PlaylistIndex 
+                  playlist={playlist} 
+                  key={idx} />
+                ))}
+              </ul>
+            </div>
              <div className="delete-playlist-button" onClick={this.handleDeletePlaylist}>Delete Playlist</div>
              <Link to="/webplayer">
              <div className="delete-playlist-button" onClick={this.removeSongFromPlaylist}>Remove Song</div>
@@ -59,6 +71,7 @@ class PlaylistSongIndexItem extends React.Component {
            </div>
            </div>
         </div>
+      </div>
       </div>
     );
   }
