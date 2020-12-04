@@ -9,6 +9,7 @@ class WebPlayer extends React.Component {
   constructor(props) {
     super(props);
     this.togglePlayPause = this.togglePlayPause.bind(this);
+    this.activateFabMode = this.activateFabMode.bind(this);
     this.state = {
       playingSong: false,
       selectedSong: "",
@@ -40,12 +41,40 @@ class WebPlayer extends React.Component {
     }
   }
 
+   activateFabMode() {
+    //  if(input === checked) {
+    let outerContainer  = document.getElementsByClassName("webplayer-body-container")
+    for(let i = 0; i < outerContainer.length; i++){
+      outerContainer[i].style.backgroundColor = '#FF69B4'
+    }
+
+    let musicTiles = document.getElementsByClassName("webplayer-music-tile")
+        for(let i = 0; i < musicTiles.length; i++){
+          // musicTiles[i].style.backgroundColor = '#D3FF55'
+          musicTiles[i].style.backgroundImage="url(https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.prettylittlething.us%2Fprettylittlething-chunky-gold-glitter.html&psig=AOvVaw3RSrunsZHojVUDVQNelbUP&ust=1607196648160000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCIjjzpyIte0CFQAAAAAdAAAAABAF)"
+        }
+
+    let musicTileNames = document.getElementsByClassName("webplayer-music-tile-name")
+        for(let i = 0; i < musicTiles.length; i++){
+          musicTileNames[i].style.color = 'black'
+        }
+    //  } else {
+    //  }
+  }
+
   render() {
     return (
       <div className="web-player-container">
         <InternalNavbarContainer />
         <div className="webplayer-outer-body-container">
           <div className="top-bar-container">
+            <div className="fab-mode-button-container">
+              <div className="fab-mode-button">Fab Mode?</div>
+              <label className="switch">
+                <input type="checkbox" onClick={this.activateFabMode}/> 
+                <span className="slider-round"></span>
+              </label>
+          </div>
             <div className="dropdown">
            <button className="webplayer-logout-button">Menu
            </button>
