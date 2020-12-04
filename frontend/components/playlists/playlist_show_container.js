@@ -8,17 +8,17 @@ import { fetchArtists } from "../../actions/artist_actions";
 import { logout } from "../../actions/session_actions";
 import { deletePlaylist } from "../../actions/playlist_actions";
 import { withRouter } from "react-router-dom";
-import { fetchPlaylistSongs } from "../../actions/playlist_song_actions";
+// import { fetchPlaylistSongs } from "../../actions/playlist_song_actions";
 import { removeSongFromPlaylist } from "../../actions/playlist_song_actions";
 
 const mSTP = (state, ownProps) => {
   const currentUser = state.entities.users[state.session.id];
   let songs = Object.values(state.entities.songs);
   let artists = state.entities.artists;
-  let playlistSongs = state.entities.playlistSongs ? Object.values(state.entities.playlistSongs) : []
+  // let playlistSongs = state.entities.playlistSongs ? Object.values(state.entities.playlistSongs) : []
   return {
     playlist: state.entities.playlists[ownProps.match.params.playlistId] || {},
-    playlistSongs,
+    // playlistSongs,
     songs,
     artists,
     currentUser: currentUser,
@@ -27,7 +27,7 @@ const mSTP = (state, ownProps) => {
 
 const mDTP = (dispatch) => {
   return {
-    fetchPlaylistSongs: () => dispatch(fetchPlaylistSongs()),
+    // fetchPlaylistSongs: () => dispatch(fetchPlaylistSongs()),
     fetchPlaylist: id => dispatch(fetchPlaylist(id)),
     fetchUser: (id) => dispatch(fetchUser(id)),
     fetchPlaylists: () => dispatch(fetchPlaylists()),

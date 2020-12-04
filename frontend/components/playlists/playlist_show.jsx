@@ -40,24 +40,23 @@ class PlaylistShow extends React.Component {
 
   removeSongFromPlaylist() {
      e.preventDefault()
-     this.props.removeSongFromPlaylist(this.props.playlistSongs.songId, this.props.playlistSongs.playlistId);
+     this.props.removeSongFromPlaylist(this.props.songId, this.props.playlistId);
   }
 
   componentDidMount() {
     this.props.fetchSongs();
     this.props.fetchPlaylist(this.props.match.params.playlistId);
-    this.props.fetchPlaylistSongs();
   }
 
   render() {
-    const { songs, artists, playlistName, playlistId, playlistDescription, playlistSongs} = this.props;
+    const { songs, artists, playlistName, playlistDescription} = this.props;
     let playlistSongsIndex = []
     songs.forEach((song) => {
-      if(playlistSongs.song_id === song.id && playlistSongs.playlist_id === playlistId) {
+      if(this.props.playlist.song_ids.includes(song.id)) {
         playlistSongsIndex.push(song);
       }
     })
-    console.log(playlistSongsIndex)
+
     if (!songs) return null;
     return (
       <div className="playlist-show-container">

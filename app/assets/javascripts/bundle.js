@@ -2063,14 +2063,13 @@ var PlaylistShow = /*#__PURE__*/function (_React$Component) {
     key: "removeSongFromPlaylist",
     value: function removeSongFromPlaylist() {
       e.preventDefault();
-      this.props.removeSongFromPlaylist(this.props.playlistSongs.songId, this.props.playlistSongs.playlistId);
+      this.props.removeSongFromPlaylist(this.props.songId, this.props.playlistId);
     }
   }, {
     key: "componentDidMount",
     value: function componentDidMount() {
       this.props.fetchSongs();
       this.props.fetchPlaylist(this.props.match.params.playlistId);
-      this.props.fetchPlaylistSongs();
     }
   }, {
     key: "render",
@@ -2081,16 +2080,13 @@ var PlaylistShow = /*#__PURE__*/function (_React$Component) {
           songs = _this$props.songs,
           artists = _this$props.artists,
           playlistName = _this$props.playlistName,
-          playlistId = _this$props.playlistId,
-          playlistDescription = _this$props.playlistDescription,
-          playlistSongs = _this$props.playlistSongs;
+          playlistDescription = _this$props.playlistDescription;
       var playlistSongsIndex = [];
       songs.forEach(function (song) {
-        if (playlistSongs.song_id === song.id && playlistSongs.playlist_id === playlistId) {
+        if (_this2.props.playlist.song_ids.includes(song.id)) {
           playlistSongsIndex.push(song);
         }
       });
-      console.log(playlistSongsIndex);
       if (!songs) return null;
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "playlist-show-container"
@@ -2402,18 +2398,18 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
+ // import { fetchPlaylistSongs } from "../../actions/playlist_song_actions";
 
 
 
 var mSTP = function mSTP(state, ownProps) {
   var currentUser = state.entities.users[state.session.id];
   var songs = Object.values(state.entities.songs);
-  var artists = state.entities.artists;
-  var playlistSongs = state.entities.playlistSongs ? Object.values(state.entities.playlistSongs) : [];
+  var artists = state.entities.artists; // let playlistSongs = state.entities.playlistSongs ? Object.values(state.entities.playlistSongs) : []
+
   return {
     playlist: state.entities.playlists[ownProps.match.params.playlistId] || {},
-    playlistSongs: playlistSongs,
+    // playlistSongs,
     songs: songs,
     artists: artists,
     currentUser: currentUser
@@ -2422,9 +2418,7 @@ var mSTP = function mSTP(state, ownProps) {
 
 var mDTP = function mDTP(dispatch) {
   return {
-    fetchPlaylistSongs: function fetchPlaylistSongs() {
-      return dispatch(Object(_actions_playlist_song_actions__WEBPACK_IMPORTED_MODULE_8__["fetchPlaylistSongs"])());
-    },
+    // fetchPlaylistSongs: () => dispatch(fetchPlaylistSongs()),
     fetchPlaylist: function fetchPlaylist(id) {
       return dispatch(Object(_actions_playlist_actions__WEBPACK_IMPORTED_MODULE_3__["fetchPlaylist"])(id));
     },
