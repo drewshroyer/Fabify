@@ -33,7 +33,7 @@ const App = () => (
       path="/artists/:artistId"
       component={ArtistShowBody}
     />
-    <ProtectedRoute exact path="/likes" component={WebPlayer} />
+    {/* <ProtectedRoute exact path="/likes" component={WebPlayer} /> */}
   </div>
 );
 

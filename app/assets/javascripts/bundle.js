@@ -541,10 +541,6 @@ var App = function App() {
     exact: true,
     path: "/artists/:artistId",
     component: _artists_artist_body__WEBPACK_IMPORTED_MODULE_10__["default"]
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_7__["ProtectedRoute"], {
-    exact: true,
-    path: "/likes",
-    component: _webplayer_webplayer__WEBPACK_IMPORTED_MODULE_5__["default"]
   }));
 };
 
@@ -1237,7 +1233,7 @@ var InternalNavbar = /*#__PURE__*/function (_React$Component) {
         alt: "Liked Songs",
         sizes: "(min-width: 120px) 30px, 30px"
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-        to: "/likes",
+        to: "/webplayer",
         className: "internal-nav-link"
       }, "All Songs")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "internal-nav-line"

@@ -141,7 +141,7 @@ class InternalNavbar extends React.Component {
                 alt="Liked Songs"
                 sizes="(min-width: 120px) 30px, 30px"
               ></img>
-              <Link to={`/likes`} className="internal-nav-link">
+              <Link to={`/webplayer`} className="internal-nav-link">
                 All Songs
               </Link>
             </div>
