@@ -4398,7 +4398,7 @@ __webpack_require__.r(__webpack_exports__);
 var addSongToPlaylist = function addSongToPlaylist(playlist_song) {
   return $.ajax({
     method: "POST",
-    url: "/api/playlists_songs",
+    url: "/api/playlist_songs",
     data: {
       playlist_song: playlist_song
     }
@@ -4407,7 +4407,7 @@ var addSongToPlaylist = function addSongToPlaylist(playlist_song) {
 var removeSongFromPlaylist = function removeSongFromPlaylist(songId, playlistId) {
   return $.ajax({
     method: "DELETE",
-    url: "/api/playlists_songs/remove",
+    url: "/api/playlist_songs/remove",
     data: {
       song_id: songId,
       playlist_id: playlistId
@@ -4416,7 +4416,7 @@ var removeSongFromPlaylist = function removeSongFromPlaylist(songId, playlistId)
 };
 var fetchPlaylistSongs = function fetchPlaylistSongs() {
   return $.ajax({
-    url: "/api/playlists_songs"
+    url: "/api/playlist_songs"
   });
 };
 
