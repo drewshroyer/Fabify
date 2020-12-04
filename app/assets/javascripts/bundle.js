@@ -2063,7 +2063,7 @@ var PlaylistShow = /*#__PURE__*/function (_React$Component) {
     key: "removeSongFromPlaylist",
     value: function removeSongFromPlaylist() {
       e.preventDefault();
-      this.props.removeSongFromPlaylist(this.props.songId, this.props.playlistId);
+      this.props.removeSongFromPlaylist(this.props.playlistSongs.songId, this.props.playlistSongs.playlistId);
     }
   }, {
     key: "componentDidMount",
@@ -2075,18 +2075,22 @@ var PlaylistShow = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      // debugger
-      // let playlistSongsIndex 
-      // songs.forEach((song) => {
-      //   if(this.props.playlistSongs.includes(song.id)) {
-      //     playlistSongsIndex.push(song);
-      //   }
-      // })
+      var _this2 = this;
+
       var _this$props = this.props,
           songs = _this$props.songs,
           artists = _this$props.artists,
           playlistName = _this$props.playlistName,
-          playlistDescription = _this$props.playlistDescription;
+          playlistId = _this$props.playlistId,
+          playlistDescription = _this$props.playlistDescription,
+          playlistSongs = _this$props.playlistSongs;
+      var playlistSongsIndex = [];
+      songs.forEach(function (song) {
+        if (playlistSongs.song_id === song.id && playlistSongs.playlist_id === playlistId) {
+          playlistSongsIndex.push(song);
+        }
+      });
+      console.log(playlistSongsIndex);
       if (!songs) return null;
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "playlist-show-container"
@@ -2131,7 +2135,15 @@ var PlaylistShow = /*#__PURE__*/function (_React$Component) {
         className: "delete-playlist-button"
       }, "Edit Details"))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "playlist-music-tile-line-item"
-      }));
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, playlistSongsIndex.map(function (song) {
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_playlist_song_index__WEBPACK_IMPORTED_MODULE_2__["default"], {
+          song: song,
+          artist: artists[song.artist_id],
+          key: song.id,
+          togglePlayPause: _this2.props.togglePlayPause,
+          removeSongFromPlaylist: _this2.props.removeSongFromPlaylist
+        });
+      }))));
     }
   }]);
 
@@ -4017,13 +4029,13 @@ var playlistSongReducer = function playlistSongReducer() {
 
   switch (action.type) {
     case _actions_playlist_song_actions__WEBPACK_IMPORTED_MODULE_1__["RECEIVE_ALL_PLAYLIST_SONGS"]:
-      return action.playlist_songs;
+      return action.playlistSongs;
 
     case _actions_playlist_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_PLAYLIST"]:
       newState = Object.assign({}, state);
 
       if (action.playlist_songs) {
-        return action.playlist_songs;
+        return action.playlistSongs;
       } else {
         return {};
       }

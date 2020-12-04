@@ -7,12 +7,12 @@ const playlistSongReducer = (state = {}, action) => {
 
   switch (action.type) {
      case RECEIVE_ALL_PLAYLIST_SONGS:
-      return action.playlist_songs;
+      return action.playlistSongs;
 
     case RECEIVE_PLAYLIST:
       newState = Object.assign({}, state);
       if (action.playlist_songs) {
-        return action.playlist_songs;
+        return action.playlistSongs;
       } else {
         return {};
       }

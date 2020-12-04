@@ -40,7 +40,7 @@ class PlaylistShow extends React.Component {
 
   removeSongFromPlaylist() {
      e.preventDefault()
-     this.props.removeSongFromPlaylist(this.props.songId, this.props.playlistId);
+     this.props.removeSongFromPlaylist(this.props.playlistSongs.songId, this.props.playlistSongs.playlistId);
   }
 
   componentDidMount() {
@@ -50,14 +50,14 @@ class PlaylistShow extends React.Component {
   }
 
   render() {
-    // debugger
-    // let playlistSongsIndex 
-    // songs.forEach((song) => {
-    //   if(this.props.playlistSongs.includes(song.id)) {
-    //     playlistSongsIndex.push(song);
-    //   }
-    // })
-    const { songs, artists, playlistName, playlistDescription} = this.props;
+    const { songs, artists, playlistName, playlistId, playlistDescription, playlistSongs} = this.props;
+    let playlistSongsIndex = []
+    songs.forEach((song) => {
+      if(playlistSongs.song_id === song.id && playlistSongs.playlist_id === playlistId) {
+        playlistSongsIndex.push(song);
+      }
+    })
+    console.log(playlistSongsIndex)
     if (!songs) return null;
     return (
       <div className="playlist-show-container">
@@ -101,8 +101,8 @@ class PlaylistShow extends React.Component {
            </div>
         </div>
         <div className="playlist-music-tile-line-item">
-          {/* <ul >
-            {playlistSongs.map((song, id) => (
+          <ul >
+            {playlistSongsIndex.map((song) => (
               <PlaylistSongIndexItem
                 song={song}
                 artist={artists[song.artist_id]}
@@ -111,7 +111,7 @@ class PlaylistShow extends React.Component {
                 removeSongFromPlaylist = {this.props.removeSongFromPlaylist}
               />
             ))}
-          </ul> */}
+          </ul>
         </div>
       
       </div>
