@@ -47,13 +47,11 @@ class WebPlayer extends React.Component {
     for(let i = 0; i < outerContainer.length; i++){
       outerContainer[i].style.backgroundColor = '#FF69B4'
     }
-
     let musicTiles = document.getElementsByClassName("webplayer-music-tile")
         for(let i = 0; i < musicTiles.length; i++){
-          // musicTiles[i].style.backgroundColor = '#D3FF55'
-          musicTiles[i].style.backgroundImage="url(https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.prettylittlething.us%2Fprettylittlething-chunky-gold-glitter.html&psig=AOvVaw3RSrunsZHojVUDVQNelbUP&ust=1607196648160000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCIjjzpyIte0CFQAAAAAdAAAAABAF)"
+          musicTiles[i].style.backgroundColor = '#D3FF55'
+          // musicTiles[i].style.backgroundImage="url('../../../app/assets/images/gold-background')"
         }
-
     let musicTileNames = document.getElementsByClassName("webplayer-music-tile-name")
         for(let i = 0; i < musicTiles.length; i++){
           musicTileNames[i].style.color = 'black'

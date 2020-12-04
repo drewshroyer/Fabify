@@ -47,14 +47,13 @@ class PlaylistShow extends React.Component {
     this.props.fetchSongs();
     this.props.fetchPlaylist(this.props.match.params.playlistId);
     this.props.fetchPlaylistSongs();
-    debugger
   }
 
   render() {
     // debugger
     // let playlistSongsIndex 
     // songs.forEach((song) => {
-    //   if(playlistSongs.includes(song.id)) {
+    //   if(this.props.playlistSongs.includes(song.id)) {
     //     playlistSongsIndex.push(song);
     //   }
     // })

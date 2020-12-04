@@ -2070,7 +2070,6 @@ var PlaylistShow = /*#__PURE__*/function (_React$Component) {
       this.props.fetchSongs();
       this.props.fetchPlaylist(this.props.match.params.playlistId);
       this.props.fetchPlaylistSongs();
-      debugger;
     }
   }, {
     key: "render",
@@ -2078,7 +2077,7 @@ var PlaylistShow = /*#__PURE__*/function (_React$Component) {
       // debugger
       // let playlistSongsIndex 
       // songs.forEach((song) => {
-      //   if(playlistSongs.includes(song.id)) {
+      //   if(this.props.playlistSongs.includes(song.id)) {
       //     playlistSongsIndex.push(song);
       //   }
       // })
@@ -3572,8 +3571,7 @@ var WebPlayer = /*#__PURE__*/function (_React$Component) {
       var musicTiles = document.getElementsByClassName("webplayer-music-tile");
 
       for (var _i = 0; _i < musicTiles.length; _i++) {
-        // musicTiles[i].style.backgroundColor = '#D3FF55'
-        musicTiles[_i].style.backgroundImage = "url(https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.prettylittlething.us%2Fprettylittlething-chunky-gold-glitter.html&psig=AOvVaw3RSrunsZHojVUDVQNelbUP&ust=1607196648160000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCIjjzpyIte0CFQAAAAAdAAAAABAF)";
+        musicTiles[_i].style.backgroundColor = '#D3FF55'; // musicTiles[i].style.backgroundImage="url('../../../app/assets/images/gold-background')"
       }
 
       var musicTileNames = document.getElementsByClassName("webplayer-music-tile-name");
@@ -4400,7 +4398,7 @@ __webpack_require__.r(__webpack_exports__);
 var addSongToPlaylist = function addSongToPlaylist(playlist_song) {
   return $.ajax({
     method: "POST",
-    url: "/api/playlists_songs",
+    url: "/api/playlist_songs",
     data: {
       playlist_song: playlist_song
     }
@@ -4409,7 +4407,7 @@ var addSongToPlaylist = function addSongToPlaylist(playlist_song) {
 var removeSongFromPlaylist = function removeSongFromPlaylist(songId, playlistId) {
   return $.ajax({
     method: "DELETE",
-    url: "/api/playlists_songs/remove",
+    url: "/api/playlist_songs/remove",
     data: {
       song_id: songId,
       playlist_id: playlistId
@@ -4418,7 +4416,7 @@ var removeSongFromPlaylist = function removeSongFromPlaylist(songId, playlistId)
 };
 var fetchPlaylistSongs = function fetchPlaylistSongs() {
   return $.ajax({
-    url: "/api/playlists_songs"
+    url: "/api/playlist_songs"
   });
 };
 

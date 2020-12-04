@@ -1,7 +1,7 @@
 export const addSongToPlaylist = (playlist_song) => {
   return $.ajax({
     method: "POST",
-    url: "/api/playlists_songs",
+    url: "/api/playlist_songs",
     data: { playlist_song },
   });
 };
@@ -9,7 +9,7 @@ export const addSongToPlaylist = (playlist_song) => {
 export const removeSongFromPlaylist = (songId, playlistId) => {
   return $.ajax({
     method: "DELETE",
-    url: "/api/playlists_songs/remove",
+    url: "/api/playlist_songs/remove",
     data: { song_id: songId, playlist_id: playlistId },
   });
 };
@@ -17,6 +17,6 @@ export const removeSongFromPlaylist = (songId, playlistId) => {
 
 export const fetchPlaylistSongs = () => {
   return $.ajax({
-    url: "/api/playlists_songs",
+    url: "/api/playlist_songs",
   });
 };

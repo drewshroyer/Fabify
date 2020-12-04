@@ -8,8 +8,6 @@ Rails.application.routes.draw do
     resources :artists, only: [:show, :index]
     resources :playlists_songs, only: [:create, :destroy, :index]
     resources :playlists, only: [:show, :index, :create, :destroy, :update] 
-      # post "/addsong/:song_id/", to: "playlists#add_song"
-      # delete "/removesong/:song_id/", to: "playlists#remove_song"
   end
 
   root to: 'static_pages#root'

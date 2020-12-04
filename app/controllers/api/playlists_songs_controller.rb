@@ -19,7 +19,6 @@ class Api::PlaylistsSongsController < ApplicationController
 
     def index 
         @playlist_songs = PlaylistSong.all
-        # debugger
         render :index
     end
 
