@@ -103,6 +103,7 @@ class WebPlayer extends React.Component {
  onClick={this.activateFabMode}/> 
                 <span className="slider-round"></span>
               </label>
+              {/* <div className="fabify-fab-mode-title-div">FABIFY</div> */}
           </div>
             <div className="dropdown">
            <button className="webplayer-logout-button">Menu
