@@ -55,18 +55,24 @@ class WebPlayer extends React.Component {
     //  if(outerContainer[0].style.backgroundColor === '#121212') {
     // let outerContainer  = document.getElementsByClassName("webplayer-body-container")
     for(let i = 0; i < outerContainer.length; i++){
-      outerContainer[i].style.backgroundColor = '#FF69B4'
+      outerContainer[i].style.background = 'linear-gradient(to bottom, #D3FF55, #5E4BEA'
       outerContainer[i].style.transition = '1s'
     }
     let musicTiles = document.getElementsByClassName("webplayer-music-tile")
         for(let i = 0; i < musicTiles.length; i++){
-          musicTiles[i].style.backgroundColor = '#D3FF55'
+          musicTiles[i].style.background =  'linear-gradient(to bottom, #E24E59, #B62E8C' // '#F137A6'
           musicTiles[i].style.transition = '10s'
           // musicTiles[i].style.backgroundImage="url('../../../app/assets/images/gold-background')"
         }
+    let shortcutsTitle = document.getElementsByClassName("shortcuts-keyword-webplayer")
+        for(let i = 0; i < shortcutsTitle.length; i++){
+          shortcutsTitle[i].style.color = 'black'
+          shortcutsTitle[i].style.transition = '5s'
+        }  
+
     let musicTileNames = document.getElementsByClassName("webplayer-music-tile-name")
         for(let i = 0; i < musicTiles.length; i++){
-          musicTileNames[i].style.color = 'black'
+          musicTileNames[i].style.color = '#9DF0E1'
           musicTileNames[i].style.transition = '5s'
         }   
     let musicTilePlayButton = document.getElementsByClassName("webplayer-music-tile-audio")
@@ -76,7 +82,7 @@ class WebPlayer extends React.Component {
 
     let topBarContainer = document.getElementsByClassName("top-bar-container")
     for(let i = 0; i < topBarContainer.length; i++){
-          topBarContainer[i].style.backgroundColor = '#101EFF'
+          topBarContainer[i].style.backgroundColor = '#5E4BEA'
           topBarContainer[i].style.transition = '3s'
         }
 //      } else {
