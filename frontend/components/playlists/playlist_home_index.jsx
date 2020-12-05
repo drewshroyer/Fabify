@@ -75,8 +75,8 @@ class PlaylistAllIndex extends React.Component {
               <div className="popular-playlists-keyword-webplayer">Popular Playlists</div>
             </div>
             <ul className="webplayer-music-tile-line-item">
-        {playlists.map((playlist) => (
-              <div className="webplayer-music-tile-container">
+        {playlists.map((playlist, idx) => (
+              <div className="webplayer-music-tile-container" key={idx}>
                 <div className="playlist-home-tile">
                   <div className="webplayer-music-tile">
                     <Link to={`/playlists/${playlist.id}`}>

@@ -1849,9 +1849,10 @@ var PlaylistAllIndex = /*#__PURE__*/function (_React$Component) {
         className: "popular-playlists-keyword-webplayer"
       }, "Popular Playlists")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
         className: "webplayer-music-tile-line-item"
-      }, playlists.map(function (playlist) {
+      }, playlists.map(function (playlist, idx) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "webplayer-music-tile-container"
+          className: "webplayer-music-tile-container",
+          key: idx
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "playlist-home-tile"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
