@@ -51,9 +51,8 @@ class WebPlayer extends React.Component {
   }
 
    activateFabMode() {
+     if(this.state.checked === false) {
     let outerContainer  = document.getElementsByClassName("webplayer-body-container")
-    //  if(outerContainer[0].style.backgroundColor === '#121212') {
-    // let outerContainer  = document.getElementsByClassName("webplayer-body-container")
     for(let i = 0; i < outerContainer.length; i++){
       outerContainer[i].style.background = 'linear-gradient(to bottom, #D3FF55, #5E4BEA'
       outerContainer[i].style.transition = '1s'
@@ -62,7 +61,6 @@ class WebPlayer extends React.Component {
         for(let i = 0; i < musicTiles.length; i++){
           musicTiles[i].style.background =  'linear-gradient(to bottom, #E24E59, #B62E8C' // '#F137A6'
           musicTiles[i].style.transition = '10s'
-          // musicTiles[i].style.backgroundImage="url('../../../app/assets/images/gold-background')"
         }
     let shortcutsTitle = document.getElementsByClassName("shortcuts-keyword-webplayer")
         for(let i = 0; i < shortcutsTitle.length; i++){
@@ -85,11 +83,12 @@ class WebPlayer extends React.Component {
           topBarContainer[i].style.backgroundColor = '#5E4BEA'
           topBarContainer[i].style.transition = '3s'
         }
-//      } else {
-// for(let i = 0; i < outerContainer.length; i++){
-//       outerContainer[i].style.backgroundColor = '#FF69B4'
-//     }
-//      }
+     } else {
+      let outerContainer = document.getElementsByClassName("webplayer-body-container")
+      for(let i = 0; i < outerContainer.length; i++){
+            outerContainer[i].style.backgroundColor = '#FF69B4'
+          }
+     }
   }
 
   render() {
