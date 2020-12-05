@@ -10,13 +10,22 @@ class WebPlayer extends React.Component {
     super(props);
     this.togglePlayPause = this.togglePlayPause.bind(this);
     this.activateFabMode = this.activateFabMode.bind(this);
+    this.handleCheck = this.handleCheck.bind(this);
+
     this.state = {
+      checked: false,
       playingSong: false,
       selectedSong: "",
       name: "",
       photo: "",
       artist: "",
     };
+  }
+
+  handleCheck(e) {
+    this.setState({
+    checked: e.target.checked
+   })
   }
 
   togglePlayPause(id = 2, name = "1999", photo, artist = "Troy") {
@@ -47,23 +56,28 @@ class WebPlayer extends React.Component {
     // let outerContainer  = document.getElementsByClassName("webplayer-body-container")
     for(let i = 0; i < outerContainer.length; i++){
       outerContainer[i].style.backgroundColor = '#FF69B4'
+      outerContainer[i].style.transition = '1s'
     }
     let musicTiles = document.getElementsByClassName("webplayer-music-tile")
         for(let i = 0; i < musicTiles.length; i++){
           musicTiles[i].style.backgroundColor = '#D3FF55'
+          musicTiles[i].style.transition = '10s'
           // musicTiles[i].style.backgroundImage="url('../../../app/assets/images/gold-background')"
         }
     let musicTileNames = document.getElementsByClassName("webplayer-music-tile-name")
         for(let i = 0; i < musicTiles.length; i++){
           musicTileNames[i].style.color = 'black'
+          musicTileNames[i].style.transition = '5s'
         }   
     let musicTilePlayButton = document.getElementsByClassName("webplayer-music-tile-audio")
     for(let i = 0; i < musicTilePlayButton.length; i++){
           musicTilePlayButton[i].style.backgroundColor = '#101EFF'
         }
+
     let topBarContainer = document.getElementsByClassName("top-bar-container")
     for(let i = 0; i < topBarContainer.length; i++){
           topBarContainer[i].style.backgroundColor = '#101EFF'
+          topBarContainer[i].style.transition = '3s'
         }
 //      } else {
 // for(let i = 0; i < outerContainer.length; i++){
@@ -81,7 +95,8 @@ class WebPlayer extends React.Component {
             <div className="fab-mode-button-container">
               <div className="fab-mode-button">Fab Mode?</div>
               <label className="switch">
-                <input type="checkbox" onClick={this.activateFabMode}/> 
+                <input type="checkbox" checked={this.state.checked} onChange={this.handleCheck}
+ onClick={this.activateFabMode}/> 
                 <span className="slider-round"></span>
               </label>
           </div>

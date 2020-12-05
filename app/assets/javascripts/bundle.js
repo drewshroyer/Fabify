@@ -3503,7 +3503,9 @@ var WebPlayer = /*#__PURE__*/function (_React$Component) {
     _this = _super.call(this, props);
     _this.togglePlayPause = _this.togglePlayPause.bind(_assertThisInitialized(_this));
     _this.activateFabMode = _this.activateFabMode.bind(_assertThisInitialized(_this));
+    _this.handleCheck = _this.handleCheck.bind(_assertThisInitialized(_this));
     _this.state = {
+      checked: false,
       playingSong: false,
       selectedSong: "",
       name: "",
@@ -3514,6 +3516,13 @@ var WebPlayer = /*#__PURE__*/function (_React$Component) {
   }
 
   _createClass(WebPlayer, [{
+    key: "handleCheck",
+    value: function handleCheck(e) {
+      this.setState({
+        checked: e.target.checked
+      });
+    }
+  }, {
     key: "togglePlayPause",
     value: function togglePlayPause() {
       var id = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 2;
@@ -3551,18 +3560,21 @@ var WebPlayer = /*#__PURE__*/function (_React$Component) {
 
       for (var i = 0; i < outerContainer.length; i++) {
         outerContainer[i].style.backgroundColor = '#FF69B4';
+        outerContainer[i].style.transition = '1s';
       }
 
       var musicTiles = document.getElementsByClassName("webplayer-music-tile");
 
       for (var _i = 0; _i < musicTiles.length; _i++) {
-        musicTiles[_i].style.backgroundColor = '#D3FF55'; // musicTiles[i].style.backgroundImage="url('../../../app/assets/images/gold-background')"
+        musicTiles[_i].style.backgroundColor = '#D3FF55';
+        musicTiles[_i].style.transition = '10s'; // musicTiles[i].style.backgroundImage="url('../../../app/assets/images/gold-background')"
       }
 
       var musicTileNames = document.getElementsByClassName("webplayer-music-tile-name");
 
       for (var _i2 = 0; _i2 < musicTiles.length; _i2++) {
         musicTileNames[_i2].style.color = 'black';
+        musicTileNames[_i2].style.transition = '5s';
       }
 
       var musicTilePlayButton = document.getElementsByClassName("webplayer-music-tile-audio");
@@ -3575,6 +3587,7 @@ var WebPlayer = /*#__PURE__*/function (_React$Component) {
 
       for (var _i4 = 0; _i4 < topBarContainer.length; _i4++) {
         topBarContainer[_i4].style.backgroundColor = '#101EFF';
+        topBarContainer[_i4].style.transition = '3s';
       } //      } else {
       // for(let i = 0; i < outerContainer.length; i++){
       //       outerContainer[i].style.backgroundColor = '#FF69B4'
@@ -3599,6 +3612,8 @@ var WebPlayer = /*#__PURE__*/function (_React$Component) {
         className: "switch"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "checkbox",
+        checked: this.state.checked,
+        onChange: this.handleCheck,
         onClick: this.activateFabMode
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "slider-round"
