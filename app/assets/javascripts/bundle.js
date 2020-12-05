@@ -3525,11 +3525,7 @@ var WebPlayer = /*#__PURE__*/function (_React$Component) {
     }
   }, {
     key: "togglePlayPause",
-    value: function togglePlayPause() {
-      var id = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 2;
-      var name = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : "1999";
-      var photo = arguments.length > 2 ? arguments[2] : undefined;
-      var artist = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : "Troy";
+    value: function togglePlayPause(id, name, photo, artist) {
       var audioEle = document.getElementById("audio-element--".concat(id));
 
       if (this.state.selectedSong === id) {
@@ -3537,7 +3533,6 @@ var WebPlayer = /*#__PURE__*/function (_React$Component) {
           playingSong: !this.state.playingSong
         });
       } else {
-        // this where we set a new song
         this.setState({
           selectedSong: id,
           playingSong: false,
@@ -3560,7 +3555,7 @@ var WebPlayer = /*#__PURE__*/function (_React$Component) {
         var outerContainer = document.getElementsByClassName("webplayer-body-container");
 
         for (var i = 0; i < outerContainer.length; i++) {
-          outerContainer[i].style.background = 'linear-gradient(to bottom, #D3FF55, #5E4BEA';
+          outerContainer[i].style.background = 'linear-gradient(to bottom, #5E4BEA, #D3FF55';
           outerContainer[i].style.transition = '1s';
         }
 
@@ -3570,39 +3565,36 @@ var WebPlayer = /*#__PURE__*/function (_React$Component) {
           musicTiles[_i].style.background = 'linear-gradient(to bottom, #E24E59, #B62E8C'; // '#F137A6'
 
           musicTiles[_i].style.transition = '10s';
-        }
+        } // let shortcutsTitle = document.getElementsByClassName("shortcuts-keyword-webplayer")
+        //     for(let i = 0; i < shortcutsTitle.length; i++){
+        //       shortcutsTitle[i].style.color = '#B62E8C'
+        //       shortcutsTitle[i].style.transition = '1s'
+        //     }  
 
-        var shortcutsTitle = document.getElementsByClassName("shortcuts-keyword-webplayer");
-
-        for (var _i2 = 0; _i2 < shortcutsTitle.length; _i2++) {
-          shortcutsTitle[_i2].style.color = 'black';
-          shortcutsTitle[_i2].style.transition = '5s';
-        }
 
         var musicTileNames = document.getElementsByClassName("webplayer-music-tile-name");
 
-        for (var _i3 = 0; _i3 < musicTiles.length; _i3++) {
-          musicTileNames[_i3].style.color = '#9DF0E1';
-          musicTileNames[_i3].style.transition = '5s';
+        for (var _i2 = 0; _i2 < musicTiles.length; _i2++) {
+          musicTileNames[_i2].style.color = '#9DF0E1';
+          musicTileNames[_i2].style.transition = '5s';
         }
 
         var musicTilePlayButton = document.getElementsByClassName("webplayer-music-tile-audio");
 
-        for (var _i4 = 0; _i4 < musicTilePlayButton.length; _i4++) {
-          musicTilePlayButton[_i4].style.backgroundColor = '#101EFF';
+        for (var _i3 = 0; _i3 < musicTilePlayButton.length; _i3++) {
+          musicTilePlayButton[_i3].style.backgroundColor = '#101EFF';
         }
 
         var topBarContainer = document.getElementsByClassName("top-bar-container");
 
-        for (var _i5 = 0; _i5 < topBarContainer.length; _i5++) {
-          topBarContainer[_i5].style.backgroundColor = '#5E4BEA';
-          topBarContainer[_i5].style.transition = '3s';
+        for (var _i4 = 0; _i4 < topBarContainer.length; _i4++) {
+          topBarContainer[_i4].style.backgroundColor = '#5E4BEA'; // topBarContainer[i].style.transition = '3s'
         }
       } else {
         var _outerContainer = document.getElementsByClassName("webplayer-body-container");
 
-        for (var _i6 = 0; _i6 < _outerContainer.length; _i6++) {
-          _outerContainer[_i6].style.backgroundColor = '#FF69B4';
+        for (var _i5 = 0; _i5 < _outerContainer.length; _i5++) {
+          _outerContainer[_i5].style.backgroundColor = '#FF69B4';
         }
       }
     }

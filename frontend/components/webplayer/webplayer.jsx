@@ -28,13 +28,12 @@ class WebPlayer extends React.Component {
    })
   }
 
-  togglePlayPause(id = 2, name = "1999", photo, artist = "Troy") {
+  togglePlayPause(id, name, photo, artist) {
 
     const audioEle = document.getElementById(`audio-element--${id}`);
     if (this.state.selectedSong === id) {
       this.setState({ playingSong: !this.state.playingSong });
     } else {
-      // this where we set a new song
       this.setState({
         selectedSong: id,
         playingSong: false,
@@ -54,7 +53,7 @@ class WebPlayer extends React.Component {
      if(this.state.checked === false) {
     let outerContainer  = document.getElementsByClassName("webplayer-body-container")
     for(let i = 0; i < outerContainer.length; i++){
-      outerContainer[i].style.background = 'linear-gradient(to bottom, #D3FF55, #5E4BEA'
+      outerContainer[i].style.background = 'linear-gradient(to bottom, #5E4BEA, #D3FF55'
       outerContainer[i].style.transition = '1s'
     }
     let musicTiles = document.getElementsByClassName("webplayer-music-tile")
@@ -62,11 +61,11 @@ class WebPlayer extends React.Component {
           musicTiles[i].style.background =  'linear-gradient(to bottom, #E24E59, #B62E8C' // '#F137A6'
           musicTiles[i].style.transition = '10s'
         }
-    let shortcutsTitle = document.getElementsByClassName("shortcuts-keyword-webplayer")
-        for(let i = 0; i < shortcutsTitle.length; i++){
-          shortcutsTitle[i].style.color = 'black'
-          shortcutsTitle[i].style.transition = '5s'
-        }  
+    // let shortcutsTitle = document.getElementsByClassName("shortcuts-keyword-webplayer")
+    //     for(let i = 0; i < shortcutsTitle.length; i++){
+    //       shortcutsTitle[i].style.color = '#B62E8C'
+    //       shortcutsTitle[i].style.transition = '1s'
+    //     }  
 
     let musicTileNames = document.getElementsByClassName("webplayer-music-tile-name")
         for(let i = 0; i < musicTiles.length; i++){
@@ -81,7 +80,7 @@ class WebPlayer extends React.Component {
     let topBarContainer = document.getElementsByClassName("top-bar-container")
     for(let i = 0; i < topBarContainer.length; i++){
           topBarContainer[i].style.backgroundColor = '#5E4BEA'
-          topBarContainer[i].style.transition = '3s'
+          // topBarContainer[i].style.transition = '3s'
         }
      } else {
       let outerContainer = document.getElementsByClassName("webplayer-body-container")
