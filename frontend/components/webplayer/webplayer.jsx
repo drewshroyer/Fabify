@@ -42,8 +42,9 @@ class WebPlayer extends React.Component {
   }
 
    activateFabMode() {
-    //  if(input === checked) {
     let outerContainer  = document.getElementsByClassName("webplayer-body-container")
+    //  if(outerContainer[0].style.backgroundColor === '#121212') {
+    // let outerContainer  = document.getElementsByClassName("webplayer-body-container")
     for(let i = 0; i < outerContainer.length; i++){
       outerContainer[i].style.backgroundColor = '#FF69B4'
     }
@@ -55,9 +56,20 @@ class WebPlayer extends React.Component {
     let musicTileNames = document.getElementsByClassName("webplayer-music-tile-name")
         for(let i = 0; i < musicTiles.length; i++){
           musicTileNames[i].style.color = 'black'
+        }   
+    let musicTilePlayButton = document.getElementsByClassName("webplayer-music-tile-audio")
+    for(let i = 0; i < musicTilePlayButton.length; i++){
+          musicTilePlayButton[i].style.backgroundColor = '#101EFF'
         }
-    //  } else {
-    //  }
+    let topBarContainer = document.getElementsByClassName("top-bar-container")
+    for(let i = 0; i < topBarContainer.length; i++){
+          topBarContainer[i].style.backgroundColor = '#101EFF'
+        }
+//      } else {
+// for(let i = 0; i < outerContainer.length; i++){
+//       outerContainer[i].style.backgroundColor = '#FF69B4'
+//     }
+//      }
   }
 
   render() {

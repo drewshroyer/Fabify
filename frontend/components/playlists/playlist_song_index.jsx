@@ -18,6 +18,8 @@ class PlaylistSongIndexItem extends React.Component {
     );
   }
 
+  
+
   render() {
     const { song, artist, idx, playlists } = this.props;
     return (

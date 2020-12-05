@@ -3546,8 +3546,8 @@ var WebPlayer = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "activateFabMode",
     value: function activateFabMode() {
-      //  if(input === checked) {
-      var outerContainer = document.getElementsByClassName("webplayer-body-container");
+      var outerContainer = document.getElementsByClassName("webplayer-body-container"); //  if(outerContainer[0].style.backgroundColor === '#121212') {
+      // let outerContainer  = document.getElementsByClassName("webplayer-body-container")
 
       for (var i = 0; i < outerContainer.length; i++) {
         outerContainer[i].style.backgroundColor = '#FF69B4';
@@ -3563,8 +3563,23 @@ var WebPlayer = /*#__PURE__*/function (_React$Component) {
 
       for (var _i2 = 0; _i2 < musicTiles.length; _i2++) {
         musicTileNames[_i2].style.color = 'black';
-      } //  } else {
-      //  }
+      }
+
+      var musicTilePlayButton = document.getElementsByClassName("webplayer-music-tile-audio");
+
+      for (var _i3 = 0; _i3 < musicTilePlayButton.length; _i3++) {
+        musicTilePlayButton[_i3].style.backgroundColor = '#101EFF';
+      }
+
+      var topBarContainer = document.getElementsByClassName("top-bar-container");
+
+      for (var _i4 = 0; _i4 < topBarContainer.length; _i4++) {
+        topBarContainer[_i4].style.backgroundColor = '#101EFF';
+      } //      } else {
+      // for(let i = 0; i < outerContainer.length; i++){
+      //       outerContainer[i].style.backgroundColor = '#FF69B4'
+      //     }
+      //      }
 
     }
   }, {
