@@ -56,6 +56,13 @@ class WebPlayer extends React.Component {
       outerContainer[i].style.background = 'linear-gradient(to bottom, #5E4BEA, #D3FF55'
       outerContainer[i].style.transition = '1s'
     }
+
+    // let internalNavBarLinks  = document.getElementsByClassName("internal-nav-link")
+    // for(let i = 0; i < internalNavBar.length; i++){
+    //   internalNavBar[i].style.color = '#B62E8C'
+    //   internalNavBar[i].style.transition = '1s'
+    // }
+
     let musicTiles = document.getElementsByClassName("webplayer-music-tile")
         for(let i = 0; i < musicTiles.length; i++){
           musicTiles[i].style.background =  'linear-gradient(to bottom, #E24E59, #B62E8C' // '#F137A6'

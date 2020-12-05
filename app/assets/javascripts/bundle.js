@@ -3557,7 +3557,12 @@ var WebPlayer = /*#__PURE__*/function (_React$Component) {
         for (var i = 0; i < outerContainer.length; i++) {
           outerContainer[i].style.background = 'linear-gradient(to bottom, #5E4BEA, #D3FF55';
           outerContainer[i].style.transition = '1s';
-        }
+        } // let internalNavBarLinks  = document.getElementsByClassName("internal-nav-link")
+        // for(let i = 0; i < internalNavBar.length; i++){
+        //   internalNavBar[i].style.color = '#B62E8C'
+        //   internalNavBar[i].style.transition = '1s'
+        // }
+
 
         var musicTiles = document.getElementsByClassName("webplayer-music-tile");
 
