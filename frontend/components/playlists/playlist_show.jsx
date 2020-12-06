@@ -41,6 +41,7 @@ class PlaylistShow extends React.Component {
   removeSongFromPlaylist() {
      e.preventDefault()
      this.props.removeSongFromPlaylist(this.props.songId, this.props.playlistId);
+     this.props.history.push(`/playlists/${playlistId}`)
   }
 
   componentDidMount() {
@@ -50,10 +51,11 @@ class PlaylistShow extends React.Component {
   }
 
   render() {
-    const { songs, artists, playlistName, playlistDescription, playlists} = this.props;
+    const { songs, artists, playlistName, playlistDescription, playlists, playlistId} = this.props;
     let playlistSongsIndex = []
+    // console.log(this.props.playlist.song_ids)
     songs.forEach((song) => {
-      if(this.props.playlist.song_ids.includes(song.id)) {
+      if(this.props.playlist.song_ids.includes(song.id + 10)) { // running into issue with the song_ids
         playlistSongsIndex.push(song);
       }
     })
@@ -104,6 +106,7 @@ class PlaylistShow extends React.Component {
           <ul >
             {playlistSongsIndex.map((song, idx) => (
               <PlaylistSongIndexItem
+                playlistId = {playlistId}
                 playlists = {playlists}
                 idx = {idx}
                 song={song}
@@ -114,8 +117,7 @@ class PlaylistShow extends React.Component {
               />
             ))}
           </ul>
-        </div>
-      
+        </div>     
       </div>
     );
   }

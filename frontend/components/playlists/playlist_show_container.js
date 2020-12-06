@@ -15,10 +15,9 @@ const mSTP = (state, ownProps) => {
   const currentUser = state.entities.users[state.session.id];
   let songs = Object.values(state.entities.songs);
   let artists = state.entities.artists;
-  // let playlistSongs = state.entities.playlistSongs ? Object.values(state.entities.playlistSongs) : []
+
   return {
     playlist: state.entities.playlists[ownProps.match.params.playlistId] || {},
-    // playlistSongs,
     playlists: Object.values(state.entities.playlists),
     songs,
     artists,
@@ -28,7 +27,6 @@ const mSTP = (state, ownProps) => {
 
 const mDTP = (dispatch) => {
   return {
-    // fetchPlaylistSongs: () => dispatch(fetchPlaylistSongs()),
     fetchPlaylist: id => dispatch(fetchPlaylist(id)),
     fetchUser: (id) => dispatch(fetchUser(id)),
     fetchPlaylists: () => dispatch(fetchPlaylists()),

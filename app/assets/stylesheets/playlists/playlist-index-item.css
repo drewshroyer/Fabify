@@ -14,6 +14,7 @@
     color: white;    
     margin: 0px 10px 0px 10px;
     transition: .5s;
+    cursor: pointer;
 }
 
 .playlist-music-tile:hover {

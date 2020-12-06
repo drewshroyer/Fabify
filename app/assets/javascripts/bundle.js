@@ -2023,6 +2023,7 @@ var PlaylistShow = /*#__PURE__*/function (_React$Component) {
     value: function removeSongFromPlaylist() {
       e.preventDefault();
       this.props.removeSongFromPlaylist(this.props.songId, this.props.playlistId);
+      this.props.history.push("/playlists/".concat(playlistId));
     }
   }, {
     key: "componentDidMount",
@@ -2041,10 +2042,13 @@ var PlaylistShow = /*#__PURE__*/function (_React$Component) {
           artists = _this$props.artists,
           playlistName = _this$props.playlistName,
           playlistDescription = _this$props.playlistDescription,
-          playlists = _this$props.playlists;
-      var playlistSongsIndex = [];
+          playlists = _this$props.playlists,
+          playlistId = _this$props.playlistId;
+      var playlistSongsIndex = []; // console.log(this.props.playlist.song_ids)
+
       songs.forEach(function (song) {
-        if (_this2.props.playlist.song_ids.includes(song.id)) {
+        if (_this2.props.playlist.song_ids.includes(song.id + 10)) {
+          // running into issue with the song_ids
           playlistSongsIndex.push(song);
         }
       });
@@ -2094,6 +2098,7 @@ var PlaylistShow = /*#__PURE__*/function (_React$Component) {
         className: "playlist-music-tile-line-item"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, playlistSongsIndex.map(function (song, idx) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_playlist_song_index__WEBPACK_IMPORTED_MODULE_2__["default"], {
+          playlistId: playlistId,
           playlists: playlists,
           idx: idx,
           song: song,
@@ -2368,11 +2373,9 @@ __webpack_require__.r(__webpack_exports__);
 var mSTP = function mSTP(state, ownProps) {
   var currentUser = state.entities.users[state.session.id];
   var songs = Object.values(state.entities.songs);
-  var artists = state.entities.artists; // let playlistSongs = state.entities.playlistSongs ? Object.values(state.entities.playlistSongs) : []
-
+  var artists = state.entities.artists;
   return {
     playlist: state.entities.playlists[ownProps.match.params.playlistId] || {},
-    // playlistSongs,
     playlists: Object.values(state.entities.playlists),
     songs: songs,
     artists: artists,
@@ -2382,7 +2385,6 @@ var mSTP = function mSTP(state, ownProps) {
 
 var mDTP = function mDTP(dispatch) {
   return {
-    // fetchPlaylistSongs: () => dispatch(fetchPlaylistSongs()),
     fetchPlaylist: function fetchPlaylist(id) {
       return dispatch(Object(_actions_playlist_actions__WEBPACK_IMPORTED_MODULE_3__["fetchPlaylist"])(id));
     },
@@ -2486,8 +2488,7 @@ var PlaylistSongIndexItem = /*#__PURE__*/function (_React$Component) {
           idx = _this$props.idx,
           playlists = _this$props.playlists;
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "playlist-song-tile-container",
-        onClick: this.handleSongClick
+        className: "playlist-song-tile-container"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "playlist-music-tile"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("audio", {
@@ -2497,7 +2498,8 @@ var PlaylistSongIndexItem = /*#__PURE__*/function (_React$Component) {
         controls: true,
         id: "audio-element--".concat(song.id)
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "playlist-music-tile-number-container"
+        className: "playlist-music-tile-number-container",
+        onClick: this.handleSongClick
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "playlist-music-tile-number"
       }, idx + 1, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -2510,7 +2512,8 @@ var PlaylistSongIndexItem = /*#__PURE__*/function (_React$Component) {
         src: song.photo_url,
         className: "playlist-music-tile-photo"
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "playlist-music-tile-name"
+        className: "playlist-music-tile-name",
+        onClick: this.handleSongClick
       }, song.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         to: "/artists/".concat(artist.id)
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -2537,14 +2540,8 @@ var PlaylistSongIndexItem = /*#__PURE__*/function (_React$Component) {
           key: idx
         });
       }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "delete-playlist-button",
-        onClick: this.handleDeletePlaylist
-      }, "Delete Playlist"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-        to: "/webplayer"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "delete-playlist-button",
-        onClick: this.removeSongFromPlaylist
-      }, "Remove Song"))))))));
+        className: "delete-playlist-button"
+      }, "Remove Song")))))));
     }
   }]);
 

@@ -18,12 +18,10 @@ class PlaylistSongIndexItem extends React.Component {
     );
   }
 
-  
-
   render() {
     const { song, artist, idx, playlists } = this.props;
     return (
-      <div className="playlist-song-tile-container" onClick={this.handleSongClick}>
+      <div className="playlist-song-tile-container">
         <div className="playlist-music-tile">
           <audio
             src={song.audio_url}
@@ -31,7 +29,7 @@ class PlaylistSongIndexItem extends React.Component {
             controls
             id={`audio-element--${song.id}`}
           />
-          <div className="playlist-music-tile-number-container">
+          <div className="playlist-music-tile-number-container" onClick={this.handleSongClick}>
             <div className="playlist-music-tile-number">{idx + 1} 
               <div
                 className="playlist-music-tile-audio"
@@ -45,7 +43,7 @@ class PlaylistSongIndexItem extends React.Component {
             </div>
           </div>
           <img src={song.photo_url} className="playlist-music-tile-photo" />
-          <div className="playlist-music-tile-name">{song.name}</div>
+          <div className="playlist-music-tile-name" onClick={this.handleSongClick} >{song.name}</div>
           <Link to={`/artists/${artist.id}`}>
           <div className="playlist-music-tile-artist">{artist.name}</div>
           </Link>
@@ -65,10 +63,8 @@ class PlaylistSongIndexItem extends React.Component {
                 ))}
               </ul>
             </div>
-             <div className="delete-playlist-button" onClick={this.handleDeletePlaylist}>Delete Playlist</div>
-             <Link to="/webplayer">
-             <div className="delete-playlist-button" onClick={this.removeSongFromPlaylist}>Remove Song</div>
-             </Link>
+             <div className="delete-playlist-button">Remove Song</div>
+             {/* onClick={this.props.removeSongFromPlaylist(song.id, playlistId)} */}
              </div>
            </div>
            </div>
