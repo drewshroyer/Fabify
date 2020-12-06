@@ -158,24 +158,6 @@
 .internal-create-playlist-link:hover {
     color: white;
 }
-/* 
-#hover-white {
-    transition: .5s;
-}
-
-#hover-white-home {
-    color: white;
-    font-size: 14px;
-    font-weight: 700;
-    line-height: 16px;
-    letter-spacing: normal;
-    text-transform: none;
-    margin-left: 20px;
-}
-
-#hover-white:hover {
-     color: white;
-} */
 
 .internal-liked-songs-link:hover {
     color: white;
