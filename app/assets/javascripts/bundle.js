@@ -3637,6 +3637,13 @@ var WebPlayer = /*#__PURE__*/function (_React$Component) {
         for (var _i12 = 0; _i12 < _topBarContainer.length; _i12++) {
           _topBarContainer[_i12].style.backgroundColor = 'black';
         }
+
+        var _webplayerLogoutButton = document.getElementsByClassName("webplayer-logout-button");
+
+        for (var _i13 = 0; _i13 < _webplayerLogoutButton.length; _i13++) {
+          _webplayerLogoutButton[_i13].style.background = '#121212';
+          _webplayerLogoutButton[_i13].style.color = 'white';
+        }
       }
     }
   }, {

@@ -111,8 +111,13 @@ class WebPlayer extends React.Component {
     let topBarContainer = document.getElementsByClassName("top-bar-container")
     for(let i = 0; i < topBarContainer.length; i++){
           topBarContainer[i].style.backgroundColor = 'black'
-        }         
-     }
+        }   
+      let webplayerLogoutButton  = document.getElementsByClassName("webplayer-logout-button")
+    for(let i = 0; i < webplayerLogoutButton.length; i++){
+      webplayerLogoutButton[i].style.background = '#121212'
+      webplayerLogoutButton[i].style.color = 'white'
+    }
+   }
   }
 
   render() {
