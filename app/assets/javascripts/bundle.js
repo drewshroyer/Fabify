@@ -3563,8 +3563,7 @@ var WebPlayer = /*#__PURE__*/function (_React$Component) {
         var outerContainer = document.getElementsByClassName("webplayer-body-container");
 
         for (var _i = 0; _i < outerContainer.length; _i++) {
-          outerContainer[_i].style.background = 'linear-gradient(to bottom, #5E4BEA, #D3FF55';
-          outerContainer[_i].style.transition = '1s';
+          outerContainer[_i].style.background = 'linear-gradient(to bottom, #5E4BEA, #D3FF55'; // outerContainer[i].style.transition = '1s'
         }
 
         var webplayerLogoutButton = document.getElementsByClassName("webplayer-logout-button");
@@ -3578,15 +3577,13 @@ var WebPlayer = /*#__PURE__*/function (_React$Component) {
 
         for (var _i3 = 0; _i3 < musicTiles.length; _i3++) {
           musicTiles[_i3].style.background = 'linear-gradient(to bottom, #E24E59, #B62E8C'; // '#F137A6'
-
-          musicTiles[_i3].style.transition = '10s';
+          // musicTiles[i].style.transition = '10s'
         }
 
         var musicTileNames = document.getElementsByClassName("webplayer-music-tile-name");
 
         for (var _i4 = 0; _i4 < musicTiles.length; _i4++) {
-          musicTileNames[_i4].style.color = '#9DF0E1';
-          musicTileNames[_i4].style.transition = '5s';
+          musicTileNames[_i4].style.color = '#9DF0E1'; // musicTileNames[i].style.transition = '5s'
         }
 
         var musicTilePlayButton = document.getElementsByClassName("webplayer-music-tile-audio");
@@ -3610,8 +3607,7 @@ var WebPlayer = /*#__PURE__*/function (_React$Component) {
         var _outerContainer = document.getElementsByClassName("webplayer-body-container");
 
         for (var _i8 = 0; _i8 < _outerContainer.length; _i8++) {
-          _outerContainer[_i8].style.background = '#121212';
-          _outerContainer[_i8].style.transition = '1s';
+          _outerContainer[_i8].style.background = '#121212'; // outerContainer[i].style.transition = '1s'
         }
 
         var _musicTiles = document.getElementsByClassName("webplayer-music-tile");
