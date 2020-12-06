@@ -50,29 +50,26 @@ class WebPlayer extends React.Component {
   }
 
    activateFabMode() {
-     if(this.state.checked === false) {
+     if(this.state.checked === false) { 
+    let fabifyLogo  = document.getElementsByClassName("fabify-fab-mode-title-div")
+    for(let i = 0; i < fabifyLogo.length; i++){
+      fabifyLogo[i].style.display = 'block'
+    }
     let outerContainer  = document.getElementsByClassName("webplayer-body-container")
     for(let i = 0; i < outerContainer.length; i++){
       outerContainer[i].style.background = 'linear-gradient(to bottom, #5E4BEA, #D3FF55'
       outerContainer[i].style.transition = '1s'
     }
-
-    // let internalNavBarLinks  = document.getElementsByClassName("internal-nav-link")
-    // for(let i = 0; i < internalNavBar.length; i++){
-    //   internalNavBar[i].style.color = '#B62E8C'
-    //   internalNavBar[i].style.transition = '1s'
-    // }
-
+    let webplayerLogoutButton  = document.getElementsByClassName("webplayer-logout-button")
+    for(let i = 0; i < webplayerLogoutButton.length; i++){
+      webplayerLogoutButton[i].style.background = '#D3FF55'
+      webplayerLogoutButton[i].style.color = '#5E4BEA'
+    }
     let musicTiles = document.getElementsByClassName("webplayer-music-tile")
         for(let i = 0; i < musicTiles.length; i++){
           musicTiles[i].style.background =  'linear-gradient(to bottom, #E24E59, #B62E8C' // '#F137A6'
           musicTiles[i].style.transition = '10s'
         }
-    // let shortcutsTitle = document.getElementsByClassName("shortcuts-keyword-webplayer")
-    //     for(let i = 0; i < shortcutsTitle.length; i++){
-    //       shortcutsTitle[i].style.color = '#B62E8C'
-    //       shortcutsTitle[i].style.transition = '1s'
-    //     }  
 
     let musicTileNames = document.getElementsByClassName("webplayer-music-tile-name")
         for(let i = 0; i < musicTiles.length; i++){
@@ -87,13 +84,34 @@ class WebPlayer extends React.Component {
     let topBarContainer = document.getElementsByClassName("top-bar-container")
     for(let i = 0; i < topBarContainer.length; i++){
           topBarContainer[i].style.backgroundColor = '#5E4BEA'
-          // topBarContainer[i].style.transition = '3s'
         }
      } else {
-      let outerContainer = document.getElementsByClassName("webplayer-body-container")
+        let fabifyLogo  = document.getElementsByClassName("fabify-fab-mode-title-div")
+      for(let i = 0; i < fabifyLogo.length; i++){
+        fabifyLogo[i].style.display = 'none'
+      }
+      let outerContainer  = document.getElementsByClassName("webplayer-body-container")
       for(let i = 0; i < outerContainer.length; i++){
-            outerContainer[i].style.backgroundColor = '#FF69B4'
-          }
+        outerContainer[i].style.background = '#121212'
+        outerContainer[i].style.transition = '1s'
+      }   
+      let musicTiles = document.getElementsByClassName("webplayer-music-tile")
+        for(let i = 0; i < musicTiles.length; i++){
+          musicTiles[i].style.background = '#272722' 
+        }
+
+    let musicTileNames = document.getElementsByClassName("webplayer-music-tile-name")
+        for(let i = 0; i < musicTiles.length; i++){
+          musicTileNames[i].style.color = '#ffffff'
+        }   
+    let musicTilePlayButton = document.getElementsByClassName("webplayer-music-tile-audio")
+    for(let i = 0; i < musicTilePlayButton.length; i++){
+          musicTilePlayButton[i].style.backgroundColor = '#1eba54'
+        }
+    let topBarContainer = document.getElementsByClassName("top-bar-container")
+    for(let i = 0; i < topBarContainer.length; i++){
+          topBarContainer[i].style.backgroundColor = 'black'
+        }         
      }
   }
 
@@ -104,13 +122,13 @@ class WebPlayer extends React.Component {
         <div className="webplayer-outer-body-container">
           <div className="top-bar-container">
             <div className="fab-mode-button-container">
-              <div className="fab-mode-button">Fab Mode?</div>
-              <label className="switch">
-                <input type="checkbox" checked={this.state.checked} onChange={this.handleCheck}
- onClick={this.activateFabMode}/> 
-                <span className="slider-round"></span>
-              </label>
-              {/* <div className="fabify-fab-mode-title-div">FABIFY</div> */}
+            <div className="fab-mode-button">Fab Mode?</div>
+              <div className="theme-switch-wrapper">
+              <label className="theme-switch" htmlFor="checkbox">
+                  <input type="checkbox" id="checkbox" checked={this.state.checked} onChange={this.handleCheck} onClick={this.activateFabMode} />
+                  <div className="slider round"></div>
+            </label>
+          </div>             
           </div>
             <div className="dropdown">
            <button className="webplayer-logout-button">Menu

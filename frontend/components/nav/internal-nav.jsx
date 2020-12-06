@@ -40,6 +40,7 @@ class InternalNavbar extends React.Component {
     return (
       <div className="internal-nav-bar-container">
         <div className="internal-nav-bar-inner-container">
+          <div className="fabify-fab-mode-title-div">FABIFY</div>
           <Link to="/webplayer">
             <img
               id="internal-white-splash-logo"

@@ -1105,7 +1105,9 @@ var InternalNavbar = /*#__PURE__*/function (_React$Component) {
         className: "internal-nav-bar-container"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "internal-nav-bar-inner-container"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "fabify-fab-mode-title-div"
+      }, "FABIFY"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         to: "/webplayer"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         id: "internal-white-splash-logo",
@@ -3552,54 +3554,88 @@ var WebPlayer = /*#__PURE__*/function (_React$Component) {
     key: "activateFabMode",
     value: function activateFabMode() {
       if (this.state.checked === false) {
+        var fabifyLogo = document.getElementsByClassName("fabify-fab-mode-title-div");
+
+        for (var i = 0; i < fabifyLogo.length; i++) {
+          fabifyLogo[i].style.display = 'block';
+        }
+
         var outerContainer = document.getElementsByClassName("webplayer-body-container");
 
-        for (var i = 0; i < outerContainer.length; i++) {
-          outerContainer[i].style.background = 'linear-gradient(to bottom, #5E4BEA, #D3FF55';
-          outerContainer[i].style.transition = '1s';
-        } // let internalNavBarLinks  = document.getElementsByClassName("internal-nav-link")
-        // for(let i = 0; i < internalNavBar.length; i++){
-        //   internalNavBar[i].style.color = '#B62E8C'
-        //   internalNavBar[i].style.transition = '1s'
-        // }
+        for (var _i = 0; _i < outerContainer.length; _i++) {
+          outerContainer[_i].style.background = 'linear-gradient(to bottom, #5E4BEA, #D3FF55';
+          outerContainer[_i].style.transition = '1s';
+        }
 
+        var webplayerLogoutButton = document.getElementsByClassName("webplayer-logout-button");
+
+        for (var _i2 = 0; _i2 < webplayerLogoutButton.length; _i2++) {
+          webplayerLogoutButton[_i2].style.background = '#D3FF55';
+          webplayerLogoutButton[_i2].style.color = '#5E4BEA';
+        }
 
         var musicTiles = document.getElementsByClassName("webplayer-music-tile");
 
-        for (var _i = 0; _i < musicTiles.length; _i++) {
-          musicTiles[_i].style.background = 'linear-gradient(to bottom, #E24E59, #B62E8C'; // '#F137A6'
+        for (var _i3 = 0; _i3 < musicTiles.length; _i3++) {
+          musicTiles[_i3].style.background = 'linear-gradient(to bottom, #E24E59, #B62E8C'; // '#F137A6'
 
-          musicTiles[_i].style.transition = '10s';
-        } // let shortcutsTitle = document.getElementsByClassName("shortcuts-keyword-webplayer")
-        //     for(let i = 0; i < shortcutsTitle.length; i++){
-        //       shortcutsTitle[i].style.color = '#B62E8C'
-        //       shortcutsTitle[i].style.transition = '1s'
-        //     }  
-
+          musicTiles[_i3].style.transition = '10s';
+        }
 
         var musicTileNames = document.getElementsByClassName("webplayer-music-tile-name");
 
-        for (var _i2 = 0; _i2 < musicTiles.length; _i2++) {
-          musicTileNames[_i2].style.color = '#9DF0E1';
-          musicTileNames[_i2].style.transition = '5s';
+        for (var _i4 = 0; _i4 < musicTiles.length; _i4++) {
+          musicTileNames[_i4].style.color = '#9DF0E1';
+          musicTileNames[_i4].style.transition = '5s';
         }
 
         var musicTilePlayButton = document.getElementsByClassName("webplayer-music-tile-audio");
 
-        for (var _i3 = 0; _i3 < musicTilePlayButton.length; _i3++) {
-          musicTilePlayButton[_i3].style.backgroundColor = '#101EFF';
+        for (var _i5 = 0; _i5 < musicTilePlayButton.length; _i5++) {
+          musicTilePlayButton[_i5].style.backgroundColor = '#101EFF';
         }
 
         var topBarContainer = document.getElementsByClassName("top-bar-container");
 
-        for (var _i4 = 0; _i4 < topBarContainer.length; _i4++) {
-          topBarContainer[_i4].style.backgroundColor = '#5E4BEA'; // topBarContainer[i].style.transition = '3s'
+        for (var _i6 = 0; _i6 < topBarContainer.length; _i6++) {
+          topBarContainer[_i6].style.backgroundColor = '#5E4BEA';
         }
       } else {
+        var _fabifyLogo = document.getElementsByClassName("fabify-fab-mode-title-div");
+
+        for (var _i7 = 0; _i7 < _fabifyLogo.length; _i7++) {
+          _fabifyLogo[_i7].style.display = 'none';
+        }
+
         var _outerContainer = document.getElementsByClassName("webplayer-body-container");
 
-        for (var _i5 = 0; _i5 < _outerContainer.length; _i5++) {
-          _outerContainer[_i5].style.backgroundColor = '#FF69B4';
+        for (var _i8 = 0; _i8 < _outerContainer.length; _i8++) {
+          _outerContainer[_i8].style.background = '#121212';
+          _outerContainer[_i8].style.transition = '1s';
+        }
+
+        var _musicTiles = document.getElementsByClassName("webplayer-music-tile");
+
+        for (var _i9 = 0; _i9 < _musicTiles.length; _i9++) {
+          _musicTiles[_i9].style.background = '#272722';
+        }
+
+        var _musicTileNames = document.getElementsByClassName("webplayer-music-tile-name");
+
+        for (var _i10 = 0; _i10 < _musicTiles.length; _i10++) {
+          _musicTileNames[_i10].style.color = '#ffffff';
+        }
+
+        var _musicTilePlayButton = document.getElementsByClassName("webplayer-music-tile-audio");
+
+        for (var _i11 = 0; _i11 < _musicTilePlayButton.length; _i11++) {
+          _musicTilePlayButton[_i11].style.backgroundColor = '#1eba54';
+        }
+
+        var _topBarContainer = document.getElementsByClassName("top-bar-container");
+
+        for (var _i12 = 0; _i12 < _topBarContainer.length; _i12++) {
+          _topBarContainer[_i12].style.backgroundColor = 'black';
         }
       }
     }
@@ -3616,16 +3652,20 @@ var WebPlayer = /*#__PURE__*/function (_React$Component) {
         className: "fab-mode-button-container"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "fab-mode-button"
-      }, "Fab Mode?"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-        className: "switch"
+      }, "Fab Mode?"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "theme-switch-wrapper"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        className: "theme-switch",
+        htmlFor: "checkbox"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "checkbox",
+        id: "checkbox",
         checked: this.state.checked,
         onChange: this.handleCheck,
         onClick: this.activateFabMode
-      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
-        className: "slider-round"
-      }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "slider round"
+      })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "dropdown"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "webplayer-logout-button"
