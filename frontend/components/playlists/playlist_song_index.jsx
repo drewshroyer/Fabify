@@ -63,8 +63,8 @@ class PlaylistSongIndexItem extends React.Component {
                 ))}
               </ul>
             </div>
-             <div className="delete-playlist-button">Remove Song</div>
-             {/* onClick={this.props.removeSongFromPlaylist(song.id, playlistId)} */}
+             {/* <div className="delete-playlist-button" onClick={this.props.handleRemoveSongFromPlaylist(this.props.song.id, this.props.playlistId)}>Remove Song</div> */}
+             {/* onClick={this.props.handleRemoveSongFromPlaylist()} */}
              </div>
            </div>
            </div>

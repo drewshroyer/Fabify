@@ -9,7 +9,7 @@ class PlaylistShow extends React.Component {
     this.deletePlaylist = this.deletePlaylist.bind(this);
     this.handleSongClick = this.handleSongClick.bind(this);
     this.handleToggleShuffle = this.handleToggleShuffle.bind(this);
-    this.removeSongFromPlaylist = this.removeSongFromPlaylist.bind(this);
+    this.handleRemoveSongFromPlaylist = this.handleRemoveSongFromPlaylist.bind(this);
   }
 
    deletePlaylist(e) {
@@ -38,9 +38,9 @@ class PlaylistShow extends React.Component {
     );
   }
 
-  removeSongFromPlaylist() {
+  handleRemoveSongFromPlaylist() {
      e.preventDefault()
-     this.props.removeSongFromPlaylist(this.props.songId, this.props.playlistId);
+     this.props.removeSongFromPlaylist(this.props.song.id, this.props.playlistId);
      this.props.history.push(`/playlists/${playlistId}`)
   }
 
@@ -113,7 +113,7 @@ class PlaylistShow extends React.Component {
                 artist={artists[song.artist_id]}
                 key={song.id}
                 togglePlayPause={this.props.togglePlayPause}
-                removeSongFromPlaylist = {this.props.removeSongFromPlaylist}
+                handleRemoveSongFromPlaylist = {this.props.handleRemoveSongFromPlaylist}
               />
             ))}
           </ul>

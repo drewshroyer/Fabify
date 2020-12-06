@@ -1995,7 +1995,7 @@ var PlaylistShow = /*#__PURE__*/function (_React$Component) {
     _this.deletePlaylist = _this.deletePlaylist.bind(_assertThisInitialized(_this));
     _this.handleSongClick = _this.handleSongClick.bind(_assertThisInitialized(_this));
     _this.handleToggleShuffle = _this.handleToggleShuffle.bind(_assertThisInitialized(_this));
-    _this.removeSongFromPlaylist = _this.removeSongFromPlaylist.bind(_assertThisInitialized(_this));
+    _this.handleRemoveSongFromPlaylist = _this.handleRemoveSongFromPlaylist.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -2019,10 +2019,10 @@ var PlaylistShow = /*#__PURE__*/function (_React$Component) {
       this.props.togglePlayPause(this.props.song.id, this.props.song.name, this.props.song.photo_url, this.props.song.name);
     }
   }, {
-    key: "removeSongFromPlaylist",
-    value: function removeSongFromPlaylist() {
+    key: "handleRemoveSongFromPlaylist",
+    value: function handleRemoveSongFromPlaylist() {
       e.preventDefault();
-      this.props.removeSongFromPlaylist(this.props.songId, this.props.playlistId);
+      this.props.removeSongFromPlaylist(this.props.song.id, this.props.playlistId);
       this.props.history.push("/playlists/".concat(playlistId));
     }
   }, {
@@ -2105,7 +2105,7 @@ var PlaylistShow = /*#__PURE__*/function (_React$Component) {
           artist: artists[song.artist_id],
           key: song.id,
           togglePlayPause: _this2.props.togglePlayPause,
-          removeSongFromPlaylist: _this2.props.removeSongFromPlaylist
+          handleRemoveSongFromPlaylist: _this2.props.handleRemoveSongFromPlaylist
         });
       }))));
     }
@@ -2539,9 +2539,7 @@ var PlaylistSongIndexItem = /*#__PURE__*/function (_React$Component) {
           playlist: playlist,
           key: idx
         });
-      }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "delete-playlist-button"
-      }, "Remove Song")))))));
+      })))))))));
     }
   }]);
 
