@@ -9,7 +9,7 @@ class PlaylistShow extends React.Component {
     this.deletePlaylist = this.deletePlaylist.bind(this);
     this.handleSongClick = this.handleSongClick.bind(this);
     this.handleToggleShuffle = this.handleToggleShuffle.bind(this);
-    this.handleRemoveSongFromPlaylist = this.handleRemoveSongFromPlaylist.bind(this);
+    this.removeSongFromPlaylist = this.removeSongFromPlaylist.bind(this);
   }
 
    deletePlaylist(e) {
@@ -38,7 +38,7 @@ class PlaylistShow extends React.Component {
     );
   }
 
-  handleRemoveSongFromPlaylist() {
+  removeSongFromPlaylist() {
      e.preventDefault()
      this.props.removeSongFromPlaylist(this.props.song.id, this.props.playlistId);
      this.props.history.push(`/playlists/${playlistId}`)
@@ -84,7 +84,6 @@ class PlaylistShow extends React.Component {
               alt="white-play-button"
             ></img>
           </div>
-          {/* <svg role="img" height="32" width="32" viewBox="0 0 32 32"><path d="M27.319 5.927a7.445 7.445 0 00-10.02-.462s-.545.469-1.299.469c-.775 0-1.299-.469-1.299-.469a7.445 7.445 0 00-10.02 10.993l9.266 10.848a2.7 2.7 0 004.106 0l9.266-10.848a7.447 7.447 0 000-10.531z"></path></svg> */}
           <div className="dropdown">
            <button className="three-dot-options" >...
            </button>
@@ -113,7 +112,7 @@ class PlaylistShow extends React.Component {
                 artist={artists[song.artist_id]}
                 key={song.id}
                 togglePlayPause={this.props.togglePlayPause}
-                handleRemoveSongFromPlaylist = {this.props.handleRemoveSongFromPlaylist}
+                removeSongFromPlaylist = {this.props.removeSongFromPlaylist}
               />
             ))}
           </ul>
