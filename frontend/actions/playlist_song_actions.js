@@ -28,9 +28,9 @@ export const addSongToPlaylist = (playlistSong) => (dispatch) => {
   );
 };
 
-export const removeSongFromPlaylist = (songId, playlistId) => (dispatch) => {
-  return PlaylistSongApiUtil.removeSongFromPlaylist(
-    songId,
-    playlistId
-  ).then((value) => dispatch(receivePlaylist(value)));
-};
+export const removeSongFromPlaylist = playlistSongId => {
+    return dispatch => {
+        return PlaylistSongApiUtil.removeSongFromPlaylist(playlistSongId)
+            .then(playlist => dispatch(receivePlaylist(playlist)))
+    }
+}

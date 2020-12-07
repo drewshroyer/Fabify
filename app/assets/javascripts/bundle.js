@@ -300,10 +300,10 @@ var addSongToPlaylist = function addSongToPlaylist(playlistSong) {
     });
   };
 };
-var removeSongFromPlaylist = function removeSongFromPlaylist(songId, playlistId) {
+var removeSongFromPlaylist = function removeSongFromPlaylist(playlistSongId) {
   return function (dispatch) {
-    return _util_playlist_song_api_util__WEBPACK_IMPORTED_MODULE_0__["removeSongFromPlaylist"](songId, playlistId).then(function (value) {
-      return dispatch(Object(_playlist_actions__WEBPACK_IMPORTED_MODULE_1__["receivePlaylist"])(value));
+    return _util_playlist_song_api_util__WEBPACK_IMPORTED_MODULE_0__["removeSongFromPlaylist"](playlistSongId).then(function (playlist) {
+      return dispatch(Object(_playlist_actions__WEBPACK_IMPORTED_MODULE_1__["receivePlaylist"])(playlist));
     });
   };
 };
@@ -1995,7 +1995,6 @@ var PlaylistShow = /*#__PURE__*/function (_React$Component) {
     _this.deletePlaylist = _this.deletePlaylist.bind(_assertThisInitialized(_this));
     _this.handleSongClick = _this.handleSongClick.bind(_assertThisInitialized(_this));
     _this.handleToggleShuffle = _this.handleToggleShuffle.bind(_assertThisInitialized(_this));
-    _this.removeSongFromPlaylist = _this.removeSongFromPlaylist.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -2019,24 +2018,19 @@ var PlaylistShow = /*#__PURE__*/function (_React$Component) {
       this.props.togglePlayPause(this.props.song.id, this.props.song.name, this.props.song.photo_url, this.props.song.name);
     }
   }, {
-    key: "removeSongFromPlaylist",
-    value: function removeSongFromPlaylist() {
-      e.preventDefault();
-      this.props.removeSongFromPlaylist(this.props.song.id, this.props.playlistId);
-      this.props.history.push("/playlists/".concat(playlistId));
-    }
-  }, {
     key: "componentDidMount",
     value: function componentDidMount() {
       this.props.fetchSongs();
       this.props.fetchPlaylist(this.props.match.params.playlistId);
       this.props.fetchPlaylists();
+      this.props.fetchPlaylistSongs();
     }
   }, {
     key: "render",
     value: function render() {
       var _this2 = this;
 
+      debugger;
       var _this$props = this.props,
           songs = _this$props.songs,
           artists = _this$props.artists,
@@ -2105,7 +2099,9 @@ var PlaylistShow = /*#__PURE__*/function (_React$Component) {
           artist: artists[song.artist_id],
           key: song.id,
           togglePlayPause: _this2.props.togglePlayPause,
-          removeSongFromPlaylist: _this2.props.removeSongFromPlaylist
+          removeSongFromPlaylist: function removeSongFromPlaylist() {
+            return _this2.props.removeSongFromPlaylist(song.playlistSong.id);
+          }
         });
       }))));
     }
@@ -2367,15 +2363,17 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
-
 var mSTP = function mSTP(state, ownProps) {
   var currentUser = state.entities.users[state.session.id];
   var songs = Object.values(state.entities.songs);
   var artists = state.entities.artists;
+  var playlists = Object.values(state.entities.playlists);
+  var playlist = state.entities.playlists[ownProps.match.params.playlistId] || {};
+  var playlistSongs = Object.values(state.entities.playlistSongs);
   return {
-    playlist: state.entities.playlists[ownProps.match.params.playlistId] || {},
-    playlists: Object.values(state.entities.playlists),
+    playlistSongs: playlistSongs,
+    playlist: playlist,
+    playlists: playlists,
     songs: songs,
     artists: artists,
     currentUser: currentUser
@@ -2393,6 +2391,9 @@ var mDTP = function mDTP(dispatch) {
     fetchPlaylists: function fetchPlaylists() {
       return dispatch(Object(_actions_playlist_actions__WEBPACK_IMPORTED_MODULE_3__["fetchPlaylists"])());
     },
+    fetchPlaylistSongs: function fetchPlaylistSongs() {
+      return dispatch(Object(_actions_playlist_song_actions__WEBPACK_IMPORTED_MODULE_8__["fetchPlaylistSongs"])());
+    },
     fetchSongs: function fetchSongs() {
       return dispatch(Object(_actions_song_actions__WEBPACK_IMPORTED_MODULE_2__["fetchSongs"])());
     },
@@ -2405,8 +2406,8 @@ var mDTP = function mDTP(dispatch) {
     deletePlaylist: function deletePlaylist(id) {
       return dispatch(Object(_actions_playlist_actions__WEBPACK_IMPORTED_MODULE_3__["deletePlaylist"])(id));
     },
-    removeSongFromPlaylist: function removeSongFromPlaylist(songId, playlistId) {
-      return dispatch(Object(_actions_playlist_song_actions__WEBPACK_IMPORTED_MODULE_8__["removeSongFromPlaylist"])(songId, playlistId));
+    removeSongFromPlaylist: function removeSongFromPlaylist(songPlaylistId) {
+      return dispatch(Object(_actions_playlist_song_actions__WEBPACK_IMPORTED_MODULE_8__["removeSongFromPlaylist"])(songPlaylistId));
     }
   };
 };
@@ -2483,6 +2484,18 @@ var PlaylistSongIndexItem = /*#__PURE__*/function (_React$Component) {
     value: function render() {
       var _this2 = this;
 
+      var removeButton;
+      var createdAt;
+
+      if (this.props.removeSongFromPlaylist) {
+        removeButton = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "delete-song",
+          onClick: this.props.removeSongFromPlaylist
+        }, "Remove Song");
+      } else {
+        removeButton = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null);
+      }
+
       var _this$props = this.props,
           song = _this$props.song,
           artist = _this$props.artist,
@@ -2525,7 +2538,7 @@ var PlaylistSongIndexItem = /*#__PURE__*/function (_React$Component) {
         className: "three-dot-options"
       }, "..."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "dropdown-content"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, removeButton, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "dropdown-content-flex"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "add-song-to-playlist-button"
@@ -4470,14 +4483,10 @@ var addSongToPlaylist = function addSongToPlaylist(playlist_song) {
     }
   });
 };
-var removeSongFromPlaylist = function removeSongFromPlaylist(songId, playlistId) {
+var removeSongFromPlaylist = function removeSongFromPlaylist(playlistSongId) {
   return $.ajax({
     method: "DELETE",
-    url: "/api/playlist_songs/remove",
-    data: {
-      song_id: songId,
-      playlist_id: playlistId
-    }
+    url: "/api/playlist_songs/".concat(playlistSongId)
   });
 };
 var fetchPlaylistSongs = function fetchPlaylistSongs() {

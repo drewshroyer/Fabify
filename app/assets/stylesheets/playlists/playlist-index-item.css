@@ -17,6 +17,11 @@
     cursor: pointer;
 }
 
+.delete-song {
+    font-size: 14px;
+    margin: 10px 0px 10px 15px;
+}
+
 .playlist-music-tile:hover {
     background-color: hsla(0,0%,100%,.1);
     border-radius: 5px;

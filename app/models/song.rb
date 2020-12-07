@@ -28,4 +28,5 @@ class Song < ApplicationRecord
     has_many :playlist_songs,
         foreign_key: :song_id,
         class_name: :PlaylistSong
+        
 end

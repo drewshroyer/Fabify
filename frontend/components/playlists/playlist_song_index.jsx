@@ -19,6 +19,14 @@ class PlaylistSongIndexItem extends React.Component {
   }
 
   render() {
+     let removeButton;
+        let createdAt;
+        if (this.props.removeSongFromPlaylist){
+            removeButton = <div className="delete-song" onClick={this.props.removeSongFromPlaylist}>Remove Song</div>        
+        }else{
+            removeButton = <div></div>
+        }
+
     const { song, artist, idx, playlists } = this.props;
     return (
       <div className="playlist-song-tile-container">
@@ -51,6 +59,7 @@ class PlaylistSongIndexItem extends React.Component {
            <button className="three-dot-options" >...
            </button>
            <div className="dropdown-content">
+             {removeButton}
              <div className="dropdown-content-flex">
                <div className="add-song-to-playlist-button">Add Song to Playlist</div>
              <div className="playlist-add-song-list">
@@ -67,8 +76,6 @@ class PlaylistSongIndexItem extends React.Component {
                 ))}
               </ul>
             </div>
-             {/* <div className="delete-playlist-button" onClick={this.props.handleRemoveSongFromPlaylist(this.props.song.id, this.props.playlistId)}>Remove Song</div> */}
-             {/* onClick={this.props.handleRemoveSongFromPlaylist()} */}
              </div>
            </div>
            </div>

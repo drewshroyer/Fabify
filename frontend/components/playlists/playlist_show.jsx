@@ -9,7 +9,6 @@ class PlaylistShow extends React.Component {
     this.deletePlaylist = this.deletePlaylist.bind(this);
     this.handleSongClick = this.handleSongClick.bind(this);
     this.handleToggleShuffle = this.handleToggleShuffle.bind(this);
-    this.removeSongFromPlaylist = this.removeSongFromPlaylist.bind(this);
   }
 
    deletePlaylist(e) {
@@ -38,19 +37,16 @@ class PlaylistShow extends React.Component {
     );
   }
 
-  removeSongFromPlaylist() {
-     e.preventDefault()
-     this.props.removeSongFromPlaylist(this.props.song.id, this.props.playlistId);
-     this.props.history.push(`/playlists/${playlistId}`)
-  }
-
   componentDidMount() {
     this.props.fetchSongs();
     this.props.fetchPlaylist(this.props.match.params.playlistId);
     this.props.fetchPlaylists();
+    this.props.fetchPlaylistSongs();
   }
 
   render() {
+    debugger
+
     const { songs, artists, playlistName, playlistDescription, playlists, playlistId} = this.props;
     let playlistSongsIndex = []
     // console.log(this.props.playlist.song_ids)
@@ -101,6 +97,7 @@ class PlaylistShow extends React.Component {
            </div>
            </div>
         </div>
+
         <div className="playlist-music-tile-line-item">
           <ul >
             {playlistSongsIndex.map((song, idx) => (
@@ -112,7 +109,7 @@ class PlaylistShow extends React.Component {
                 artist={artists[song.artist_id]}
                 key={song.id}
                 togglePlayPause={this.props.togglePlayPause}
-                removeSongFromPlaylist = {this.props.removeSongFromPlaylist}
+                removeSongFromPlaylist={() => this.props.removeSongFromPlaylist(song.playlistSong.id)}
               />
             ))}
           </ul>
