@@ -860,7 +860,8 @@ var ArtistShow = /*#__PURE__*/function (_React$Component) {
         className: "artist-show-info-container"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, artistSongs.map(function (song, idx) {
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "playlist-song-tile-container"
+          className: "playlist-song-tile-container",
+          key: idx
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
           src: song.photo_url,
           className: "artist-show-music-tile-photo-".concat(idx)
@@ -2449,17 +2450,18 @@ var PlaylistSongIndexItem = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "handleRemoveSongFromPlaylist",
     value: function handleRemoveSongFromPlaylist() {
-      debugger;
       this.props.removeSongFromPlaylist();
-      this.props.handleRemoveSong(this.props.song.id); // this.props.history.push(`/playlists/${this.props.playlist.id}`)
+      this.props.handleRemoveSong(this.props.song.id);
     }
   }, {
     key: "handleAddSongToPlaylist",
     value: function handleAddSongToPlaylist() {
-      this.props.addSongToPlaylist({
+      var playlistSong = {
         playlist_id: this.props.playlist.id,
         song_id: this.props.song.id
-      });
+      };
+      this.props.addSongToPlaylist(playlistSong);
+      this.props.history.push("/playlists/".concat(this.props.playlist.id));
     }
   }, {
     key: "render",
@@ -2467,11 +2469,10 @@ var PlaylistSongIndexItem = /*#__PURE__*/function (_React$Component) {
       var _this2 = this;
 
       var removeButton;
-      var createdAt;
 
       if (this.props.removeSongFromPlaylist) {
         removeButton = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "delete-song",
+          className: "remove-song-button",
           onClick: this.handleRemoveSongFromPlaylist
         }, "Remove Song");
       } else {

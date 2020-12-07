@@ -43,7 +43,7 @@ class ArtistShow extends React.Component {
       <div className="artist-show-info-container">
       <ul >
          {artistSongs.map((song, idx) => (
-                 <div className="playlist-song-tile-container">
+                 <div className="playlist-song-tile-container" key={idx}>
                 <img src={song.photo_url} className={`artist-show-music-tile-photo-${idx}`} />
                 </div>
          ))}

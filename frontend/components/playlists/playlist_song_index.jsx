@@ -23,21 +23,24 @@ class PlaylistSongIndexItem extends React.Component {
   }
 
   handleRemoveSongFromPlaylist() {
-    debugger
     this.props.removeSongFromPlaylist();
     this.props.handleRemoveSong(this.props.song.id);
-    // this.props.history.push(`/playlists/${this.props.playlist.id}`)
   }
 
   handleAddSongToPlaylist() {
-    this.props.addSongToPlaylist({playlist_id: this.props.playlist.id, song_id: this.props.song.id});
+    let playlistSong = {
+        playlist_id: this.props.playlist.id,
+        song_id: this.props.song.id
+    }
+    this.props.addSongToPlaylist(playlistSong);
+    this.props.history.push(`/playlists/${this.props.playlist.id}`)
   }
 
   render() {
-     let removeButton;
-        let createdAt;
+     
+    let removeButton;
         if (this.props.removeSongFromPlaylist){
-            removeButton = <div className="delete-song" onClick={this.handleRemoveSongFromPlaylist}>Remove Song</div>        
+            removeButton = <div className="remove-song-button" onClick={this.handleRemoveSongFromPlaylist}>Remove Song</div>        
         }else{
             removeButton = <div></div>
         }
