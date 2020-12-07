@@ -2047,7 +2047,7 @@ var PlaylistShow = /*#__PURE__*/function (_React$Component) {
       var playlistSongsIndex = []; // console.log(this.props.playlist.song_ids)
 
       songs.forEach(function (song) {
-        if (_this2.props.playlist.song_ids.includes(song.id + 10)) {
+        if (_this2.props.playlist.song_ids.includes(song.id)) {
           // running into issue with the song_ids
           playlistSongsIndex.push(song);
         }

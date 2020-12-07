@@ -13,9 +13,11 @@ Song.destroy_all
 Album.destroy_all
 Playlist.destroy_all
 User.destroy_all
+PlaylistSong.destroy_all
 
 user1 = User.create!({email: "drewshroyer@gmail.com", password: "password", name: "Drew", birthdate: "1994-09-14", gender: "Male"})
 user2 = User.create!({email: "drewshroyer1@gmail.com", password: "password", name: "Sarah", birthdate: "1990-09-14", gender: "Female"})
+user3 = User.create!({email: "password@gmail.com", password: "password", name: "Demo Login", birthdate: "1990-09-14", gender: "Female"})
 
 #Troye Sivan
 artist1 = Artist.create!({name: "Troye Sivan", biography: "TIME magazine proclaimed Troye Sivan “the perfect pop star for 2018” and his work continues to affirm his reputation as an important artistic voice for our time. His 2015 debut album, Blue Neighbourhood, topped the iTunes charts in 66 countries, and is certified Gold in four countries. Troye’s Blue Neighbourhood trilogy of videos captured coming-of-age from a modern perspective, resonating especially with LGBTQ teens.
@@ -179,6 +181,21 @@ file40 = URI.open('https://fabify-seeds.s3.us-east-2.amazonaws.com/miley-cyrus-b
 song20.audio.attach(io: file39, filename: 'Miley-Cyrus-Bangerz-audio.mp3')
 song20.photo.attach(io: file40, filename: 'Miley-Cyrus-Bangerz-cover.jpg')
 
-playlist1 = Playlist.create!(name: "New Music Friday", author_id: user1.id, description: "Come back each Friday for fresh new tunes!")
-playlist2 = Playlist.create!(name: "Pop Power", author_id: user1.id, description: "All the latest Pop, delivered to you")
-playlist3 = Playlist.create!(name: "Support Queer Artists", author_id: user2.id, description: "Support Queer Artists")
+playlist1 = Playlist.create!(name: "New Music Friday", author_id: user3.id, description: "Come back each Friday for fresh new tunes! New Music from Miley Cyrus, Sam Smith, Kehlani, and more!")
+playlist2 = Playlist.create!(name: "2020 Wrapped", author_id: user3.id, description: "Your year in Review - Wrapped is where Fabify listeners everywhere get a deep dive into their most memorable listening moments of the year.")
+playlist3 = Playlist.create!(name: "QUEERANTINE", author_id: user3.id, description: "This past year of Quarantine as represented by queer artists. It's time to feel ALL the feels.")
+
+playlistsong1 = PlaylistSong.create!(song_id: song18.id, playlist_id: playlist1.id)
+playlistsong2 = PlaylistSong.create!(song_id: song9.id, playlist_id: playlist1.id)
+playlistsong3 = PlaylistSong.create!(song_id: song9.id, playlist_id: playlist1.id)
+
+playlistsong4 = PlaylistSong.create!(song_id: song17.id, playlist_id: playlist2.id)
+playlistsong5 = PlaylistSong.create!(song_id: song16.id, playlist_id: playlist2.id)
+playlistsong5 = PlaylistSong.create!(song_id: song15.id, playlist_id: playlist2.id)
+playlistsong5 = PlaylistSong.create!(song_id: song6.id, playlist_id: playlist2.id)
+playlistsong5 = PlaylistSong.create!(song_id: song1.id, playlist_id: playlist2.id)
+
+playlistsong5 = PlaylistSong.create!(song_id: song2.id, playlist_id: playlist3.id)
+playlistsong5 = PlaylistSong.create!(song_id: song4.id, playlist_id: playlist3.id)
+playlistsong5 = PlaylistSong.create!(song_id: song5.id, playlist_id: playlist3.id)
+playlistsong5 = PlaylistSong.create!(song_id: song19.id, playlist_id: playlist3.id)
