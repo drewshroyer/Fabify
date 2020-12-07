@@ -8,7 +8,7 @@ class ArtistShow extends React.Component {
     super(props);
     this.state = { playingSong: false, selectedSong: "" };
     this.handleSongClick = this.handleSongClick.bind(this);
-    // this.handleAddSongToPlaylist = this.handleAddSongToPlaylist(this);
+    // this.handleAddSongToPlaylist = this.handleAddSongToPlaylist.bind(this);
   }
 
     handleSongClick() {
@@ -20,9 +20,9 @@ class ArtistShow extends React.Component {
     );
   }
 
-  handleAddSongToPlaylist(playlistSong) {
-    this.props.addSongToPlaylist(playlistSong);
-  }
+  // handleAddSongToPlaylist(playlistSong) {
+  //   this.props.addSongToPlaylist(playlistSong);
+  // }
 
   componentDidMount() {
     this.props.fetchSongs();
@@ -81,7 +81,6 @@ class ArtistShow extends React.Component {
                 artist={artistName}
                 key={song.id}
                 togglePlayPause={this.props.togglePlayPause}
-                handleAddSongToPlaylist = {this.props.handleAddSongToPlaylist}
               />
             ))}
           </ul>

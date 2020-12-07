@@ -1,12 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import PlaylistIndex from "../nav/playlist_index"; 
+import { addSongToPlaylist } from "../../actions/playlist_song_actions";
+import {withRouter} from "react-router-dom";
+import { connect } from "react-redux";
 
 class PlaylistSongIndexItem extends React.Component {
   constructor(props) {
     super(props);
     this.state = { playingSong: false, selectedSong: "" };
     this.handleSongClick = this.handleSongClick.bind(this);
+    this.handleAddSongToPlaylist = this.handleAddSongToPlaylist.bind(this);
     this.handleRemoveSongFromPlaylist = this.handleRemoveSongFromPlaylist.bind(this); 
   }
 
@@ -24,6 +27,10 @@ class PlaylistSongIndexItem extends React.Component {
     this.props.removeSongFromPlaylist();
     this.props.handleRemoveSong(this.props.song.id);
     // this.props.history.push(`/playlists/${this.props.playlist.id}`)
+  }
+
+  handleAddSongToPlaylist() {
+    this.props.addSongToPlaylist({playlist_id: this.props.playlist.id, song_id: this.props.song.id});
   }
 
   render() {
@@ -75,8 +82,7 @@ class PlaylistSongIndexItem extends React.Component {
               <ul className="nav-bar-playlists">
                 {playlists.map((playlist, idx) => (
                  <div className="nav-bar-playlist-list" key={idx}>
-                <div className="nav-bar-playlist-name" onClick={this.props.handleAddSongToPlaylist(
-                  {playlist_id: playlist.id, song_id: song.id})}>{playlist.name}</div>
+                <div className="nav-bar-playlist-name" onClick={this.handleAddSongToPlaylist}>{playlist.name}</div>
                  </div>
                 ))}
               </ul>
@@ -91,4 +97,10 @@ class PlaylistSongIndexItem extends React.Component {
   }
 }
 
-export default PlaylistSongIndexItem;
+const mDTP = (dispatch) => {
+  return {
+    addSongToPlaylist: (playlistSong) => dispatch(addSongToPlaylist(playlistSong)),
+  };
+};
+
+export default withRouter(connect(null, mDTP)(PlaylistSongIndexItem));

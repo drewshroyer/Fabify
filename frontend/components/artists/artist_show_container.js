@@ -5,7 +5,6 @@ import { fetchPlaylists } from "../../actions/playlist_actions";
 import { fetchUser } from "../../actions/user_actions";
 import { fetchArtists, fetchArtist } from "../../actions/artist_actions";
 import { logout } from "../../actions/session_actions";
-import { removeSongFromPlaylist, addSongToPlaylist } from "../../actions/playlist_song_actions";
 import { withRouter } from "react-router-dom";
 
 const mSTP = (state, ownProps) => {
@@ -31,7 +30,6 @@ const mDTP = (dispatch) => {
     fetchArtist: (id) => dispatch(fetchArtist(id)),
     logout: () => dispatch(logout()),
     deletePlaylist: (id) => dispatch(deletePlaylist(id)),
-    addSongToPlaylist: playlistSong => dispatch(addSongToPlaylist(playlistSong)),
   };
 };
 
