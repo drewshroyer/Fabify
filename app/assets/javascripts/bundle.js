@@ -299,7 +299,11 @@ var addSongToPlaylist = function addSongToPlaylist(playlistSong) {
       return dispatch(Object(_playlist_actions__WEBPACK_IMPORTED_MODULE_1__["receivePlaylist"])(value));
     });
   };
-};
+}; // export const addSongToPlaylist = playlistSong => {
+//     return dispatch => {
+//         return mainAPIUtil.addSongToPlaylist(playlistSong);
+//     }   
+
 var removeSongFromPlaylist = function removeSongFromPlaylist(playlistSongId) {
   return function (dispatch) {
     return _util_playlist_song_api_util__WEBPACK_IMPORTED_MODULE_0__["removeSongFromPlaylist"](playlistSongId).then(function (playlist) {
@@ -822,11 +826,12 @@ var ArtistShow = /*#__PURE__*/function (_React$Component) {
     key: "handleSongClick",
     value: function handleSongClick() {
       this.props.togglePlayPause(this.props.song.id, this.props.song.name, this.props.song.photo_url, this.props.artist.name);
-    } // handleAddSongToPlaylist() {
-    //   this.props.addSongToPlaylist(songId, playlistId)
-    //    this.props.history.push(`/playlists/${playlistId}`)
-    // }
-
+    }
+  }, {
+    key: "handleAddSongToPlaylist",
+    value: function handleAddSongToPlaylist(playlistSong) {
+      this.props.addSongToPlaylist(playlistSong);
+    }
   }, {
     key: "componentDidMount",
     value: function componentDidMount() {
@@ -897,7 +902,6 @@ var ArtistShow = /*#__PURE__*/function (_React$Component) {
           artist: artistName,
           key: song.id,
           togglePlayPause: _this2.props.togglePlayPause,
-          removeSongFromPlaylist: _this2.props.removeSongFromPlaylist,
           handleAddSongToPlaylist: _this2.props.handleAddSongToPlaylist
         });
       }))));
@@ -1000,9 +1004,6 @@ var mDTP = function mDTP(dispatch) {
     }),
     addSongToPlaylist: function addSongToPlaylist(playlistSong) {
       return dispatch(Object(_actions_playlist_song_actions__WEBPACK_IMPORTED_MODULE_7__["addSongToPlaylist"])(playlistSong));
-    },
-    removeSongFromPlaylist: function removeSongFromPlaylist(songId, playlistId) {
-      return dispatch(Object(_actions_playlist_song_actions__WEBPACK_IMPORTED_MODULE_7__["removeSongFromPlaylist"])(songId, playlistId));
     }
   };
 };
@@ -1098,7 +1099,7 @@ var InternalNavbar = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      var playlists = this.props.playlists ? this.props.playlists : [];
+      var playlists = this.props.playlists;
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "internal-nav-bar-container"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -2041,7 +2042,7 @@ var PlaylistShow = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "componentDidMount",
     value: function componentDidMount() {
-      debugger;
+      // debugger
       this.props.fetchSongs();
       this.props.fetchPlaylist(this.props.match.params.playlistId);
       this.props.fetchPlaylists(); // this.props.fetchPlaylistSongs();
@@ -2070,8 +2071,7 @@ var PlaylistShow = /*#__PURE__*/function (_React$Component) {
           playlists = _this$props.playlists,
           playlistId = _this$props.playlistId;
       var playlistSongsIndex = []; // console.log(this.props.playlist.song_ids)
-
-      debugger;
+      // debugger
 
       if (this.state.playlistSongIds !== null) {
         songs.forEach(function (song) {
@@ -2244,8 +2244,7 @@ var PlaylistShowBody = /*#__PURE__*/function (_React$Component) {
         this.setState({
           playlistName: this.props.playlist.name,
           playlistDescription: this.props.playlist.description,
-          playlistId: this.props.playlist.id,
-          playlist: this.props.playlist
+          playlistId: this.props.playlist.id
         });
       }
 
@@ -2595,14 +2594,16 @@ var PlaylistSongIndexItem = /*#__PURE__*/function (_React$Component) {
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
         className: "nav-bar-playlists"
       }, playlists.map(function (playlist, idx) {
-        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_nav_playlist_index__WEBPACK_IMPORTED_MODULE_2__["default"], {
-          songId: song.id,
-          handleAddSongToPlaylist: _this2.handleAddSongToPlaylist,
-          id: playlist.id,
-          playlist: playlist,
-          playlistId: playlist.id,
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "nav-bar-playlist-list",
           key: idx
-        });
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "nav-bar-playlist-name",
+          onClick: _this2.props.handleAddSongToPlaylist({
+            playlist_id: playlist.id,
+            song_id: song.id
+          })
+        }, playlist.name));
       })))))))));
     }
   }]);

@@ -13,7 +13,6 @@ export const removeSongFromPlaylist = (playlistSongId) => {
     })
 }
 
-
 export const fetchPlaylistSongs = () => {
   return $.ajax({
     url: "/api/playlist_songs",

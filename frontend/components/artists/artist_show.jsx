@@ -20,10 +20,9 @@ class ArtistShow extends React.Component {
     );
   }
 
-  // handleAddSongToPlaylist() {
-  //   this.props.addSongToPlaylist(songId, playlistId)
-  //    this.props.history.push(`/playlists/${playlistId}`)
-  // }
+  handleAddSongToPlaylist(playlistSong) {
+    this.props.addSongToPlaylist(playlistSong);
+  }
 
   componentDidMount() {
     this.props.fetchSongs();
@@ -82,7 +81,6 @@ class ArtistShow extends React.Component {
                 artist={artistName}
                 key={song.id}
                 togglePlayPause={this.props.togglePlayPause}
-                removeSongFromPlaylist = {this.props.removeSongFromPlaylist}
                 handleAddSongToPlaylist = {this.props.handleAddSongToPlaylist}
               />
             ))}

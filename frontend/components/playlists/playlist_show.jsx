@@ -60,7 +60,7 @@ class PlaylistShow extends React.Component {
   }
 
   componentDidMount() {
-    debugger
+    // debugger
     this.props.fetchSongs();
     this.props.fetchPlaylist(this.props.match.params.playlistId);
     this.props.fetchPlaylists();
@@ -81,7 +81,7 @@ class PlaylistShow extends React.Component {
     const { songs, artists, playlistName, playlistDescription, playlists, playlistId} = this.props;
     let playlistSongsIndex = []
     // console.log(this.props.playlist.song_ids)
-    debugger
+    // debugger
     if(this.state.playlistSongIds !== null) {
     songs.forEach((song) => {
       if(this.state.playlistSongIds.includes(song.id)) { // running into issue with the song_ids

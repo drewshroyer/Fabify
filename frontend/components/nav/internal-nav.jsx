@@ -34,7 +34,7 @@ class InternalNavbar extends React.Component {
   }
 
   render() {
-    const playlists = this.props.playlists ? this.props.playlists : [];
+    const { playlists } = this.props
 
     return (
       <div className="internal-nav-bar-container">

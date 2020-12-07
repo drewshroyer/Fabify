@@ -69,18 +69,15 @@ class PlaylistSongIndexItem extends React.Component {
            <div className="dropdown-content">
              {removeButton}
              <div className="dropdown-content-flex">
-               <div className="add-song-to-playlist-button">Add Song to Playlist</div>
+               <div className="add-song-to-playlist-button" >Add Song to Playlist</div>
              <div className="playlist-add-song-list">
                 <div className="user-playlists">
               <ul className="nav-bar-playlists">
                 {playlists.map((playlist, idx) => (
-                  <PlaylistIndex 
-                  songId = {song.id}
-                  handleAddSongToPlaylist = {this.handleAddSongToPlaylist}
-                  id = {playlist.id}
-                  playlist={playlist} 
-                  playlistId = {playlist.id}
-                  key={idx} />
+                 <div className="nav-bar-playlist-list" key={idx}>
+                <div className="nav-bar-playlist-name" onClick={this.props.handleAddSongToPlaylist(
+                  {playlist_id: playlist.id, song_id: song.id})}>{playlist.name}</div>
+                 </div>
                 ))}
               </ul>
             </div>

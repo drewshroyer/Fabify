@@ -41,7 +41,6 @@ class PlaylistShowBody extends React.Component {
           playlistName: this.props.playlist.name,
           playlistDescription: this.props.playlist.description,
           playlistId: this.props.playlist.id,
-          playlist: this.props.playlist
         })
       }
       if(prevProps.match.params.playlistId !== this.props.match.params.playlistId) {
