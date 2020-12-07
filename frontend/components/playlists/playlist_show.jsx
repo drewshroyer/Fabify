@@ -125,7 +125,7 @@ class PlaylistShow extends React.Component {
              <Link to="/webplayer">
              <div className="delete-playlist-button">Add Songs</div>
              </Link>
-             <div className="delete-playlist-button">Edit Details</div>
+             {/* <div className="delete-playlist-button">Edit Details</div> */}
              </div>
            </div>
            </div>

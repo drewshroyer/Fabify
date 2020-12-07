@@ -2046,9 +2046,7 @@ var PlaylistShow = /*#__PURE__*/function (_React$Component) {
           to: "/webplayer"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "delete-playlist-button"
-        }, "Add Songs")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "delete-playlist-button"
-        }, "Edit Details"))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        }, "Add Songs")))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "playlist-music-tile-line-item"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, playlistSongsIndex.map(function (song, idx) {
           return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_playlist_song_index__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -2460,8 +2458,7 @@ var PlaylistSongIndexItem = /*#__PURE__*/function (_React$Component) {
         playlist_id: this.props.playlist.id,
         song_id: this.props.song.id
       };
-      this.props.addSongToPlaylist(playlistSong);
-      this.props.history.push("/playlists/".concat(this.props.playlist.id));
+      this.props.addSongToPlaylist(playlistSong); // this.props.history.push(`/playlists/${this.props.playlist.id}`)
     }
   }, {
     key: "render",
