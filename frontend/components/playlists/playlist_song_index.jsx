@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import PlaylistIndex from "../nav/playlist_index";
+import PlaylistIndex from "../nav/playlist_index"; 
 
 class PlaylistSongIndexItem extends React.Component {
   constructor(props) {
@@ -23,6 +23,7 @@ class PlaylistSongIndexItem extends React.Component {
     debugger
     this.props.removeSongFromPlaylist();
     this.props.handleRemoveSong(this.props.song.id);
+    // this.props.history.push(`/playlists/${this.props.playlist.id}`)
   }
 
   render() {

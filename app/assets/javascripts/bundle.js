@@ -1991,7 +1991,8 @@ var PlaylistShow = /*#__PURE__*/function (_React$Component) {
     _this.state = {
       playingSong: false,
       selectedSong: "",
-      playlistSongIds: null
+      playlistSongIds: null,
+      playlistId: null
     };
     _this.deletePlaylist = _this.deletePlaylist.bind(_assertThisInitialized(_this));
     _this.handleSongClick = _this.handleSongClick.bind(_assertThisInitialized(_this));
@@ -2003,11 +2004,18 @@ var PlaylistShow = /*#__PURE__*/function (_React$Component) {
   _createClass(PlaylistShow, [{
     key: "componentDidUpdate",
     value: function componentDidUpdate() {
-      debugger;
-
+      // debugger
       if (this.state.playlistSongIds === null && this.props.playlist.song_ids !== undefined) {
         this.setState({
-          playlistSongIds: this.props.playlist.song_ids
+          playlistSongIds: this.props.playlist.song_ids,
+          playlistId: this.props.playlist.id
+        });
+      }
+
+      if (this.state.playlistId !== null && this.state.playlistId !== this.props.playlist.id) {
+        this.setState({
+          playlistSongIds: this.props.playlist.song_ids,
+          playlistId: this.props.playlist.id
         });
       }
     }
@@ -2033,6 +2041,7 @@ var PlaylistShow = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "componentDidMount",
     value: function componentDidMount() {
+      debugger;
       this.props.fetchSongs();
       this.props.fetchPlaylist(this.props.match.params.playlistId);
       this.props.fetchPlaylists(); // this.props.fetchPlaylistSongs();
@@ -2040,7 +2049,7 @@ var PlaylistShow = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "handleRemoveSong",
     value: function handleRemoveSong(songId) {
-      debugger;
+      // debugger
       var newState = this.state.playlistSongIds.filter(function (playlistSongId) {
         return playlistSongId !== songId;
       });
@@ -2211,7 +2220,8 @@ var PlaylistShowBody = /*#__PURE__*/function (_React$Component) {
       artist: "",
       playlistName: "",
       playlistDescription: "",
-      playlistId: ""
+      playlistId: "",
+      playlist: null
     };
     return _this;
   }
@@ -2234,7 +2244,8 @@ var PlaylistShowBody = /*#__PURE__*/function (_React$Component) {
         this.setState({
           playlistName: this.props.playlist.name,
           playlistDescription: this.props.playlist.description,
-          playlistId: this.props.playlist.id
+          playlistId: this.props.playlist.id,
+          playlist: this.props.playlist
         });
       }
 
@@ -2512,7 +2523,7 @@ var PlaylistSongIndexItem = /*#__PURE__*/function (_React$Component) {
     value: function handleRemoveSongFromPlaylist() {
       debugger;
       this.props.removeSongFromPlaylist();
-      this.props.handleRemoveSong(this.props.song.id);
+      this.props.handleRemoveSong(this.props.song.id); // this.props.history.push(`/playlists/${this.props.playlist.id}`)
     }
   }, {
     key: "render",

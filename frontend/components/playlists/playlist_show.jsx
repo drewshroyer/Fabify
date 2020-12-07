@@ -9,6 +9,7 @@ class PlaylistShow extends React.Component {
       playingSong: false, 
       selectedSong: "",
       playlistSongIds: null, 
+      playlistId: null
     };
     this.deletePlaylist = this.deletePlaylist.bind(this);
     this.handleSongClick = this.handleSongClick.bind(this);
@@ -17,10 +18,17 @@ class PlaylistShow extends React.Component {
   }
 
   componentDidUpdate() {
-    debugger
+    // debugger
     if(this.state.playlistSongIds === null && this.props.playlist.song_ids !== undefined) {
       this.setState({
-      playlistSongIds: this.props.playlist.song_ids,
+        playlistSongIds: this.props.playlist.song_ids,
+        playlistId: this.props.playlist.id
+    })
+    }
+    if(this.state.playlistId !== null && this.state.playlistId !== this.props.playlist.id) {
+      this.setState({
+        playlistSongIds: this.props.playlist.song_ids,
+        playlistId: this.props.playlist.id
     })
     }
   }
@@ -52,6 +60,7 @@ class PlaylistShow extends React.Component {
   }
 
   componentDidMount() {
+    debugger
     this.props.fetchSongs();
     this.props.fetchPlaylist(this.props.match.params.playlistId);
     this.props.fetchPlaylists();
@@ -59,7 +68,7 @@ class PlaylistShow extends React.Component {
   }
 
   handleRemoveSong(songId) {
-    debugger
+    // debugger
     let newState = this.state.playlistSongIds.filter(playlistSongId => {
       return playlistSongId !== songId
     })
@@ -79,6 +88,7 @@ class PlaylistShow extends React.Component {
         playlistSongsIndex.push(song);
       }
     })
+
     if (!songs) return null;
     return (
       <div className="playlist-show-container">

@@ -8,11 +8,11 @@
 
 require 'open-uri'
 
+User.destroy_all
+Album.destroy_all
 Artist.destroy_all
 Song.destroy_all
-Album.destroy_all
 Playlist.destroy_all
-User.destroy_all
 PlaylistSong.destroy_all
 
 user1 = User.create!({email: "drewshroyer@gmail.com", password: "password", name: "Drew", birthdate: "1994-09-14", gender: "Male"})
@@ -187,7 +187,6 @@ playlist3 = Playlist.create!(name: "QUEERANTINE", author_id: user3.id, descripti
 
 playlistsong1 = PlaylistSong.create!(song_id: song18.id, playlist_id: playlist1.id)
 playlistsong2 = PlaylistSong.create!(song_id: song9.id, playlist_id: playlist1.id)
-playlistsong3 = PlaylistSong.create!(song_id: song9.id, playlist_id: playlist1.id)
 
 playlistsong4 = PlaylistSong.create!(song_id: song17.id, playlist_id: playlist2.id)
 playlistsong5 = PlaylistSong.create!(song_id: song16.id, playlist_id: playlist2.id)
