@@ -1990,15 +1990,28 @@ var PlaylistShow = /*#__PURE__*/function (_React$Component) {
     _this = _super.call(this, props);
     _this.state = {
       playingSong: false,
-      selectedSong: ""
+      selectedSong: "",
+      playlistSongIds: null
     };
     _this.deletePlaylist = _this.deletePlaylist.bind(_assertThisInitialized(_this));
     _this.handleSongClick = _this.handleSongClick.bind(_assertThisInitialized(_this));
     _this.handleToggleShuffle = _this.handleToggleShuffle.bind(_assertThisInitialized(_this));
+    _this.handleRemoveSong = _this.handleRemoveSong.bind(_assertThisInitialized(_this));
     return _this;
   }
 
   _createClass(PlaylistShow, [{
+    key: "componentDidUpdate",
+    value: function componentDidUpdate() {
+      debugger;
+
+      if (this.state.playlistSongIds === null && this.props.playlist.song_ids !== undefined) {
+        this.setState({
+          playlistSongIds: this.props.playlist.song_ids
+        });
+      }
+    }
+  }, {
     key: "deletePlaylist",
     value: function deletePlaylist(e) {
       e.preventDefault();
@@ -2022,15 +2035,24 @@ var PlaylistShow = /*#__PURE__*/function (_React$Component) {
     value: function componentDidMount() {
       this.props.fetchSongs();
       this.props.fetchPlaylist(this.props.match.params.playlistId);
-      this.props.fetchPlaylists();
-      this.props.fetchPlaylistSongs();
+      this.props.fetchPlaylists(); // this.props.fetchPlaylistSongs();
+    }
+  }, {
+    key: "handleRemoveSong",
+    value: function handleRemoveSong(songId) {
+      debugger;
+      var newState = this.state.playlistSongIds.filter(function (playlistSongId) {
+        return playlistSongId !== songId;
+      });
+      this.setState({
+        playlistSongIds: newState
+      });
     }
   }, {
     key: "render",
     value: function render() {
       var _this2 = this;
 
-      debugger;
       var _this$props = this.props,
           songs = _this$props.songs,
           artists = _this$props.artists,
@@ -2040,70 +2062,77 @@ var PlaylistShow = /*#__PURE__*/function (_React$Component) {
           playlistId = _this$props.playlistId;
       var playlistSongsIndex = []; // console.log(this.props.playlist.song_ids)
 
-      songs.forEach(function (song) {
-        if (_this2.props.playlist.song_ids.includes(song.id)) {
-          // running into issue with the song_ids
-          playlistSongsIndex.push(song);
-        }
-      });
-      if (!songs) return null;
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "playlist-show-container"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        "data-testid": "background-image",
-        className: "background-header-image-playlist-show"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "playlist-subheader-show"
-      }, "Playlist"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "playlist-show-title"
-      }, playlistName), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "playlist-show-description"
-      }, playlistDescription)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "play-pause-like-delete-container"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "playlist-music-audio",
-        onClick: this.handleToggleShuffle
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        className: "playlist-music-play-button",
-        src: window.whitePlayButton,
-        alt: "white-play-button"
-      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "dropdown"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        className: "three-dot-options"
-      }, "..."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "dropdown-content"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "dropdown-content-flex"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "delete-playlist-button",
-        onClick: this.deletePlaylist
-      }, "Delete Playlist"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-        to: "/webplayer"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "delete-playlist-button"
-      }, "Return to Home")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-        to: "/webplayer"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "delete-playlist-button"
-      }, "Add Songs")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "delete-playlist-button"
-      }, "Edit Details"))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "playlist-music-tile-line-item"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, playlistSongsIndex.map(function (song, idx) {
-        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_playlist_song_index__WEBPACK_IMPORTED_MODULE_2__["default"], {
-          playlistId: playlistId,
-          playlists: playlists,
-          idx: idx,
-          song: song,
-          artist: artists[song.artist_id],
-          key: song.id,
-          togglePlayPause: _this2.props.togglePlayPause,
-          removeSongFromPlaylist: function removeSongFromPlaylist() {
-            return _this2.props.removeSongFromPlaylist(song.playlistSong.id);
+      debugger;
+
+      if (this.state.playlistSongIds !== null) {
+        songs.forEach(function (song) {
+          if (_this2.state.playlistSongIds.includes(song.id)) {
+            // running into issue with the song_ids
+            playlistSongsIndex.push(song);
           }
         });
-      }))));
+        if (!songs) return null;
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "playlist-show-container"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          "data-testid": "background-image",
+          className: "background-header-image-playlist-show"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "playlist-subheader-show"
+        }, "Playlist"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "playlist-show-title"
+        }, playlistName), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "playlist-show-description"
+        }, playlistDescription)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "play-pause-like-delete-container"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "playlist-music-audio",
+          onClick: this.handleToggleShuffle
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+          className: "playlist-music-play-button",
+          src: window.whitePlayButton,
+          alt: "white-play-button"
+        })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "dropdown"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+          className: "three-dot-options"
+        }, "..."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "dropdown-content"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "dropdown-content-flex"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "delete-playlist-button",
+          onClick: this.deletePlaylist
+        }, "Delete Playlist"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+          to: "/webplayer"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "delete-playlist-button"
+        }, "Return to Home")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+          to: "/webplayer"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "delete-playlist-button"
+        }, "Add Songs")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "delete-playlist-button"
+        }, "Edit Details"))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "playlist-music-tile-line-item"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, playlistSongsIndex.map(function (song, idx) {
+          return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_playlist_song_index__WEBPACK_IMPORTED_MODULE_2__["default"], {
+            playlistId: playlistId,
+            playlists: playlists,
+            idx: idx,
+            song: song,
+            artist: artists[song.artist_id],
+            key: song.id,
+            togglePlayPause: _this2.props.togglePlayPause,
+            handleRemoveSong: _this2.handleRemoveSong,
+            removeSongFromPlaylist: function removeSongFromPlaylist() {
+              return _this2.props.removeSongFromPlaylist(song.id);
+            }
+          });
+        }))));
+      } else {
+        return null;
+      }
     }
   }]);
 
@@ -2369,9 +2398,7 @@ var mSTP = function mSTP(state, ownProps) {
   var artists = state.entities.artists;
   var playlists = Object.values(state.entities.playlists);
   var playlist = state.entities.playlists[ownProps.match.params.playlistId] || {};
-  var playlistSongs = Object.values(state.entities.playlistSongs);
   return {
-    playlistSongs: playlistSongs,
     playlist: playlist,
     playlists: playlists,
     songs: songs,
@@ -2471,6 +2498,7 @@ var PlaylistSongIndexItem = /*#__PURE__*/function (_React$Component) {
       selectedSong: ""
     };
     _this.handleSongClick = _this.handleSongClick.bind(_assertThisInitialized(_this));
+    _this.handleRemoveSongFromPlaylist = _this.handleRemoveSongFromPlaylist.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -2478,6 +2506,13 @@ var PlaylistSongIndexItem = /*#__PURE__*/function (_React$Component) {
     key: "handleSongClick",
     value: function handleSongClick() {
       this.props.togglePlayPause(this.props.song.id, this.props.song.name, this.props.song.photo_url, this.props.artist.name);
+    }
+  }, {
+    key: "handleRemoveSongFromPlaylist",
+    value: function handleRemoveSongFromPlaylist() {
+      debugger;
+      this.props.removeSongFromPlaylist();
+      this.props.handleRemoveSong(this.props.song.id);
     }
   }, {
     key: "render",
@@ -2490,7 +2525,7 @@ var PlaylistSongIndexItem = /*#__PURE__*/function (_React$Component) {
       if (this.props.removeSongFromPlaylist) {
         removeButton = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "delete-song",
-          onClick: this.props.removeSongFromPlaylist
+          onClick: this.handleRemoveSongFromPlaylist
         }, "Remove Song");
       } else {
         removeButton = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null);
@@ -4098,13 +4133,8 @@ var playlistSongReducer = function playlistSongReducer() {
       return action.playlistSongs;
 
     case _actions_playlist_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_PLAYLIST"]:
-      newState = Object.assign({}, state);
-
-      if (action.playlist_songs) {
-        return action.playlistSongs;
-      } else {
-        return {};
-      }
+      newState[action.playlist.id] = action.playlist;
+      return newState;
 
     case _actions_playlist_song_actions__WEBPACK_IMPORTED_MODULE_1__["CLEAR_PLAYLIST_SONGS"]:
       return {};

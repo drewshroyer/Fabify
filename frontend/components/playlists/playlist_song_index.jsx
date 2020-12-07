@@ -7,6 +7,7 @@ class PlaylistSongIndexItem extends React.Component {
     super(props);
     this.state = { playingSong: false, selectedSong: "" };
     this.handleSongClick = this.handleSongClick.bind(this);
+    this.handleRemoveSongFromPlaylist = this.handleRemoveSongFromPlaylist.bind(this); 
   }
 
   handleSongClick() {
@@ -18,11 +19,17 @@ class PlaylistSongIndexItem extends React.Component {
     );
   }
 
+  handleRemoveSongFromPlaylist() {
+    debugger
+    this.props.removeSongFromPlaylist();
+    this.props.handleRemoveSong(this.props.song.id);
+  }
+
   render() {
      let removeButton;
         let createdAt;
         if (this.props.removeSongFromPlaylist){
-            removeButton = <div className="delete-song" onClick={this.props.removeSongFromPlaylist}>Remove Song</div>        
+            removeButton = <div className="delete-song" onClick={this.handleRemoveSongFromPlaylist}>Remove Song</div>        
         }else{
             removeButton = <div></div>
         }

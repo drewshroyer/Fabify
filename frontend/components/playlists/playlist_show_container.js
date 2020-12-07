@@ -14,9 +14,7 @@ const mSTP = (state, ownProps) => {
   let artists = state.entities.artists;
   let playlists = Object.values(state.entities.playlists);
   let playlist = state.entities.playlists[ownProps.match.params.playlistId] || {};
-  let playlistSongs = Object.values(state.entities.playlistSongs)
   return {
-    playlistSongs,
     playlist,
     playlists,
     songs,

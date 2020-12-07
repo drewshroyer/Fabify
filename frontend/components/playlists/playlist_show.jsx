@@ -5,10 +5,24 @@ import PlaylistSongIndexItem from "./playlist_song_index";
 class PlaylistShow extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { playingSong: false, selectedSong: "" };
+    this.state = { 
+      playingSong: false, 
+      selectedSong: "",
+      playlistSongIds: null, 
+    };
     this.deletePlaylist = this.deletePlaylist.bind(this);
     this.handleSongClick = this.handleSongClick.bind(this);
     this.handleToggleShuffle = this.handleToggleShuffle.bind(this);
+    this.handleRemoveSong = this.handleRemoveSong.bind(this);
+  }
+
+  componentDidUpdate() {
+    debugger
+    if(this.state.playlistSongIds === null && this.props.playlist.song_ids !== undefined) {
+      this.setState({
+      playlistSongIds: this.props.playlist.song_ids,
+    })
+    }
   }
 
    deletePlaylist(e) {
@@ -41,21 +55,30 @@ class PlaylistShow extends React.Component {
     this.props.fetchSongs();
     this.props.fetchPlaylist(this.props.match.params.playlistId);
     this.props.fetchPlaylists();
-    this.props.fetchPlaylistSongs();
+    // this.props.fetchPlaylistSongs();
+  }
+
+  handleRemoveSong(songId) {
+    debugger
+    let newState = this.state.playlistSongIds.filter(playlistSongId => {
+      return playlistSongId !== songId
+    })
+    this.setState({
+      playlistSongIds: newState
+    })
   }
 
   render() {
-    debugger
-
     const { songs, artists, playlistName, playlistDescription, playlists, playlistId} = this.props;
     let playlistSongsIndex = []
     // console.log(this.props.playlist.song_ids)
+    debugger
+    if(this.state.playlistSongIds !== null) {
     songs.forEach((song) => {
-      if(this.props.playlist.song_ids.includes(song.id)) { // running into issue with the song_ids
+      if(this.state.playlistSongIds.includes(song.id)) { // running into issue with the song_ids
         playlistSongsIndex.push(song);
       }
     })
-
     if (!songs) return null;
     return (
       <div className="playlist-show-container">
@@ -109,13 +132,17 @@ class PlaylistShow extends React.Component {
                 artist={artists[song.artist_id]}
                 key={song.id}
                 togglePlayPause={this.props.togglePlayPause}
-                removeSongFromPlaylist={() => this.props.removeSongFromPlaylist(song.playlistSong.id)}
+                handleRemoveSong = {this.handleRemoveSong}
+                removeSongFromPlaylist={() => this.props.removeSongFromPlaylist(song.id)}
               />
             ))}
           </ul>
         </div>     
       </div>
     );
+   } else {
+     return null;
+   }
   }
 }
 
