@@ -1329,11 +1329,9 @@ var PlaylistIndex = /*#__PURE__*/function (_React$Component) {
       var playlist = this.props.playlist;
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "nav-bar-playlist-list"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-        to: "/playlists/".concat(playlist.id)
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "nav-bar-playlist-name"
-      }, playlist.name)));
+      }, playlist.name));
     }
   }]);
 
