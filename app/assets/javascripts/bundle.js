@@ -295,8 +295,8 @@ var fetchPlaylistSongs = function fetchPlaylistSongs() {
 };
 var addSongToPlaylist = function addSongToPlaylist(playlistSong) {
   return function (dispatch) {
-    return _util_playlist_song_api_util__WEBPACK_IMPORTED_MODULE_0__["addSongToPlaylist"](playlistSong).then(function (value) {
-      return dispatch(Object(_playlist_actions__WEBPACK_IMPORTED_MODULE_1__["receivePlaylist"])(value));
+    return _util_playlist_song_api_util__WEBPACK_IMPORTED_MODULE_0__["addSongToPlaylist"](playlistSong).then(function (playlistSong) {
+      return dispatch(Object(_playlist_actions__WEBPACK_IMPORTED_MODULE_1__["receivePlaylist"])(playlistSong));
     });
   };
 }; // export const addSongToPlaylist = playlistSong => {
@@ -1073,11 +1073,6 @@ var InternalNavbar = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "componentDidMount",
     value: function componentDidMount() {
-      this.props.fetchPlaylists();
-    }
-  }, {
-    key: "componentWillMount",
-    value: function componentWillMount() {
       this.props.fetchPlaylists();
     }
   }, {
@@ -1929,9 +1924,15 @@ var PlaylistShow = /*#__PURE__*/function (_React$Component) {
   }
 
   _createClass(PlaylistShow, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      this.props.fetchSongs();
+      this.props.fetchPlaylist(this.props.match.params.playlistId);
+      this.props.fetchPlaylists();
+    }
+  }, {
     key: "componentDidUpdate",
     value: function componentDidUpdate() {
-      // debugger
       if (this.state.playlistSongIds === null && this.props.playlist.song_ids !== undefined) {
         this.setState({
           playlistSongIds: this.props.playlist.song_ids,
@@ -1966,17 +1967,8 @@ var PlaylistShow = /*#__PURE__*/function (_React$Component) {
       this.props.togglePlayPause(this.props.song.id, this.props.song.name, this.props.song.photo_url, this.props.song.name);
     }
   }, {
-    key: "componentDidMount",
-    value: function componentDidMount() {
-      // debugger
-      this.props.fetchSongs();
-      this.props.fetchPlaylist(this.props.match.params.playlistId);
-      this.props.fetchPlaylists(); // this.props.fetchPlaylistSongs();
-    }
-  }, {
     key: "handleRemoveSong",
     value: function handleRemoveSong(songId) {
-      // debugger
       var newState = this.state.playlistSongIds.filter(function (playlistSongId) {
         return playlistSongId !== songId;
       });
@@ -2458,7 +2450,8 @@ var PlaylistSongIndexItem = /*#__PURE__*/function (_React$Component) {
         playlist_id: this.props.playlist.id,
         song_id: this.props.song.id
       };
-      this.props.addSongToPlaylist(playlistSong); // this.props.history.push(`/playlists/${this.props.playlist.id}`)
+      this.props.addSongToPlaylist(playlistSong);
+      this.props.history.push("/playlists/".concat(this.props.playlist.id));
     }
   }, {
     key: "render",

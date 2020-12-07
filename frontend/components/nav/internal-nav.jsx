@@ -20,10 +20,6 @@ class InternalNavbar extends React.Component {
     this.props.fetchPlaylists();
   }
 
-  componentWillMount() {
-    this.props.fetchPlaylists();
-  }
-
   updatePlaylistTab() {
     let homeTab = document.getElementById("internal-home-link")
     homeTab.style.backgroundColor = '#040404'

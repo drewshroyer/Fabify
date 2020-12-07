@@ -23,8 +23,8 @@ export const fetchPlaylistSongs = () => dispatch => {
 }
 
 export const addSongToPlaylist = (playlistSong) => (dispatch) => {
-  return PlaylistSongApiUtil.addSongToPlaylist(playlistSong).then((value) =>
-    dispatch(receivePlaylist(value))
+  return PlaylistSongApiUtil.addSongToPlaylist(playlistSong).then((playlistSong) =>
+    dispatch(receivePlaylist(playlistSong))
   );
 };
 

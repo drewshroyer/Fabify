@@ -33,7 +33,7 @@ class PlaylistSongIndexItem extends React.Component {
         song_id: this.props.song.id
     }
     this.props.addSongToPlaylist(playlistSong);
-    // this.props.history.push(`/playlists/${this.props.playlist.id}`)
+    this.props.history.push(`/playlists/${this.props.playlist.id}`)
   }
 
   render() {

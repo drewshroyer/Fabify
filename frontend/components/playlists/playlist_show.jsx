@@ -17,8 +17,13 @@ class PlaylistShow extends React.Component {
     this.handleRemoveSong = this.handleRemoveSong.bind(this);
   }
 
+  componentDidMount() {
+    this.props.fetchSongs();
+    this.props.fetchPlaylist(this.props.match.params.playlistId);
+    this.props.fetchPlaylists();
+  }
+
   componentDidUpdate() {
-    // debugger
     if(this.state.playlistSongIds === null && this.props.playlist.song_ids !== undefined) {
       this.setState({
         playlistSongIds: this.props.playlist.song_ids,
@@ -59,16 +64,7 @@ class PlaylistShow extends React.Component {
     );
   }
 
-  componentDidMount() {
-    // debugger
-    this.props.fetchSongs();
-    this.props.fetchPlaylist(this.props.match.params.playlistId);
-    this.props.fetchPlaylists();
-    // this.props.fetchPlaylistSongs();
-  }
-
   handleRemoveSong(songId) {
-    // debugger
     let newState = this.state.playlistSongIds.filter(playlistSongId => {
       return playlistSongId !== songId
     })
@@ -125,7 +121,6 @@ class PlaylistShow extends React.Component {
              <Link to="/webplayer">
              <div className="delete-playlist-button">Add Songs</div>
              </Link>
-             {/* <div className="delete-playlist-button">Edit Details</div> */}
              </div>
            </div>
            </div>
