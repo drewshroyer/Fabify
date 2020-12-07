@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import PlaylistIndex from "../nav/playlist_index";
 import PlaylistSongIndexItem from "../playlists/playlist_song_index"
 
 
@@ -9,7 +8,7 @@ class ArtistShow extends React.Component {
     super(props);
     this.state = { playingSong: false, selectedSong: "" };
     this.handleSongClick = this.handleSongClick.bind(this);
-    this.handleAddSongToPlaylist = this.handleAddSongToPlaylist(this);
+    // this.handleAddSongToPlaylist = this.handleAddSongToPlaylist(this);
   }
 
     handleSongClick() {
@@ -21,9 +20,10 @@ class ArtistShow extends React.Component {
     );
   }
 
-  handleAddSongToPlaylist() {
-
-  }
+  // handleAddSongToPlaylist() {
+  //   this.props.addSongToPlaylist(songId, playlistId)
+  //    this.props.history.push(`/playlists/${playlistId}`)
+  // }
 
   componentDidMount() {
     this.props.fetchSongs();
@@ -83,6 +83,7 @@ class ArtistShow extends React.Component {
                 key={song.id}
                 togglePlayPause={this.props.togglePlayPause}
                 removeSongFromPlaylist = {this.props.removeSongFromPlaylist}
+                handleAddSongToPlaylist = {this.props.handleAddSongToPlaylist}
               />
             ))}
           </ul>

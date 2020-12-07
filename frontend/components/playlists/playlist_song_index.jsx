@@ -58,7 +58,11 @@ class PlaylistSongIndexItem extends React.Component {
               <ul className="nav-bar-playlists">
                 {playlists.map((playlist, idx) => (
                   <PlaylistIndex 
+                  songId = {song.id}
+                  handleAddSongToPlaylist = {this.handleAddSongToPlaylist}
+                  id = {playlist.id}
                   playlist={playlist} 
+                  playlistId = {playlist.id}
                   key={idx} />
                 ))}
               </ul>

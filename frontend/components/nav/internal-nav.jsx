@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import CreatePlaylistContainer from "../playlists/create_playlist_container";
-import PlaylistIndex from "./playlist_index";
 
 class InternalNavbar extends React.Component {
   constructor(props) {
@@ -150,9 +149,11 @@ class InternalNavbar extends React.Component {
             <div className="user-playlists">
               <ul className="nav-bar-playlists">
                 {playlists.map((playlist, idx) => (
-                  <PlaylistIndex 
-                  playlist={playlist} 
-                  key={idx} />
+                    <div className="nav-bar-playlist-list" key={idx}>
+                    <Link to={`/playlists/${playlist.id}`}>
+                      <div className="nav-bar-playlist-name">{playlist.name}</div>
+                    </Link>
+                  </div>
                 ))}
               </ul>
             </div>
