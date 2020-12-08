@@ -28,11 +28,6 @@ export const addSongToPlaylist = (playlistSong) => (dispatch) => {
   );
 };
 
-// export const addSongToPlaylist = playlistSong => {
-//     return dispatch => {
-//         return mainAPIUtil.addSongToPlaylist(playlistSong);
-//     }   
-
 export const removeSongFromPlaylist = playlistSongId => {
     return dispatch => {
         return PlaylistSongApiUtil.removeSongFromPlaylist(playlistSongId)

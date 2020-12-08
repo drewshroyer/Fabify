@@ -1,15 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { addSongToPlaylist } from "../../actions/playlist_song_actions";
-import {withRouter} from "react-router-dom";
-import { connect } from "react-redux";
+// import { addSongToPlaylist } from "../../actions/playlist_song_actions";
+// import {withRouter} from "react-router-dom";
+// import { connect } from "react-redux";
+import PlaylistList from "./playlist_list";
 
 class PlaylistSongIndexItem extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { playingSong: false, selectedSong: "" };
+    this.state = { playingSong: false, selectedSong: "", playlistId: null };
     this.handleSongClick = this.handleSongClick.bind(this);
-    this.handleAddSongToPlaylist = this.handleAddSongToPlaylist.bind(this);
     this.handleRemoveSongFromPlaylist = this.handleRemoveSongFromPlaylist.bind(this); 
   }
 
@@ -27,14 +27,6 @@ class PlaylistSongIndexItem extends React.Component {
     this.props.handleRemoveSong(this.props.song.id);
   }
 
-  handleAddSongToPlaylist() {
-    let playlistSong = {
-        playlist_id: this.props.playlist.id,
-        song_id: this.props.song.id
-    }
-    this.props.addSongToPlaylist(playlistSong);
-    this.props.history.push(`/playlists/${this.props.playlist.id}`)
-  }
 
   render() {
     let removeButton;
@@ -83,9 +75,11 @@ class PlaylistSongIndexItem extends React.Component {
                 <div className="user-playlists">
               <ul className="nav-bar-playlists">
                 {playlists.map((playlist, idx) => (
-                 <div className="nav-bar-playlist-list" key={idx}>
-                <div className="nav-bar-playlist-name" onClick={this.handleAddSongToPlaylist}>{playlist.name}</div>
-                 </div>
+                  <PlaylistList
+                    key={idx}
+                    playlist={playlist}
+                    song={song}
+                  />
                 ))}
               </ul>
             </div>
@@ -99,10 +93,10 @@ class PlaylistSongIndexItem extends React.Component {
   }
 }
 
-const mDTP = (dispatch) => {
-  return {
-    addSongToPlaylist: (playlistSong) => dispatch(addSongToPlaylist(playlistSong)),
-  };
-};
+// const mDTP = (dispatch) => {
+//   return {
+//     addSongToPlaylist: (playlistSong) => dispatch(addSongToPlaylist(playlistSong)),
+//   };
+// };
 
-export default withRouter(connect(null, mDTP)(PlaylistSongIndexItem));
+export default (PlaylistSongIndexItem);

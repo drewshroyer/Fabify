@@ -21,7 +21,6 @@ class Api::PlaylistSongsController < ApplicationController
 
     def index 
         @playlist_songs = PlaylistSong.all
-        # @playlist_songs = PlaylistSong.where("playlist_id LIKE %#{params[:id]}")
         render :index
     end
 
