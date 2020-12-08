@@ -115,16 +115,6 @@
     color: white;
 }
 
-/* .playlist-music-audio:hover {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 65px;
-    width: 65px;
-    border-radius: 50%;
-    background-color:  #1eba54;
-} */
-
 .dropdown:hover .dropbtn {
   background-color: #282828;
   color: white;
@@ -142,4 +132,9 @@
 
 .dropdown:hover .dropdown-content {
   display: block;
+}
+
+.fas fa-caret-right {
+  font-size: 14px;
+  color: white;
 }

@@ -1915,10 +1915,13 @@ var PlaylistList = /*#__PURE__*/function (_React$Component) {
   _createClass(PlaylistList, [{
     key: "handleAddSongToPlaylist",
     value: function handleAddSongToPlaylist() {
+      debugger;
       var playlistSong = {
         playlist_id: this.props.playlist.id,
-        song_id: this.props.song.id
+        song_id: this.props.song.id // It's not putting the correct song ID - it's making a new one that is too high 
+
       };
+      debugger;
       this.props.addSongToPlaylist(playlistSong);
       this.props.history.push("/playlists/".concat(this.props.playlist.id));
     }
@@ -2079,8 +2082,7 @@ var PlaylistShow = /*#__PURE__*/function (_React$Component) {
           playlistDescription = _this$props.playlistDescription,
           playlists = _this$props.playlists,
           playlistId = _this$props.playlistId;
-      var playlistSongsIndex = []; // console.log(this.props.playlist.song_ids)
-      // debugger
+      var playlistSongsIndex = [];
 
       if (this.state.playlistSongIds !== null) {
         songs.forEach(function (song) {
@@ -2252,7 +2254,8 @@ var PlaylistShowBody = /*#__PURE__*/function (_React$Component) {
         this.setState({
           playlistName: this.props.playlist.name,
           playlistDescription: this.props.playlist.description,
-          playlistId: this.props.playlist.id
+          playlistId: this.props.playlist.id,
+          playlist: this.props.playlist
         });
       }
 
@@ -2590,12 +2593,12 @@ var PlaylistSongIndexItem = /*#__PURE__*/function (_React$Component) {
         className: "dropdown-content"
       }, removeButton, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "dropdown-content-flex"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "add-song-to-playlist-button"
-      }, "Add Song to Playlist"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "Add Song to Playlist"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fas fa-caret-right"
+      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "playlist-add-song-list"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "user-playlists"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
         className: "nav-bar-playlists"
       }, playlists.map(function (playlist, idx) {
@@ -2604,7 +2607,7 @@ var PlaylistSongIndexItem = /*#__PURE__*/function (_React$Component) {
           playlist: playlist,
           song: song
         });
-      })))))))));
+      }))))))));
     }
   }]);
 

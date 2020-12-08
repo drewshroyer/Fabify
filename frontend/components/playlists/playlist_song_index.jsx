@@ -67,9 +67,11 @@ class PlaylistSongIndexItem extends React.Component {
            <div className="dropdown-content">
              {removeButton}
              <div className="dropdown-content-flex">
+               <div>
                <div className="add-song-to-playlist-button" >Add Song to Playlist</div>
+               <i className="fas fa-caret-right"></i>
+               </div>
              <div className="playlist-add-song-list">
-                <div className="user-playlists">
               <ul className="nav-bar-playlists">
                 {playlists.map((playlist, idx) => (
                   <PlaylistList
@@ -80,7 +82,6 @@ class PlaylistSongIndexItem extends React.Component {
                 ))}
               </ul>
             </div>
-             </div>
            </div>
            </div>
         </div>

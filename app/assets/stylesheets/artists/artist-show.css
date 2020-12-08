@@ -65,13 +65,17 @@
 
 .playlist-add-song-list {
     display: none;
-    position: absolute;
-    background-color: #282828;
+    -webkit-app-region: no-drag;
     min-width: 160px;
-    padding: 10px;
-    z-index: 1;
+    max-width: 350px;
+    padding: 4px;
+    background-color: #282828;
+    -webkit-box-shadow: 0 16px 24px rgba(0,0,0,.3), 0 6px 8px rgba(0,0,0,.2);
     box-shadow: 0 16px 24px rgba(0,0,0,.3), 0 6px 8px rgba(0,0,0,.2);
-    border-radius: 4px;  
+    border-radius: 4px;
+    overflow-y: auto;
+    margin: 12px;
+    max-height: calc(100vh - 24px);
 }
 
 .add-song-to-playlist-button:hover .playlist-add-song-list {

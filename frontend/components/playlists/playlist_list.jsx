@@ -10,10 +10,12 @@ class PlaylistList extends React.Component {
     }
 
     handleAddSongToPlaylist() {
+      debugger
         let playlistSong = {
             playlist_id: this.props.playlist.id,
-            song_id: this.props.song.id
-        }
+            song_id: this.props.song.id    // It's not putting the correct song ID - it's making a new one that is too high 
+        } 
+        debugger
         this.props.addSongToPlaylist(playlistSong);
         this.props.history.push(`/playlists/${this.props.playlist.id}`)
   }
