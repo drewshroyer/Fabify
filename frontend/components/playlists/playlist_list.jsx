@@ -2,15 +2,10 @@ import React from 'react'
 import { addSongToPlaylist } from "../../actions/playlist_song_actions";
 import {withRouter} from "react-router-dom";
 import { connect } from "react-redux";
-import {Link} from "react-router-dom";
 
 class PlaylistList extends React.Component {
     constructor(props) {
         super(props);
-         this.state = { 
-            playlistSongIds: null, 
-            playlistId: null
-        };
         this.handleAddSongToPlaylist = this.handleAddSongToPlaylist.bind(this);
     }
 
@@ -20,6 +15,7 @@ class PlaylistList extends React.Component {
             song_id: this.props.song.id
         }
         this.props.addSongToPlaylist(playlistSong);
+        this.props.history.push(`/playlists/${this.props.playlist.id}`)
   }
 
     render() {

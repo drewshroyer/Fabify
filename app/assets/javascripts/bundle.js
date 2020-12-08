@@ -1897,7 +1897,6 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 
 
 
-
 var PlaylistList = /*#__PURE__*/function (_React$Component) {
   _inherits(PlaylistList, _React$Component);
 
@@ -1909,10 +1908,6 @@ var PlaylistList = /*#__PURE__*/function (_React$Component) {
     _classCallCheck(this, PlaylistList);
 
     _this = _super.call(this, props);
-    _this.state = {
-      playlistSongIds: null,
-      playlistId: null
-    };
     _this.handleAddSongToPlaylist = _this.handleAddSongToPlaylist.bind(_assertThisInitialized(_this));
     return _this;
   }
@@ -1925,6 +1920,7 @@ var PlaylistList = /*#__PURE__*/function (_React$Component) {
         song_id: this.props.song.id
       };
       this.props.addSongToPlaylist(playlistSong);
+      this.props.history.push("/playlists/".concat(this.props.playlist.id));
     }
   }, {
     key: "render",
@@ -2501,9 +2497,6 @@ function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Re
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
 
- // import { addSongToPlaylist } from "../../actions/playlist_song_actions";
-// import {withRouter} from "react-router-dom";
-// import { connect } from "react-redux";
 
 
 
@@ -2616,12 +2609,7 @@ var PlaylistSongIndexItem = /*#__PURE__*/function (_React$Component) {
   }]);
 
   return PlaylistSongIndexItem;
-}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component); // const mDTP = (dispatch) => {
-//   return {
-//     addSongToPlaylist: (playlistSong) => dispatch(addSongToPlaylist(playlistSong)),
-//   };
-// };
-
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
 /* harmony default export */ __webpack_exports__["default"] = (PlaylistSongIndexItem);
 

@@ -1,8 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-// import { addSongToPlaylist } from "../../actions/playlist_song_actions";
-// import {withRouter} from "react-router-dom";
-// import { connect } from "react-redux";
 import PlaylistList from "./playlist_list";
 
 class PlaylistSongIndexItem extends React.Component {
@@ -92,11 +89,5 @@ class PlaylistSongIndexItem extends React.Component {
     );
   }
 }
-
-// const mDTP = (dispatch) => {
-//   return {
-//     addSongToPlaylist: (playlistSong) => dispatch(addSongToPlaylist(playlistSong)),
-//   };
-// };
 
 export default (PlaylistSongIndexItem);
