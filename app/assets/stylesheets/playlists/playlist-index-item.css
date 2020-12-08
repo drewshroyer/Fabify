@@ -31,6 +31,7 @@
 ul {
    padding-inline-start: 0px; 
 }
+
 .playlist-music-play-button {
     height: 30px;
     width: 30px;
@@ -38,6 +39,7 @@ ul {
 .playlist-music-tile-line-item {
   margin-top: 0px;
   padding-inline-start: 0px;
+  margin-bottom: 200px;
 }
 
 .playlist-music-tile-photo {

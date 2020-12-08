@@ -16,14 +16,6 @@ class PlayBar extends React.Component {
   //   return false;
   //  }
 
-  updatePlayPauseButton() {
-    let playButton = document.getElementById("main-play-button")
-    playButton.style.display = 'none';
-
-    let pauseButton = document.getElementById("main-pause-button")
-    pauseButton.style.display = 'none';
-  }
-
   render() {
     const { selectedSong, name, artist, photo, songLength } = this.props;
     return (
@@ -46,18 +38,15 @@ class PlayBar extends React.Component {
             <img
               src={whitePlayCircleButton}
               alt="whitePlayCircleButton"
-              id="main-play-button"
               className="main-play-button"
-              id={this.props.selectedSong}
               onClick={this.togglePlayBar}
             />
-            {/* <img
+            <img
               src={whitePauseCircleButton}
               alt="whitePlayCircleButton"
-              id="main-pause-button"
-              id={this.props.selectedSong}
+              className="main-pause-button"
               onClick={this.togglePlayBar}
-            /> */}
+            />
             <img
               src={whiteNextIcon}
               alt="whiteNextIcon"

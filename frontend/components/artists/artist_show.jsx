@@ -2,13 +2,11 @@ import React from "react";
 import { Link } from "react-router-dom";
 import PlaylistSongIndexItem from "../playlists/playlist_song_index"
 
-
 class ArtistShow extends React.Component {
   constructor(props) {
     super(props);
     this.state = { playingSong: false, selectedSong: "" };
     this.handleSongClick = this.handleSongClick.bind(this);
-    // this.handleAddSongToPlaylist = this.handleAddSongToPlaylist.bind(this);
   }
 
     handleSongClick() {
@@ -19,10 +17,6 @@ class ArtistShow extends React.Component {
       this.props.artist.name
     );
   }
-
-  // handleAddSongToPlaylist(playlistSong) {
-  //   this.props.addSongToPlaylist(playlistSong);
-  // }
 
   componentDidMount() {
     this.props.fetchSongs();
@@ -43,7 +37,7 @@ class ArtistShow extends React.Component {
       <div className="artist-show-info-container">
       <ul >
          {artistSongs.map((song, idx) => (
-                 <div className="playlist-song-tile-container" key={idx}>
+                 <div className="playlist-song-tile-container">
                 <img src={song.photo_url} className={`artist-show-music-tile-photo-${idx}`} />
                 </div>
          ))}

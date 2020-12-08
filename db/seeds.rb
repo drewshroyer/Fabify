@@ -11,9 +11,9 @@ require 'open-uri'
 User.destroy_all
 Album.destroy_all
 Artist.destroy_all
+PlaylistSong.destroy_all
 Song.destroy_all
 Playlist.destroy_all
-PlaylistSong.destroy_all
 
 user1 = User.create!({email: "drewshroyer@gmail.com", password: "password", name: "Drew", birthdate: "1994-09-14", gender: "Male"})
 user2 = User.create!({email: "drewshroyer1@gmail.com", password: "password", name: "Sarah", birthdate: "1990-09-14", gender: "Female"})

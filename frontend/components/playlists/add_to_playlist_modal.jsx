@@ -1,33 +1,28 @@
-import React from "react";
+import React from 'react'
+import { addSongToPlaylist } from "../../actions/playlist_song_actions";
+import {withRouter} from "react-router-dom";
+import { connect } from "react-redux";
 
-class CreatePlaylist extends React.Component {
+class AddToPlaylist extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      playlist: {
-        name: "",
-      },
       isOpen: true,
     };
-
     this.handleClickforCancel = this.handleClickforCancel.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleChange = this.handleChange.bind(this);
+    this.handleAddSongToPlaylist = this.handleAddSongToPlaylist(this);
   }
 
-  handleSubmit(e) {
-    e.preventDefault();
-    // console.log(this.state.playlist);
-    this.props
-      .createPlaylist(this.state)
-      .then(this.props.toggleModal());
-  }
-
-  handleChange(field) {
-    return (e) =>
-      this.setState({
-        [field]: e.target.value,
-      });
+handleAddSongToPlaylist() {
+      debugger
+        let playlistSong = {
+            playlist_id: this.props.playlist.id,
+            song_id: this.props.song.id    // It's not putting the correct song ID - it's making a new one that is too high 
+        } 
+        debugger
+        this.props.addSongToPlaylist(playlistSong);
+        this.props.toggleModal();
+        this.props.history.push(`/playlists/${this.props.playlist.id}`)
   }
 
   handleClickforCancel() {
@@ -54,16 +49,9 @@ class CreatePlaylist extends React.Component {
               Create new playlist
             </h1>
             <div className="create-playlist-input-bar">
-              <form className="create-playlist-form-container" onSubmit={this.handleSubmit}>
+              <form className="create-playlist-form-container">
                 <div className="new-playlist-input">
                   <div className="new-playlist-input-title">Playlist Name</div>
-                  <input
-                    type="text"
-                    value={this.state.name}
-                    onChange={this.handleChange("name")}
-                    placeholder="New Playlist"
-                    className="new-playlist-input-text"
-                  />
                 </div>
                 <div className="cancel-create-buttons">
                   <button
@@ -73,10 +61,6 @@ class CreatePlaylist extends React.Component {
                   >
                     CANCEL
                   </button>
-                  <input
-                    className="playlist-create-button"
-                    type="submit"
-                    value="CREATE"/>
                 </div>
               </form>
             </div>
@@ -86,5 +70,10 @@ class CreatePlaylist extends React.Component {
     );
   }
 }
+const mDTP = (dispatch) => {
+  return {
+    addSongToPlaylist: (playlistSong) => dispatch(addSongToPlaylist(playlistSong)),
+  };
+};
 
-export default CreatePlaylist;
+export default withRouter(connect(null, mDTP)(AddToPlaylist));

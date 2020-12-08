@@ -78,7 +78,7 @@ class PlaylistShow extends React.Component {
     let playlistSongsIndex = []
     if(this.state.playlistSongIds !== null) {
     songs.forEach((song) => {
-      if(this.state.playlistSongIds.includes(song.id)) { // running into issue with the song_ids
+      if(this.state.playlistSongIds.includes((song.id))) { // running into issue with the song_ids
         playlistSongsIndex.push(song);
       }
     })

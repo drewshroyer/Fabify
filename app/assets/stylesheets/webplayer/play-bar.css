@@ -13,14 +13,14 @@
     bottom: 0%;
 }
 
-#main-pause-button {
+.main-pause-button {
   display: none;
-  /* padding: 10px;
+  padding: 10px;
   height: 36px;
-  width: auto; */
+  width: auto;
 }
 
-#main-pause-button:hover {
+.main-pause-button:hover {
   padding: 7px;
   height: 42px;
   width: auto;
@@ -153,12 +153,6 @@
 }
 
 .main-play-button:hover {
-    padding: 7px;
-    height: 42px;
-    width: auto;
-}
-
-#main-pause-button:hover {
     padding: 7px;
     height: 42px;
     width: auto;

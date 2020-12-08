@@ -1,11 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import PlaylistList from "./playlist_list";
+import AddToPlaylist from "./add_to_playlist_modal";
+import PlaylistList from "./playlist_list"
 
 class PlaylistSongIndexItem extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { playingSong: false, selectedSong: "", playlistId: null };
+    this.state = { playingSong: false, selectedSong: "", playlistId: null, isOpen: false };
     this.handleSongClick = this.handleSongClick.bind(this);
     this.handleRemoveSongFromPlaylist = this.handleRemoveSongFromPlaylist.bind(this); 
   }
@@ -67,10 +68,7 @@ class PlaylistSongIndexItem extends React.Component {
            <div className="dropdown-content">
              {removeButton}
              <div className="dropdown-content-flex">
-               <div>
-               <div className="add-song-to-playlist-button" >Add Song to Playlist</div>
-               <i className="fas fa-caret-right"></i>
-               </div>
+               <div className="add-song-to-playlist-button">Add Song to Playlist</div>
              <div className="playlist-add-song-list">
               <ul className="nav-bar-playlists">
                 {playlists.map((playlist, idx) => (

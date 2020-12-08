@@ -46,13 +46,27 @@ class WebPlayer extends React.Component {
     } else {
       audioEle.play();
     }
+
+    // let playButton = document.getElementsByClassName("main-play-button")
+    //  if(this.playButton.style.display === 'block') { 
+    //   playButton.style.display = 'none'
+    //   let pauseButton  = document.getElementsByClassName("main-pause-button")
+    // for(let i = 0; i < pauseButton.length; i++){
+    //   pauseButton[i].style.display = 'block'
+    // } } else {
+      
+    // }
   }
 
    activateFabMode() {
      if(this.state.checked === false) { 
-    let fabifyLogo  = document.getElementsByClassName("fabify-fab-mode-title-div")
+    let fabifyLogo = document.getElementsByClassName("fabify-fab-mode-title-div")
     for(let i = 0; i < fabifyLogo.length; i++){
       fabifyLogo[i].style.display = 'block'
+    }
+    let splashLogo = document.getElementsByClassName("internal-white-splash-logo")
+    for(let i = 0; i < splashLogo.length; i++){
+      splashLogo[i].style.height = '0px'
     }
     let outerContainer  = document.getElementsByClassName("webplayer-body-container")
     for(let i = 0; i < outerContainer.length; i++){

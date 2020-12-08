@@ -27,9 +27,8 @@ class Playlist < ApplicationRecord
         source: :song
 
     def song_ids
-        self.playlist_songs.map do |song|
+        self.songs.map do |song|
             song.id
         end
     end
-    
 end
