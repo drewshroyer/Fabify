@@ -144,6 +144,7 @@ class PlaylistShow extends React.Component {
                 togglePlayPause={this.props.togglePlayPause}
                 handleRemoveSong = {this.handleRemoveSong}
                 removeSongFromPlaylist={() => this.props.removeSongFromPlaylist(song.id)}
+                
               />
             ))}
           </ul>
