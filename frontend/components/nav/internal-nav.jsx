@@ -23,10 +23,6 @@ class InternalNavbar extends React.Component {
   updatePlaylistTab() {
     let homeTab = document.getElementById("internal-home-link")
     homeTab.style.backgroundColor = '#040404'
-
-    let playlistTab = document.getElementById("internal-playlist-link")
-    playlistTab.style.backgroundColor = '#282828'
-    playlistTab.style.color = '#ffffff'
   }
 
   render() {

@@ -1072,9 +1072,6 @@ var InternalNavbar = /*#__PURE__*/function (_React$Component) {
     value: function updatePlaylistTab() {
       var homeTab = document.getElementById("internal-home-link");
       homeTab.style.backgroundColor = '#040404';
-      var playlistTab = document.getElementById("internal-playlist-link");
-      playlistTab.style.backgroundColor = '#282828';
-      playlistTab.style.color = '#ffffff';
     }
   }, {
     key: "render",
@@ -2035,13 +2032,11 @@ var PlaylistList = /*#__PURE__*/function (_React$Component) {
   _createClass(PlaylistList, [{
     key: "handleAddSongToPlaylist",
     value: function handleAddSongToPlaylist() {
-      // debugger
       var playlistSong = {
         playlist_id: this.props.playlist.id,
         song_id: this.props.song.id // It's not putting the correct song ID - it's making a new one that is too high 
 
-      }; // debugger
-
+      };
       this.props.addSongToPlaylist(playlistSong);
       this.props.history.push("/playlists/".concat(this.props.playlist.id));
     }
@@ -2159,7 +2154,13 @@ var PlaylistShow = /*#__PURE__*/function (_React$Component) {
           playlistSongIds: this.props.playlist.song_ids,
           playlistId: this.props.playlist.id
         });
-      }
+      } // if(this.state.playlistSongIds.length !== this.props.playlist.song_ids) {
+      //   this.setState({
+      //     playlistSongIds: this.props.playlist.song_ids,
+      //     playlistId: this.props.playlist.id
+      // })
+      // }
+
     }
   }, {
     key: "deletePlaylist",

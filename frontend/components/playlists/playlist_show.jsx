@@ -36,6 +36,12 @@ class PlaylistShow extends React.Component {
         playlistId: this.props.playlist.id
     })
     }
+    // if(this.state.playlistSongIds.length !== this.props.playlist.song_ids) {
+    //   this.setState({
+    //     playlistSongIds: this.props.playlist.song_ids,
+    //     playlistId: this.props.playlist.id
+    // })
+    // }
   }
 
    deletePlaylist(e) {

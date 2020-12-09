@@ -60,6 +60,7 @@ class WebPlayer extends React.Component {
 
    activateFabMode() {
      if(this.state.checked === false) { 
+       
     let fabifyLogo = document.getElementsByClassName("fabify-fab-mode-title-div")
     for(let i = 0; i < fabifyLogo.length; i++){
       fabifyLogo[i].style.display = 'block'
