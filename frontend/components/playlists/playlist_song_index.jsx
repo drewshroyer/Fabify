@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import AddToPlaylist from "./add_to_playlist_modal";
-import PlaylistList from "./playlist_list"
+import PlaylistList from "./playlist_list";
 
 class PlaylistSongIndexItem extends React.Component {
   constructor(props) {
@@ -21,7 +20,12 @@ class PlaylistSongIndexItem extends React.Component {
   }
 
   handleRemoveSongFromPlaylist() {
-    this.props.removeSongFromPlaylist();
+    let playlistSong = {
+       playlist_id: this.props.playlistId,
+      song_id: this.props.song.id  
+    }
+    debugger
+    this.props.removeSongFromPlaylist(playlistSong);
     this.props.handleRemoveSong(this.props.song.id);
   }
 

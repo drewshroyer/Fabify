@@ -8,6 +8,7 @@ import { fetchArtists } from "../../actions/artist_actions";
 const mSTP = (state) => {
   const currentUserId = state.session.id;
   const currentUser = state.entities.users[currentUserId];
+
   return {
     playlists: Object.values(state.entities.playlists),
     songs: Object.values(state.entities.songs),

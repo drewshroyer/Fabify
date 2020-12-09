@@ -26,8 +26,6 @@ class PlaylistShowBody extends React.Component {
   }
 
    componentDidMount() {
-    //  debugger
-     this.props.fetchPlaylist(this.props.match.params.playlistId);
      this.setState({
         playlistName: this.props.playlist.name,
         playlistDescription: this.props.playlist.description,
@@ -44,9 +42,9 @@ class PlaylistShowBody extends React.Component {
           playlist: this.props.playlist
         })
       }
-      if(prevProps.match.params.playlistId !== this.props.match.params.playlistId) {
-        this.props.fetchPlaylist(this.props.match.params.playlistId);
-      }
+      // if(prevProps.match.params.playlistId !== this.props.match.params.playlistId) {
+      //   this.props.fetchPlaylist(this.props.match.params.playlistId);
+      // }
    }
 
   togglePlayPause(id, name, photo, artist) {

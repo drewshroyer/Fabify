@@ -27,7 +27,7 @@ class InternalNavbar extends React.Component {
 
   render() {
     const { playlists } = this.props
-
+    // debugger
     return (
       <div className="internal-nav-bar-container">
         <div className="internal-nav-bar-inner-container">
