@@ -137,12 +137,26 @@
 }
 
 .previous-song-button {
+   padding: 10px;
     height: 20px;
     width: auto;
 }
 
+.previous-song-button:hover {
+    padding: 7px;
+    height: 26px;
+    width: auto;
+}
+
 .next-song-button {
+   padding: 10px;
     height: 20px;
+    width: auto;
+}
+
+.next-song-button:hover {
+    padding: 7px;
+    height: 26px;
     width: auto;
 }
 

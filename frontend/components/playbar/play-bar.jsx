@@ -5,13 +5,43 @@ class PlayBar extends React.Component {
   constructor(props) {
     super(props);
     this.togglePlayBar = this.togglePlayBar.bind(this);
+    this.handleNext = this.handleNext.bind(this);
+    this.handleBack = this.handleBack.bind(this);
   }
 
   togglePlayBar() {
     this.props.togglePlayPause(this.props.selectedSong);
   }
 
-// this method should help us not rerender the component but unsure how to effectively use it so far
+  handleBack() {
+    const currentAudioEle = document.getElementById(`audio-element--${this.props.selectedSong}`);
+    currentAudioEle.pause()
+    let nextSong = this.props.songs[(this.props.selectedSong - 82)]   // these numbers need to be updated if we reseed
+    const audioEle = document.getElementById(`audio-element--${nextSong.id}`);
+    this.props.togglePlayPause(
+      nextSong.id,
+      nextSong.name,
+      nextSong.photo_url,
+      nextSong.name,
+    );
+      audioEle.play();
+  }
+
+   handleNext() {
+    const currentAudioEle = document.getElementById(`audio-element--${this.props.selectedSong}`);
+    currentAudioEle.pause()
+    let nextSong = this.props.songs[(this.props.selectedSong - 80)]   // these numbers need to be updated if we reseed
+    const audioEle = document.getElementById(`audio-element--${nextSong.id}`);
+    this.props.togglePlayPause(
+      nextSong.id,
+      nextSong.name,
+      nextSong.photo_url,
+      nextSong.name,
+    );
+      audioEle.play();
+  }
+
+  // this method should help us not rerender the component but unsure how to effectively use it so far
   //  shouldComponentUpdate(nextProps, nextState) {
   //   return false;
   //  }
@@ -34,6 +64,7 @@ class PlayBar extends React.Component {
               src={whitePreviousIcon}
               alt="whitePreviousIcon"
               className="previous-song-button"
+              onClick={this.handleBack}
             />
             <img
               src={whitePlayCircleButton}
@@ -51,6 +82,7 @@ class PlayBar extends React.Component {
               src={whiteNextIcon}
               alt="whiteNextIcon"
               className="next-song-button"
+              onClick={this.handleNext}
             />
           </div>
           <div className="timeline-slide-container">

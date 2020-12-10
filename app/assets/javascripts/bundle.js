@@ -1358,6 +1358,8 @@ var PlayBar = /*#__PURE__*/function (_React$Component) {
 
     _this = _super.call(this, props);
     _this.togglePlayBar = _this.togglePlayBar.bind(_assertThisInitialized(_this));
+    _this.handleNext = _this.handleNext.bind(_assertThisInitialized(_this));
+    _this.handleBack = _this.handleBack.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -1365,6 +1367,28 @@ var PlayBar = /*#__PURE__*/function (_React$Component) {
     key: "togglePlayBar",
     value: function togglePlayBar() {
       this.props.togglePlayPause(this.props.selectedSong);
+    }
+  }, {
+    key: "handleBack",
+    value: function handleBack() {
+      var currentAudioEle = document.getElementById("audio-element--".concat(this.props.selectedSong));
+      currentAudioEle.pause();
+      var nextSong = this.props.songs[this.props.selectedSong - 82]; // these numbers need to be updated if we reseed
+
+      var audioEle = document.getElementById("audio-element--".concat(nextSong.id));
+      this.props.togglePlayPause(nextSong.id, nextSong.name, nextSong.photo_url, nextSong.name);
+      audioEle.play();
+    }
+  }, {
+    key: "handleNext",
+    value: function handleNext() {
+      var currentAudioEle = document.getElementById("audio-element--".concat(this.props.selectedSong));
+      currentAudioEle.pause();
+      var nextSong = this.props.songs[this.props.selectedSong - 80]; // these numbers need to be updated if we reseed
+
+      var audioEle = document.getElementById("audio-element--".concat(nextSong.id));
+      this.props.togglePlayPause(nextSong.id, nextSong.name, nextSong.photo_url, nextSong.name);
+      audioEle.play();
     } // this method should help us not rerender the component but unsure how to effectively use it so far
     //  shouldComponentUpdate(nextProps, nextState) {
     //   return false;
@@ -1399,7 +1423,8 @@ var PlayBar = /*#__PURE__*/function (_React$Component) {
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         src: whitePreviousIcon,
         alt: "whitePreviousIcon",
-        className: "previous-song-button"
+        className: "previous-song-button",
+        onClick: this.handleBack
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         src: whitePlayCircleButton,
         alt: "whitePlayCircleButton",
@@ -1413,7 +1438,8 @@ var PlayBar = /*#__PURE__*/function (_React$Component) {
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         src: whiteNextIcon,
         alt: "whiteNextIcon",
-        className: "next-song-button"
+        className: "next-song-button",
+        onClick: this.handleNext
       })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "timeline-slide-container"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1903,8 +1929,7 @@ var PlaylistList = /*#__PURE__*/function (_React$Component) {
     value: function handleAddSongToPlaylist() {
       var playlistSong = {
         playlist_id: this.props.playlist.id,
-        song_id: this.props.song.id // It's not putting the correct song ID - it's making a new one that is too high 
-
+        song_id: this.props.song.id
       };
       this.props.addSongToPlaylist(playlistSong);
       this.props.history.push("/playlists/".concat(this.props.playlist.id));
@@ -2048,7 +2073,9 @@ var PlaylistShow = /*#__PURE__*/function (_React$Component) {
     value: function handleToggleShuffle() {
       var randomNumber = Math.floor(Math.random() * this.props.songs.length);
       var song1 = this.props.songs[randomNumber];
-      this.props.togglePlayPause(this.props.song.id, this.props.song.name, this.props.song.photo_url, this.props.song.name);
+      var audioEle = document.getElementById("audio-element--".concat(song1.id));
+      this.props.togglePlayPause(song1.id, song1.name, song1.photo_url, song1.name);
+      audioEle.play();
     }
   }, {
     key: "handleRemoveSong",
@@ -2525,7 +2552,7 @@ var PlaylistSongIndexItem = /*#__PURE__*/function (_React$Component) {
         song_id: this.props.song.id
       };
       debugger;
-      this.props.removeSongFromPlaylist(playlistSong);
+      this.props.removeSongFromPlaylist();
       this.props.handleRemoveSong(this.props.song.id);
     }
   }, {

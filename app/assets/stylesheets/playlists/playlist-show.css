@@ -12,7 +12,7 @@
 .background-header-image-playlist-show {
     position: fixed;
     background-image: url("https://t.scdn.co/images/fd7b652335c349899cb8e8e302c87528");
-    height: 400px;
+    height: 40vh;
     width: 100%;
     background-position: 50% 15%;
     background-size: cover;

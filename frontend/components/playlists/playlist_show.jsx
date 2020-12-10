@@ -62,12 +62,14 @@ class PlaylistShow extends React.Component {
    handleToggleShuffle() {
     let randomNumber = Math.floor(Math.random() * this.props.songs.length);
     let song1 = this.props.songs[randomNumber];
+    const audioEle = document.getElementById(`audio-element--${song1.id}`);
     this.props.togglePlayPause(
-      this.props.song.id,
-      this.props.song.name,
-      this.props.song.photo_url,
-      this.props.song.name
+      song1.id,
+      song1.name,
+      song1.photo_url,
+      song1.name,
     );
+      audioEle.play();
   }
 
   handleRemoveSong(songId) {
@@ -144,7 +146,7 @@ class PlaylistShow extends React.Component {
                 togglePlayPause={this.props.togglePlayPause}
                 handleRemoveSong = {this.handleRemoveSong}
                 removeSongFromPlaylist={() => this.props.removeSongFromPlaylist(song.id)}
-                
+
               />
             ))}
           </ul>
