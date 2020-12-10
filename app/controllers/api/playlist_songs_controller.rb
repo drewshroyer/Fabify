@@ -10,11 +10,11 @@ class Api::PlaylistSongsController < ApplicationController
         end
     end
 
-    def destroy
-        @playlist_song = PlaylistSong.find(params[:id])
+    def destroy  
+        @playlist_song = PlaylistSong.find_by(playlist_song_params)
+        @playlist = Playlist.find(@playlist_song.playlist_id)
 
         if @playlist_song.destroy
-            @playlist = Playlist.find(@playlist_song.playlist_id)
             render "api/playlists/show"
         end
     end

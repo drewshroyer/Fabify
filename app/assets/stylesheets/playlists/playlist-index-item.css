@@ -10,7 +10,7 @@
     justify-content: space-between;
     align-items: center;
     height: 60px;
-    width: 80vw;
+    width: 82vw;
     color: white;
     margin: 0px 10px 0px 10px;
     transition: .5s;
@@ -20,7 +20,8 @@
 .remove-song-button {
     font-size: 12px;
     color: #b3b3b3;
-    margin: 10px 0px 10px 15px;
+    margin: 10px 10px 10px 15px;
+    font-family: 'lineto-circular-book';
 }
 
 .playlist-music-tile:hover {

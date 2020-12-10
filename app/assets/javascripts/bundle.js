@@ -300,9 +300,9 @@ var addSongToPlaylist = function addSongToPlaylist(playlistSong) {
     });
   };
 };
-var removeSongFromPlaylist = function removeSongFromPlaylist(playlistSongId) {
+var removeSongFromPlaylist = function removeSongFromPlaylist(playlistSong) {
   return function (dispatch) {
-    return _util_playlist_song_api_util__WEBPACK_IMPORTED_MODULE_0__["removeSongFromPlaylist"](playlistSongId).then(function (playlist) {
+    return _util_playlist_song_api_util__WEBPACK_IMPORTED_MODULE_0__["removeSongFromPlaylist"](playlistSong).then(function (playlist) {
       return dispatch(Object(_playlist_actions__WEBPACK_IMPORTED_MODULE_1__["receivePlaylist"])(playlist));
     });
   };
@@ -2105,7 +2105,7 @@ var PlaylistShow = /*#__PURE__*/function (_React$Component) {
       });
       this.setState({
         playlistSongIds: newState
-      });
+      }); // this.props.removeSongFromPlaylist(playlistSongId)
     }
   }, {
     key: "render",
@@ -2181,8 +2181,8 @@ var PlaylistShow = /*#__PURE__*/function (_React$Component) {
             key: song.id,
             togglePlayPause: _this2.props.togglePlayPause,
             handleRemoveSong: _this2.handleRemoveSong,
-            removeSongFromPlaylist: function removeSongFromPlaylist() {
-              return _this2.props.removeSongFromPlaylist(song.id);
+            removeSongFromPlaylist: function removeSongFromPlaylist(playlistSong) {
+              return _this2.props.removeSongFromPlaylist(playlistSong);
             }
           });
         }))));
@@ -2488,8 +2488,8 @@ var mDTP = function mDTP(dispatch) {
     deletePlaylist: function deletePlaylist(id) {
       return dispatch(Object(_actions_playlist_actions__WEBPACK_IMPORTED_MODULE_3__["deletePlaylist"])(id));
     },
-    removeSongFromPlaylist: function removeSongFromPlaylist(playlistSongId) {
-      return dispatch(Object(_actions_playlist_song_actions__WEBPACK_IMPORTED_MODULE_8__["removeSongFromPlaylist"])(playlistSongId));
+    removeSongFromPlaylist: function removeSongFromPlaylist(playlistSong) {
+      return dispatch(Object(_actions_playlist_song_actions__WEBPACK_IMPORTED_MODULE_8__["removeSongFromPlaylist"])(playlistSong));
     }
   };
 };
@@ -2570,9 +2570,9 @@ var PlaylistSongIndexItem = /*#__PURE__*/function (_React$Component) {
       var playlistSong = {
         playlist_id: this.props.playlistId,
         song_id: this.props.song.id
-      };
-      debugger;
-      this.props.removeSongFromPlaylist();
+      }; // debugger
+
+      this.props.removeSongFromPlaylist(playlistSong);
       this.props.handleRemoveSong(this.props.song.id);
     }
   }, {
@@ -4208,6 +4208,7 @@ var playlistSongReducer = function playlistSongReducer() {
       return action.playlistSongs;
 
     case _actions_playlist_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_PLAYLIST"]:
+      // newState = Object.assign({}, newState, {action.playlist.id});
       newState[action.playlist.id] = action.playlist;
       return newState;
 
@@ -4246,7 +4247,7 @@ var playlistsReducer = function playlistsReducer() {
       return action.playlists;
 
     case _actions_playlist_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_PLAYLIST"]:
-      newState[action.playlistId] = action.playlist;
+      newState[action.playlist.id] = action.playlist;
       return newState;
 
     case _actions_playlist_actions__WEBPACK_IMPORTED_MODULE_0__["REMOVE_PLAYLIST"]:
@@ -4588,10 +4589,13 @@ var addSongToPlaylist = function addSongToPlaylist(playlist_song) {
     }
   });
 };
-var removeSongFromPlaylist = function removeSongFromPlaylist(playlistSongId) {
+var removeSongFromPlaylist = function removeSongFromPlaylist(playlist_song) {
   return $.ajax({
     method: "DELETE",
-    url: "/api/playlist_songs/".concat(playlistSongId)
+    url: "/api/playlist_songs/4",
+    data: {
+      playlist_song: playlist_song
+    }
   });
 };
 var fetchPlaylistSongs = function fetchPlaylistSongs() {

@@ -24,8 +24,8 @@ class PlaylistSongIndexItem extends React.Component {
        playlist_id: this.props.playlistId,
       song_id: this.props.song.id  
     }
-    debugger
-    this.props.removeSongFromPlaylist();
+    // debugger
+    this.props.removeSongFromPlaylist(playlistSong);
     this.props.handleRemoveSong(this.props.song.id);
   }
 

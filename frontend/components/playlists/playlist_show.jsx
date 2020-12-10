@@ -78,7 +78,7 @@ class PlaylistShow extends React.Component {
     this.setState({
       playlistSongIds: newState
     })
-
+    // this.props.removeSongFromPlaylist(playlistSongId)
   }
 
   render() {
@@ -145,8 +145,7 @@ class PlaylistShow extends React.Component {
                 key={song.id}
                 togglePlayPause={this.props.togglePlayPause}
                 handleRemoveSong = {this.handleRemoveSong}
-                removeSongFromPlaylist={() => this.props.removeSongFromPlaylist(song.id)}
-
+                removeSongFromPlaylist={(playlistSong) => this.props.removeSongFromPlaylist(playlistSong)}
               />
             ))}
           </ul>

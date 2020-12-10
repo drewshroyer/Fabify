@@ -33,7 +33,7 @@ const mDTP = (dispatch) => {
     fetchArtists: () => dispatch(fetchArtists()),
     logout: () => dispatch(logout()),
     deletePlaylist: (id) => dispatch(deletePlaylist(id)),
-    removeSongFromPlaylist: playlistSongId => dispatch(removeSongFromPlaylist(playlistSongId)),
+    removeSongFromPlaylist: playlistSong => dispatch(removeSongFromPlaylist(playlistSong)),
   };
 };
 
