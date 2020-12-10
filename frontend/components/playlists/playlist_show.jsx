@@ -19,7 +19,6 @@ class PlaylistShow extends React.Component {
 
   componentDidMount() {
     this.props.fetchSongs();
-    // this.props.fetchPlaylist(this.props.match.params.playlistId);
     this.props.fetchPlaylists();
   }
 
@@ -79,6 +78,7 @@ class PlaylistShow extends React.Component {
     this.setState({
       playlistSongIds: newState
     })
+
   }
 
   render() {

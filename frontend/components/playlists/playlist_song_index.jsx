@@ -48,6 +48,7 @@ class PlaylistSongIndexItem extends React.Component {
             controls
             id={`audio-element--${song.id}`}
           />
+          <div className="music-number-photo-container">
           <div className="playlist-music-tile-number-container" onClick={this.handleSongClick}>
             <div className="playlist-music-tile-number">{idx + 1} 
               <div
@@ -62,6 +63,7 @@ class PlaylistSongIndexItem extends React.Component {
             </div>
           </div>
           <img src={song.photo_url} className="playlist-music-tile-photo" />
+          </div>
           <div className="playlist-music-tile-name" onClick={this.handleSongClick} >{song.name}</div>
           <Link to={`/artists/${artist.id}`}>
           <div className="playlist-music-tile-artist">{artist.name}</div>
@@ -70,7 +72,6 @@ class PlaylistSongIndexItem extends React.Component {
            <button className="three-dot-options" >...
            </button>
            <div className="dropdown-content">
-             {removeButton}
              <div className="dropdown-content-flex">
                <div className="add-song-to-playlist-button">Add Song to Playlist</div>
              <div className="playlist-add-song-list">
@@ -87,6 +88,7 @@ class PlaylistSongIndexItem extends React.Component {
            </div>
            </div>
         </div>
+        {removeButton}
       </div>
       </div>
     );

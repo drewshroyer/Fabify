@@ -19,6 +19,11 @@
     transition: .5s;
 }
 
+.music-number-photo-container {
+  display: flex;
+  align-items: center;
+}
+
 .playlist-all-music-tile-name {
   margin-top: 10px;
   font-size: 16px;

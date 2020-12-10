@@ -2050,8 +2050,7 @@ var PlaylistShow = /*#__PURE__*/function (_React$Component) {
   _createClass(PlaylistShow, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      this.props.fetchSongs(); // this.props.fetchPlaylist(this.props.match.params.playlistId);
-
+      this.props.fetchSongs();
       this.props.fetchPlaylists();
     }
   }, {
@@ -2606,6 +2605,8 @@ var PlaylistSongIndexItem = /*#__PURE__*/function (_React$Component) {
         controls: true,
         id: "audio-element--".concat(song.id)
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "music-number-photo-container"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "playlist-music-tile-number-container",
         onClick: this.handleSongClick
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -2619,7 +2620,7 @@ var PlaylistSongIndexItem = /*#__PURE__*/function (_React$Component) {
       })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         src: song.photo_url,
         className: "playlist-music-tile-photo"
-      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "playlist-music-tile-name",
         onClick: this.handleSongClick
       }, song.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
@@ -2632,7 +2633,7 @@ var PlaylistSongIndexItem = /*#__PURE__*/function (_React$Component) {
         className: "three-dot-options"
       }, "..."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "dropdown-content"
-      }, removeButton, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "dropdown-content-flex"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "add-song-to-playlist-button"
@@ -2646,7 +2647,7 @@ var PlaylistSongIndexItem = /*#__PURE__*/function (_React$Component) {
           playlist: playlist,
           song: song
         });
-      }))))))));
+      })))))), removeButton));
     }
   }]);
 

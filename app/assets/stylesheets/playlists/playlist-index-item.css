@@ -7,18 +7,19 @@
     padding: 5px;
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
     height: 60px;
-    width: 100%;
-    color: white;    
+    width: 80vw;
+    color: white;
     margin: 0px 10px 0px 10px;
     transition: .5s;
     cursor: pointer;
 }
 
 .remove-song-button {
-    font-size: 14px;
+    font-size: 12px;
+    color: #b3b3b3;
     margin: 10px 0px 10px 15px;
 }
 
