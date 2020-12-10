@@ -1357,6 +1357,9 @@ var PlayBar = /*#__PURE__*/function (_React$Component) {
     _classCallCheck(this, PlayBar);
 
     _this = _super.call(this, props);
+    _this.state = {
+      songLength: "0:00"
+    };
     _this.togglePlayBar = _this.togglePlayBar.bind(_assertThisInitialized(_this));
     _this.handleNext = _this.handleNext.bind(_assertThisInitialized(_this));
     _this.handleBack = _this.handleBack.bind(_assertThisInitialized(_this));
@@ -1373,11 +1376,14 @@ var PlayBar = /*#__PURE__*/function (_React$Component) {
     value: function handleBack() {
       var currentAudioEle = document.getElementById("audio-element--".concat(this.props.selectedSong));
       currentAudioEle.pause();
-      var nextSong = this.props.songs[this.props.selectedSong - 82]; // these numbers need to be updated if we reseed
+      var previousSong = this.props.songs[this.props.selectedSong - 82]; // these numbers need to be updated if we reseed
 
-      var audioEle = document.getElementById("audio-element--".concat(nextSong.id));
-      this.props.togglePlayPause(nextSong.id, nextSong.name, nextSong.photo_url, nextSong.name);
+      var audioEle = document.getElementById("audio-element--".concat(previousSong.id));
+      this.props.togglePlayPause(previousSong.id, previousSong.name, previousSong.photo_url, previousSong.name);
       audioEle.play();
+      this.setState({
+        songLength: previousSong.song_length
+      });
     }
   }, {
     key: "handleNext",
@@ -1389,6 +1395,21 @@ var PlayBar = /*#__PURE__*/function (_React$Component) {
       var audioEle = document.getElementById("audio-element--".concat(nextSong.id));
       this.props.togglePlayPause(nextSong.id, nextSong.name, nextSong.photo_url, nextSong.name);
       audioEle.play();
+      this.setState({
+        songLength: nextSong.song_length + ":".concat(Math.floor(Math.random() * 60))
+      });
+    }
+  }, {
+    key: "handleToggleShuffle",
+    value: function handleToggleShuffle() {
+      var randomNumber = Math.floor(Math.random() * this.props.songs.length);
+      var song1 = this.props.songs[randomNumber];
+      var audioEle = document.getElementById("audio-element--".concat(song1.id));
+      this.props.togglePlayPause(song1.id, song1.name, song1.photo_url, song1.name);
+      audioEle.play();
+      this.setState({
+        songLength: song1.song_length
+      });
     } // this method should help us not rerender the component but unsure how to effectively use it so far
     //  shouldComponentUpdate(nextProps, nextState) {
     //   return false;
@@ -1445,14 +1466,14 @@ var PlayBar = /*#__PURE__*/function (_React$Component) {
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "timeline-slide-time-count"
       }, "O:OO"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        type: "range",
+        // type="range"
         min: "1",
         max: "100",
         placeholder: "0",
         className: "timeline-slider"
       }), " ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "timeline-slide-time-count"
-      }, "3:37"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, this.state.songLength))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "right-play-bar"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         src: whiteVolumeIcon,
@@ -3484,6 +3505,10 @@ var SongIndexItem = /*#__PURE__*/function (_React$Component) {
   _createClass(SongIndexItem, [{
     key: "handleSongClick",
     value: function handleSongClick() {
+      // if(this.state.playingSong === true) {
+      // const currentAudioEle = document.getElementById(`audio-element--${this.state.selectedSong}`);
+      // currentAudioEle.pause()
+      // }
       this.props.togglePlayPause(this.props.song.id, this.props.song.name, this.props.song.photo_url, this.props.artist.name);
     }
   }, {
@@ -3627,7 +3652,9 @@ var WebPlayer = /*#__PURE__*/function (_React$Component) {
 
       if (this.state.playingSong) {
         audioEle.pause();
+        audioEle.pause();
       } else {
+        audioEle.play();
         audioEle.play();
       } // let playButton = document.getElementsByClassName("main-play-button")
       //  if(this.playButton.style.display === 'block') { 

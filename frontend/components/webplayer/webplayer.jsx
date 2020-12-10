@@ -43,7 +43,9 @@ class WebPlayer extends React.Component {
     }
     if (this.state.playingSong) {
       audioEle.pause();
+      audioEle.pause();
     } else {
+      audioEle.play();
       audioEle.play();
     }
 

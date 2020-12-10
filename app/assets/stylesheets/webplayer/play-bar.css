@@ -95,11 +95,12 @@
 
 .timeline-slider {
   -webkit-appearance: none;
-  width: 500px;
-  height: 4px;
-  border-radius: 2px;
-  background: #535353;
-  outline: none;
+    width: 500px;
+    height: 3px;
+    border-radius: 2px;
+    background: #535353;
+    outline: none;
+    border: none;
 }
 
 .timeline-slider-slider:hover {

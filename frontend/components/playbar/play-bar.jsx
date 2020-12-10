@@ -4,6 +4,9 @@ import { fetchSong } from "../../actions/song_actions";
 class PlayBar extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      songLength: "0:00",
+    }
     this.togglePlayBar = this.togglePlayBar.bind(this);
     this.handleNext = this.handleNext.bind(this);
     this.handleBack = this.handleBack.bind(this);
@@ -16,15 +19,18 @@ class PlayBar extends React.Component {
   handleBack() {
     const currentAudioEle = document.getElementById(`audio-element--${this.props.selectedSong}`);
     currentAudioEle.pause()
-    let nextSong = this.props.songs[(this.props.selectedSong - 82)]   // these numbers need to be updated if we reseed
-    const audioEle = document.getElementById(`audio-element--${nextSong.id}`);
+    let previousSong = this.props.songs[(this.props.selectedSong - 82)]   // these numbers need to be updated if we reseed
+    const audioEle = document.getElementById(`audio-element--${previousSong.id}`);
     this.props.togglePlayPause(
-      nextSong.id,
-      nextSong.name,
-      nextSong.photo_url,
-      nextSong.name,
+      previousSong.id,
+      previousSong.name,
+      previousSong.photo_url,
+      previousSong.name,
     );
       audioEle.play();
+      this.setState({
+        songLength: previousSong.song_length,
+      })
   }
 
    handleNext() {
@@ -39,6 +45,27 @@ class PlayBar extends React.Component {
       nextSong.name,
     );
       audioEle.play();
+
+      this.setState({
+        songLength: nextSong.song_length + `:${Math.floor(Math.random() * 60)}`,
+      })
+  }
+
+  handleToggleShuffle() {
+    let randomNumber = Math.floor(Math.random() * this.props.songs.length);
+    let song1 = this.props.songs[randomNumber];
+    const audioEle = document.getElementById(`audio-element--${song1.id}`);
+    this.props.togglePlayPause(
+      song1.id,
+      song1.name,
+      song1.photo_url,
+      song1.name,
+    );
+      audioEle.play();
+
+      this.setState({
+        songLength: song1.song_length,
+      })
   }
 
   // this method should help us not rerender the component but unsure how to effectively use it so far
@@ -88,13 +115,13 @@ class PlayBar extends React.Component {
           <div className="timeline-slide-container">
             <div className="timeline-slide-time-count">O:OO</div>
             <input
-              type="range"
+              // type="range"
               min="1"
               max="100"
               placeholder="0"
               className="timeline-slider"
             />{" "}
-            <div className="timeline-slide-time-count">3:37</div>
+            <div className="timeline-slide-time-count">{this.state.songLength}</div>
           </div>
         </div>
 
