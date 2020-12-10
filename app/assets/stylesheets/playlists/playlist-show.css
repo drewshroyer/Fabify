@@ -1,4 +1,3 @@
-
 .playlist-show-container {
   display: flex;
   flex-direction: column;
@@ -109,6 +108,7 @@
     border: 0;
     letter-spacing: 2px;
     font-size: 24px;
+    cursor: pointer;
 }
 
 .three-dot-options:hover {
@@ -132,9 +132,4 @@
 
 .dropdown:hover .dropdown-content {
   display: block;
-}
-
-.fas fa-caret-right {
-  font-size: 14px;
-  color: white;
 }

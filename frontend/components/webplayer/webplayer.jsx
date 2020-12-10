@@ -151,7 +151,7 @@ class WebPlayer extends React.Component {
             </label>
           </div>             
           </div>
-            <div className="dropdown">
+            <div className="dropdown-menu">
            <button className="webplayer-logout-button">Menu
            </button>
            <div className="dropdown-content-webplayer">

@@ -94,6 +94,7 @@ class PlaylistShow extends React.Component {
     if (!songs) return null;
     return (
       <div className="playlist-show-container">
+        <div className="playlist-show-image-container">
         <div
           data-testid="background-image"
           className="background-header-image-playlist-show"
@@ -103,6 +104,7 @@ class PlaylistShow extends React.Component {
           <div className="playlist-show-description">
             {playlistDescription}
           </div>
+        </div>
         </div>
         <div className="play-pause-like-delete-container">
           <div

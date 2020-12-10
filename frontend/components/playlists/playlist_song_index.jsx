@@ -7,6 +7,8 @@ class PlaylistSongIndexItem extends React.Component {
     super(props);
     this.state = { playingSong: false, selectedSong: "", playlistId: null, isOpen: false };
     this.handleSongClick = this.handleSongClick.bind(this);
+    this.openAddSongModal = this.openAddSongModal.bind(this);
+    this.closeAddSongModal = this.closeAddSongModal.bind(this);
     this.handleRemoveSongFromPlaylist = this.handleRemoveSongFromPlaylist.bind(this); 
   }
 
@@ -29,8 +31,23 @@ class PlaylistSongIndexItem extends React.Component {
     this.props.handleRemoveSong(this.props.song.id);
   }
 
+  openAddSongModal() {
+     let openModal = document.getElementsByClassName("modal-background-add-playlist")
+    for(let i = 0; i < openModal.length; i++){
+      openModal[i].style.display = 'block'
+    }
+  }
+
+  closeAddSongModal() {
+    let openModal = document.getElementsByClassName("modal-background-add-playlist")
+    for(let i = 0; i < openModal.length; i++){
+      openModal[i].style.display = 'none'
+    }
+  }
 
   render() {
+    const { song, artist, idx, playlists } = this.props;
+
     let removeButton;
         if (this.props.removeSongFromPlaylist){
             removeButton = <div className="remove-song-button" onClick={this.handleRemoveSongFromPlaylist}>Remove Song</div>        
@@ -38,7 +55,26 @@ class PlaylistSongIndexItem extends React.Component {
             removeButton = <div></div>
         }
 
-    const { song, artist, idx, playlists } = this.props;
+      let addSongModal;
+          addSongModal = <div className="modal-background-add-playlist">
+            <div className="modal-background-add-playlist-inner">
+            <div className="playlist-form-header" onClick={this.closeAddSongModal}>X</div>
+            <div className="playlist-form-header">Add to Playlist</div>
+            {/* <div className="playlist-add-song-modal-list"> */}
+              <ul className="nav-bar-playlists-modal">
+                {playlists.map((playlist, idx) => (
+                  <PlaylistList
+                    key={idx}
+                    playlist={playlist}
+                    song={song}
+                    closeAddSongModal = {this.closeAddSongModal}
+                  />
+                ))}
+              </ul>
+            </div>
+            {/* </div> */}
+          </div>
+
     return (
       <div className="playlist-song-tile-container">
         <div className="playlist-music-tile">
@@ -69,27 +105,12 @@ class PlaylistSongIndexItem extends React.Component {
           <div className="playlist-music-tile-artist">{artist.name}</div>
           </Link>
           <div className="dropdown">
-           <button className="three-dot-options" >...
+           <button className="three-dot-options" onClick={this.openAddSongModal}>...
            </button>
-           <div className="dropdown-content">
-             <div className="dropdown-content-flex">
-               <div className="add-song-to-playlist-button">Add Song to Playlist</div>
-             <div className="playlist-add-song-list">
-              <ul className="nav-bar-playlists">
-                {playlists.map((playlist, idx) => (
-                  <PlaylistList
-                    key={idx}
-                    playlist={playlist}
-                    song={song}
-                  />
-                ))}
-              </ul>
-            </div>
-           </div>
-           </div>
         </div>
         {removeButton}
       </div>
+        {addSongModal}
       </div>
     );
   }

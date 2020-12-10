@@ -1,0 +1,57 @@
+.modal-background-add-playlist {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: rgba(0,0,0,0.7);
+    opacity: .5;
+    z-index: 10;
+    display: none;
+}
+
+.modal-background-add-playlist-inner {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.playlist-form-header {
+    margin: 10vh;
+    font-size: 45px;
+    color: white;
+    font-weight: 800;
+    padding-top: 15px;
+    padding-bottom: 10px;
+    cursor: pointer;
+}
+
+.playlist-add-song-modal-list {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.nav-bar-playlists-modal {
+   display: flex;
+    width: 100vw;
+    justify-content: space-around;
+    margin: 4vw;
+    font-size: 36px;
+    color: #b3b3b3;
+}
+
+.nav-bar-playlist-name-modal {
+    font-size: 36px;
+    cursor: pointer;
+}
+
+.nav-bar-playlist-name-modal:hover {
+    color: #1ED760; 
+}

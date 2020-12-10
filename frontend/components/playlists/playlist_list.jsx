@@ -15,6 +15,7 @@ class PlaylistList extends React.Component {
             song_id: this.props.song.id   
         } 
         this.props.addSongToPlaylist(playlistSong);
+        this.props.closeAddSongModal();
         this.props.history.push(`/playlists/${this.props.playlist.id}`)
   }
 
@@ -22,7 +23,7 @@ class PlaylistList extends React.Component {
         const { playlist } = this.props;
         return (
           <div className="nav-bar-playlist-list" key={playlist.id}>
-                <div className="nav-bar-playlist-name" onClick={this.handleAddSongToPlaylist}>{playlist.name}</div>
+                <div className="nav-bar-playlist-name-modal" onClick={this.handleAddSongToPlaylist}>{playlist.name}</div>
           </div>
         );
     }
