@@ -13,14 +13,13 @@ class PlayBar extends React.Component {
   }
 
   togglePlayBar() {
-    // debugger
     this.props.togglePlayPause(this.props.selectedSong);
   }
 
   handleBack() {
     const currentAudioEle = document.getElementById(`audio-element--${this.props.selectedSong}`);
     currentAudioEle.pause()
-    let previousSong = this.props.songs.id[(this.props.selectedSong - 82)]   // these numbers need to be updated if we reseed
+    let previousSong = this.props.songs[(this.props.selectedSong - 82)]   // these numbers need to be updated if we reseed
     const audioEle = document.getElementById(`audio-element--${this.props.selectedSong - 1}`);
     this.props.togglePlayPause(
       previousSong.id,
@@ -35,7 +34,6 @@ class PlayBar extends React.Component {
   }
 
    handleNext() {
-    debugger
     const currentAudioEle = document.getElementById(`audio-element--${this.props.selectedSong}`);
     currentAudioEle.pause()
     let nextSong = this.props.songs[(this.props.selectedSong - 80)]   // these numbers need to be updated if we reseed
