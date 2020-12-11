@@ -141,13 +141,13 @@ class AllSongs extends React.Component {
         <div className="webplayer-outer-body-container">
           <div className="top-bar-container">
             <div className="fab-mode-button-container">
-            <div className="fab-mode-button">Fab Mode?</div>
+            {/* <div className="fab-mode-button">Fab Mode?</div>
               <div className="theme-switch-wrapper">
               <label className="theme-switch" htmlFor="checkbox">
                   <input type="checkbox" id="checkbox" checked={this.state.checked} onChange={this.handleCheck} onClick={this.activateFabMode} />
                   <div className="slider round"></div>
             </label>
-          </div>             
+          </div>              */}
           </div>
             <div className="dropdown">
            <button className="webplayer-logout-button">Menu
