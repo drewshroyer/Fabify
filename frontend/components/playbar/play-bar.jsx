@@ -69,7 +69,7 @@ class PlayBar extends React.Component {
       audioEle.play();
 
       this.setState({
-        songLength: song1.song_length,
+        songLength: song1.song_length + `:${Math.floor(Math.random() * 60)}`,
       })
   }
 

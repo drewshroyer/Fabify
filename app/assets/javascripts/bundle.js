@@ -1416,7 +1416,7 @@ var PlayBar = /*#__PURE__*/function (_React$Component) {
       this.props.togglePlayPause(song1.id, song1.name, song1.photo_url, song1.name);
       audioEle.play();
       this.setState({
-        songLength: song1.song_length
+        songLength: song1.song_length + ":".concat(Math.floor(Math.random() * 60))
       });
     } // this method should help us not rerender the component but unsure how to effectively use it so far
     //  shouldComponentUpdate(nextProps, nextState) {
