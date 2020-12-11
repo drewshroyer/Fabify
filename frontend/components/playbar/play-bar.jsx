@@ -19,7 +19,10 @@ class PlayBar extends React.Component {
   handleBack() {
     const currentAudioEle = document.getElementById(`audio-element--${this.props.selectedSong}`);
     currentAudioEle.pause()
-    let previousSong = this.props.songs[(this.props.selectedSong - 82)]   // these numbers need to be updated if we reseed
+     let currentSong = this.props.selectedSong;
+    let previousSong = this.props.songs.find(song => {
+      return (song.id === currentSong - 1)
+    })    
     const audioEle = document.getElementById(`audio-element--${this.props.selectedSong - 1}`);
     this.props.togglePlayPause(
       previousSong.id,
@@ -36,7 +39,10 @@ class PlayBar extends React.Component {
    handleNext() {
     const currentAudioEle = document.getElementById(`audio-element--${this.props.selectedSong}`);
     currentAudioEle.pause()
-    let nextSong = this.props.songs[(this.props.selectedSong - 80)]   // these numbers need to be updated if we reseed
+    let currentSong = this.props.selectedSong;
+    let nextSong = this.props.songs.find(song => {
+      return (song.id === currentSong + 1)
+    })  
     const audioEle = document.getElementById(`audio-element--${nextSong.id}`);
     this.props.togglePlayPause(
       nextSong.id,
@@ -45,7 +51,6 @@ class PlayBar extends React.Component {
       nextSong.name,
     );
       audioEle.play();
-
       this.setState({
         songLength: nextSong.song_length + `:${Math.floor(Math.random() * 60)}`,
       })
