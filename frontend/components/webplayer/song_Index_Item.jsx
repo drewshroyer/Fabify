@@ -9,10 +9,6 @@ class SongIndexItem extends React.Component {
   }
 
   handleSongClick() {
-    // if(this.state.playingSong === true) {
-    // const currentAudioEle = document.getElementById(`audio-element--${this.state.selectedSong}`);
-    // currentAudioEle.pause()
-    // }
     this.props.togglePlayPause(
       this.props.song.id,
       this.props.song.name,

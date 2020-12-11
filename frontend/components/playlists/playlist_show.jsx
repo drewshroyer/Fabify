@@ -78,7 +78,6 @@ class PlaylistShow extends React.Component {
     this.setState({
       playlistSongIds: newState
     })
-    // this.props.removeSongFromPlaylist(playlistSongId)
   }
 
   render() {
