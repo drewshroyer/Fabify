@@ -2640,7 +2640,8 @@ var PlaylistSongIndexItem = /*#__PURE__*/function (_React$Component) {
           key: idx,
           playlist: playlist,
           song: song,
-          closeAddSongModal: _this2.closeAddSongModal
+          closeAddSongModal: _this2.closeAddSongModal,
+          handleRemoveSong: _this2.props.handleRemoveSong
         });
       }))));
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {

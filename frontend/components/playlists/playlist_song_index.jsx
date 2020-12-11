@@ -68,6 +68,7 @@ class PlaylistSongIndexItem extends React.Component {
                     playlist={playlist}
                     song={song}
                     closeAddSongModal = {this.closeAddSongModal}
+                    handleRemoveSong = {this.props.handleRemoveSong}
                   />
                 ))}
               </ul>

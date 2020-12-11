@@ -17,7 +17,7 @@ class PlaylistList extends React.Component {
         this.props.addSongToPlaylist(playlistSong);
         this.props.closeAddSongModal();
         this.props.history.push(`/playlists/${this.props.playlist.id}`)
-  }
+    }
 
     render() {
         const { playlist } = this.props;
