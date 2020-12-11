@@ -1373,6 +1373,7 @@ var PlayBar = /*#__PURE__*/function (_React$Component) {
   _createClass(PlayBar, [{
     key: "togglePlayBar",
     value: function togglePlayBar() {
+      // debugger
       this.props.togglePlayPause(this.props.selectedSong);
     }
   }, {
@@ -1380,9 +1381,9 @@ var PlayBar = /*#__PURE__*/function (_React$Component) {
     value: function handleBack() {
       var currentAudioEle = document.getElementById("audio-element--".concat(this.props.selectedSong));
       currentAudioEle.pause();
-      var previousSong = this.props.songs[this.props.selectedSong - 82]; // these numbers need to be updated if we reseed
+      var previousSong = this.props.songs.id[this.props.selectedSong - 82]; // these numbers need to be updated if we reseed
 
-      var audioEle = document.getElementById("audio-element--".concat(previousSong.id));
+      var audioEle = document.getElementById("audio-element--".concat(this.props.selectedSong - 1));
       this.props.togglePlayPause(previousSong.id, previousSong.name, previousSong.photo_url, previousSong.name);
       audioEle.play();
       this.setState({
@@ -1392,6 +1393,7 @@ var PlayBar = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "handleNext",
     value: function handleNext() {
+      debugger;
       var currentAudioEle = document.getElementById("audio-element--".concat(this.props.selectedSong));
       currentAudioEle.pause();
       var nextSong = this.props.songs[this.props.selectedSong - 80]; // these numbers need to be updated if we reseed
