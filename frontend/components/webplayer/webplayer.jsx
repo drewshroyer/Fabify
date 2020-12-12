@@ -41,6 +41,7 @@ class WebPlayer extends React.Component {
         artist: artist,
       });
     }
+  
     if (this.state.playingSong) {
       audioEle.pause();
       audioEle.pause();
@@ -134,6 +135,7 @@ class WebPlayer extends React.Component {
       webplayerLogoutButton[i].style.color = 'white'
     }
    }
+  //  this.togglePlayPause(83, "Malibu", "Malibu", "Kim Petras")
   }
 
   render() {

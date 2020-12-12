@@ -1385,7 +1385,7 @@ var PlayBar = /*#__PURE__*/function (_React$Component) {
         return song.id === currentSong - 1;
       });
       var audioEle = document.getElementById("audio-element--".concat(this.props.selectedSong - 1));
-      this.props.togglePlayPause(previousSong.id, previousSong.name, previousSong.photo_url, previousSong.name);
+      this.props.togglePlayPause(previousSong.id, previousSong.name, previousSong.photo_url, previousSong.artist);
       audioEle.play();
       this.setState({
         songLength: previousSong.song_length
@@ -1401,11 +1401,12 @@ var PlayBar = /*#__PURE__*/function (_React$Component) {
         return song.id === currentSong + 1;
       });
       var audioEle = document.getElementById("audio-element--".concat(nextSong.id));
-      this.props.togglePlayPause(nextSong.id, nextSong.name, nextSong.photo_url, nextSong.name);
+      this.props.togglePlayPause(nextSong.id, nextSong.name, nextSong.photo_url, nextSong.artist);
       audioEle.play();
       this.setState({
         songLength: nextSong.song_length + ":".concat(Math.floor(Math.random() * 60))
       });
+      debugger;
     }
   }, {
     key: "handleToggleShuffle",
@@ -4115,7 +4116,8 @@ var WebPlayer = /*#__PURE__*/function (_React$Component) {
           _webplayerLogoutButton[_i14].style.background = '#121212';
           _webplayerLogoutButton[_i14].style.color = 'white';
         }
-      }
+      } //  this.togglePlayPause(83, "Malibu", "Malibu", "Kim Petras")
+
     }
   }, {
     key: "render",

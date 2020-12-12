@@ -28,7 +28,7 @@ class PlayBar extends React.Component {
       previousSong.id,
       previousSong.name,
       previousSong.photo_url,
-      previousSong.name,
+      previousSong.artist,
     );
       audioEle.play();
       this.setState({
@@ -43,17 +43,19 @@ class PlayBar extends React.Component {
     let nextSong = this.props.songs.find(song => {
       return (song.id === currentSong + 1)
     })  
+    
     const audioEle = document.getElementById(`audio-element--${nextSong.id}`);
     this.props.togglePlayPause(
       nextSong.id,
       nextSong.name,
       nextSong.photo_url,
-      nextSong.name,
+      nextSong.artist,
     );
       audioEle.play();
       this.setState({
         songLength: nextSong.song_length + `:${Math.floor(Math.random() * 60)}`,
       })
+      debugger
   }
 
   handleToggleShuffle() {
