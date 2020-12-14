@@ -87,7 +87,7 @@ class PlaylistSongIndexItem extends React.Component {
           />
           <div className="music-number-photo-container">
           <div className="playlist-music-tile-number-container" onClick={this.handleSongClick}>
-            <div className="playlist-music-tile-number">{idx + 1} 
+            <div className="playlist-music-tile-number">{idx + 1} </div>
               <div
                 className="playlist-music-tile-audio"
               >
@@ -97,7 +97,6 @@ class PlaylistSongIndexItem extends React.Component {
                   alt="white-play-button"
                   
                 ></img>
-              </div>
             </div>
           </div>
           <img src={song.photo_url} className="playlist-music-tile-photo" onClick={this.handleSongClick}/>

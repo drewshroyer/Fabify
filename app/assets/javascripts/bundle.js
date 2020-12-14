@@ -2712,13 +2712,13 @@ var PlaylistSongIndexItem = /*#__PURE__*/function (_React$Component) {
         onClick: this.handleSongClick
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "playlist-music-tile-number"
-      }, idx + 1, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, idx + 1, " "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "playlist-music-tile-audio"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         className: "playlist-music-tile-play-button",
         src: window.whitePlayButton,
         alt: "white-play-button"
-      })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+      }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         src: song.photo_url,
         className: "playlist-music-tile-photo",
         onClick: this.handleSongClick

@@ -30,6 +30,15 @@
     margin: 0px 10px 0px 10px;
 }
 
+.playlist-music-tile:hover .playlist-music-tile-play-button {
+    display: block;
+    z-index: 8;
+}
+
+.playlist-music-tile:hover .playlist-music-tile-number {
+    display: none;
+} 
+
 ul {
    padding-inline-start: 0px; 
 }
