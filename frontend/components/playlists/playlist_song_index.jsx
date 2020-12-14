@@ -95,11 +95,12 @@ class PlaylistSongIndexItem extends React.Component {
                   className="playlist-music-tile-play-button"
                   src={window.whitePlayButton}
                   alt="white-play-button"
+                  
                 ></img>
               </div>
             </div>
           </div>
-          <img src={song.photo_url} className="playlist-music-tile-photo" />
+          <img src={song.photo_url} className="playlist-music-tile-photo" onClick={this.handleSongClick}/>
           </div>
           <div className="playlist-music-tile-name" onClick={this.handleSongClick} >{song.name}</div>
           <Link to={`/artists/${artist.id}`}>

@@ -2674,7 +2674,8 @@ var PlaylistSongIndexItem = /*#__PURE__*/function (_React$Component) {
         alt: "white-play-button"
       })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         src: song.photo_url,
-        className: "playlist-music-tile-photo"
+        className: "playlist-music-tile-photo",
+        onClick: this.handleSongClick
       })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "playlist-music-tile-name",
         onClick: this.handleSongClick
