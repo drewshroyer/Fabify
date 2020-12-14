@@ -63,6 +63,26 @@ class ArtistShowBody extends React.Component {
     } else {
       audioEle.play();
     }
+    
+    if (this.state.playingSong) {
+      let playButton = document.getElementsByClassName("main-play-button")
+      for(let i = 0; i < playButton.length; i++){
+        playButton[i].style.display = 'block'
+      }
+      let pauseButton = document.getElementsByClassName("main-pause-button")
+      for(let i = 0; i < pauseButton.length; i++){
+        pauseButton[i].style.display = 'none'
+      }
+    } else {
+       let playButton = document.getElementsByClassName("main-play-button")
+      for(let i = 0; i < playButton.length; i++){
+        playButton[i].style.display = 'none'
+      }
+      let pauseButton = document.getElementsByClassName("main-pause-button")
+      for(let i = 0; i < pauseButton.length; i++){
+        pauseButton[i].style.display = 'block'
+      }
+    }
   }
 
   render() {

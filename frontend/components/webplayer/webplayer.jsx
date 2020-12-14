@@ -41,7 +41,6 @@ class WebPlayer extends React.Component {
         artist: artist,
       });
     }
-    
     if (this.state.playingSong) {
       audioEle.pause();
       audioEle.pause();
@@ -50,15 +49,25 @@ class WebPlayer extends React.Component {
       audioEle.play();
     }
 
-    // let playButton = document.getElementsByClassName("main-play-button")
-    //  if(this.playButton.style.display === 'block') { 
-    //   playButton.style.display = 'none'
-    //   let pauseButton  = document.getElementsByClassName("main-pause-button")
-    // for(let i = 0; i < pauseButton.length; i++){
-    //   pauseButton[i].style.display = 'block'
-    // } } else {
-      
-    // }
+     if (this.state.playingSong) {
+      let playButton = document.getElementsByClassName("main-play-button")
+      for(let i = 0; i < playButton.length; i++){
+        playButton[i].style.display = 'block'
+      }
+      let pauseButton = document.getElementsByClassName("main-pause-button")
+      for(let i = 0; i < pauseButton.length; i++){
+        pauseButton[i].style.display = 'none'
+      }
+    } else {
+       let playButton = document.getElementsByClassName("main-play-button")
+      for(let i = 0; i < playButton.length; i++){
+        playButton[i].style.display = 'none'
+      }
+      let pauseButton = document.getElementsByClassName("main-pause-button")
+      for(let i = 0; i < pauseButton.length; i++){
+        pauseButton[i].style.display = 'block'
+      }
+    }
   }
 
    activateFabMode() {
@@ -110,7 +119,7 @@ class WebPlayer extends React.Component {
 
        let oldLogo = document.getElementById("internal-white-splash-logo")
       oldLogo.style.display = 'block'
-      
+
         let fabifyLogo  = document.getElementsByClassName("fabify-fab-mode-title-div")
       for(let i = 0; i < fabifyLogo.length; i++){
         fabifyLogo[i].style.display = 'none'

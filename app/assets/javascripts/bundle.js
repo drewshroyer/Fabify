@@ -673,6 +673,32 @@ var ArtistShowBody = /*#__PURE__*/function (_React$Component) {
       } else {
         audioEle.play();
       }
+
+      if (this.state.playingSong) {
+        var playButton = document.getElementsByClassName("main-play-button");
+
+        for (var i = 0; i < playButton.length; i++) {
+          playButton[i].style.display = 'block';
+        }
+
+        var pauseButton = document.getElementsByClassName("main-pause-button");
+
+        for (var _i = 0; _i < pauseButton.length; _i++) {
+          pauseButton[_i].style.display = 'none';
+        }
+      } else {
+        var _playButton = document.getElementsByClassName("main-play-button");
+
+        for (var _i2 = 0; _i2 < _playButton.length; _i2++) {
+          _playButton[_i2].style.display = 'none';
+        }
+
+        var _pauseButton = document.getElementsByClassName("main-pause-button");
+
+        for (var _i3 = 0; _i3 < _pauseButton.length; _i3++) {
+          _pauseButton[_i3].style.display = 'block';
+        }
+      }
     }
   }, {
     key: "render",
@@ -1406,7 +1432,6 @@ var PlayBar = /*#__PURE__*/function (_React$Component) {
       this.setState({
         songLength: nextSong.song_length + ":".concat(Math.floor(Math.random() * 60))
       });
-      debugger;
     }
   }, {
     key: "handleToggleShuffle",
@@ -2333,12 +2358,33 @@ var PlaylistShowBody = /*#__PURE__*/function (_React$Component) {
       } else {
         audioEle.play();
       }
-    } // handleToggleShuffle() {
-    //   let shuffledSong = Math.floor(Math.random() * songs.length);
-    //   let song = songs[shuffledSong];
-    //   togglePlayPause(shuffledSong.id, shuffledSong.name, shuffledSong.photo, shuffledSong.artist)
-    // }
 
+      if (this.state.playingSong) {
+        var playButton = document.getElementsByClassName("main-play-button");
+
+        for (var i = 0; i < playButton.length; i++) {
+          playButton[i].style.display = 'block';
+        }
+
+        var pauseButton = document.getElementsByClassName("main-pause-button");
+
+        for (var _i = 0; _i < pauseButton.length; _i++) {
+          pauseButton[_i].style.display = 'none';
+        }
+      } else {
+        var _playButton = document.getElementsByClassName("main-play-button");
+
+        for (var _i2 = 0; _i2 < _playButton.length; _i2++) {
+          _playButton[_i2].style.display = 'none';
+        }
+
+        var _pauseButton = document.getElementsByClassName("main-pause-button");
+
+        for (var _i3 = 0; _i3 < _pauseButton.length; _i3++) {
+          _pauseButton[_i3].style.display = 'block';
+        }
+      }
+    }
   }, {
     key: "render",
     value: function render() {
@@ -3611,6 +3657,32 @@ var AllSongs = /*#__PURE__*/function (_React$Component) {
         audioEle.play();
         audioEle.play();
       }
+
+      if (this.state.playingSong) {
+        var playButton = document.getElementsByClassName("main-play-button");
+
+        for (var i = 0; i < playButton.length; i++) {
+          playButton[i].style.display = 'block';
+        }
+
+        var pauseButton = document.getElementsByClassName("main-pause-button");
+
+        for (var _i = 0; _i < pauseButton.length; _i++) {
+          pauseButton[_i].style.display = 'none';
+        }
+      } else {
+        var _playButton = document.getElementsByClassName("main-play-button");
+
+        for (var _i2 = 0; _i2 < _playButton.length; _i2++) {
+          _playButton[_i2].style.display = 'none';
+        }
+
+        var _pauseButton = document.getElementsByClassName("main-pause-button");
+
+        for (var _i3 = 0; _i3 < _pauseButton.length; _i3++) {
+          _pauseButton[_i3].style.display = 'block';
+        }
+      }
     }
   }, {
     key: "activateFabMode",
@@ -3624,89 +3696,89 @@ var AllSongs = /*#__PURE__*/function (_React$Component) {
 
         var splashLogo = document.getElementsByClassName("internal-white-splash-logo");
 
-        for (var _i = 0; _i < splashLogo.length; _i++) {
-          splashLogo[_i].style.height = '0px';
+        for (var _i4 = 0; _i4 < splashLogo.length; _i4++) {
+          splashLogo[_i4].style.height = '0px';
         }
 
         var outerContainer = document.getElementsByClassName("webplayer-body-container");
 
-        for (var _i2 = 0; _i2 < outerContainer.length; _i2++) {
-          outerContainer[_i2].style.background = 'linear-gradient(to bottom, #5E4BEA, #D3FF55'; // outerContainer[i].style.transition = '1s'
+        for (var _i5 = 0; _i5 < outerContainer.length; _i5++) {
+          outerContainer[_i5].style.background = 'linear-gradient(to bottom, #5E4BEA, #D3FF55'; // outerContainer[i].style.transition = '1s'
         }
 
         var webplayerLogoutButton = document.getElementsByClassName("webplayer-logout-button");
 
-        for (var _i3 = 0; _i3 < webplayerLogoutButton.length; _i3++) {
-          webplayerLogoutButton[_i3].style.background = '#D3FF55';
-          webplayerLogoutButton[_i3].style.color = '#5E4BEA';
+        for (var _i6 = 0; _i6 < webplayerLogoutButton.length; _i6++) {
+          webplayerLogoutButton[_i6].style.background = '#D3FF55';
+          webplayerLogoutButton[_i6].style.color = '#5E4BEA';
         }
 
         var musicTiles = document.getElementsByClassName("webplayer-music-tile");
 
-        for (var _i4 = 0; _i4 < musicTiles.length; _i4++) {
-          musicTiles[_i4].style.background = 'linear-gradient(to bottom, #E24E59, #B62E8C'; // '#F137A6'
+        for (var _i7 = 0; _i7 < musicTiles.length; _i7++) {
+          musicTiles[_i7].style.background = 'linear-gradient(to bottom, #E24E59, #B62E8C'; // '#F137A6'
           // musicTiles[i].style.transition = '10s'
         }
 
         var musicTileNames = document.getElementsByClassName("webplayer-music-tile-name");
 
-        for (var _i5 = 0; _i5 < musicTiles.length; _i5++) {
-          musicTileNames[_i5].style.color = '#9DF0E1'; // musicTileNames[i].style.transition = '5s'
+        for (var _i8 = 0; _i8 < musicTiles.length; _i8++) {
+          musicTileNames[_i8].style.color = '#9DF0E1'; // musicTileNames[i].style.transition = '5s'
         }
 
         var musicTilePlayButton = document.getElementsByClassName("webplayer-music-tile-audio");
 
-        for (var _i6 = 0; _i6 < musicTilePlayButton.length; _i6++) {
-          musicTilePlayButton[_i6].style.backgroundColor = '#101EFF';
+        for (var _i9 = 0; _i9 < musicTilePlayButton.length; _i9++) {
+          musicTilePlayButton[_i9].style.backgroundColor = '#101EFF';
         }
 
         var topBarContainer = document.getElementsByClassName("top-bar-container");
 
-        for (var _i7 = 0; _i7 < topBarContainer.length; _i7++) {
-          topBarContainer[_i7].style.backgroundColor = '#5E4BEA';
+        for (var _i10 = 0; _i10 < topBarContainer.length; _i10++) {
+          topBarContainer[_i10].style.backgroundColor = '#5E4BEA';
         }
       } else {
         var _fabifyLogo = document.getElementsByClassName("fabify-fab-mode-title-div");
 
-        for (var _i8 = 0; _i8 < _fabifyLogo.length; _i8++) {
-          _fabifyLogo[_i8].style.display = 'none';
+        for (var _i11 = 0; _i11 < _fabifyLogo.length; _i11++) {
+          _fabifyLogo[_i11].style.display = 'none';
         }
 
         var _outerContainer = document.getElementsByClassName("webplayer-body-container");
 
-        for (var _i9 = 0; _i9 < _outerContainer.length; _i9++) {
-          _outerContainer[_i9].style.background = '#121212'; // outerContainer[i].style.transition = '1s'
+        for (var _i12 = 0; _i12 < _outerContainer.length; _i12++) {
+          _outerContainer[_i12].style.background = '#121212'; // outerContainer[i].style.transition = '1s'
         }
 
         var _musicTiles = document.getElementsByClassName("webplayer-music-tile");
 
-        for (var _i10 = 0; _i10 < _musicTiles.length; _i10++) {
-          _musicTiles[_i10].style.background = '#272722';
+        for (var _i13 = 0; _i13 < _musicTiles.length; _i13++) {
+          _musicTiles[_i13].style.background = '#272722';
         }
 
         var _musicTileNames = document.getElementsByClassName("webplayer-music-tile-name");
 
-        for (var _i11 = 0; _i11 < _musicTiles.length; _i11++) {
-          _musicTileNames[_i11].style.color = '#ffffff';
+        for (var _i14 = 0; _i14 < _musicTiles.length; _i14++) {
+          _musicTileNames[_i14].style.color = '#ffffff';
         }
 
         var _musicTilePlayButton = document.getElementsByClassName("webplayer-music-tile-audio");
 
-        for (var _i12 = 0; _i12 < _musicTilePlayButton.length; _i12++) {
-          _musicTilePlayButton[_i12].style.backgroundColor = '#1eba54';
+        for (var _i15 = 0; _i15 < _musicTilePlayButton.length; _i15++) {
+          _musicTilePlayButton[_i15].style.backgroundColor = '#1eba54';
         }
 
         var _topBarContainer = document.getElementsByClassName("top-bar-container");
 
-        for (var _i13 = 0; _i13 < _topBarContainer.length; _i13++) {
-          _topBarContainer[_i13].style.backgroundColor = 'black';
+        for (var _i16 = 0; _i16 < _topBarContainer.length; _i16++) {
+          _topBarContainer[_i16].style.backgroundColor = 'black';
         }
 
         var _webplayerLogoutButton = document.getElementsByClassName("webplayer-logout-button");
 
-        for (var _i14 = 0; _i14 < _webplayerLogoutButton.length; _i14++) {
-          _webplayerLogoutButton[_i14].style.background = '#121212';
-          _webplayerLogoutButton[_i14].style.color = 'white';
+        for (var _i17 = 0; _i17 < _webplayerLogoutButton.length; _i17++) {
+          _webplayerLogoutButton[_i17].style.background = '#121212';
+          _webplayerLogoutButton[_i17].style.color = 'white';
         }
       }
     }
@@ -4019,15 +4091,33 @@ var WebPlayer = /*#__PURE__*/function (_React$Component) {
       } else {
         audioEle.play();
         audioEle.play();
-      } // let playButton = document.getElementsByClassName("main-play-button")
-      //  if(this.playButton.style.display === 'block') { 
-      //   playButton.style.display = 'none'
-      //   let pauseButton  = document.getElementsByClassName("main-pause-button")
-      // for(let i = 0; i < pauseButton.length; i++){
-      //   pauseButton[i].style.display = 'block'
-      // } } else {
-      // }
+      }
 
+      if (this.state.playingSong) {
+        var playButton = document.getElementsByClassName("main-play-button");
+
+        for (var i = 0; i < playButton.length; i++) {
+          playButton[i].style.display = 'block';
+        }
+
+        var pauseButton = document.getElementsByClassName("main-pause-button");
+
+        for (var _i = 0; _i < pauseButton.length; _i++) {
+          pauseButton[_i].style.display = 'none';
+        }
+      } else {
+        var _playButton = document.getElementsByClassName("main-play-button");
+
+        for (var _i2 = 0; _i2 < _playButton.length; _i2++) {
+          _playButton[_i2].style.display = 'none';
+        }
+
+        var _pauseButton = document.getElementsByClassName("main-pause-button");
+
+        for (var _i3 = 0; _i3 < _pauseButton.length; _i3++) {
+          _pauseButton[_i3].style.display = 'block';
+        }
+      }
     }
   }, {
     key: "activateFabMode",
@@ -4043,46 +4133,46 @@ var WebPlayer = /*#__PURE__*/function (_React$Component) {
         oldLogo.style.display = 'none';
         var splashLogo = document.getElementsByClassName("internal-white-splash-logo");
 
-        for (var _i = 0; _i < splashLogo.length; _i++) {
-          splashLogo[_i].style.height = '0px';
+        for (var _i4 = 0; _i4 < splashLogo.length; _i4++) {
+          splashLogo[_i4].style.height = '0px';
         }
 
         var outerContainer = document.getElementsByClassName("webplayer-body-container");
 
-        for (var _i2 = 0; _i2 < outerContainer.length; _i2++) {
-          outerContainer[_i2].style.background = 'linear-gradient(to bottom, #5E4BEA, #D3FF55'; // outerContainer[i].style.transition = '1s'
+        for (var _i5 = 0; _i5 < outerContainer.length; _i5++) {
+          outerContainer[_i5].style.background = 'linear-gradient(to bottom, #5E4BEA, #D3FF55'; // outerContainer[i].style.transition = '1s'
         }
 
         var webplayerLogoutButton = document.getElementsByClassName("webplayer-logout-button");
 
-        for (var _i3 = 0; _i3 < webplayerLogoutButton.length; _i3++) {
-          webplayerLogoutButton[_i3].style.background = '#D3FF55';
-          webplayerLogoutButton[_i3].style.color = '#5E4BEA';
+        for (var _i6 = 0; _i6 < webplayerLogoutButton.length; _i6++) {
+          webplayerLogoutButton[_i6].style.background = '#D3FF55';
+          webplayerLogoutButton[_i6].style.color = '#5E4BEA';
         }
 
         var musicTiles = document.getElementsByClassName("webplayer-music-tile");
 
-        for (var _i4 = 0; _i4 < musicTiles.length; _i4++) {
-          musicTiles[_i4].style.background = 'linear-gradient(to bottom, #E24E59, #B62E8C'; // '#F137A6'
+        for (var _i7 = 0; _i7 < musicTiles.length; _i7++) {
+          musicTiles[_i7].style.background = 'linear-gradient(to bottom, #E24E59, #B62E8C'; // '#F137A6'
           // musicTiles[i].style.transition = '10s'
         }
 
         var musicTileNames = document.getElementsByClassName("webplayer-music-tile-name");
 
-        for (var _i5 = 0; _i5 < musicTiles.length; _i5++) {
-          musicTileNames[_i5].style.color = '#9DF0E1'; // musicTileNames[i].style.transition = '5s'
+        for (var _i8 = 0; _i8 < musicTiles.length; _i8++) {
+          musicTileNames[_i8].style.color = '#9DF0E1'; // musicTileNames[i].style.transition = '5s'
         }
 
         var musicTilePlayButton = document.getElementsByClassName("webplayer-music-tile-audio");
 
-        for (var _i6 = 0; _i6 < musicTilePlayButton.length; _i6++) {
-          musicTilePlayButton[_i6].style.backgroundColor = '#101EFF';
+        for (var _i9 = 0; _i9 < musicTilePlayButton.length; _i9++) {
+          musicTilePlayButton[_i9].style.backgroundColor = '#101EFF';
         }
 
         var topBarContainer = document.getElementsByClassName("top-bar-container");
 
-        for (var _i7 = 0; _i7 < topBarContainer.length; _i7++) {
-          topBarContainer[_i7].style.backgroundColor = '#5E4BEA';
+        for (var _i10 = 0; _i10 < topBarContainer.length; _i10++) {
+          topBarContainer[_i10].style.backgroundColor = '#5E4BEA';
         }
       } else {
         var _oldLogo = document.getElementById("internal-white-splash-logo");
@@ -4091,45 +4181,45 @@ var WebPlayer = /*#__PURE__*/function (_React$Component) {
 
         var _fabifyLogo = document.getElementsByClassName("fabify-fab-mode-title-div");
 
-        for (var _i8 = 0; _i8 < _fabifyLogo.length; _i8++) {
-          _fabifyLogo[_i8].style.display = 'none';
+        for (var _i11 = 0; _i11 < _fabifyLogo.length; _i11++) {
+          _fabifyLogo[_i11].style.display = 'none';
         }
 
         var _outerContainer = document.getElementsByClassName("webplayer-body-container");
 
-        for (var _i9 = 0; _i9 < _outerContainer.length; _i9++) {
-          _outerContainer[_i9].style.background = '#121212'; // outerContainer[i].style.transition = '1s'
+        for (var _i12 = 0; _i12 < _outerContainer.length; _i12++) {
+          _outerContainer[_i12].style.background = '#121212'; // outerContainer[i].style.transition = '1s'
         }
 
         var _musicTiles = document.getElementsByClassName("webplayer-music-tile");
 
-        for (var _i10 = 0; _i10 < _musicTiles.length; _i10++) {
-          _musicTiles[_i10].style.background = '#272722';
+        for (var _i13 = 0; _i13 < _musicTiles.length; _i13++) {
+          _musicTiles[_i13].style.background = '#272722';
         }
 
         var _musicTileNames = document.getElementsByClassName("webplayer-music-tile-name");
 
-        for (var _i11 = 0; _i11 < _musicTiles.length; _i11++) {
-          _musicTileNames[_i11].style.color = '#ffffff';
+        for (var _i14 = 0; _i14 < _musicTiles.length; _i14++) {
+          _musicTileNames[_i14].style.color = '#ffffff';
         }
 
         var _musicTilePlayButton = document.getElementsByClassName("webplayer-music-tile-audio");
 
-        for (var _i12 = 0; _i12 < _musicTilePlayButton.length; _i12++) {
-          _musicTilePlayButton[_i12].style.backgroundColor = '#1eba54';
+        for (var _i15 = 0; _i15 < _musicTilePlayButton.length; _i15++) {
+          _musicTilePlayButton[_i15].style.backgroundColor = '#1eba54';
         }
 
         var _topBarContainer = document.getElementsByClassName("top-bar-container");
 
-        for (var _i13 = 0; _i13 < _topBarContainer.length; _i13++) {
-          _topBarContainer[_i13].style.backgroundColor = 'black';
+        for (var _i16 = 0; _i16 < _topBarContainer.length; _i16++) {
+          _topBarContainer[_i16].style.backgroundColor = 'black';
         }
 
         var _webplayerLogoutButton = document.getElementsByClassName("webplayer-logout-button");
 
-        for (var _i14 = 0; _i14 < _webplayerLogoutButton.length; _i14++) {
-          _webplayerLogoutButton[_i14].style.background = '#121212';
-          _webplayerLogoutButton[_i14].style.color = 'white';
+        for (var _i17 = 0; _i17 < _webplayerLogoutButton.length; _i17++) {
+          _webplayerLogoutButton[_i17].style.background = '#121212';
+          _webplayerLogoutButton[_i17].style.color = 'white';
         }
       } //  this.togglePlayPause(83, "Malibu", "Malibu", "Kim Petras")
 

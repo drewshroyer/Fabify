@@ -60,18 +60,34 @@ class PlaylistShowBody extends React.Component {
         artist: artist,
       });
     }
+
     if (this.state.playingSong) {
       audioEle.pause();
     } else {
       audioEle.play();
     }
-  }
+    
+    if (this.state.playingSong) {
+      let playButton = document.getElementsByClassName("main-play-button")
+      for(let i = 0; i < playButton.length; i++){
+        playButton[i].style.display = 'block'
+      }
+      let pauseButton = document.getElementsByClassName("main-pause-button")
+      for(let i = 0; i < pauseButton.length; i++){
+        pauseButton[i].style.display = 'none'
+      }
+    } else {
+       let playButton = document.getElementsByClassName("main-play-button")
+      for(let i = 0; i < playButton.length; i++){
+        playButton[i].style.display = 'none'
+      }
+      let pauseButton = document.getElementsByClassName("main-pause-button")
+      for(let i = 0; i < pauseButton.length; i++){
+        pauseButton[i].style.display = 'block'
+      }
+    }
 
-  // handleToggleShuffle() {
-  //   let shuffledSong = Math.floor(Math.random() * songs.length);
-  //   let song = songs[shuffledSong];
-  //   togglePlayPause(shuffledSong.id, shuffledSong.name, shuffledSong.photo, shuffledSong.artist)
-  // }
+  }
 
   render() {
     const { playlist } = this.props
@@ -82,10 +98,6 @@ class PlaylistShowBody extends React.Component {
           <div className="top-bar-container">
              <div className="fab-mode-button-container">
               <div className="fab-mode-button"></div>
-              {/* <label className="switch">
-                <input type="checkbox" onClick={this.activateFabMode}/> 
-                <span className="slider-round"></span>
-              </label> */}
           </div>
             <div className="dropdown">
            <button className="webplayer-logout-button">Menu

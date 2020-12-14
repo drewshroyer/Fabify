@@ -25,8 +25,8 @@ Fabify features user auth that only allows members that have signed up for Fabif
 
 Once logged in, users have the ability to create, view, update and delete their own personal selection of playlists. Users may add and remove songs, title their playlists, as well as provide a description of their playlist for other users who may wish to follow their playlist of currated music. 
 
-## Continous Play 
-This currated audio player allows users to move within the walls of the application and load new components of the app whilst continually listening to their favorite music. My cutom toggle play pause method allows users to pause and play their music at the click of a button.
+## Toggle Play Pause
+My custom toggle play pause method allows users to pause and play their music at the click of a button. It seemless updates the state to render the proper button (play or pause), the correct artist, song, image and finally play the corresponding audio. Additionally, two custom functions, HandleNext and HandleBack, allow users to step through songs within the webplayer, skip songs, as well as revist songs they enjoyed.  
 
 
 ```javascript
@@ -35,7 +35,6 @@ This currated audio player allows users to move within the walls of the applicat
     if (this.state.selectedSong === id) {
       this.setState({ playingSong: !this.state.playingSong });
     } else {
-      // this where we set a new song
       this.setState({
         selectedSong: id,
         playingSong: false,
@@ -50,6 +49,27 @@ This currated audio player allows users to move within the walls of the applicat
     } else {
       audioEle.play();
     }
+    
+    if (this.state.playingSong) {
+      let playButton = document.getElementsByClassName("main-play-button")
+      for(let i = 0; i < playButton.length; i++){
+        playButton[i].style.display = 'block'
+      }
+      let pauseButton = document.getElementsByClassName("main-pause-button")
+      for(let i = 0; i < pauseButton.length; i++){
+        pauseButton[i].style.display = 'none'
+      }
+      } else {
+       let playButton = document.getElementsByClassName("main-play-button")
+      for(let i = 0; i < playButton.length; i++){
+        playButton[i].style.display = 'none'
+      }
+      let pauseButton = document.getElementsByClassName("main-pause-button")
+      for(let i = 0; i < pauseButton.length; i++){
+        pauseButton[i].style.display = 'block'
+      }
+    }
+
   }
 ```
 

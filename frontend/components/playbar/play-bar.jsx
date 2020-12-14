@@ -55,7 +55,6 @@ class PlayBar extends React.Component {
       this.setState({
         songLength: nextSong.song_length + `:${Math.floor(Math.random() * 60)}`,
       })
-      debugger
   }
 
   handleToggleShuffle() {
