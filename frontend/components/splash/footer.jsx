@@ -17,100 +17,105 @@ class Footer extends React.Component {
             </Link>
             <div className="footer-left-column">
               <div className="footer-links">
-                <Link
+                <a
                   className="footer-link"
                   id="grey-footer"
-                  to="linkedin.com/in/drew-shroyer-861b32a4/"
+                  href={"http://drewshroyer.github.io/"}
+                  target = "_blank"
                 >
-                  COMPANY{" "}
-                </Link>
-                <Link
+                  DREW SHROYER
+                </a>
+                <a
                   className="footer-link"
-                  to="linkedin.com/in/drew-shroyer-861b32a4/"
+                  href={"http://drewshroyer.github.io/"}
+                  target = "_blank"
                 >
-                  About
-                </Link>
-                <Link
+                  Portfolio
+                </a>
+                <a
                   className="footer-link"
-                  to="linkedin.com/in/drew-shroyer-861b32a4/"
+            href={"https://www.github.com/drewshroyer/"}
+                  target = "_blank"
                 >
-                  Jobs
-                </Link>
-                <Link
+                  Github
+                </a>
+                <a
                   className="footer-link"
-                  to="linkedin.com/in/drew-shroyer-861b32a4/"
+            href={"https://www.linkedin.com/in/drew-shroyer-861b32a4/"}
+                  target = "_blank"
                 >
-                  For the Record
-                </Link>
+                  LinkedIn
+                </a>
+                <a
+                  className="footer-link"
+                  href={"https://angel.co/u/drew-drew-shroyer"}
+                  target = "_blank"
+                >
+                  Angel List
+                </a>
+                <a
+                  className="footer-link"
+                  href={"https://docs.google.com/document/d/e/2PACX-1vSapkifLigH4clhxcPpwihws5DLUIEMOvHzbjtw0ol8ZPvX2v1-N4Y85d9edDoJn0KvTVWs2wRPz98j/pub"}
+                  target = "_blank"
+                >
+                  Resume
+                </a>
               </div>
             </div>
             <div className="footer-center-column">
               <div className="footer-links">
-                <Link
+                      <a
                   className="footer-link"
                   id="grey-footer"
-                  to="linkedin.com/in/drew-shroyer-861b32a4/"
+                  href={"http://drewshroyer.github.io/"}
+                  target = "_blank"
                 >
-                  COMMUNITIES{" "}
-                </Link>
-                <Link
+                  MY WORK
+                </a>
+                <a
                   className="footer-link"
-                  to="linkedin.com/in/drew-shroyer-861b32a4/"
+                  href={"https://mongo-bread.herokuapp.com/#/"}
+                  target = "_blank"
                 >
-                  For Artists
-                </Link>
-                <Link
+                  Bread
+                </a>
+                <a
                   className="footer-link"
-                  to="linkedin.com/in/drew-shroyer-861b32a4/"
+                  href={"https://johnrobertmcc.github.io/walk-this-way/"}
+                  target = "_blank"
                 >
-                  Developers
-                </Link>
-                <Link
+                  Walk this way
+                </a>
+                <a
                   className="footer-link"
-                  to="linkedin.com/in/drew-shroyer-861b32a4/"
+                  href={"https://www.modalyst.co/"}
+                  target = "_blank"
                 >
-                  Brands
-                </Link>
-                <Link
-                  className="footer-link"
-                  to="linkedin.com/in/drew-shroyer-861b32a4/"
-                >
-                  Investors
-                </Link>
-                <Link
-                  className="footer-link"
-                  to="linkedin.com/in/drew-shroyer-861b32a4/"
-                >
-                  Vendors
-                </Link>
+                  Modalyst
+                </a>
               </div>
             </div>
             <div className="footer-right-column">
               <div className="footer-links">
+                <a
+            className="footer-link"
+            id="grey-footer"
+            href={"http://drewshroyer.github.io/"}
+            target = "_blank"
+          >
+            ADDITIONAL
+          </a>
                 <Link
                   className="footer-link"
-                  id="grey-footer"
-                  to="linkedin.com/in/drew-shroyer-861b32a4/"
+                  to="/login"
                 >
-                  USEFUL LINKS{" "}
+                  Login
                 </Link>
                 <Link
                   className="footer-link"
-                  to="linkedin.com/in/drew-shroyer-861b32a4/"
+                  to="/signup"
                 >
-                  Help
-                </Link>
-                <Link
-                  className="footer-link"
-                  to="linkedin.com/in/drew-shroyer-861b32a4/"
-                >
-                  Web Player
-                </Link>
-                <Link
-                  className="footer-link"
-                  to="linkedin.com/in/drew-shroyer-861b32a4/"
-                >
-                  Free Mobile App
+                  Sign Up
                 </Link>
               </div>
             </div>

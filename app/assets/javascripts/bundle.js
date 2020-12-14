@@ -3245,60 +3245,68 @@ var Footer = /*#__PURE__*/function (_React$Component) {
         className: "footer-left-column"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "footer-links"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         className: "footer-link",
         id: "grey-footer",
-        to: "linkedin.com/in/drew-shroyer-861b32a4/"
-      }, "COMPANY", " "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+        href: "http://drewshroyer.github.io/",
+        target: "_blank"
+      }, "DREW SHROYER"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         className: "footer-link",
-        to: "linkedin.com/in/drew-shroyer-861b32a4/"
-      }, "About"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+        href: "http://drewshroyer.github.io/",
+        target: "_blank"
+      }, "Portfolio"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         className: "footer-link",
-        to: "linkedin.com/in/drew-shroyer-861b32a4/"
-      }, "Jobs"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+        href: "https://www.github.com/drewshroyer/",
+        target: "_blank"
+      }, "Github"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         className: "footer-link",
-        to: "linkedin.com/in/drew-shroyer-861b32a4/"
-      }, "For the Record"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        href: "https://www.linkedin.com/in/drew-shroyer-861b32a4/",
+        target: "_blank"
+      }, "LinkedIn"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        className: "footer-link",
+        href: "https://angel.co/u/drew-drew-shroyer",
+        target: "_blank"
+      }, "Angel List"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        className: "footer-link",
+        href: "https://docs.google.com/document/d/e/2PACX-1vSapkifLigH4clhxcPpwihws5DLUIEMOvHzbjtw0ol8ZPvX2v1-N4Y85d9edDoJn0KvTVWs2wRPz98j/pub",
+        target: "_blank"
+      }, "Resume"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "footer-center-column"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "footer-links"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         className: "footer-link",
         id: "grey-footer",
-        to: "linkedin.com/in/drew-shroyer-861b32a4/"
-      }, "COMMUNITIES", " "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+        href: "http://drewshroyer.github.io/",
+        target: "_blank"
+      }, "MY WORK"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         className: "footer-link",
-        to: "linkedin.com/in/drew-shroyer-861b32a4/"
-      }, "For Artists"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+        href: "https://mongo-bread.herokuapp.com/#/",
+        target: "_blank"
+      }, "Bread"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         className: "footer-link",
-        to: "linkedin.com/in/drew-shroyer-861b32a4/"
-      }, "Developers"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+        href: "https://johnrobertmcc.github.io/walk-this-way/",
+        target: "_blank"
+      }, "Walk this way"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         className: "footer-link",
-        to: "linkedin.com/in/drew-shroyer-861b32a4/"
-      }, "Brands"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-        className: "footer-link",
-        to: "linkedin.com/in/drew-shroyer-861b32a4/"
-      }, "Investors"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-        className: "footer-link",
-        to: "linkedin.com/in/drew-shroyer-861b32a4/"
-      }, "Vendors"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        href: "https://www.modalyst.co/",
+        target: "_blank"
+      }, "Modalyst"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "footer-right-column"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "footer-links"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         className: "footer-link",
         id: "grey-footer",
-        to: "linkedin.com/in/drew-shroyer-861b32a4/"
-      }, "USEFUL LINKS", " "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+        href: "http://drewshroyer.github.io/",
+        target: "_blank"
+      }, "ADDITIONAL"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         className: "footer-link",
-        to: "linkedin.com/in/drew-shroyer-861b32a4/"
-      }, "Help"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+        to: "/login"
+      }, "Login"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         className: "footer-link",
-        to: "linkedin.com/in/drew-shroyer-861b32a4/"
-      }, "Web Player"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-        className: "footer-link",
-        to: "linkedin.com/in/drew-shroyer-861b32a4/"
-      }, "Free Mobile App"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        to: "/signup"
+      }, "Sign Up"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "footer-far-right-icons"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         to: "instagram.com/drewshroyer"
