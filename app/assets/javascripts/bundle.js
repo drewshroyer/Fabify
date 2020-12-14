@@ -4038,6 +4038,8 @@ var WebPlayer = /*#__PURE__*/function (_React$Component) {
           fabifyLogo[i].style.display = 'block';
         }
 
+        var oldLogo = document.getElementById("internal-white-splash-logo");
+        oldLogo.style.display = 'none';
         var splashLogo = document.getElementsByClassName("internal-white-splash-logo");
 
         for (var _i = 0; _i < splashLogo.length; _i++) {
@@ -4082,6 +4084,10 @@ var WebPlayer = /*#__PURE__*/function (_React$Component) {
           topBarContainer[_i7].style.backgroundColor = '#5E4BEA';
         }
       } else {
+        var _oldLogo = document.getElementById("internal-white-splash-logo");
+
+        _oldLogo.style.display = 'block';
+
         var _fabifyLogo = document.getElementsByClassName("fabify-fab-mode-title-div");
 
         for (var _i8 = 0; _i8 < _fabifyLogo.length; _i8++) {

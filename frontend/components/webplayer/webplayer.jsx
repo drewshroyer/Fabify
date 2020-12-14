@@ -41,7 +41,7 @@ class WebPlayer extends React.Component {
         artist: artist,
       });
     }
-  
+    
     if (this.state.playingSong) {
       audioEle.pause();
       audioEle.pause();
@@ -68,6 +68,10 @@ class WebPlayer extends React.Component {
     for(let i = 0; i < fabifyLogo.length; i++){
       fabifyLogo[i].style.display = 'block'
     }
+
+    let oldLogo = document.getElementById("internal-white-splash-logo")
+      oldLogo.style.display = 'none'
+
     let splashLogo = document.getElementsByClassName("internal-white-splash-logo")
     for(let i = 0; i < splashLogo.length; i++){
       splashLogo[i].style.height = '0px'
@@ -103,6 +107,10 @@ class WebPlayer extends React.Component {
           topBarContainer[i].style.backgroundColor = '#5E4BEA'
         }
      } else {
+
+       let oldLogo = document.getElementById("internal-white-splash-logo")
+      oldLogo.style.display = 'block'
+      
         let fabifyLogo  = document.getElementsByClassName("fabify-fab-mode-title-div")
       for(let i = 0; i < fabifyLogo.length; i++){
         fabifyLogo[i].style.display = 'none'
