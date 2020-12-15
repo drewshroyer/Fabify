@@ -23,7 +23,6 @@ class PlaylistShow extends React.Component {
   }
 
   componentDidUpdate() {
-    this.props.fetchSongs();
     if(this.state.playlistSongIds === null && this.props.playlist.song_ids !== undefined) {
       this.setState({
         playlistSongIds: this.props.playlist.song_ids,

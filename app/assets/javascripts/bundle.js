@@ -2091,8 +2091,6 @@ var PlaylistShow = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "componentDidUpdate",
     value: function componentDidUpdate() {
-      this.props.fetchSongs();
-
       if (this.state.playlistSongIds === null && this.props.playlist.song_ids !== undefined) {
         this.setState({
           playlistSongIds: this.props.playlist.song_ids,
