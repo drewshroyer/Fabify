@@ -58,6 +58,10 @@ class WebPlayer extends React.Component {
       for(let i = 0; i < pauseButton.length; i++){
         pauseButton[i].style.display = 'none'
       }
+      let greenButtons = document.getElementsByClassName("webplayer-music-tile-audio")
+      for(let i = 0; i < greenButtons.length; i++){
+        greenButtons[i].style.display = 'flex'
+      }
     } else {
        let playButton = document.getElementsByClassName("main-play-button")
       for(let i = 0; i < playButton.length; i++){
@@ -66,6 +70,10 @@ class WebPlayer extends React.Component {
       let pauseButton = document.getElementsByClassName("main-pause-button")
       for(let i = 0; i < pauseButton.length; i++){
         pauseButton[i].style.display = 'block'
+      }
+      let greenButtons = document.getElementsByClassName("webplayer-music-tile-audio")
+      for(let i = 0; i < greenButtons.length; i++){
+        greenButtons[i].style.display = 'none'
       }
     }
   }

@@ -2091,6 +2091,8 @@ var PlaylistShow = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "componentDidUpdate",
     value: function componentDidUpdate() {
+      this.props.fetchSongs();
+
       if (this.state.playlistSongIds === null && this.props.playlist.song_ids !== undefined) {
         this.setState({
           playlistSongIds: this.props.playlist.song_ids,
@@ -4104,17 +4106,29 @@ var WebPlayer = /*#__PURE__*/function (_React$Component) {
         for (var _i = 0; _i < pauseButton.length; _i++) {
           pauseButton[_i].style.display = 'none';
         }
+
+        var greenButtons = document.getElementsByClassName("webplayer-music-tile-audio");
+
+        for (var _i2 = 0; _i2 < greenButtons.length; _i2++) {
+          greenButtons[_i2].style.display = 'flex';
+        }
       } else {
         var _playButton = document.getElementsByClassName("main-play-button");
 
-        for (var _i2 = 0; _i2 < _playButton.length; _i2++) {
-          _playButton[_i2].style.display = 'none';
+        for (var _i3 = 0; _i3 < _playButton.length; _i3++) {
+          _playButton[_i3].style.display = 'none';
         }
 
         var _pauseButton = document.getElementsByClassName("main-pause-button");
 
-        for (var _i3 = 0; _i3 < _pauseButton.length; _i3++) {
-          _pauseButton[_i3].style.display = 'block';
+        for (var _i4 = 0; _i4 < _pauseButton.length; _i4++) {
+          _pauseButton[_i4].style.display = 'block';
+        }
+
+        var _greenButtons = document.getElementsByClassName("webplayer-music-tile-audio");
+
+        for (var _i5 = 0; _i5 < _greenButtons.length; _i5++) {
+          _greenButtons[_i5].style.display = 'none';
         }
       }
     }
@@ -4132,46 +4146,46 @@ var WebPlayer = /*#__PURE__*/function (_React$Component) {
         oldLogo.style.display = 'none';
         var splashLogo = document.getElementsByClassName("internal-white-splash-logo");
 
-        for (var _i4 = 0; _i4 < splashLogo.length; _i4++) {
-          splashLogo[_i4].style.height = '0px';
+        for (var _i6 = 0; _i6 < splashLogo.length; _i6++) {
+          splashLogo[_i6].style.height = '0px';
         }
 
         var outerContainer = document.getElementsByClassName("webplayer-body-container");
 
-        for (var _i5 = 0; _i5 < outerContainer.length; _i5++) {
-          outerContainer[_i5].style.background = 'linear-gradient(to bottom, #5E4BEA, #D3FF55'; // outerContainer[i].style.transition = '1s'
+        for (var _i7 = 0; _i7 < outerContainer.length; _i7++) {
+          outerContainer[_i7].style.background = 'linear-gradient(to bottom, #5E4BEA, #D3FF55'; // outerContainer[i].style.transition = '1s'
         }
 
         var webplayerLogoutButton = document.getElementsByClassName("webplayer-logout-button");
 
-        for (var _i6 = 0; _i6 < webplayerLogoutButton.length; _i6++) {
-          webplayerLogoutButton[_i6].style.background = '#D3FF55';
-          webplayerLogoutButton[_i6].style.color = '#5E4BEA';
+        for (var _i8 = 0; _i8 < webplayerLogoutButton.length; _i8++) {
+          webplayerLogoutButton[_i8].style.background = '#D3FF55';
+          webplayerLogoutButton[_i8].style.color = '#5E4BEA';
         }
 
         var musicTiles = document.getElementsByClassName("webplayer-music-tile");
 
-        for (var _i7 = 0; _i7 < musicTiles.length; _i7++) {
-          musicTiles[_i7].style.background = 'linear-gradient(to bottom, #E24E59, #B62E8C'; // '#F137A6'
+        for (var _i9 = 0; _i9 < musicTiles.length; _i9++) {
+          musicTiles[_i9].style.background = 'linear-gradient(to bottom, #E24E59, #B62E8C'; // '#F137A6'
           // musicTiles[i].style.transition = '10s'
         }
 
         var musicTileNames = document.getElementsByClassName("webplayer-music-tile-name");
 
-        for (var _i8 = 0; _i8 < musicTiles.length; _i8++) {
-          musicTileNames[_i8].style.color = '#9DF0E1'; // musicTileNames[i].style.transition = '5s'
+        for (var _i10 = 0; _i10 < musicTiles.length; _i10++) {
+          musicTileNames[_i10].style.color = '#9DF0E1'; // musicTileNames[i].style.transition = '5s'
         }
 
         var musicTilePlayButton = document.getElementsByClassName("webplayer-music-tile-audio");
 
-        for (var _i9 = 0; _i9 < musicTilePlayButton.length; _i9++) {
-          musicTilePlayButton[_i9].style.backgroundColor = '#101EFF';
+        for (var _i11 = 0; _i11 < musicTilePlayButton.length; _i11++) {
+          musicTilePlayButton[_i11].style.backgroundColor = '#101EFF';
         }
 
         var topBarContainer = document.getElementsByClassName("top-bar-container");
 
-        for (var _i10 = 0; _i10 < topBarContainer.length; _i10++) {
-          topBarContainer[_i10].style.backgroundColor = '#5E4BEA';
+        for (var _i12 = 0; _i12 < topBarContainer.length; _i12++) {
+          topBarContainer[_i12].style.backgroundColor = '#5E4BEA';
         }
       } else {
         var _oldLogo = document.getElementById("internal-white-splash-logo");
@@ -4180,45 +4194,45 @@ var WebPlayer = /*#__PURE__*/function (_React$Component) {
 
         var _fabifyLogo = document.getElementsByClassName("fabify-fab-mode-title-div");
 
-        for (var _i11 = 0; _i11 < _fabifyLogo.length; _i11++) {
-          _fabifyLogo[_i11].style.display = 'none';
+        for (var _i13 = 0; _i13 < _fabifyLogo.length; _i13++) {
+          _fabifyLogo[_i13].style.display = 'none';
         }
 
         var _outerContainer = document.getElementsByClassName("webplayer-body-container");
 
-        for (var _i12 = 0; _i12 < _outerContainer.length; _i12++) {
-          _outerContainer[_i12].style.background = '#121212'; // outerContainer[i].style.transition = '1s'
+        for (var _i14 = 0; _i14 < _outerContainer.length; _i14++) {
+          _outerContainer[_i14].style.background = '#121212'; // outerContainer[i].style.transition = '1s'
         }
 
         var _musicTiles = document.getElementsByClassName("webplayer-music-tile");
 
-        for (var _i13 = 0; _i13 < _musicTiles.length; _i13++) {
-          _musicTiles[_i13].style.background = '#272722';
+        for (var _i15 = 0; _i15 < _musicTiles.length; _i15++) {
+          _musicTiles[_i15].style.background = '#272722';
         }
 
         var _musicTileNames = document.getElementsByClassName("webplayer-music-tile-name");
 
-        for (var _i14 = 0; _i14 < _musicTiles.length; _i14++) {
-          _musicTileNames[_i14].style.color = '#ffffff';
+        for (var _i16 = 0; _i16 < _musicTiles.length; _i16++) {
+          _musicTileNames[_i16].style.color = '#ffffff';
         }
 
         var _musicTilePlayButton = document.getElementsByClassName("webplayer-music-tile-audio");
 
-        for (var _i15 = 0; _i15 < _musicTilePlayButton.length; _i15++) {
-          _musicTilePlayButton[_i15].style.backgroundColor = '#1eba54';
+        for (var _i17 = 0; _i17 < _musicTilePlayButton.length; _i17++) {
+          _musicTilePlayButton[_i17].style.backgroundColor = '#1eba54';
         }
 
         var _topBarContainer = document.getElementsByClassName("top-bar-container");
 
-        for (var _i16 = 0; _i16 < _topBarContainer.length; _i16++) {
-          _topBarContainer[_i16].style.backgroundColor = 'black';
+        for (var _i18 = 0; _i18 < _topBarContainer.length; _i18++) {
+          _topBarContainer[_i18].style.backgroundColor = 'black';
         }
 
         var _webplayerLogoutButton = document.getElementsByClassName("webplayer-logout-button");
 
-        for (var _i17 = 0; _i17 < _webplayerLogoutButton.length; _i17++) {
-          _webplayerLogoutButton[_i17].style.background = '#121212';
-          _webplayerLogoutButton[_i17].style.color = 'white';
+        for (var _i19 = 0; _i19 < _webplayerLogoutButton.length; _i19++) {
+          _webplayerLogoutButton[_i19].style.background = '#121212';
+          _webplayerLogoutButton[_i19].style.color = 'white';
         }
       } //  this.togglePlayPause(83, "Malibu", "Malibu", "Kim Petras")
 
