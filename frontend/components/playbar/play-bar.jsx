@@ -1,5 +1,4 @@
 import React from "react";
-import { fetchSong } from "../../actions/song_actions";
 
 class PlayBar extends React.Component {
   constructor(props) {
@@ -23,6 +22,9 @@ class PlayBar extends React.Component {
     let previousSong = this.props.songs.find(song => {
       return (song.id === currentSong - 1)
     })    
+    // let previousArtist = this.props.artists.find(artist => {
+    //    return (artist.id === previousSong.artist_id - 1)
+    // })
     const audioEle = document.getElementById(`audio-element--${this.props.selectedSong - 1}`);
     this.props.togglePlayPause(
       previousSong.id,
@@ -43,7 +45,9 @@ class PlayBar extends React.Component {
     let nextSong = this.props.songs.find(song => {
       return (song.id === currentSong + 1)
     })  
-    
+    // let nextArtist = this.props.artists.find(artist => {
+    //    return (artist.id === previousSong.artist_id + 1)
+    // })
     const audioEle = document.getElementById(`audio-element--${nextSong.id}`);
     this.props.togglePlayPause(
       nextSong.id,
