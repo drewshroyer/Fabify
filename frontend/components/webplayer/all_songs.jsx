@@ -92,7 +92,6 @@ class AllSongs extends React.Component {
     let outerContainer  = document.getElementsByClassName("webplayer-body-container")
     for(let i = 0; i < outerContainer.length; i++){
       outerContainer[i].style.background = 'linear-gradient(to bottom, #5E4BEA, #D3FF55'
-      // outerContainer[i].style.transition = '1s'
     }
     let webplayerLogoutButton  = document.getElementsByClassName("webplayer-logout-button")
     for(let i = 0; i < webplayerLogoutButton.length; i++){
@@ -102,13 +101,11 @@ class AllSongs extends React.Component {
     let musicTiles = document.getElementsByClassName("webplayer-music-tile")
         for(let i = 0; i < musicTiles.length; i++){
           musicTiles[i].style.background =  'linear-gradient(to bottom, #E24E59, #B62E8C' // '#F137A6'
-          // musicTiles[i].style.transition = '10s'
         }
 
     let musicTileNames = document.getElementsByClassName("webplayer-music-tile-name")
         for(let i = 0; i < musicTiles.length; i++){
           musicTileNames[i].style.color = '#9DF0E1'
-          // musicTileNames[i].style.transition = '5s'
         }   
     let musicTilePlayButton = document.getElementsByClassName("webplayer-music-tile-audio")
     for(let i = 0; i < musicTilePlayButton.length; i++){
@@ -127,7 +124,6 @@ class AllSongs extends React.Component {
       let outerContainer  = document.getElementsByClassName("webplayer-body-container")
       for(let i = 0; i < outerContainer.length; i++){
         outerContainer[i].style.background = '#121212'
-        // outerContainer[i].style.transition = '1s'
       }   
       let musicTiles = document.getElementsByClassName("webplayer-music-tile")
         for(let i = 0; i < musicTiles.length; i++){

@@ -10,7 +10,6 @@ class WebPlayerBody extends React.Component {
   componentDidMount() {
     this.props.fetchSongs();
     this.props.fetchPlaylists();
-    // this.props.fetchArtists();
   }
   
   render() {

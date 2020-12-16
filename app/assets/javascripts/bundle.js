@@ -2102,13 +2102,7 @@ var PlaylistShow = /*#__PURE__*/function (_React$Component) {
           playlistSongIds: this.props.playlist.song_ids,
           playlistId: this.props.playlist.id
         });
-      } // if(this.state.playlistSongIds.length !== this.props.playlist.song_ids) {
-      //   this.setState({
-      //     playlistSongIds: this.props.playlist.song_ids,
-      //     playlistId: this.props.playlist.id
-      // })
-      // }
-
+      }
     }
   }, {
     key: "deletePlaylist",
@@ -3534,9 +3528,7 @@ var Splash = /*#__PURE__*/function (_React$Component) {
   return Splash;
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
-/* harmony default export */ __webpack_exports__["default"] = (Splash); // start by going throughing the AWS tutorial 
-// AWS is very specific so tiny errors can ruin everything - be as carful as possible 
-// follow along with the videos and be super specific
+/* harmony default export */ __webpack_exports__["default"] = (Splash);
 
 /***/ }),
 
@@ -3701,7 +3693,7 @@ var AllSongs = /*#__PURE__*/function (_React$Component) {
         var outerContainer = document.getElementsByClassName("webplayer-body-container");
 
         for (var _i5 = 0; _i5 < outerContainer.length; _i5++) {
-          outerContainer[_i5].style.background = 'linear-gradient(to bottom, #5E4BEA, #D3FF55'; // outerContainer[i].style.transition = '1s'
+          outerContainer[_i5].style.background = 'linear-gradient(to bottom, #5E4BEA, #D3FF55';
         }
 
         var webplayerLogoutButton = document.getElementsByClassName("webplayer-logout-button");
@@ -3715,13 +3707,12 @@ var AllSongs = /*#__PURE__*/function (_React$Component) {
 
         for (var _i7 = 0; _i7 < musicTiles.length; _i7++) {
           musicTiles[_i7].style.background = 'linear-gradient(to bottom, #E24E59, #B62E8C'; // '#F137A6'
-          // musicTiles[i].style.transition = '10s'
         }
 
         var musicTileNames = document.getElementsByClassName("webplayer-music-tile-name");
 
         for (var _i8 = 0; _i8 < musicTiles.length; _i8++) {
-          musicTileNames[_i8].style.color = '#9DF0E1'; // musicTileNames[i].style.transition = '5s'
+          musicTileNames[_i8].style.color = '#9DF0E1';
         }
 
         var musicTilePlayButton = document.getElementsByClassName("webplayer-music-tile-audio");
@@ -3745,7 +3736,7 @@ var AllSongs = /*#__PURE__*/function (_React$Component) {
         var _outerContainer = document.getElementsByClassName("webplayer-body-container");
 
         for (var _i12 = 0; _i12 < _outerContainer.length; _i12++) {
-          _outerContainer[_i12].style.background = '#121212'; // outerContainer[i].style.transition = '1s'
+          _outerContainer[_i12].style.background = '#121212';
         }
 
         var _musicTiles = document.getElementsByClassName("webplayer-music-tile");
@@ -4150,7 +4141,7 @@ var WebPlayer = /*#__PURE__*/function (_React$Component) {
         var outerContainer = document.getElementsByClassName("webplayer-body-container");
 
         for (var _i7 = 0; _i7 < outerContainer.length; _i7++) {
-          outerContainer[_i7].style.background = 'linear-gradient(to bottom, #5E4BEA, #D3FF55'; // outerContainer[i].style.transition = '1s'
+          outerContainer[_i7].style.background = 'linear-gradient(to bottom, #5E4BEA, #D3FF55';
         }
 
         var webplayerLogoutButton = document.getElementsByClassName("webplayer-logout-button");
@@ -4164,13 +4155,12 @@ var WebPlayer = /*#__PURE__*/function (_React$Component) {
 
         for (var _i9 = 0; _i9 < musicTiles.length; _i9++) {
           musicTiles[_i9].style.background = 'linear-gradient(to bottom, #E24E59, #B62E8C'; // '#F137A6'
-          // musicTiles[i].style.transition = '10s'
         }
 
         var musicTileNames = document.getElementsByClassName("webplayer-music-tile-name");
 
         for (var _i10 = 0; _i10 < musicTiles.length; _i10++) {
-          musicTileNames[_i10].style.color = '#9DF0E1'; // musicTileNames[i].style.transition = '5s'
+          musicTileNames[_i10].style.color = '#9DF0E1';
         }
 
         var musicTilePlayButton = document.getElementsByClassName("webplayer-music-tile-audio");
@@ -4198,7 +4188,7 @@ var WebPlayer = /*#__PURE__*/function (_React$Component) {
         var _outerContainer = document.getElementsByClassName("webplayer-body-container");
 
         for (var _i14 = 0; _i14 < _outerContainer.length; _i14++) {
-          _outerContainer[_i14].style.background = '#121212'; // outerContainer[i].style.transition = '1s'
+          _outerContainer[_i14].style.background = '#121212';
         }
 
         var _musicTiles = document.getElementsByClassName("webplayer-music-tile");
@@ -4375,7 +4365,7 @@ var WebPlayerBody = /*#__PURE__*/function (_React$Component) {
     key: "componentDidMount",
     value: function componentDidMount() {
       this.props.fetchSongs();
-      this.props.fetchPlaylists(); // this.props.fetchArtists();
+      this.props.fetchPlaylists();
     }
   }, {
     key: "render",
@@ -4710,7 +4700,7 @@ var playlistsReducer = function playlistsReducer() {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
   var action = arguments.length > 1 ? arguments[1] : undefined;
   Object.freeze(state);
-  var newState = Object.assign({}, state); // debugger
+  var newState = Object.assign({}, state);
 
   switch (action.type) {
     case _actions_playlist_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_ALL_PLAYLISTS"]:
