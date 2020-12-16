@@ -28,6 +28,7 @@ class PlaylistShow extends React.Component {
         playlistSongIds: this.props.playlist.song_ids,
         playlistId: this.props.playlist.id
     })
+
     }
     if(this.state.playlistId !== null && this.state.playlistId !== this.props.playlist.id) {
       this.setState({
@@ -41,7 +42,6 @@ class PlaylistShow extends React.Component {
     //     playlistId: this.props.playlist.id
     // })
     // }
-
   }
 
    deletePlaylist(e) {
@@ -84,9 +84,9 @@ class PlaylistShow extends React.Component {
   render() {
     const { songs, artists, playlistName, playlistDescription, playlists, playlistId} = this.props;
     let playlistSongsIndex = []
-    if(this.state.playlistSongIds !== null) {
+    if(this.props.playlist.song_ids !== null) {
     songs.forEach((song) => {
-      if(this.state.playlistSongIds.includes((song.id))) { // running into issue with the song_ids
+      if(this.props.playlist.song_ids.includes((song.id))) { // running into issue with the song_ids
         playlistSongsIndex.push(song);
       }
     })

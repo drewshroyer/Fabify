@@ -1106,8 +1106,7 @@ var InternalNavbar = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      var playlists = this.props.playlists; // debugger
-
+      var playlists = this.props.playlists;
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "internal-nav-bar-container"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -2156,9 +2155,9 @@ var PlaylistShow = /*#__PURE__*/function (_React$Component) {
           playlistId = _this$props.playlistId;
       var playlistSongsIndex = [];
 
-      if (this.state.playlistSongIds !== null) {
+      if (this.props.playlist.song_ids !== null) {
         songs.forEach(function (song) {
-          if (_this2.state.playlistSongIds.includes(song.id)) {
+          if (_this2.props.playlist.song_ids.includes(song.id)) {
             // running into issue with the song_ids
             playlistSongsIndex.push(song);
           }
@@ -4678,7 +4677,7 @@ var playlistSongReducer = function playlistSongReducer() {
       return action.playlistSongs;
 
     case _actions_playlist_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_PLAYLIST"]:
-      newState[action.playlist.id] = action.playlist;
+      newState[action.playlist.id] = action.playlist.song_ids;
       return newState;
 
     case _actions_playlist_song_actions__WEBPACK_IMPORTED_MODULE_1__["CLEAR_PLAYLIST_SONGS"]:
@@ -4703,6 +4702,8 @@ var playlistSongReducer = function playlistSongReducer() {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _actions_playlist_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../actions/playlist_actions */ "./frontend/actions/playlist_actions.js");
+/* harmony import */ var _actions_playlist_song_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../actions/playlist_song_actions */ "./frontend/actions/playlist_song_actions.js");
+
 
 
 var playlistsReducer = function playlistsReducer() {

@@ -9,9 +9,8 @@ const playlistSongReducer = (state = {}, action) => {
      case RECEIVE_ALL_PLAYLIST_SONGS:
       return action.playlistSongs;
     case RECEIVE_PLAYLIST:
-      newState[action.playlist.id] = action.playlist;
+      newState[action.playlist.id] = action.playlist.song_ids;
       return newState;
-
     case CLEAR_PLAYLIST_SONGS:
       return {};
     default:
