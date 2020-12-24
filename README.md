@@ -1,4 +1,4 @@
-
+# FABIFY 
 [<div style="text-align: center"><img src="app/assets/images/fabifygiphy.gif"></div>](https://fabify.herokuapp.com/#/)
 
 <h3 style="text-align: center">Listening is Everything</h3>
@@ -26,9 +26,13 @@ Fabify is a clone of Spotify that exclusively features currated content created 
 
 ## Login / Sign Up
 
+[<div style="text-align: center"><img src="app/assets/images/fabifygiphy.gif"></div>](https://fabify.herokuapp.com/#/)
+
 Fabify features user auth that only allows members that have signed up for Fabify to step within the walls for this exlcuive content. As well as the ability to sign in and out of the app. If you try to log in with incorrect credentials or sign up with a duplicate email address, you will receive an error message. 
 
 ## Create Playlists
+
+[<div style="text-align: center"><img src="app/assets/images/fabifygiphy.gif"></div>](https://fabify.herokuapp.com/#/)
 
 Once logged in, users have the ability to create, view, update and delete their own personal selection of playlists. Users may add and remove songs, title their playlists, as well as provide a description of their playlist for other users who may wish to follow their playlist of currated music. 
 
