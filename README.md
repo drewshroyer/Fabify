@@ -3,6 +3,13 @@
 
 <h3 style="text-align: center">Listening is Everything</h3>
 
+To build Fabify, I used the following stack:
+
+  * Ruby on Rails - web-application framework
+  * Postgresql - database management
+  * React - front-end rendering
+  * Redux - state-management
+
 # Table of Contents
 
 1. Introduction
