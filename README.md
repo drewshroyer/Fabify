@@ -3,22 +3,11 @@
 
 <h3 style="text-align: center">Listening is Everything</h3>
 
-To build Fabify, I used the following stack:
-
-  * Ruby on Rails - web-application framework
-  * Postgresql - database management
-  * React - front-end rendering
-  * Redux - state-management
-
 # Table of Contents
 
-1. Introduction
-2. Key Features
-3. Recent Updates
-4. Technology
-5. A closer look
-
-6. Final Notes
+1. HighLighted Featureas 
+2. Key Functions
+3. Technologies 
 
 ## Highlights 
 
@@ -84,7 +73,14 @@ My custom toggle play pause method allows users to pause and play their music at
   }
 ```
 
-# Technologies Used
+To build Fabify, I used the following stack:
+
+  * Ruby on Rails - web-application framework
+  * Postgresql - database management
+  * React - front-end rendering
+  * Redux - state-management
+
+# List of All Technologies Used
 * React.js
 * Redux
 * Javascript
