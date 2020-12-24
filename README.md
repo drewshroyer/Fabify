@@ -8,17 +8,14 @@
 3. Technologies 
 
 ## Highlights 
-
-Fabify is a clone of Spotify that exclusively features currated content created by artists that identify as LBGTQIA+. This website was built with JavaScript, React, Redux, Ruby, Rails, AWS, and Postgres.
+Fabify is a clone of Spotify that exclusively features currated content created by artists that identify as LBGTQIA+. This website was built with JavaScript, React, Redux, Ruby, Rails, AWS, and Postgres. Fabify allows users to listen to their favorite music, create and delete playlists with their favorite songs, and explore over 10 uploaded artists. It features back to front end user authentication and preloaded playlists for the demo user. 
 
 ## Login / Sign Up
-
 [<div style="text-align: center"><img src="app/assets/images/log-in-read-me.gif"></div>](https://fabify.herokuapp.com/#/)
 
 Fabify features user auth that only allows members that have signed up for Fabify to step within the walls for this exlcuive content. As well as the ability to sign in and out of the app. If you try to log in with incorrect credentials or sign up with a duplicate email address, you will receive an error message. 
 
 ## Create Playlists
-
 [<div style="text-align: center"><img src="app/assets/images/create_playlist-gif.gif"></div>](https://fabify.herokuapp.com/#/)
 
 Once logged in, users have the ability to create, view, update and delete their own personal selection of playlists. Users may add and remove songs, title their playlists, as well as provide a description of their playlist for other users who may wish to follow their playlist of currated music. 
@@ -78,7 +75,7 @@ To build Fabify, I used the following stack:
   * React - front-end rendering
   * Redux - state-management
 
-# List of All Technologies Used
+# List of ALL Technologies Used
 * React.js
 * Redux
 * Javascript
