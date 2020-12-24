@@ -10,7 +10,7 @@
 ## Highlights 
 Fabify is a clone of Spotify that exclusively features currated content created by artists that identify as LBGTQIA+. This website was built with JavaScript, React, Redux, Ruby, Rails, AWS, and Postgres. Fabify allows users to listen to their favorite music, create and delete playlists with their favorite songs, and explore over 10 uploaded artists. It features back to front end user authentication and preloaded playlists for the demo user. 
 
-## Login / Sign Up
+## Login 
 [<div style="text-align: center"><img src="app/assets/images/log-in-read-me.gif"></div>](https://fabify.herokuapp.com/#/)
 
 Fabify features user auth that only allows members that have signed up for Fabify to step within the walls for this exlcuive content. As well as the ability to sign in and out of the app. If you try to log in with incorrect credentials or sign up with a duplicate email address, you will receive an error message. 
