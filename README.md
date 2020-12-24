@@ -1,6 +1,6 @@
 # FABIFY 
 <h3 style="text-align: center">Listening is Everything</h3>
-[<div style="text-align: center"><img src="app/assets/images/fabifygiphy.gif"></div>](https://fabify.herokuapp.com/#/)
+<div style="text-align: center"><img src="app/assets/images/fabifygiphy.gif"></div>](https://fabify.herokuapp.com/#/)
 
 # Table of Contents
 
