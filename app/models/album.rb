@@ -12,7 +12,6 @@ class Album < ApplicationRecord
 
     validates :name, presence: true
     validates :creator_id, presence: true
-
     has_many :songs
 
 end
