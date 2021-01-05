@@ -1,38 +1,22 @@
 # FABIFY 
 [<div style="text-align: center"><img src="app/assets/images/fabifygiphy.gif"></div>](https://fabify.herokuapp.com/#/)
 
-<h3 style="text-align: center">Listening is Everything</h3>
-
-To build Fabify, I used the following stack:
-
-  * Ruby on Rails - web-application framework
-  * Postgresql - database management
-  * React - front-end rendering
-  * Redux - state-management
-
 # Table of Contents
 
-1. Introduction
-2. Key Features
-3. Recent Updates
-4. Technology
-5. A closer look
-
-6. Final Notes
+1. HighLighted Featureas 
+2. Key Functions
+3. Technologies 
 
 ## Highlights 
+Fabify is a clone of Spotify that exclusively features currated content created by artists that identify as LBGTQIA+. This website was built with JavaScript, React, Redux, Ruby, Rails, AWS, and Postgres. Fabify allows users to listen to their favorite music, create and delete playlists with their favorite songs, and explore over 10 uploaded artists. It features back to front end user authentication and preloaded playlists for the demo user. 
 
-Fabify is a clone of Spotify that exclusively features currated content created by artists that identify as LBGTQIA+. This website was built with JavaScript, React, Redux, Ruby, Rails, AWS, and Postgres.
-
-## Login / Sign Up
-
-[<div style="text-align: center"><img src="app/assets/images/fabifygiphy.gif"></div>](https://fabify.herokuapp.com/#/)
+## Login 
+[<div style="text-align: center"><img src="app/assets/images/log-in-read-me.gif"></div>](https://fabify.herokuapp.com/#/)
 
 Fabify features user auth that only allows members that have signed up for Fabify to step within the walls for this exlcuive content. As well as the ability to sign in and out of the app. If you try to log in with incorrect credentials or sign up with a duplicate email address, you will receive an error message. 
 
 ## Create Playlists
-
-[<div style="text-align: center"><img src="app/assets/images/fabifygiphy.gif"></div>](https://fabify.herokuapp.com/#/)
+[<div style="text-align: center"><img src="app/assets/images/create_playlist-gif.gif"></div>](https://fabify.herokuapp.com/#/)
 
 Once logged in, users have the ability to create, view, update and delete their own personal selection of playlists. Users may add and remove songs, title their playlists, as well as provide a description of their playlist for other users who may wish to follow their playlist of currated music. 
 
@@ -84,7 +68,14 @@ My custom toggle play pause method allows users to pause and play their music at
   }
 ```
 
-# Technologies Used
+To build Fabify, I used the following stack:
+
+  * Ruby on Rails - web-application framework
+  * Postgresql - database management
+  * React - front-end rendering
+  * Redux - state-management
+
+# List of ALL Technologies Used
 * React.js
 * Redux
 * Javascript
