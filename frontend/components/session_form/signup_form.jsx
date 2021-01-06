@@ -25,15 +25,6 @@ class SignupForm extends React.Component {
     this.props.processForm(user);
   }
 
-//   handleEmail = () => {
-//     const { email, confirmEmail } = this.state;
-//     if (email !== confirmEmail) {
-//       alert("Emails don't match");
-//     } else {
-//       this.handleSubmit(e);
-//     }
-//   };
-
   renderErrors() {
     return (
       <ul>

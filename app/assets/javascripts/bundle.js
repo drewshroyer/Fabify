@@ -3065,15 +3065,7 @@ var SignupForm = /*#__PURE__*/function (_React$Component) {
       e.preventDefault();
       var user = Object.assign({}, this.state);
       this.props.processForm(user);
-    } //   handleEmail = () => {
-    //     const { email, confirmEmail } = this.state;
-    //     if (email !== confirmEmail) {
-    //       alert("Emails don't match");
-    //     } else {
-    //       this.handleSubmit(e);
-    //     }
-    //   };
-
+    }
   }, {
     key: "renderErrors",
     value: function renderErrors() {
