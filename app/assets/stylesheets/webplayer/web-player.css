@@ -1,6 +1,7 @@
 .web-player-container {
     display: flex;
 }
+
 .webplayer-outer-body-container {
     display: flex;
     flex-direction: column;
