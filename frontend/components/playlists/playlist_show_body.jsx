@@ -11,7 +11,6 @@ class PlaylistShowBody extends React.Component {
   constructor(props) {
     super(props);
     this.togglePlayPause = this.togglePlayPause.bind(this);
-    // this.handleToggleShuffle = this.handleToggleShuffle.bind(this);
     this.state = {
       playingSong: false,
       selectedSong: "",

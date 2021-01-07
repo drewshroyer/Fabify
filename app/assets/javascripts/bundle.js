@@ -2291,8 +2291,7 @@ var PlaylistShowBody = /*#__PURE__*/function (_React$Component) {
     _classCallCheck(this, PlaylistShowBody);
 
     _this = _super.call(this, props);
-    _this.togglePlayPause = _this.togglePlayPause.bind(_assertThisInitialized(_this)); // this.handleToggleShuffle = this.handleToggleShuffle.bind(this);
-
+    _this.togglePlayPause = _this.togglePlayPause.bind(_assertThisInitialized(_this));
     _this.state = {
       playingSong: false,
       selectedSong: "",
