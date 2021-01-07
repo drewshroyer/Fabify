@@ -17,7 +17,6 @@ class CreatePlaylist extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    // console.log(this.state.playlist);
     this.props
       .createPlaylist(this.state)
       .then(this.props.toggleModal());

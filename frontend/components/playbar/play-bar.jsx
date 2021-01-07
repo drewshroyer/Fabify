@@ -22,9 +22,6 @@ class PlayBar extends React.Component {
     let previousSong = this.props.songs.find(song => {
       return (song.id === currentSong - 1)
     })    
-    // let previousArtist = this.props.artists.find(artist => {
-    //    return (artist.id === previousSong.artist_id - 1)
-    // })
     const audioEle = document.getElementById(`audio-element--${this.props.selectedSong - 1}`);
     this.props.togglePlayPause(
       previousSong.id,
@@ -45,9 +42,7 @@ class PlayBar extends React.Component {
     let nextSong = this.props.songs.find(song => {
       return (song.id === currentSong + 1)
     })  
-    // let nextArtist = this.props.artists.find(artist => {
-    //    return (artist.id === previousSong.artist_id + 1)
-    // })
+
     const audioEle = document.getElementById(`audio-element--${nextSong.id}`);
     this.props.togglePlayPause(
       nextSong.id,
@@ -77,11 +72,6 @@ class PlayBar extends React.Component {
         songLength: song1.song_length + `:${Math.floor(Math.random() * 60)}`,
       })
   }
-
-  // this method should help us not rerender the component but unsure how to effectively use it so far
-  //  shouldComponentUpdate(nextProps, nextState) {
-  //   return false;
-  //  }
 
   render() {
     const { selectedSong, name, artist, photo, songLength } = this.props;

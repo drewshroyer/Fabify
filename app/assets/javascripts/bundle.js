@@ -1406,10 +1406,7 @@ var PlayBar = /*#__PURE__*/function (_React$Component) {
       var currentSong = this.props.selectedSong;
       var previousSong = this.props.songs.find(function (song) {
         return song.id === currentSong - 1;
-      }); // let previousArtist = this.props.artists.find(artist => {
-      //    return (artist.id === previousSong.artist_id - 1)
-      // })
-
+      });
       var audioEle = document.getElementById("audio-element--".concat(this.props.selectedSong - 1));
       this.props.togglePlayPause(previousSong.id, previousSong.name, previousSong.photo_url, previousSong.artist);
       audioEle.play();
@@ -1425,10 +1422,7 @@ var PlayBar = /*#__PURE__*/function (_React$Component) {
       var currentSong = this.props.selectedSong;
       var nextSong = this.props.songs.find(function (song) {
         return song.id === currentSong + 1;
-      }); // let nextArtist = this.props.artists.find(artist => {
-      //    return (artist.id === previousSong.artist_id + 1)
-      // })
-
+      });
       var audioEle = document.getElementById("audio-element--".concat(nextSong.id));
       this.props.togglePlayPause(nextSong.id, nextSong.name, nextSong.photo_url, nextSong.artist);
       audioEle.play();
@@ -1447,11 +1441,7 @@ var PlayBar = /*#__PURE__*/function (_React$Component) {
       this.setState({
         songLength: song1.song_length + ":".concat(Math.floor(Math.random() * 60))
       });
-    } // this method should help us not rerender the component but unsure how to effectively use it so far
-    //  shouldComponentUpdate(nextProps, nextState) {
-    //   return false;
-    //  }
-
+    }
   }, {
     key: "render",
     value: function render() {
@@ -1640,8 +1630,7 @@ var CreatePlaylist = /*#__PURE__*/function (_React$Component) {
   _createClass(CreatePlaylist, [{
     key: "handleSubmit",
     value: function handleSubmit(e) {
-      e.preventDefault(); // console.log(this.state.playlist);
-
+      e.preventDefault();
       this.props.createPlaylist(this.state).then(this.props.toggleModal());
     }
   }, {
