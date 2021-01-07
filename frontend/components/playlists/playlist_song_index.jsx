@@ -59,7 +59,6 @@ class PlaylistSongIndexItem extends React.Component {
             <div className="modal-background-add-playlist-inner">
             <div className="playlist-form-header" onClick={this.closeAddSongModal}>X</div>
             <div className="playlist-form-header">Add to Playlist</div>
-            {/* <div className="playlist-add-song-modal-list"> */}
               <ul className="nav-bar-playlists-modal">
                 {playlists.map((playlist, idx) => (
                   <PlaylistList
@@ -72,7 +71,6 @@ class PlaylistSongIndexItem extends React.Component {
                 ))}
               </ul>
             </div>
-            {/* </div> */}
           </div>
 
     return (
