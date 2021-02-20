@@ -164,13 +164,13 @@ class WebPlayer extends React.Component {
       webplayerLogoutButton[i].style.background = '#121212'
       webplayerLogoutButton[i].style.color = 'white'
     }
-    let playbar = document.getElementsByClassName("play-bar-container")
-    for(let i = 0; i < playbar.length; i++){
-      playbar[i].style.background = '#121212'
-      playbar[i].style.color = 'white'
-    }
+    // let playbar = document.getElementsByClassName("play-bar-container")
+    // for(let i = 0; i < playbar.length; i++){
+    //   playbar[i].style.background = '#121212'
+    //   playbar[i].style.color = 'white'
+    // }
    }
-  //  this.togglePlayPause(83, "Malibu", "Malibu", "Kim Petras")
+  this.togglePlayPause(83, "Malibu", "Malibu", "Kim Petras")
   }
 
   render() {

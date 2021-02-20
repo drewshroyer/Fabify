@@ -4,6 +4,7 @@ import { Route, Switch, Link } from "react-router-dom";
 import SignUpFormContainer from "./session_form/signup_form_container";
 import LogInFormContainer from "./session_form/login_form_container";
 import Splash from "./splash/splash_form";
+import SpotifyAgenda from "./splash/spotify_agenda"
 import WebPlayer from './webplayer/webplayer';
 import { AuthRoute, ProtectedRoute } from "../util/route_util";
 import PlaylistShowBody from "./playlists/playlist_show_body";
@@ -14,6 +15,7 @@ import AllSongs from "./webplayer/all_songs";
 const App = () => (
   <div>
     <Route exact path="/" component={Splash} />
+    <Route exact path="/spotify/agenda" component={SpotifyAgenda} />
     <AuthRoute exact path="/login" component={LogInFormContainer} />
     <AuthRoute exact path="/signup" component={SignUpFormContainer} />
     <ProtectedRoute exact path="/webplayer" component={WebPlayer} />

@@ -1,0 +1,52 @@
+.background-agenda-splash {
+    background-color: #191414;
+    color: #ff4632;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+}
+
+.sound-wave {
+    padding-top: 2vh;
+    width: 100%;
+    height: 40vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sound-wave div {
+    background-color: white;
+    background-image: linear-gradient(180deg,#4100f5,#a0c3d2 19.27%,#9bf0e1 38.54%,#fae62d 60.94%,#ff4632 79.17%,#191414);
+    border-radius: 6.25vw;
+    /* height: 10vw; */
+    width: 1.1875vw;
+}
+
+.agenda-title {
+    font-size: 58px;
+}
+.agenda-timeline {
+    width: 90%;
+    height: 12vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-end;
+}
+
+.agenda-timeline-items {
+    font-size: 28px;
+    text-transform: uppercase;
+    transition: .3s;
+    color: #a0c3d2;
+    cursor: pointer;
+}
+
+.agenda-timeline-items:hover {
+    color: #fae62d;
+}
