@@ -14,7 +14,7 @@ class ArtistShow extends React.Component {
       this.props.song.id,
       this.props.song.name,
       this.props.song.photo_url,
-      this.props.artist.name
+      this.props.artistName
     );
   }
 
@@ -24,6 +24,7 @@ class ArtistShow extends React.Component {
   }
 
   render() {
+    // debugger
     const { playlists, songs, artistName, artistBio, artistId} = this.props;
     let artistSongs = []
     songs.forEach(song => {

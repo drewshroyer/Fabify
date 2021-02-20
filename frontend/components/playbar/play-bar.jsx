@@ -137,7 +137,7 @@ class PlayBar extends React.Component {
             <input
               type="range"
               min={0}
-              max={1}
+              max={100}
               step={0.02}
               value={this.state.volume}
               // onChange={this.setVolume(this.value)}

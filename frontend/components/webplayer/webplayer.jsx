@@ -4,6 +4,7 @@ import InternalNavbarContainer from "../nav/internal-nav_container";
 import PlayBarContainer from "../playbar/play-bar-container";
 import WebPlayerBodyContainer from "./webplayer_body_container";
 import { logout } from "../../actions/session_actions";
+import { fetchUser } from "../../actions/user_actions";
 
 class WebPlayer extends React.Component {
   constructor(props) {
@@ -170,10 +171,10 @@ class WebPlayer extends React.Component {
     //   playbar[i].style.color = 'white'
     // }
    }
-  this.togglePlayPause(83, "Malibu", "Malibu", "Kim Petras")
+  // this.togglePlayPause(83, "Malibu", "Malibu", "Kim Petras")
   }
-
   render() {
+    // debugger
     return (
       <div className="web-player-container">
         <InternalNavbarContainer />
@@ -242,9 +243,16 @@ class WebPlayer extends React.Component {
     );
   }
 }
+const mSTP = (state) => {
+  return {
+    users: state.entities.users,
+    currentUserId: state.session.currentUserId
+  };
+};
 
 const mDTP = (dispatch) => {
   return {
+    fetchUser: userId => dispatch(fetchUser(userId)),
     logout: () => dispatch(logout()),
   };
 };

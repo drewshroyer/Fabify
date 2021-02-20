@@ -857,7 +857,7 @@ var ArtistShow = /*#__PURE__*/function (_React$Component) {
   _createClass(ArtistShow, [{
     key: "handleSongClick",
     value: function handleSongClick() {
-      this.props.togglePlayPause(this.props.song.id, this.props.song.name, this.props.song.photo_url, this.props.artist.name);
+      this.props.togglePlayPause(this.props.song.id, this.props.song.name, this.props.song.photo_url, this.props.artistName);
     }
   }, {
     key: "componentDidMount",
@@ -870,6 +870,7 @@ var ArtistShow = /*#__PURE__*/function (_React$Component) {
     value: function render() {
       var _this2 = this;
 
+      // debugger
       var _this$props = this.props,
           playlists = _this$props.playlists,
           songs = _this$props.songs,
@@ -1521,7 +1522,7 @@ var PlayBar = /*#__PURE__*/function (_React$Component) {
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "range",
         min: 0,
-        max: 1,
+        max: 100,
         step: 0.02,
         value: this.state.volume // onChange={this.setVolume(this.value)}
         ,
@@ -4356,6 +4357,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _playbar_play_bar_container__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../playbar/play-bar-container */ "./frontend/components/playbar/play-bar-container.jsx");
 /* harmony import */ var _webplayer_body_container__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./webplayer_body_container */ "./frontend/components/webplayer/webplayer_body_container.jsx");
 /* harmony import */ var _actions_session_actions__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../actions/session_actions */ "./frontend/actions/session_actions.js");
+/* harmony import */ var _actions_user_actions__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../actions/user_actions */ "./frontend/actions/user_actions.js");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -4377,6 +4379,7 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
 
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
 
 
 
@@ -4597,13 +4600,13 @@ var WebPlayer = /*#__PURE__*/function (_React$Component) {
         //   playbar[i].style.color = 'white'
         // }
 
-      }
+      } // this.togglePlayPause(83, "Malibu", "Malibu", "Kim Petras")
 
-      this.togglePlayPause(83, "Malibu", "Malibu", "Kim Petras");
     }
   }, {
     key: "render",
     value: function render() {
+      // debugger
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "web-player-container"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_nav_internal_nav_container__WEBPACK_IMPORTED_MODULE_2__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -4676,8 +4679,18 @@ var WebPlayer = /*#__PURE__*/function (_React$Component) {
   return WebPlayer;
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
+var mSTP = function mSTP(state) {
+  return {
+    users: state.entities.users,
+    currentUserId: state.session.currentUserId
+  };
+};
+
 var mDTP = function mDTP(dispatch) {
   return {
+    fetchUser: function fetchUser(userId) {
+      return dispatch(Object(_actions_user_actions__WEBPACK_IMPORTED_MODULE_6__["fetchUser"])(userId));
+    },
     logout: function logout() {
       return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_5__["logout"])());
     }
