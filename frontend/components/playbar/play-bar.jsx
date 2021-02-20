@@ -1,10 +1,12 @@
 import React from "react";
+import Slider from 'react-rangeslider'
 
 class PlayBar extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       songLength: "0:00",
+      volume: 50,
     }
     this.togglePlayBar = this.togglePlayBar.bind(this);
     this.handleNext = this.handleNext.bind(this);
@@ -133,12 +135,12 @@ class PlayBar extends React.Component {
           />
           <div className="volume-slide-container">
             <input
-              // onInput={setVolume(this.value)}
-              // onChange={setVolume(this.value)}
               type="range"
-              min="0"
-              max="100"
-              placeholder="100"
+              min={0}
+              max={1}
+              step={0.02}
+              value={this.state.volume}
+              // onChange={this.setVolume(this.value)}
               className="volume-slider"
             />
           </div>

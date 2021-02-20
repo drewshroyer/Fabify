@@ -85,7 +85,6 @@ class WebPlayer extends React.Component {
     for(let i = 0; i < fabifyLogo.length; i++){
       fabifyLogo[i].style.display = 'block'
     }
-
     let oldLogo = document.getElementById("internal-white-splash-logo")
       oldLogo.style.display = 'none'
 
@@ -115,6 +114,16 @@ class WebPlayer extends React.Component {
     for(let i = 0; i < musicTilePlayButton.length; i++){
           musicTilePlayButton[i].style.backgroundColor = '#101EFF'
         }
+
+    // let playbar = document.getElementsByClassName("play-bar-container")
+    // for(let i = 0; i < playbar.length; i++){
+    //   playbar[i].style.background = '#D3FF55'
+    //   playbar[i].style.borderTop = 'none'
+    // }
+    // let navBarContainer  = document.getElementsByClassName("internal-nav-bar-container")
+    // for(let i = 0; i < navBarContainer.length; i++){
+    //   navBarContainer[i].style.background = 'linear-gradient(to bottom, #5E4BEA, #D3FF55'
+    // }
 
     let topBarContainer = document.getElementsByClassName("top-bar-container")
     for(let i = 0; i < topBarContainer.length; i++){
@@ -154,6 +163,11 @@ class WebPlayer extends React.Component {
     for(let i = 0; i < webplayerLogoutButton.length; i++){
       webplayerLogoutButton[i].style.background = '#121212'
       webplayerLogoutButton[i].style.color = 'white'
+    }
+    let playbar = document.getElementsByClassName("play-bar-container")
+    for(let i = 0; i < playbar.length; i++){
+      playbar[i].style.background = '#121212'
+      playbar[i].style.color = 'white'
     }
    }
   //  this.togglePlayPause(83, "Malibu", "Malibu", "Kim Petras")
