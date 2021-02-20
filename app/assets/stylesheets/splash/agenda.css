@@ -50,3 +50,93 @@
 .agenda-timeline-items:hover {
     color: #fae62d;
 }
+
+.technologies-popup {
+    display: none;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    /* background-image: linear-gradient(180deg,#4100f5,#a0c3d2 19.27%,#9bf0e1 38.54%,#fae62d 60.94%,#ff4632 79.17%,#191414); */
+    background-color: #9BF0E1;
+    z-index: 10;
+    transition: 1s;
+}
+
+.technologies-inner {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.technologies-timeline {
+    width: 80%;
+    height: 100%;
+    margin-top: 15vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-left: 10vw;
+}
+
+
+.technologies-items {
+    color: #F037A5;
+    text-transform: uppercase;
+    line-height: initial;
+    font-size: 70px;
+    transition: .5s;
+}
+
+.technologies-items:hover {
+    color: #000;
+}
+
+.top-row {
+    height: 40vh;
+    width: 100%;
+    font-size: 32px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.x-container {
+    padding: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: #000;
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    color: white;
+    margin-right: 10vw;
+    transition: .5s;
+    cursor: pointer;
+}
+
+polygon {
+    fill: white;
+    stroke: white;
+    transform: scale(.45);
+}
+
+.x-container:hover {
+    background-color: transparent;
+    color: #000;
+}
+
+.x-container:hover polygon {
+     fill:#000;
+    stroke: #000;
+}
