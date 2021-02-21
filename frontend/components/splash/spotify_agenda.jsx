@@ -6,23 +6,9 @@ import React from 'react';
 class Agenda extends React.Component {
   constructor(props) {
     super(props);
-    this.startMoving = this.startMoving.bind(this);
     this.openAddSongModal = this.openAddSongModal.bind(this);
     this.closeAddSongModal = this.closeAddSongModal.bind(this);
-
   }
-
- componentDidMount() {
-    this.startMoving()
- }
-    startMoving() { 
-        let timer = setInterval(function() {  
-            let additionalHeight = 0;
-            if(additionalHeight === 50) {
-              additionalHeight--;
-            }
-        }, 500); 
-    } 
 
     openAddSongModal() {
      let openModal = document.getElementsByClassName("technologies-popup")

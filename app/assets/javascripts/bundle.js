@@ -3574,29 +3574,12 @@ var Agenda = /*#__PURE__*/function (_React$Component) {
     _classCallCheck(this, Agenda);
 
     _this = _super.call(this, props);
-    _this.startMoving = _this.startMoving.bind(_assertThisInitialized(_this));
     _this.openAddSongModal = _this.openAddSongModal.bind(_assertThisInitialized(_this));
     _this.closeAddSongModal = _this.closeAddSongModal.bind(_assertThisInitialized(_this));
     return _this;
   }
 
   _createClass(Agenda, [{
-    key: "componentDidMount",
-    value: function componentDidMount() {
-      this.startMoving();
-    }
-  }, {
-    key: "startMoving",
-    value: function startMoving() {
-      var timer = setInterval(function () {
-        var additionalHeight = 0;
-
-        if (additionalHeight === 50) {
-          additionalHeight--;
-        }
-      }, 500);
-    }
-  }, {
     key: "openAddSongModal",
     value: function openAddSongModal() {
       var openModal = document.getElementsByClassName("technologies-popup");
