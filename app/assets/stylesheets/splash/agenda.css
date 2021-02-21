@@ -100,15 +100,30 @@
 }
 
 .top-row {
-    height: 40vh;
+    height: 80vh;
     width: 100%;
     font-size: 32px;
     display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    align-items: center;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-end;
+    margin-top: 18vh;
+    margin-right: 15vw;
+}
+.agenda-transcend {
+    margin-right: 35vw;
 }
 
+.agenda-retro {
+     margin-right: 30vw;
+}
+
+.agenda-mood {
+    position: absolute;
+    top: 50vh;
+    right: 12vw;
+    z-index: 0;
+}
 .x-container {
     padding: 5px;
     display: flex;
@@ -120,7 +135,7 @@
     height: 30px;
     width: 30px;
     color: white;
-    margin-right: 10vw;
+    /* margin-right: 10vw; */
     transition: .5s;
     cursor: pointer;
 }

@@ -56,7 +56,25 @@ render() {
                       <svg className="x-container" onClick={this.closeAddSongModal}>
                       <polygon points="52.506,12.908 51.092,11.494 32,30.586 12.908,11.494 11.494,12.908 30.586,32 11.494,51.092 12.908,52.506       32,33.414 51.092,52.506 52.506,51.092 33.414,32  "></polygon>
                       </svg>
-                  </div>
+                      {/* <img
+                      className="agenda-transcend"
+                        src={window.transcend}
+                        width="250px"
+                       height="250px"
+                      ></img>
+                      <img
+                        className="agenda-mood"
+                        src={window.mood}      
+                        width="300px"
+                       height="300px"
+                      ></img>
+                      <img
+                        src={window.retro}
+                          className="agenda-retro"
+                        width="250px"
+                       height="250px"
+                      ></img> */}
+                </div>
           </div>
       </div>
 
