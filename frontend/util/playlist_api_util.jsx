@@ -6,8 +6,8 @@ export const fetchPlaylists = () => {
 
 export const fetchPlaylist = (id) => {
   return $.ajax({
-    url: `/api/playlists/${id}`,
-  });
+    url: `/api/playlists/${id}`, // these are the rails routes that i'm using in the backend 
+  }); 
 };
 
 export const createPlaylist = playlist => {

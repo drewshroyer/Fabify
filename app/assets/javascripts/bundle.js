@@ -5351,7 +5351,8 @@ var fetchPlaylists = function fetchPlaylists() {
 };
 var fetchPlaylist = function fetchPlaylist(id) {
   return $.ajax({
-    url: "/api/playlists/".concat(id)
+    url: "/api/playlists/".concat(id) // these are the rails routes that i'm using in the backend 
+
   });
 };
 var createPlaylist = function createPlaylist(playlist) {
