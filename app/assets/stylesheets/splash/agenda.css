@@ -101,7 +101,6 @@
 
 .top-row {
     height: 80vh;
-    width: 100%;
     font-size: 32px;
     display: flex;
     flex-direction: column;
@@ -154,4 +153,54 @@ polygon {
 .x-container:hover polygon {
      fill:#000;
     stroke: #000;
+}
+
+
+.features-popup {
+    display: none;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    /* background-image: linear-gradient(180deg,#4100f5,#a0c3d2 19.27%,#9bf0e1 38.54%,#fae62d 60.94%,#ff4632 79.17%,#191414); */
+    background-color:  #F037A5;
+    z-index: 10;
+    transition: 1s;
+}
+
+.features-inner {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.features-timeline {
+    width: 100%;
+    height: 10%;
+    margin-top: 16vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-left: 10vw;
+}
+
+
+.features-items {
+    color: #9BF0E1;
+    text-transform: uppercase;
+    line-height: initial;
+    font-size: 80px;
+    transition: .5s;
+    margin-bottom: 10px;
+}
+
+.features-items:hover {
+    color: #000;
 }

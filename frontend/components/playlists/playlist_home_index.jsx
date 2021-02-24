@@ -25,10 +25,6 @@ class PlaylistAllIndex extends React.Component {
           <div className="top-bar-container">
             <div className="fab-mode-button-container">
               <div className="fab-mode-button"></div>
-              {/* <label className="switch">
-                <input type="checkbox" onClick={this.activateFabMode}/> 
-                <span className="slider-round"></span>
-              </label> */}
           </div>
             <div className="dropdown">
            <button className="webplayer-logout-button">Menu

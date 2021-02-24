@@ -3580,6 +3580,7 @@ var Agenda = /*#__PURE__*/function (_React$Component) {
     _this = _super.call(this, props);
     _this.openAddSongModal = _this.openAddSongModal.bind(_assertThisInitialized(_this));
     _this.closeAddSongModal = _this.closeAddSongModal.bind(_assertThisInitialized(_this));
+    _this.openAddFeaturesModal = _this.openAddFeaturesModal.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -3593,12 +3594,27 @@ var Agenda = /*#__PURE__*/function (_React$Component) {
       }
     }
   }, {
+    key: "openAddFeaturesModal",
+    value: function openAddFeaturesModal() {
+      var openFeaturesModal = document.getElementsByClassName("features-popup");
+
+      for (var i = 0; i < openFeaturesModal.length; i++) {
+        openFeaturesModal[i].style.display = 'block';
+      }
+    }
+  }, {
     key: "closeAddSongModal",
     value: function closeAddSongModal() {
       var openModal = document.getElementsByClassName("technologies-popup");
 
       for (var i = 0; i < openModal.length; i++) {
         openModal[i].style.display = 'none';
+      }
+
+      var openFeaturesModal = document.getElementsByClassName("features-popup");
+
+      for (var _i = 0; _i < openFeaturesModal.length; _i++) {
+        openFeaturesModal[_i].style.display = 'none';
       }
     }
   }, {
@@ -3627,6 +3643,28 @@ var Agenda = /*#__PURE__*/function (_React$Component) {
       }, "Heroku"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("div", {
         className: "technologies-items"
       }, "Github")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("div", {
+        className: "top-row"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("svg", {
+        className: "x-container",
+        onClick: this.closeAddSongModal
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("polygon", {
+        points: "52.506,12.908 51.092,11.494 32,30.586 12.908,11.494 11.494,12.908 30.586,32 11.494,51.092 12.908,52.506       32,33.414 51.092,52.506 52.506,51.092 33.414,32  "
+      })))));
+      var featuresPopUp = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("div", {
+        className: "features-popup"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("div", {
+        className: "features-inner"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("div", {
+        className: "features-timeline"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("div", {
+        className: "features-items"
+      }, "User Auth"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("div", {
+        className: "features-items"
+      }, "Show && Index"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("div", {
+        className: "features-items"
+      }, "Playlist Creation"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("div", {
+        className: "features-items"
+      }, "Audio Play")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("div", {
         className: "top-row"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("svg", {
         className: "x-container",
@@ -3862,7 +3900,8 @@ var Agenda = /*#__PURE__*/function (_React$Component) {
         className: "agenda-timeline-items",
         onClick: this.openAddSongModal
       }, "Technologies"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("div", {
-        className: "agenda-timeline-items"
+        className: "agenda-timeline-items",
+        onClick: this.openAddFeaturesModal
       }, "Features"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("div", {
         className: "agenda-timeline-items"
       }, "Bonus"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("div", {
@@ -3871,7 +3910,7 @@ var Agenda = /*#__PURE__*/function (_React$Component) {
         className: "agenda-timeline-items"
       }, "Future"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("div", {
         className: "agenda-timeline-items"
-      }, "Questions")), technologiesPopUp), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_footer__WEBPACK_IMPORTED_MODULE_2__["default"], null));
+      }, "Questions")), technologiesPopUp, featuresPopUp), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_footer__WEBPACK_IMPORTED_MODULE_2__["default"], null));
     }
   }]);
 

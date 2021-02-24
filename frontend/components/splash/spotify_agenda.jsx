@@ -8,6 +8,7 @@ class Agenda extends React.Component {
     super(props);
     this.openAddSongModal = this.openAddSongModal.bind(this);
     this.closeAddSongModal = this.closeAddSongModal.bind(this);
+    this.openAddFeaturesModal = this.openAddFeaturesModal.bind(this);
   }
 
     openAddSongModal() {
@@ -17,10 +18,21 @@ class Agenda extends React.Component {
     }
   }
 
+  openAddFeaturesModal() {
+     let openFeaturesModal = document.getElementsByClassName("features-popup")
+    for(let i = 0; i < openFeaturesModal.length; i++){
+      openFeaturesModal[i].style.display = 'block'
+    }
+  }
+
   closeAddSongModal() {
     let openModal = document.getElementsByClassName("technologies-popup")
     for(let i = 0; i < openModal.length; i++){
       openModal[i].style.display = 'none'
+    }
+    let openFeaturesModal = document.getElementsByClassName("features-popup")
+    for(let i = 0; i < openFeaturesModal.length; i++){
+      openFeaturesModal[i].style.display = 'none'
     }
   }
 
@@ -42,24 +54,23 @@ render() {
                       <svg className="x-container" onClick={this.closeAddSongModal}>
                       <polygon points="52.506,12.908 51.092,11.494 32,30.586 12.908,11.494 11.494,12.908 30.586,32 11.494,51.092 12.908,52.506       32,33.414 51.092,52.506 52.506,51.092 33.414,32  "></polygon>
                       </svg>
-                      {/* <img
-                      className="agenda-transcend"
-                        src={window.transcend}
-                        width="250px"
-                       height="250px"
-                      ></img>
-                      <img
-                        className="agenda-mood"
-                        src={window.mood}      
-                        width="300px"
-                       height="300px"
-                      ></img>
-                      <img
-                        src={window.retro}
-                          className="agenda-retro"
-                        width="250px"
-                       height="250px"
-                      ></img> */}
+                </div>
+          </div>
+      </div>
+
+  let featuresPopUp =  
+        <div className="features-popup">
+              <div className="features-inner">
+                  <div className="features-timeline">
+                  <div className="features-items">User Auth</div>
+                  <div className="features-items">Show && Index</div>
+                  <div className="features-items">Playlist Creation</div>
+                  <div className="features-items">Audio Play</div>
+        </div>                
+                  <div className="top-row">
+                      <svg className="x-container" onClick={this.closeAddSongModal}>
+                      <polygon points="52.506,12.908 51.092,11.494 32,30.586 12.908,11.494 11.494,12.908 30.586,32 11.494,51.092 12.908,52.506       32,33.414 51.092,52.506 52.506,51.092 33.414,32  "></polygon>
+                      </svg>
                 </div>
           </div>
       </div>
@@ -75,13 +86,14 @@ render() {
               </div>
               <div className="agenda-timeline">
                 <div className="agenda-timeline-items" onClick={this.openAddSongModal}>Technologies</div>
-                <div className="agenda-timeline-items">Features</div>
+                <div className="agenda-timeline-items" onClick={this.openAddFeaturesModal}>Features</div>
                 <div className="agenda-timeline-items">Bonus</div>
                 <div className="agenda-timeline-items">Learnings</div>
                 <div className="agenda-timeline-items">Future</div>
                 <div className="agenda-timeline-items">Questions</div>
                 </div> 
                 {technologiesPopUp}
+                {featuresPopUp}
             </div>
             <Footer />
           </div>
