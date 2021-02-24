@@ -3314,6 +3314,10 @@ var Footer = /*#__PURE__*/function (_React$Component) {
         target: "_blank"
       }, "Bread"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
         className: "footer-link",
+        href: "https://drewshroyer.com/DS-Design/",
+        target: "_blank"
+      }, "DS-Design"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        className: "footer-link",
         href: "https://johnrobertmcc.github.io/walk-this-way/",
         target: "_blank"
       }, "Walk this way"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {

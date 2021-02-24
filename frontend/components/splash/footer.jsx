@@ -79,6 +79,13 @@ class Footer extends React.Component {
                 >
                   Bread
                 </a>
+                 <a
+                  className="footer-link"
+                  href={"https://drewshroyer.com/DS-Design/"}
+                  target = "_blank"
+                >
+                  DS-Design
+                </a>
                 <a
                   className="footer-link"
                   href={"https://johnrobertmcc.github.io/walk-this-way/"}
