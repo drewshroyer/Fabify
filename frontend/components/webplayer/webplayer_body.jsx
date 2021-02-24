@@ -18,7 +18,7 @@ class WebPlayerBody extends React.Component {
     return (
       <div className="webplayer-body-container">
         <div className="webplayer-top-shortcuts-see-all">
-          <div className="shortcuts-keyword-webplayer">Shortcuts</div>
+          <div className="shortcuts-keyword-webplayer">Good Morning</div>
           <div className="see-all-playlists-keyword-webplayer">
             <Link to="/playlists/">See All</Link>
           </div>

@@ -1174,7 +1174,7 @@ var InternalNavbar = /*#__PURE__*/function (_React$Component) {
         d: "M311.873 77.46l166.349 373.587-39.111 17.27-166.349-373.587zM64 463.746v-384h42.666v384h-42.666zM170.667 463.746v-384h42.667v384h-42.666z",
         fill: "currentColor"
       })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-        to: "/webplayer",
+        to: "/songs",
         className: "internal-nav-link",
         id: "hover-white"
       }, "Your Library")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -3146,7 +3146,7 @@ var SignupForm = /*#__PURE__*/function (_React$Component) {
         onChange: this.update("gender")
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
         htmlFor: "other"
-      }, "Non-binary")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "By clicking on Sign up, you agree to Spotify's Terms and Conditions of Use. To learn more about how Spotify collects, uses, shares and protects your personal data please read Spotify's Privacy Policy."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }, "Non-binary")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "By clicking on Sign up, you agree to Fabify's Terms and Conditions of Use. To learn more about how Fabify collects, uses, shares and protects your personal data please read Fabify's Privacy Policy."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         className: "signup-session-submit",
         type: "submit",
         value: this.props.formType,
@@ -4760,7 +4760,7 @@ var WebPlayerBody = /*#__PURE__*/function (_React$Component) {
         className: "webplayer-top-shortcuts-see-all"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "shortcuts-keyword-webplayer"
-      }, "Shortcuts"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "Good Morning"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "see-all-playlists-keyword-webplayer"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
         to: "/playlists/"

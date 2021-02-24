@@ -136,10 +136,10 @@ class SignupForm extends React.Component {
                 <label htmlFor="other">Non-binary</label>
               </div>
               <p>
-                By clicking on Sign up, you agree to Spotify's Terms and
-                Conditions of Use. To learn more about how Spotify collects,
+                By clicking on Sign up, you agree to Fabify's Terms and
+                Conditions of Use. To learn more about how Fabify collects,
                 uses, shares and protects your personal data please read
-                Spotify's Privacy Policy.
+                Fabify's Privacy Policy.
               </p>
               <input
                 className="signup-session-submit"
