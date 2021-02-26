@@ -38,5 +38,4 @@ class WebPlayerBody extends React.Component {
     );
   }
 }
-
 export default WebPlayerBody;
