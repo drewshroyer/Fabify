@@ -68,7 +68,7 @@ My custom toggle play pause method allows users to pause and play their music at
   }
 ```
 
-To build Fabify, I used the following stack:
+I used the following stack to build Fabify:
 
   * Ruby on Rails - web-application framework
   * Postgresql - database management
