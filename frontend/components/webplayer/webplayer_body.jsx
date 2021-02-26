@@ -10,15 +10,16 @@ class WebPlayerBody extends React.Component {
   componentDidMount() {
     this.props.fetchSongs();
     this.props.fetchPlaylists();
+    this.props.fetchUser(this.props.currentUser.id);
   }
-  
   render() {
-    const { songs, artists, playlists } = this.props;
+    const { songs, artists, playlists, currentUser } = this.props;
     if(!songs) return null;
     return (
       <div className="webplayer-body-container">
         <div className="webplayer-top-shortcuts-see-all">
-          <div className="shortcuts-keyword-webplayer">Good Morning</div>
+          <div className="shortcuts-keyword-webplayer">Good Morning {currentUser.name} 
+          </div>
           <div className="see-all-playlists-keyword-webplayer">
             <Link to="/playlists/">See All</Link>
           </div>

@@ -4782,6 +4782,7 @@ var WebPlayerBody = /*#__PURE__*/function (_React$Component) {
     value: function componentDidMount() {
       this.props.fetchSongs();
       this.props.fetchPlaylists();
+      this.props.fetchUser(this.props.currentUser.id);
     }
   }, {
     key: "render",
@@ -4791,7 +4792,8 @@ var WebPlayerBody = /*#__PURE__*/function (_React$Component) {
       var _this$props = this.props,
           songs = _this$props.songs,
           artists = _this$props.artists,
-          playlists = _this$props.playlists;
+          playlists = _this$props.playlists,
+          currentUser = _this$props.currentUser;
       if (!songs) return null;
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "webplayer-body-container"
@@ -4799,7 +4801,7 @@ var WebPlayerBody = /*#__PURE__*/function (_React$Component) {
         className: "webplayer-top-shortcuts-see-all"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "shortcuts-keyword-webplayer"
-      }, "Good Morning"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "Good Morning ", currentUser.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "see-all-playlists-keyword-webplayer"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
         to: "/playlists/"
