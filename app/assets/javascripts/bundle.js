@@ -927,6 +927,7 @@ var ArtistShow = /*#__PURE__*/function (_React$Component) {
           playlists: playlists,
           idx: idx,
           song: song,
+          songId: song.id,
           artist: artistName,
           key: song.id,
           togglePlayPause: _this2.props.togglePlayPause

@@ -1,7 +1,7 @@
 .internal-nav-bar-container {
     display: flex;
     height: 100vh;
-    width: 275px;
+    width: 16vw;
     background-color: #040404;
 }
 
@@ -14,11 +14,11 @@
 }
 
 .internal-home-link {
-    width: 80%;
+    width: 11.8vw;
     color: white;
     background-color: #282828;
     fill: #ffffff;
-    border-radius: 5px;
+    border-radius: 4px;
     padding-left: 25px; 
     display: flex;
     align-items: center;
@@ -124,6 +124,7 @@
 .internal-nav-column {
     position: absolute;
     top: 9%;
+    width: 16vw;
 } 
 
 .playlist-header {
@@ -183,10 +184,11 @@
 }
 
 .internal-nav-line {
-    margin: 25px 10px;
-    border: 1px solid #282828;
-    background-color: #040404;
-    width: 85%;
+    margin: 20px 10px;
+    background-color: #282828;
+    width: 78%;
+    height: 1px;
+    min-height: 1px;
 }
 
 .user-playlists {

@@ -73,6 +73,7 @@ class ArtistShow extends React.Component {
                 playlists={playlists}
                 idx = {idx}
                 song={song}
+                songId = {song.id}
                 artist={artistName}
                 key={song.id}
                 togglePlayPause={this.props.togglePlayPause}
