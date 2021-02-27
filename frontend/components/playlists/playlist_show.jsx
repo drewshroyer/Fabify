@@ -94,7 +94,7 @@ class PlaylistShow extends React.Component {
           className="background-header-image-playlist-show"
         >
           <div className="playlist-subheader-show">Playlist</div>
-        <div className="playlist-show-title">{playlistName}</div>
+        <div className="playlist-show-title">{playlistName === 'Release Radar' || playlistName === '2020 Wrapped' ? `${this.props.currentUser.name}'s ${playlistName}` : playlistName} </div>
           <div className="playlist-show-description">
             {playlistDescription}
           </div>
