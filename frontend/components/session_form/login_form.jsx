@@ -69,6 +69,7 @@ class LoginForm extends React.Component {
             </Link>
           </header>
           <span className="line"></span>
+          <div className="login-form-container">
           <form onSubmit={this.handleSubmit} className="login-form-box">
             <div className="login-center-text">
               To continue, log in to Fabify.
@@ -82,10 +83,9 @@ class LoginForm extends React.Component {
               >
                 Demo User Login
               </button>
-              <br />
-              <label>
+               <br />
+              <label className="email-or-username-label">
                 Email address or username
-                <br />
                 <input
                   className="login-input-box"
                   type="text"
@@ -93,7 +93,6 @@ class LoginForm extends React.Component {
                   onChange={this.update("email")}
                 />
               </label>
-              <br />
               <br />
               <label>
                 Password
@@ -127,6 +126,7 @@ class LoginForm extends React.Component {
               </label>
             </div>
           </form>
+          </div>
         </div>
       </div>
     );
