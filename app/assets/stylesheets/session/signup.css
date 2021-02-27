@@ -34,22 +34,43 @@ div {
 }
 
 .signup-form-container {
-    width: 430px;
+    max-width: 450px;
+}
+.sign-up-header-container {
+    letter-spacing: -0.04em;
+    line-height: 36px;
+    font-size: 30px;
+    margin-top: 30px;
+    text-align: center;
+}
+
+.sign-up-form-box {
+    max-width: 450px;
 }
 
 .signup-input-box {
-    margin-top: 5px; 
-    width: 100%;
-    height: 30px;
-    padding: 3px 12px;
+    border-radius: 4px;
+    margin-top: 5px;
+    width: 93%;
+    padding: 14px;
     background-color: #fff;
     background-image: none;
     border: 1px solid #d9dadc;
-    border-radius: 0;
     display: block;
     font-size: 14px;
     line-height: 1.5;
     color: #616467;
+}
+
+.sign-up-thin-divider {
+    height: 1px;
+    border-top: 1px solid rgb(189, 189, 189);
+    width: 80%;
+    margin-left: 43px;
+}
+
+.render-errors-ul {
+    color: rgb(226, 33, 52);
 }
 
 .signup-session-submit {
@@ -74,6 +95,7 @@ div {
     transition-duration: 33ms;
     transition-property: background-color, color, box-shadow, filter, transform;
      width: 100%;
+     padding: 17px 48px;
 }
 
 .signup-session-submit:hover {
@@ -86,6 +108,7 @@ div {
     font-size: 14px;
     font-weight: 700;
     letter-spacing: 2px;
+    
     line-height: 1;
     text-align: center;
     text-transform: uppercase;
@@ -95,6 +118,10 @@ div {
 }
 
 .signup-gender-fields {
-    padding: 10px;
+    padding: 10px 10px 10px 0px;
     text-decoration: none;
+}
+.gender-input {
+    padding-right: 20px;
+    font-weight: 300;
 }

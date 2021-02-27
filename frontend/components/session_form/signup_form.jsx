@@ -27,9 +27,9 @@ class SignupForm extends React.Component {
 
   renderErrors() {
     return (
-      <ul>
+      <ul className="render-errors-ul">
         {this.props.errors.map((error, i) => (
-          <li key={`error-${i}`}>{error}</li>
+          <div key={`error-${i}`}>{error}</div>
         ))}
       </ul>
     );
@@ -49,11 +49,11 @@ class SignupForm extends React.Component {
               ></img>
             </Link>
           </header>
-          <form onSubmit={this.handleSubmit} className="login-form-box">
-            <h1>Sign up for free to start listening.</h1>
+          <form onSubmit={this.handleSubmit} className="sign-up-form-box" >
+            <div className="sign-up-header-container">Sign up for free to start listening.</div>
             <br />
+            <div className="sign-up-thin-divider"></div>
             {this.renderErrors()}
-            <div className="signup-form">
               <h2>Sign up with your email address</h2>
               <br />
               <label>
@@ -117,15 +117,15 @@ class SignupForm extends React.Component {
                   value="male"
                   onChange={this.update("gender")}
                 />
-                <label htmlFor="male">Male</label>
-                <input
+                <label htmlFor="male" className="gender-input">Male</label>
+                <input           
                   type="radio"
                   id="female"
                   name="gender"
                   value="female"
                   onChange={this.update("gender")}
                 />
-                <label htmlFor="female">Female</label>
+                <label htmlFor="female" className="gender-input">Female</label>
                 <input
                   type="radio"
                   id="other"
@@ -133,7 +133,7 @@ class SignupForm extends React.Component {
                   value="non-binary"
                   onChange={this.update("gender")}
                 />
-                <label htmlFor="other">Non-binary</label>
+                <label htmlFor="other" className="gender-input">Non-binary</label>
               </div>
               <p>
                 By clicking on Sign up, you agree to Fabify's Terms and
@@ -147,7 +147,6 @@ class SignupForm extends React.Component {
                 value={this.props.formType}
                 onSubmit={this.handleSubmit}
               />
-            </div>
           </form>
         </div>
       </div>
