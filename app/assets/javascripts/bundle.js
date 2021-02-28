@@ -2170,9 +2170,9 @@ var PlaylistShow = /*#__PURE__*/function (_React$Component) {
           className: "playlist-subheader-show"
         }, "Playlist"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "playlist-show-title"
-        }, playlistName === 'Release Radar' && this.props.currentUser.name !== "Demo Login" || playlistName === '2020 Wrapped' && this.props.currentUser.name !== "Demo Login" ? "".concat(this.props.currentUser.name, "'s ").concat(playlistName) : playlistName, " "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        }, playlistName === 'Release Radar' && this.props.currentUser.name !== "Demo User" || playlistName === '2020 Wrapped' && this.props.currentUser.name !== "Demo Login" ? "".concat(this.props.currentUser.name, "'s ").concat(playlistName) : playlistName, " "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "playlist-show-description"
-        }, playlistDescription)));
+        }, playlistName === 'Release Radar' ? "Catch all the latest music from artists you follow, plus new singles picked for you. Updates every Friday." : "Add new songs to your custom playlist below!")));
         var backGroundImage2 = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "playlist-show-image-container"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -2182,9 +2182,9 @@ var PlaylistShow = /*#__PURE__*/function (_React$Component) {
           className: "playlist-subheader-show"
         }, "Playlist"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "playlist-show-title"
-        }, playlistName === 'Release Radar' && this.props.currentUser.name !== "Demo User" || playlistName === '2020 Wrapped' && this.props.currentUser.name !== "Demo User" ? "".concat(this.props.currentUser.name, "'s ").concat(playlistName) : playlistName, " "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        }, playlistName === '2020 Wrapped' && this.props.currentUser.name !== "Demo User" ? "".concat(this.props.currentUser.name, "'s ").concat(playlistName) : playlistName, " "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "playlist-show-description"
-        }, "The songs you loved most this year, all wrapped up.")));
+        }, playlistName === 'New Music Friday' ? "New Music from Miley Cyrus, Sam Smith, Kehlani, and more!" : "The songs you loved most this year, all wrapped up.")));
         if (!songs) return null;
         return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "playlist-show-container"
