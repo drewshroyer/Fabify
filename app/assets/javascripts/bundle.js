@@ -2170,7 +2170,7 @@ var PlaylistShow = /*#__PURE__*/function (_React$Component) {
           className: "playlist-subheader-show"
         }, "Playlist"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "playlist-show-title"
-        }, playlistName === 'Release Radar' || playlistName === '2020 Wrapped' ? "".concat(this.props.currentUser.name, "'s ").concat(playlistName) : playlistName, " "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        }, playlistName === 'Release Radar' && this.props.currentUser.name !== "Demo Login" || playlistName === '2020 Wrapped' && this.props.currentUser.name !== "Demo Login" ? "".concat(this.props.currentUser.name, "'s ").concat(playlistName) : playlistName, " "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "playlist-show-description"
         }, playlistDescription)));
         var backGroundImage2 = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -2181,8 +2181,8 @@ var PlaylistShow = /*#__PURE__*/function (_React$Component) {
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "playlist-subheader-show"
         }, "Playlist"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "playlist-show-title-wrapped"
-        }, playlistName === 'Release Radar' || playlistName === '2020 Wrapped' ? "".concat(this.props.currentUser.name, "'s ").concat(playlistName) : playlistName, " "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "playlist-show-title"
+        }, playlistName === 'Release Radar' && this.props.currentUser.name !== "Demo User" || playlistName === '2020 Wrapped' && this.props.currentUser.name !== "Demo User" ? "".concat(this.props.currentUser.name, "'s ").concat(playlistName) : playlistName, " "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "playlist-show-description"
         }, "The songs you loved most this year, all wrapped up.")));
         if (!songs) return null;
@@ -4826,7 +4826,7 @@ var WebPlayerBody = /*#__PURE__*/function (_React$Component) {
         className: "webplayer-top-shortcuts-see-all"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "shortcuts-keyword-webplayer"
-      }, "Good Morning ", currentUser.name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "Good Morning ", currentUser.name !== "Demo User" ? currentUser.name : ""), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "see-all-playlists-keyword-webplayer"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
         to: "/playlists/"

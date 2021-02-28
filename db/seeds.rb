@@ -17,7 +17,7 @@ Playlist.destroy_all
 
 user1 = User.create!({email: "drewshroyer@gmail.com", password: "password", name: "Drew", birthdate: "1994-09-14", gender: "Male"})
 user2 = User.create!({email: "drewshroyer1@gmail.com", password: "password", name: "Sarah", birthdate: "1990-09-14", gender: "Female"})
-user3 = User.create!({email: "password@gmail.com", password: "password", name: "Demo Login", birthdate: "1990-09-14", gender: "Female"})
+user3 = User.create!({email: "password@gmail.com", password: "password", name: "Demo User", birthdate: "1990-09-14", gender: "Female"})
 
 #Troye Sivan
 artist1 = Artist.create!({name: "Troye Sivan", biography: "TIME magazine proclaimed Troye Sivan “the perfect pop star for 2018” and his work continues to affirm his reputation as an important artistic voice for our time. His 2015 debut album, Blue Neighbourhood, topped the iTunes charts in 66 countries, and is certified Gold in four countries. Troye’s Blue Neighbourhood trilogy of videos captured coming-of-age from a modern perspective, resonating especially with LGBTQ teens.

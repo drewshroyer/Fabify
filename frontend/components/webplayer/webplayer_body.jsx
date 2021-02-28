@@ -18,7 +18,7 @@ class WebPlayerBody extends React.Component {
     return (
       <div className="webplayer-body-container">
         <div className="webplayer-top-shortcuts-see-all">
-          <div className="shortcuts-keyword-webplayer">Good Morning {currentUser.name} 
+          <div className="shortcuts-keyword-webplayer">Good Morning {currentUser.name !== "Demo User" ? currentUser.name : ""} 
           </div>
           <div className="see-all-playlists-keyword-webplayer">
             <Link to="/playlists/">See All</Link>
