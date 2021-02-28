@@ -45,7 +45,7 @@ song3 = Song.create!({name: "Malibu", album_id: album3.id, artist_id: artist2.id
 file5 = URI.open('https://fabify-seeds.s3.us-east-2.amazonaws.com/Malibu+-+Kim+Petras+(At+Home+Edition).mp3')
 file6 = URI.open('https://fabify-seeds.s3.us-east-2.amazonaws.com/kim_petras_malibu_cover2.jpg')
 song3.audio.attach(io: file5, filename: 'Malibu-kim-petras-audio.mp3')
-song3.photo.attach(io: file6, filename: 'Malibu-kim-petras-album-cover.jpg')
+song3.photo.attach(io: file6, filename: 'Malibu-kim-petras-album.jpg')
 
 album4 = Album.create!({name: "Heart To Break", creator_id: artist2.id})
 song4 = Song.create!({name: "Heart To Break", album_id: album4.id, artist_id: artist2.id, song_length: "3:45"})
