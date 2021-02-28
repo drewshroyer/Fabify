@@ -84,11 +84,7 @@ class PlaylistShow extends React.Component {
         playlistSongsIndex.push(song);
       }
     })
-
-    if (!songs) return null;
-    return (
-      <div className="playlist-show-container">
-        <div className="playlist-show-image-container">
+    let backGroundImage1 =  <div className="playlist-show-image-container">
         <div
           data-testid="background-image"
           className="background-header-image-playlist-show"
@@ -100,6 +96,23 @@ class PlaylistShow extends React.Component {
           </div>
         </div>
         </div>
+    let backGroundImage2 = <div className="playlist-show-image-container">
+        <div
+          data-testid="background-image"
+          className="background-header-image-playlist-show"
+        >
+          <div className="playlist-subheader-show">Playlist</div>
+        <div className="playlist-show-title-wrapped">{playlistName === 'Release Radar' || playlistName === '2020 Wrapped' ? `${this.props.currentUser.name}'s ${playlistName}` : playlistName} </div>
+          <div className="playlist-show-description">
+            The songs you loved most this year, all wrapped up.
+          </div>
+        </div>
+        </div>
+
+    if (!songs) return null;
+    return (
+      <div className="playlist-show-container">
+        {playlistName === '2020 Wrapped' ?  backGroundImage2 : backGroundImage1}
         <div className="play-pause-like-delete-container">
           <div
             className="playlist-music-audio"

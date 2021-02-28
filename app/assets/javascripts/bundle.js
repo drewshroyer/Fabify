@@ -2161,10 +2161,7 @@ var PlaylistShow = /*#__PURE__*/function (_React$Component) {
             playlistSongsIndex.push(song);
           }
         });
-        if (!songs) return null;
-        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "playlist-show-container"
-        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        var backGroundImage1 = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "playlist-show-image-container"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           "data-testid": "background-image",
@@ -2175,7 +2172,23 @@ var PlaylistShow = /*#__PURE__*/function (_React$Component) {
           className: "playlist-show-title"
         }, playlistName === 'Release Radar' || playlistName === '2020 Wrapped' ? "".concat(this.props.currentUser.name, "'s ").concat(playlistName) : playlistName, " "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "playlist-show-description"
-        }, playlistDescription))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        }, playlistDescription)));
+        var backGroundImage2 = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "playlist-show-image-container"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          "data-testid": "background-image",
+          className: "background-header-image-playlist-show"
+        }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "playlist-subheader-show"
+        }, "Playlist"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "playlist-show-title-wrapped"
+        }, playlistName === 'Release Radar' || playlistName === '2020 Wrapped' ? "".concat(this.props.currentUser.name, "'s ").concat(playlistName) : playlistName, " "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "playlist-show-description"
+        }, "The songs you loved most this year, all wrapped up.")));
+        if (!songs) return null;
+        return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "playlist-show-container"
+        }, playlistName === '2020 Wrapped' ? backGroundImage2 : backGroundImage1, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "play-pause-like-delete-container"
         }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "playlist-music-audio",
